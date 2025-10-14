@@ -12,4 +12,13 @@ namespace Real_Estate_Management_System.Dialogs
 
         internal static DialogResult Result { get; set; }
     }
+
+    public enum DialogIcons
+    {
+        None,
+        Information,
+        Exclamation,
+        Error,
+        Question
+    }
 }

@@ -32,7 +32,9 @@
             pictureBox1 = new PictureBox();
             rtxtMessage = new RichTextBox();
             btnOK = new Button();
+            pcbIcon = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pcbIcon).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
@@ -68,11 +70,21 @@
             btnOK.UseVisualStyleBackColor = true;
             btnOK.Click += btnOK_Click;
             // 
+            // pcbIcon
+            // 
+            pcbIcon.Location = new Point(693, 12);
+            pcbIcon.Name = "pcbIcon";
+            pcbIcon.Size = new Size(204, 218);
+            pcbIcon.SizeMode = PictureBoxSizeMode.Zoom;
+            pcbIcon.TabIndex = 3;
+            pcbIcon.TabStop = false;
+            // 
             // MSGBox_OK
             // 
             AutoScaleDimensions = new SizeF(11F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(699, 242);
+            ClientSize = new Size(909, 242);
+            Controls.Add(pcbIcon);
             Controls.Add(btnOK);
             Controls.Add(rtxtMessage);
             Controls.Add(pictureBox1);
@@ -88,6 +100,7 @@
             FormClosing += MSGBox_OK_FormClosing;
             Load += MSGBox_OK_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pcbIcon).EndInit();
             ResumeLayout(false);
         }
 
@@ -96,5 +109,6 @@
         private PictureBox pictureBox1;
         private RichTextBox rtxtMessage;
         private Button btnOK;
+        private PictureBox pcbIcon;
     }
 }

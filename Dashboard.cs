@@ -65,7 +65,7 @@ namespace Real_Estate_Management_System
 
         private void btnSettings_Click(object sender, EventArgs e)
         {
-            Dialogs.MSGBox_OK MBOK = new Dialogs.MSGBox_OK();
+            Dialogs.MSGBox_OK MBOK = new Dialogs.MSGBox_OK(SetIcon: DialogIcons.Question);
             MBOK.ShowDialog();
         }
 

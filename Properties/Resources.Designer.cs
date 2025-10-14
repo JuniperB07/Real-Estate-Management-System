@@ -233,6 +233,46 @@ namespace Real_Estate_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap REMS_ICON_ERROR {
+            get {
+                object obj = ResourceManager.GetObject("REMS_ICON_ERROR", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap REMS_ICON_EXCLAMATION {
+            get {
+                object obj = ResourceManager.GetObject("REMS_ICON_EXCLAMATION", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap REMS_ICON_INFORMATION {
+            get {
+                object obj = ResourceManager.GetObject("REMS_ICON_INFORMATION", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap REMS_ICON_QUESTION {
+            get {
+                object obj = ResourceManager.GetObject("REMS_ICON_QUESTION", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap REMS_INTERNET_DARK {
             get {
                 object obj = ResourceManager.GetObject("REMS_INTERNET_DARK", resourceCulture);

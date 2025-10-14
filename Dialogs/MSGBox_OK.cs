@@ -14,8 +14,9 @@ namespace Real_Estate_Management_System.Dialogs
     public partial class MSGBox_OK : Form
     {
         private string text, message;
+        private DialogIcons icon;
 
-        public MSGBox_OK(string SetText="", string SetMessage="")
+        public MSGBox_OK(string SetText="", string SetMessage="", DialogIcons SetIcon = DialogIcons.None)
         {
             InitializeComponent();
             Internals.SetFormColors(this);
@@ -25,6 +26,25 @@ namespace Real_Estate_Management_System.Dialogs
 
             text = SetText;
             message = SetMessage;
+
+            switch (SetIcon)
+            {
+                case DialogIcons.Information:
+                    pcbIcon.Image = Properties.Resources.REMS_ICON_INFORMATION;
+                    break;
+                case DialogIcons.Exclamation:
+                    pcbIcon.Image = Properties.Resources.REMS_ICON_EXCLAMATION;
+                    break;
+                case DialogIcons.Error:
+                    pcbIcon.Image = Properties.Resources.REMS_ICON_ERROR;
+                    break;
+                case DialogIcons.Question:
+                    pcbIcon.Image = Properties.Resources.REMS_ICON_QUESTION;
+                    break;
+                default:
+                    pcbIcon.Image = null;
+                    break;
+            }
         }
 
         private void MSGBox_OK_Load(object sender, EventArgs e)
