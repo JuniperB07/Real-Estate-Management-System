@@ -284,6 +284,7 @@
             Name = "ElectricityBill";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Real Estate Management System - New Bill [MANAGE: Electricity Bill]";
+            FormClosing += ElectricityBill_FormClosing;
             Load += ElectricityBill_Load;
             pnlHeader.ResumeLayout(false);
             ResumeLayout(false);

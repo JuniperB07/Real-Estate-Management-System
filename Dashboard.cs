@@ -68,5 +68,11 @@ namespace Real_Estate_Management_System
             Dialogs.MSGBox_OK MBOK = new Dialogs.MSGBox_OK();
             MBOK.ShowDialog();
         }
+
+        private void Dashboard_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+        }
     }
 }

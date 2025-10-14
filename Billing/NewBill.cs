@@ -69,5 +69,11 @@ namespace Real_Estate_Management_System.Billing
             FunctionButtons.SetDueDates SDD = new FunctionButtons.SetDueDates();
             SDD.ShowDialog();
         }
+
+        private void NewBill_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+        }
     }
 }

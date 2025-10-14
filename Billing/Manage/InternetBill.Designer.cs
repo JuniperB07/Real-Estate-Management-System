@@ -233,6 +233,7 @@
             Name = "InternetBill";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Real Estate Management System - New Bill [MANAGE: Internet Bill]";
+            FormClosing += InternetBill_FormClosing;
             Load += InternetBill_Load;
             pnlHeader.ResumeLayout(false);
             ResumeLayout(false);

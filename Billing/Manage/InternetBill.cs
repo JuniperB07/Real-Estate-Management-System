@@ -26,5 +26,11 @@ namespace Real_Estate_Management_System.Billing.Manage
         {
 
         }
+
+        private void InternetBill_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+        }
     }
 }

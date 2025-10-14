@@ -285,6 +285,7 @@
             Name = "WaterBill";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Real Estate Management System - New Bill [MANAGE: Water Bill]";
+            FormClosing += WaterBill_FormClosing;
             Load += Manage_WaterBill_Load;
             pnlHeader.ResumeLayout(false);
             ResumeLayout(false);

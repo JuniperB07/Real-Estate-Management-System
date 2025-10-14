@@ -179,7 +179,7 @@
             label4.Name = "label4";
             label4.Size = new Size(474, 25);
             label4.TabIndex = 5;
-            label4.Text = "*Click the icon to reset.";
+            label4.Text = "*Click the icon to restore default.";
             label4.TextAlign = ContentAlignment.TopRight;
             // 
             // SetDueDates
@@ -199,6 +199,7 @@
             Name = "SetDueDates";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Real Estate Management System - New Bill [SET DUE DATES]";
+            FormClosing += SetDueDates_FormClosing;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);

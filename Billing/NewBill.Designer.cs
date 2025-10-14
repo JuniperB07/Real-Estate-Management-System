@@ -706,6 +706,7 @@
             Name = "NewBill";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "NewBill";
+            FormClosing += NewBill_FormClosing;
             Load += NewBill_Load;
             pnlHeader.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

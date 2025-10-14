@@ -124,6 +124,7 @@
             Name = "Login";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Welcome to Real Estate Management System!";
+            FormClosing += Login_FormClosing;
             Load += Login_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();

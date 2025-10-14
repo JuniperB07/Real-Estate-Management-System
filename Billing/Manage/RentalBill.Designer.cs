@@ -233,6 +233,7 @@
             Name = "RentalBill";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Real Estate Management System - New Bill [MANAGE: Rental Bill]";
+            FormClosing += RentalBill_FormClosing;
             Load += RentalBill_Load;
             pnlHeader.ResumeLayout(false);
             ResumeLayout(false);

@@ -1242,6 +1242,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Real Estate Management System - Dashboard";
             WindowState = FormWindowState.Maximized;
+            FormClosing += Dashboard_FormClosing;
             Load += Dashboard_Load;
             pnlHeader.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();

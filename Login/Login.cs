@@ -22,5 +22,11 @@ namespace Real_Estate_Management_System.Login
         {
 
         }
+
+        private void Login_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+        }
     }
 }

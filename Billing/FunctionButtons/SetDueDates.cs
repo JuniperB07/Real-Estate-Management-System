@@ -19,5 +19,11 @@ namespace Real_Estate_Management_System.Billing.FunctionButtons
             Internals.SetFormColors(this);
             Forms.SetControlForeColor(Forms.ControlType<Label>.Extract(this), Internals.Cyprus);
         }
+
+        private void SetDueDates_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+        }
     }
 }
