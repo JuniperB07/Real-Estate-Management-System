@@ -561,7 +561,7 @@
             pnlUnpaid.Controls.Add(label1);
             pnlUnpaid.Controls.Add(label2);
             pnlUnpaid.Controls.Add(panel4);
-            pnlUnpaid.Location = new Point(315, 210);
+            pnlUnpaid.Location = new Point(348, 196);
             pnlUnpaid.Name = "pnlUnpaid";
             pnlUnpaid.Size = new Size(440, 242);
             pnlUnpaid.TabIndex = 2;
@@ -634,7 +634,7 @@
             pnlActiveTenants.Controls.Add(label3);
             pnlActiveTenants.Controls.Add(label_ActiveTenants);
             pnlActiveTenants.Controls.Add(panel6);
-            pnlActiveTenants.Location = new Point(1382, 210);
+            pnlActiveTenants.Location = new Point(1346, 196);
             pnlActiveTenants.Name = "pnlActiveTenants";
             pnlActiveTenants.Size = new Size(440, 242);
             pnlActiveTenants.TabIndex = 3;
@@ -707,7 +707,7 @@
             pnlOverdue.Controls.Add(label27);
             pnlOverdue.Controls.Add(label28);
             pnlOverdue.Controls.Add(panel1);
-            pnlOverdue.Location = new Point(847, 210);
+            pnlOverdue.Location = new Point(847, 196);
             pnlOverdue.Name = "pnlOverdue";
             pnlOverdue.Size = new Size(440, 242);
             pnlOverdue.TabIndex = 4;
@@ -785,7 +785,7 @@
             pnlIssuedBills.Controls.Add(label9);
             pnlIssuedBills.Controls.Add(label10);
             pnlIssuedBills.Controls.Add(panel3);
-            pnlIssuedBills.Location = new Point(318, 468);
+            pnlIssuedBills.Location = new Point(349, 468);
             pnlIssuedBills.Name = "pnlIssuedBills";
             pnlIssuedBills.Size = new Size(440, 242);
             pnlIssuedBills.TabIndex = 3;
@@ -933,7 +933,7 @@
             pnlReceivables.Controls.Add(label13);
             pnlReceivables.Controls.Add(label14);
             pnlReceivables.Controls.Add(panel7);
-            pnlReceivables.Location = new Point(1382, 468);
+            pnlReceivables.Location = new Point(1346, 468);
             pnlReceivables.Name = "pnlReceivables";
             pnlReceivables.Size = new Size(440, 242);
             pnlReceivables.TabIndex = 5;
@@ -1007,7 +1007,7 @@
             pnlReceived.Controls.Add(label15);
             pnlReceived.Controls.Add(label16);
             pnlReceived.Controls.Add(panel8);
-            pnlReceived.Location = new Point(318, 726);
+            pnlReceived.Location = new Point(349, 743);
             pnlReceived.Name = "pnlReceived";
             pnlReceived.Size = new Size(440, 242);
             pnlReceived.TabIndex = 4;
@@ -1080,7 +1080,7 @@
             pnlExpenses.Controls.Add(label17);
             pnlExpenses.Controls.Add(label18);
             pnlExpenses.Controls.Add(panel9);
-            pnlExpenses.Location = new Point(847, 726);
+            pnlExpenses.Location = new Point(847, 743);
             pnlExpenses.Name = "pnlExpenses";
             pnlExpenses.Size = new Size(440, 242);
             pnlExpenses.TabIndex = 6;
@@ -1153,7 +1153,7 @@
             panel2.Controls.Add(label19);
             panel2.Controls.Add(label20);
             panel2.Controls.Add(panel10);
-            panel2.Location = new Point(1382, 726);
+            panel2.Location = new Point(1346, 743);
             panel2.Name = "panel2";
             panel2.Size = new Size(440, 242);
             panel2.TabIndex = 7;

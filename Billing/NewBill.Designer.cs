@@ -511,7 +511,7 @@
             label18.Name = "label18";
             label18.Size = new Size(284, 54);
             label18.TabIndex = 22;
-            label18.Text = "Manage";
+            label18.Text = "View";
             label18.TextAlign = ContentAlignment.MiddleRight;
             // 
             // label11
@@ -577,7 +577,7 @@
             label19.Name = "label19";
             label19.Size = new Size(284, 54);
             label19.TabIndex = 22;
-            label19.Text = "Manage";
+            label19.Text = "View";
             label19.TextAlign = ContentAlignment.MiddleRight;
             // 
             // btnManage_InternetBill
