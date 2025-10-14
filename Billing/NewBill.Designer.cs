@@ -513,6 +513,7 @@
             btnManage_RentalBill.Size = new Size(83, 54);
             btnManage_RentalBill.TabIndex = 21;
             btnManage_RentalBill.UseVisualStyleBackColor = false;
+            btnManage_RentalBill.Click += btnManage_RentalBill_Click;
             // 
             // label12
             // 

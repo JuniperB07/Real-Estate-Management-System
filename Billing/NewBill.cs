@@ -51,5 +51,11 @@ namespace Real_Estate_Management_System.Billing
             Manage.ElectricityBill MEB = new Manage.ElectricityBill();
             MEB.ShowDialog();
         }
+
+        private void btnManage_RentalBill_Click(object sender, EventArgs e)
+        {
+            Manage.RentalBill MRB = new Manage.RentalBill();
+            MRB.ShowDialog();
+        }
     }
 }
