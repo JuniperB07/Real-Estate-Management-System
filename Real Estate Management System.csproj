@@ -68,4 +68,10 @@
 		<Compile Include="bin\Debug\net8.0-windows\Tables\*.cs" />
 	</ItemGroup>
 
+	<ItemGroup>
+		<Compile Update="Dialogs\MSGBox_OK.IconSetter.cs">
+			<DependentUpon>MSGBox_OK.cs</DependentUpon>
+		</Compile>
+	</ItemGroup>
+
 </Project>
