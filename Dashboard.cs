@@ -21,7 +21,7 @@ namespace Real_Estate_Management_System
 
             InitializeComponent();
             Internals.SetFormColors(this);
-            this.WindowState = FormWindowState.Maximized;
+            WindowState = FormWindowState.Maximized;
 
             pnlHeader.BackColor = Internals.Cyprus;
             pnlSidebar.BackColor = Internals.Cyprus;
