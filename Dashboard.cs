@@ -38,7 +38,7 @@ namespace Real_Estate_Management_System
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void tmrClock_Tick(object sender, EventArgs e)
