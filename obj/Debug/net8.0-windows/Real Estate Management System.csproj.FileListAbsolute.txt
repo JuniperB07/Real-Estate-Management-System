@@ -171,3 +171,4 @@ C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug
 C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_UTILITIES_DARK.png
 C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\obj\Debug\net8.0-windows\Real_Estate_Management_System.Billing.FunctionButtons.SetDueDates.resources
 C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\obj\Debug\net8.0-windows\Real_Estate_Management_System.Dialogs.ProcessingRequest.resources
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\obj\Debug\net8.0-windows\Real_Estate_Management_System.Dialogs.MSGBox_OK.resources

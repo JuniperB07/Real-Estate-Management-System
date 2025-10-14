@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using JunX.NETStandard.Utility;
 using JunX.NET8.WinForms;
+using Real_Estate_Management_System.Dialogs;
 
 namespace Real_Estate_Management_System
 {
@@ -38,7 +39,7 @@ namespace Real_Estate_Management_System
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void tmrClock_Tick(object sender, EventArgs e)
@@ -60,6 +61,12 @@ namespace Real_Estate_Management_System
             Login.Login L = new Login.Login();
             L.ShowDialog();
             Show();
+        }
+
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            Dialogs.MSGBox_OK MBOK = new Dialogs.MSGBox_OK();
+            MBOK.ShowDialog();
         }
     }
 }

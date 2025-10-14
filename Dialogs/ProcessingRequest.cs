@@ -23,5 +23,11 @@ namespace Real_Estate_Management_System.Dialogs
         {
 
         }
+
+        private void ProcessingRequest_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+        }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Real_Estate_Management_System.Dialogs
 {
-    partial class ProcessingRequest
+    partial class MSGBox_OK
     {
         /// <summary>
         /// Required designer variable.
@@ -20,27 +20,6 @@
             base.Dispose(disposing);
         }
 
-        protected override CreateParams CreateParams
-        {
-            get
-            {
-                const int CS_NOCLOSE = 0x200;
-                CreateParams cp = base.CreateParams;
-                cp.ClassStyle |= CS_NOCLOSE;
-                return cp;
-            }
-        }
-
-        protected override void OnFormClosing(FormClosingEventArgs e)
-        {
-            if (e.CloseReason == CloseReason.UserClosing)
-            {
-                e.Cancel = true; // Prevent close
-            }
-            base.OnFormClosing(e);
-        }
-
-
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -49,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProcessingRequest));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MSGBox_OK));
             pictureBox1 = new PictureBox();
-            lblMSG = new Label();
+            rtxtMessage = new RichTextBox();
+            btnOK = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -60,27 +40,41 @@
             pictureBox1.Image = Properties.Resources.REMS_LOGO___DARK;
             pictureBox1.Location = new Point(12, 12);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(170, 154);
+            pictureBox1.Size = new Size(204, 218);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // lblMSG
+            // rtxtMessage
             // 
-            lblMSG.Font = new Font("Arial Black", 28F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblMSG.Location = new Point(188, 12);
-            lblMSG.Name = "lblMSG";
-            lblMSG.Size = new Size(538, 154);
-            lblMSG.TabIndex = 1;
-            lblMSG.Text = "PROCESSING REQUEST...";
-            lblMSG.TextAlign = ContentAlignment.MiddleCenter;
+            rtxtMessage.BorderStyle = BorderStyle.None;
+            rtxtMessage.Location = new Point(222, 12);
+            rtxtMessage.Name = "rtxtMessage";
+            rtxtMessage.ReadOnly = true;
+            rtxtMessage.Size = new Size(465, 161);
+            rtxtMessage.TabIndex = 1;
+            rtxtMessage.Text = "";
             // 
-            // ProcessingRequest
+            // btnOK
+            // 
+            btnOK.FlatAppearance.BorderSize = 0;
+            btnOK.FlatStyle = FlatStyle.Flat;
+            btnOK.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnOK.Location = new Point(385, 189);
+            btnOK.Name = "btnOK";
+            btnOK.Size = new Size(138, 41);
+            btnOK.TabIndex = 2;
+            btnOK.Text = "OK";
+            btnOK.UseVisualStyleBackColor = true;
+            btnOK.Click += btnOK_Click;
+            // 
+            // MSGBox_OK
             // 
             AutoScaleDimensions = new SizeF(11F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(738, 178);
-            Controls.Add(lblMSG);
+            ClientSize = new Size(699, 242);
+            Controls.Add(btnOK);
+            Controls.Add(rtxtMessage);
             Controls.Add(pictureBox1);
             Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.FixedDialog;
@@ -88,11 +82,11 @@
             Margin = new Padding(4, 3, 4, 3);
             MaximizeBox = false;
             MinimizeBox = false;
-            Name = "ProcessingRequest";
+            Name = "MSGBox_OK";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Processing Request...";
-            FormClosing += ProcessingRequest_FormClosing;
-            Load += ProcessingRequest_Load;
+            Text = "MSGBox_OK";
+            FormClosing += MSGBox_OK_FormClosing;
+            Load += MSGBox_OK_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
@@ -100,6 +94,7 @@
         #endregion
 
         private PictureBox pictureBox1;
-        private Label lblMSG;
+        private RichTextBox rtxtMessage;
+        private Button btnOK;
     }
 }
