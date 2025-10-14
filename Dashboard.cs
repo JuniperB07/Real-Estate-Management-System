@@ -38,8 +38,7 @@ namespace Real_Estate_Management_System
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-            Login.Login L = new Login.Login();
-            L.ShowDialog();
+
         }
 
         private void tmrClock_Tick(object sender, EventArgs e)
@@ -52,6 +51,14 @@ namespace Real_Estate_Management_System
             Hide();
             Billing.NewBill BN = new Billing.NewBill();
             BN.ShowDialog();
+            Show();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            Hide();
+            Login.Login L = new Login.Login();
+            L.ShowDialog();
             Show();
         }
     }
