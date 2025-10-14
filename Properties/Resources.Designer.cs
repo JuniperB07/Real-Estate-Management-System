@@ -123,6 +123,16 @@ namespace Real_Estate_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap REMS_BILLING_SET_DUE_DATES {
+            get {
+                object obj = ResourceManager.GetObject("REMS_BILLING_SET_DUE_DATES", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap REMS_BILLING_WATER {
             get {
                 object obj = ResourceManager.GetObject("REMS_BILLING_WATER", resourceCulture);

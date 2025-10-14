@@ -47,6 +47,8 @@
             label3 = new Label();
             txtPrevious = new TextBox();
             label2 = new Label();
+            label4 = new Label();
+            label5 = new Label();
             pnlHeader.SuspendLayout();
             SuspendLayout();
             // 
@@ -80,7 +82,7 @@
             btnSubmit.FlatAppearance.BorderSize = 0;
             btnSubmit.FlatStyle = FlatStyle.Flat;
             btnSubmit.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnSubmit.Location = new Point(233, 551);
+            btnSubmit.Location = new Point(233, 587);
             btnSubmit.Name = "btnSubmit";
             btnSubmit.Size = new Size(140, 43);
             btnSubmit.TabIndex = 32;
@@ -90,7 +92,7 @@
             // label12
             // 
             label12.Font = new Font("Arial", 16.2F, FontStyle.Bold);
-            label12.Location = new Point(88, 490);
+            label12.Location = new Point(88, 528);
             label12.Name = "label12";
             label12.Size = new Size(274, 34);
             label12.TabIndex = 31;
@@ -100,7 +102,7 @@
             // lblTotal
             // 
             lblTotal.Font = new Font("Arial", 16.2F, FontStyle.Bold);
-            lblTotal.Location = new Point(368, 490);
+            lblTotal.Location = new Point(368, 528);
             lblTotal.Name = "lblTotal";
             lblTotal.Size = new Size(225, 34);
             lblTotal.TabIndex = 30;
@@ -110,7 +112,7 @@
             // label8
             // 
             label8.Font = new Font("Arial", 12F, FontStyle.Italic);
-            label8.Location = new Point(88, 430);
+            label8.Location = new Point(88, 468);
             label8.Name = "label8";
             label8.Size = new Size(274, 25);
             label8.TabIndex = 29;
@@ -119,7 +121,7 @@
             // 
             // label9
             // 
-            label9.Location = new Point(88, 389);
+            label9.Location = new Point(88, 427);
             label9.Name = "label9";
             label9.Size = new Size(274, 25);
             label9.TabIndex = 28;
@@ -129,7 +131,7 @@
             // lblDeductions
             // 
             lblDeductions.Font = new Font("Arial", 12F, FontStyle.Italic);
-            lblDeductions.Location = new Point(368, 430);
+            lblDeductions.Location = new Point(368, 468);
             lblDeductions.Name = "lblDeductions";
             lblDeductions.Size = new Size(225, 25);
             lblDeductions.TabIndex = 27;
@@ -138,7 +140,7 @@
             // 
             // lblRemainingBalance
             // 
-            lblRemainingBalance.Location = new Point(368, 389);
+            lblRemainingBalance.Location = new Point(368, 427);
             lblRemainingBalance.Name = "lblRemainingBalance";
             lblRemainingBalance.Size = new Size(225, 25);
             lblRemainingBalance.TabIndex = 26;
@@ -148,7 +150,7 @@
             // label6
             // 
             label6.Font = new Font("Arial", 12F, FontStyle.Bold);
-            label6.Location = new Point(88, 339);
+            label6.Location = new Point(88, 377);
             label6.Name = "label6";
             label6.Size = new Size(274, 25);
             label6.TabIndex = 25;
@@ -157,7 +159,7 @@
             // 
             // label7
             // 
-            label7.Location = new Point(88, 298);
+            label7.Location = new Point(88, 336);
             label7.Name = "label7";
             label7.Size = new Size(274, 25);
             label7.TabIndex = 24;
@@ -167,7 +169,7 @@
             // lblCurrentCharge
             // 
             lblCurrentCharge.Font = new Font("Arial", 12F, FontStyle.Bold);
-            lblCurrentCharge.Location = new Point(368, 339);
+            lblCurrentCharge.Location = new Point(368, 377);
             lblCurrentCharge.Name = "lblCurrentCharge";
             lblCurrentCharge.Size = new Size(225, 25);
             lblCurrentCharge.TabIndex = 23;
@@ -176,7 +178,7 @@
             // 
             // lblConsumption
             // 
-            lblConsumption.Location = new Point(368, 298);
+            lblConsumption.Location = new Point(368, 336);
             lblConsumption.Name = "lblConsumption";
             lblConsumption.Size = new Size(225, 25);
             lblConsumption.TabIndex = 22;
@@ -188,7 +190,7 @@
             btnConfirm.FlatAppearance.BorderSize = 0;
             btnConfirm.FlatStyle = FlatStyle.Flat;
             btnConfirm.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnConfirm.Location = new Point(453, 245);
+            btnConfirm.Location = new Point(453, 283);
             btnConfirm.Name = "btnConfirm";
             btnConfirm.Size = new Size(140, 43);
             btnConfirm.TabIndex = 21;
@@ -198,7 +200,7 @@
             // txtPresent
             // 
             txtPresent.BorderStyle = BorderStyle.FixedSingle;
-            txtPresent.Location = new Point(368, 209);
+            txtPresent.Location = new Point(368, 247);
             txtPresent.Name = "txtPresent";
             txtPresent.Size = new Size(225, 30);
             txtPresent.TabIndex = 20;
@@ -206,7 +208,7 @@
             // 
             // label3
             // 
-            label3.Location = new Point(88, 210);
+            label3.Location = new Point(88, 248);
             label3.Name = "label3";
             label3.Size = new Size(274, 25);
             label3.TabIndex = 19;
@@ -216,7 +218,7 @@
             // txtPrevious
             // 
             txtPrevious.BorderStyle = BorderStyle.FixedSingle;
-            txtPrevious.Location = new Point(368, 168);
+            txtPrevious.Location = new Point(368, 206);
             txtPrevious.Name = "txtPrevious";
             txtPrevious.Size = new Size(225, 30);
             txtPrevious.TabIndex = 18;
@@ -224,18 +226,38 @@
             // 
             // label2
             // 
-            label2.Location = new Point(88, 169);
+            label2.Location = new Point(88, 207);
             label2.Name = "label2";
             label2.Size = new Size(274, 25);
             label2.TabIndex = 17;
             label2.Text = "PREVIOUS READING:";
             label2.TextAlign = ContentAlignment.MiddleRight;
             // 
+            // label4
+            // 
+            label4.Location = new Point(88, 168);
+            label4.Name = "label4";
+            label4.Size = new Size(274, 25);
+            label4.TabIndex = 34;
+            label4.Text = "DUE DATE:";
+            label4.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // label5
+            // 
+            label5.Location = new Point(368, 168);
+            label5.Name = "label5";
+            label5.Size = new Size(225, 25);
+            label5.TabIndex = 33;
+            label5.Text = "September 10, 2000";
+            label5.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // ElectricityBill
             // 
             AutoScaleDimensions = new SizeF(11F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(605, 607);
+            ClientSize = new Size(605, 643);
+            Controls.Add(label4);
+            Controls.Add(label5);
             Controls.Add(btnSubmit);
             Controls.Add(label12);
             Controls.Add(lblTotal);
@@ -256,7 +278,7 @@
             Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "ElectricityBill";
@@ -288,5 +310,7 @@
         private Label label3;
         private TextBox txtPrevious;
         private Label label2;
+        private Label label4;
+        private Label label5;
     }
 }

@@ -42,7 +42,7 @@ namespace Real_Estate_Management_System.Billing
 
         private void btnManage_WaterBill_Click(object sender, EventArgs e)
         {
-            WaterBill MWB = new WaterBill();
+            Manage.WaterBill MWB = new Manage.WaterBill();
             MWB.ShowDialog();
         }
 
@@ -56,6 +56,12 @@ namespace Real_Estate_Management_System.Billing
         {
             Manage.RentalBill MRB = new Manage.RentalBill();
             MRB.ShowDialog();
+        }
+
+        private void btnManage_InternetBill_Click(object sender, EventArgs e)
+        {
+            Manage.InternetBill MIB = new Manage.InternetBill();
+            MIB.ShowDialog();
         }
     }
 }

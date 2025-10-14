@@ -37,6 +37,9 @@
             lstTenantsList = new ListBox();
             pictureBox2 = new PictureBox();
             pnlBillSummary = new Panel();
+            panel4 = new Panel();
+            button1 = new Button();
+            pictureBox7 = new PictureBox();
             label7 = new Label();
             label6 = new Label();
             label5 = new Label();
@@ -80,6 +83,8 @@
             pnlSelectTenant.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             pnlBillSummary.SuspendLayout();
+            panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             panel2.SuspendLayout();
@@ -176,6 +181,7 @@
             // 
             pnlBillSummary.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             pnlBillSummary.BackColor = SystemColors.ControlDarkDark;
+            pnlBillSummary.Controls.Add(panel4);
             pnlBillSummary.Controls.Add(label7);
             pnlBillSummary.Controls.Add(label6);
             pnlBillSummary.Controls.Add(label5);
@@ -191,6 +197,39 @@
             pnlBillSummary.Name = "pnlBillSummary";
             pnlBillSummary.Size = new Size(1224, 299);
             pnlBillSummary.TabIndex = 2;
+            // 
+            // panel4
+            // 
+            panel4.Controls.Add(button1);
+            panel4.Controls.Add(pictureBox7);
+            panel4.Location = new Point(7, 62);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(300, 50);
+            panel4.TabIndex = 3;
+            // 
+            // button1
+            // 
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Arial Narrow", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = SystemColors.Control;
+            button1.Location = new Point(75, 3);
+            button1.Name = "button1";
+            button1.Size = new Size(222, 44);
+            button1.TabIndex = 1;
+            button1.Text = "SET DUE DATES";
+            button1.TextAlign = ContentAlignment.MiddleLeft;
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox7
+            // 
+            pictureBox7.Image = Properties.Resources.REMS_BILLING_SET_DUE_DATES;
+            pictureBox7.Location = new Point(13, 3);
+            pictureBox7.Name = "pictureBox7";
+            pictureBox7.Size = new Size(56, 44);
+            pictureBox7.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox7.TabIndex = 0;
+            pictureBox7.TabStop = false;
             // 
             // label7
             // 
@@ -566,6 +605,7 @@
             btnManage_InternetBill.Size = new Size(83, 54);
             btnManage_InternetBill.TabIndex = 21;
             btnManage_InternetBill.UseVisualStyleBackColor = false;
+            btnManage_InternetBill.Click += btnManage_InternetBill_Click;
             // 
             // label13
             // 
@@ -686,6 +726,8 @@
             pnlSelectTenant.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             pnlBillSummary.ResumeLayout(false);
+            panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             panel2.ResumeLayout(false);
@@ -749,5 +791,8 @@
         private Button btnManage_RentalBill;
         private Label label19;
         private Button btnManage_InternetBill;
+        private Panel panel4;
+        private Button button1;
+        private PictureBox pictureBox7;
     }
 }

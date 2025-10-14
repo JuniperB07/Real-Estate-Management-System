@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using JunX.NET8.Utilities;
 using JunX.NET8.WinForms;
 
-namespace Real_Estate_Management_System.Billing
+namespace Real_Estate_Management_System.Billing.Manage
 {
     public partial class WaterBill : Form
     {

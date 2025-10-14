@@ -1,4 +1,4 @@
-﻿namespace Real_Estate_Management_System.Billing
+﻿namespace Real_Estate_Management_System.Billing.Manage
 {
     partial class WaterBill
     {
@@ -47,6 +47,8 @@
             label12 = new Label();
             lblTotal = new Label();
             btnSubmit = new Button();
+            label4 = new Label();
+            lblDueDate = new Label();
             pnlHeader.SuspendLayout();
             SuspendLayout();
             // 
@@ -76,7 +78,7 @@
             // 
             // label2
             // 
-            label2.Location = new Point(13, 170);
+            label2.Location = new Point(13, 205);
             label2.Name = "label2";
             label2.Size = new Size(274, 25);
             label2.TabIndex = 1;
@@ -86,7 +88,7 @@
             // txtPrevious
             // 
             txtPrevious.BorderStyle = BorderStyle.FixedSingle;
-            txtPrevious.Location = new Point(293, 169);
+            txtPrevious.Location = new Point(293, 204);
             txtPrevious.Name = "txtPrevious";
             txtPrevious.Size = new Size(225, 30);
             txtPrevious.TabIndex = 2;
@@ -95,7 +97,7 @@
             // txtPresent
             // 
             txtPresent.BorderStyle = BorderStyle.FixedSingle;
-            txtPresent.Location = new Point(293, 210);
+            txtPresent.Location = new Point(293, 245);
             txtPresent.Name = "txtPresent";
             txtPresent.Size = new Size(225, 30);
             txtPresent.TabIndex = 4;
@@ -103,7 +105,7 @@
             // 
             // label3
             // 
-            label3.Location = new Point(13, 211);
+            label3.Location = new Point(13, 246);
             label3.Name = "label3";
             label3.Size = new Size(274, 25);
             label3.TabIndex = 3;
@@ -115,7 +117,7 @@
             btnConfirm.FlatAppearance.BorderSize = 0;
             btnConfirm.FlatStyle = FlatStyle.Flat;
             btnConfirm.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnConfirm.Location = new Point(378, 246);
+            btnConfirm.Location = new Point(378, 281);
             btnConfirm.Name = "btnConfirm";
             btnConfirm.Size = new Size(140, 43);
             btnConfirm.TabIndex = 5;
@@ -125,7 +127,7 @@
             // lblCurrentCharge
             // 
             lblCurrentCharge.Font = new Font("Arial", 12F, FontStyle.Bold);
-            lblCurrentCharge.Location = new Point(293, 340);
+            lblCurrentCharge.Location = new Point(293, 375);
             lblCurrentCharge.Name = "lblCurrentCharge";
             lblCurrentCharge.Size = new Size(225, 25);
             lblCurrentCharge.TabIndex = 7;
@@ -134,7 +136,7 @@
             // 
             // lblConsumption
             // 
-            lblConsumption.Location = new Point(293, 299);
+            lblConsumption.Location = new Point(293, 334);
             lblConsumption.Name = "lblConsumption";
             lblConsumption.Size = new Size(225, 25);
             lblConsumption.TabIndex = 6;
@@ -144,7 +146,7 @@
             // label6
             // 
             label6.Font = new Font("Arial", 12F, FontStyle.Bold);
-            label6.Location = new Point(13, 340);
+            label6.Location = new Point(13, 375);
             label6.Name = "label6";
             label6.Size = new Size(274, 25);
             label6.TabIndex = 9;
@@ -153,7 +155,7 @@
             // 
             // label7
             // 
-            label7.Location = new Point(13, 299);
+            label7.Location = new Point(13, 334);
             label7.Name = "label7";
             label7.Size = new Size(274, 25);
             label7.TabIndex = 8;
@@ -163,7 +165,7 @@
             // label8
             // 
             label8.Font = new Font("Arial", 12F, FontStyle.Italic);
-            label8.Location = new Point(13, 431);
+            label8.Location = new Point(13, 466);
             label8.Name = "label8";
             label8.Size = new Size(274, 25);
             label8.TabIndex = 13;
@@ -172,7 +174,7 @@
             // 
             // label9
             // 
-            label9.Location = new Point(13, 390);
+            label9.Location = new Point(13, 425);
             label9.Name = "label9";
             label9.Size = new Size(274, 25);
             label9.TabIndex = 12;
@@ -182,7 +184,7 @@
             // lblDeductions
             // 
             lblDeductions.Font = new Font("Arial", 12F, FontStyle.Italic);
-            lblDeductions.Location = new Point(293, 431);
+            lblDeductions.Location = new Point(293, 466);
             lblDeductions.Name = "lblDeductions";
             lblDeductions.Size = new Size(225, 25);
             lblDeductions.TabIndex = 11;
@@ -191,7 +193,7 @@
             // 
             // lblRemainingBalance
             // 
-            lblRemainingBalance.Location = new Point(293, 390);
+            lblRemainingBalance.Location = new Point(293, 425);
             lblRemainingBalance.Name = "lblRemainingBalance";
             lblRemainingBalance.Size = new Size(225, 25);
             lblRemainingBalance.TabIndex = 10;
@@ -201,7 +203,7 @@
             // label12
             // 
             label12.Font = new Font("Arial", 16.2F, FontStyle.Bold);
-            label12.Location = new Point(13, 491);
+            label12.Location = new Point(13, 526);
             label12.Name = "label12";
             label12.Size = new Size(274, 34);
             label12.TabIndex = 15;
@@ -211,7 +213,7 @@
             // lblTotal
             // 
             lblTotal.Font = new Font("Arial", 16.2F, FontStyle.Bold);
-            lblTotal.Location = new Point(293, 491);
+            lblTotal.Location = new Point(293, 526);
             lblTotal.Name = "lblTotal";
             lblTotal.Size = new Size(225, 34);
             lblTotal.TabIndex = 14;
@@ -224,7 +226,7 @@
             btnSubmit.FlatAppearance.BorderSize = 0;
             btnSubmit.FlatStyle = FlatStyle.Flat;
             btnSubmit.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnSubmit.Location = new Point(195, 552);
+            btnSubmit.Location = new Point(195, 588);
             btnSubmit.Name = "btnSubmit";
             btnSubmit.Size = new Size(140, 43);
             btnSubmit.TabIndex = 16;
@@ -232,11 +234,31 @@
             btnSubmit.UseVisualStyleBackColor = true;
             btnSubmit.Click += btnSubmit_Click;
             // 
+            // label4
+            // 
+            label4.Location = new Point(13, 166);
+            label4.Name = "label4";
+            label4.Size = new Size(274, 25);
+            label4.TabIndex = 18;
+            label4.Text = "DUE DATE:";
+            label4.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // lblDueDate
+            // 
+            lblDueDate.Location = new Point(293, 166);
+            lblDueDate.Name = "lblDueDate";
+            lblDueDate.Size = new Size(225, 25);
+            lblDueDate.TabIndex = 17;
+            lblDueDate.Text = "September 10, 2000";
+            lblDueDate.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // WaterBill
             // 
             AutoScaleDimensions = new SizeF(11F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(530, 607);
+            ClientSize = new Size(530, 643);
+            Controls.Add(label4);
+            Controls.Add(lblDueDate);
             Controls.Add(btnSubmit);
             Controls.Add(label12);
             Controls.Add(lblTotal);
@@ -289,5 +311,7 @@
         private Label label12;
         private Label lblTotal;
         private Button btnSubmit;
+        private Label label4;
+        private Label lblDueDate;
     }
 }
