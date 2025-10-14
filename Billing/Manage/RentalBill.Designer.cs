@@ -40,11 +40,11 @@
             label6 = new Label();
             label7 = new Label();
             lblCurrentCharge = new Label();
-            lblConsumption = new Label();
+            lblAdditionalCharges = new Label();
             label2 = new Label();
-            label3 = new Label();
+            lblMonthlyRent = new Label();
             label4 = new Label();
-            label5 = new Label();
+            lblDueDate = new Label();
             pnlHeader.SuspendLayout();
             SuspendLayout();
             // 
@@ -146,7 +146,7 @@
             label7.Name = "label7";
             label7.Size = new Size(274, 25);
             label7.TabIndex = 24;
-            label7.Text = "CONSUMPTION:";
+            label7.Text = "ADDITIONAL CHARGES:";
             label7.TextAlign = ContentAlignment.MiddleRight;
             // 
             // lblCurrentCharge
@@ -159,14 +159,14 @@
             lblCurrentCharge.Text = "0.00";
             lblCurrentCharge.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // lblConsumption
+            // lblAdditionalCharges
             // 
-            lblConsumption.Location = new Point(293, 254);
-            lblConsumption.Name = "lblConsumption";
-            lblConsumption.Size = new Size(225, 25);
-            lblConsumption.TabIndex = 22;
-            lblConsumption.Text = "0";
-            lblConsumption.TextAlign = ContentAlignment.MiddleCenter;
+            lblAdditionalCharges.Location = new Point(293, 254);
+            lblAdditionalCharges.Name = "lblAdditionalCharges";
+            lblAdditionalCharges.Size = new Size(225, 25);
+            lblAdditionalCharges.TabIndex = 22;
+            lblAdditionalCharges.Text = "0";
+            lblAdditionalCharges.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
@@ -174,17 +174,17 @@
             label2.Name = "label2";
             label2.Size = new Size(274, 25);
             label2.TabIndex = 34;
-            label2.Text = "REMAINING BALANCE:";
+            label2.Text = "MONTHLY RENT:";
             label2.TextAlign = ContentAlignment.MiddleRight;
             // 
-            // label3
+            // lblMonthlyRent
             // 
-            label3.Location = new Point(293, 212);
-            label3.Name = "label3";
-            label3.Size = new Size(225, 25);
-            label3.TabIndex = 33;
-            label3.Text = "0.00";
-            label3.TextAlign = ContentAlignment.MiddleCenter;
+            lblMonthlyRent.Location = new Point(293, 212);
+            lblMonthlyRent.Name = "lblMonthlyRent";
+            lblMonthlyRent.Size = new Size(225, 25);
+            lblMonthlyRent.TabIndex = 33;
+            lblMonthlyRent.Text = "0.00";
+            lblMonthlyRent.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label4
             // 
@@ -195,14 +195,14 @@
             label4.Text = "DUE DATE:";
             label4.TextAlign = ContentAlignment.MiddleRight;
             // 
-            // label5
+            // lblDueDate
             // 
-            label5.Location = new Point(293, 170);
-            label5.Name = "label5";
-            label5.Size = new Size(225, 25);
-            label5.TabIndex = 35;
-            label5.Text = "September 10, 2000";
-            label5.TextAlign = ContentAlignment.MiddleCenter;
+            lblDueDate.Location = new Point(293, 170);
+            lblDueDate.Name = "lblDueDate";
+            lblDueDate.Size = new Size(225, 25);
+            lblDueDate.TabIndex = 35;
+            lblDueDate.Text = "September 10, 2000";
+            lblDueDate.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // RentalBill
             // 
@@ -210,9 +210,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(530, 503);
             Controls.Add(label4);
-            Controls.Add(label5);
+            Controls.Add(lblDueDate);
             Controls.Add(label2);
-            Controls.Add(label3);
+            Controls.Add(lblMonthlyRent);
             Controls.Add(label12);
             Controls.Add(lblTotal);
             Controls.Add(label8);
@@ -222,7 +222,7 @@
             Controls.Add(label6);
             Controls.Add(label7);
             Controls.Add(lblCurrentCharge);
-            Controls.Add(lblConsumption);
+            Controls.Add(lblAdditionalCharges);
             Controls.Add(pnlHeader);
             Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.FixedDialog;
@@ -251,10 +251,10 @@
         private Label label6;
         private Label label7;
         private Label lblCurrentCharge;
-        private Label lblConsumption;
+        private Label lblAdditionalCharges;
         private Label label2;
-        private Label label3;
+        private Label lblMonthlyRent;
         private Label label4;
-        private Label label5;
+        private Label lblDueDate;
     }
 }

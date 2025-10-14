@@ -48,7 +48,7 @@
             txtPrevious = new TextBox();
             label2 = new Label();
             label4 = new Label();
-            label5 = new Label();
+            lblDueDate = new Label();
             pnlHeader.SuspendLayout();
             SuspendLayout();
             // 
@@ -242,14 +242,14 @@
             label4.Text = "DUE DATE:";
             label4.TextAlign = ContentAlignment.MiddleRight;
             // 
-            // label5
+            // lblDueDate
             // 
-            label5.Location = new Point(368, 168);
-            label5.Name = "label5";
-            label5.Size = new Size(225, 25);
-            label5.TabIndex = 33;
-            label5.Text = "September 10, 2000";
-            label5.TextAlign = ContentAlignment.MiddleCenter;
+            lblDueDate.Location = new Point(368, 168);
+            lblDueDate.Name = "lblDueDate";
+            lblDueDate.Size = new Size(225, 25);
+            lblDueDate.TabIndex = 33;
+            lblDueDate.Text = "September 10, 2000";
+            lblDueDate.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // ElectricityBill
             // 
@@ -257,7 +257,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(605, 643);
             Controls.Add(label4);
-            Controls.Add(label5);
+            Controls.Add(lblDueDate);
             Controls.Add(btnSubmit);
             Controls.Add(label12);
             Controls.Add(lblTotal);
@@ -311,6 +311,6 @@
         private TextBox txtPrevious;
         private Label label2;
         private Label label4;
-        private Label label5;
+        private Label lblDueDate;
     }
 }

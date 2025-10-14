@@ -1,0 +1,172 @@
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\obj\Debug\net8.0-windows\Real Estate Management System.csproj.AssemblyReference.cache
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\obj\Debug\net8.0-windows\Real_Estate_Management_System.Dashboard.resources
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\obj\Debug\net8.0-windows\Real Estate Management System.csproj.GenerateResource.cache
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\obj\Debug\net8.0-windows\Real Estate Management System.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\obj\Debug\net8.0-windows\Real Estate Management System.AssemblyInfoInputs.cache
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\obj\Debug\net8.0-windows\Real Estate Management System.AssemblyInfo.cs
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\obj\Debug\net8.0-windows\Real Estate Management System.csproj.CoreCompileInputs.cache
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Real Estate Management System.exe
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Real Estate Management System.deps.json
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Real Estate Management System.runtimeconfig.json
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Real Estate Management System.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\BouncyCastle.Cryptography.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Google.Protobuf.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\K4os.Compression.LZ4.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\K4os.Compression.LZ4.Streams.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\K4os.Hash.xxHash.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Microsoft.CodeAnalysis.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Microsoft.Extensions.ObjectPool.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\MySql.Data.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Microsoft.ReportViewer.Common.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Microsoft.ReportViewer.WinForms.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\System.IO.Packaging.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\System.IO.Pipelines.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\System.Security.Cryptography.Pkcs.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\System.Security.Cryptography.Xml.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\System.ServiceModel.Http.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\System.ServiceModel.Duplex.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\System.ServiceModel.Primitives.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\System.ServiceModel.Security.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\System.ServiceModel.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\System.Text.Encodings.Web.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\System.Text.Json.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\ZstdSharp.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\cs\Microsoft.CodeAnalysis.resources.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\de\Microsoft.CodeAnalysis.resources.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\es\Microsoft.CodeAnalysis.resources.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\fr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\it\Microsoft.CodeAnalysis.resources.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\ja\Microsoft.CodeAnalysis.resources.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\ko\Microsoft.CodeAnalysis.resources.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\pl\Microsoft.CodeAnalysis.resources.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\pt-BR\Microsoft.CodeAnalysis.resources.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\ru\Microsoft.CodeAnalysis.resources.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\tr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\cs\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\de\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\es\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\fr\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\it\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\ja\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\ko\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\pl\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\pt-BR\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\ru\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\tr\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\zh-Hans\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\zh-Hant\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\cs\System.ServiceModel.Http.resources.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\de\System.ServiceModel.Http.resources.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\es\System.ServiceModel.Http.resources.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\fr\System.ServiceModel.Http.resources.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\it\System.ServiceModel.Http.resources.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\ja\System.ServiceModel.Http.resources.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\ko\System.ServiceModel.Http.resources.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\pl\System.ServiceModel.Http.resources.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\pt-BR\System.ServiceModel.Http.resources.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\ru\System.ServiceModel.Http.resources.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\tr\System.ServiceModel.Http.resources.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\zh-Hans\System.ServiceModel.Http.resources.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\zh-Hant\System.ServiceModel.Http.resources.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\cs\System.ServiceModel.Primitives.resources.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\de\System.ServiceModel.Primitives.resources.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\es\System.ServiceModel.Primitives.resources.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\fr\System.ServiceModel.Primitives.resources.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\it\System.ServiceModel.Primitives.resources.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\ja\System.ServiceModel.Primitives.resources.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\ko\System.ServiceModel.Primitives.resources.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\pl\System.ServiceModel.Primitives.resources.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\pt-BR\System.ServiceModel.Primitives.resources.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\ru\System.ServiceModel.Primitives.resources.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\tr\System.ServiceModel.Primitives.resources.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\zh-Hans\System.ServiceModel.Primitives.resources.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\zh-Hant\System.ServiceModel.Primitives.resources.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\runtimes\win-x64\native\comerr64.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\runtimes\win-x64\native\gssapi64.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\runtimes\win-x64\native\k5sprt64.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\runtimes\win-x64\native\krb5_64.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\runtimes\win-x64\native\krbcc64.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\JunX.NETStandard.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\JunX.NETStandard.xml
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\obj\Debug\net8.0-windows\Real Est.8D023340.Up2Date
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\obj\Debug\net8.0-windows\Real Estate Management System.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\obj\Debug\net8.0-windows\refint\Real Estate Management System.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\obj\Debug\net8.0-windows\Real Estate Management System.genruntimeconfig.cache
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\obj\Debug\net8.0-windows\ref\Real Estate Management System.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\obj\Debug\net8.0-windows\Real_Estate_Management_System.Properties.Resources.resources
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\REMS LOGO - DARK.ico
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS LOGO - DARK.png
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS LOGO - LIGHT.png
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS LOGO.psd
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_DASHBOARD_OVERDUES.png
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_DASHBOARD_TENANTS.png
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_DASHBOARD_UNPAIDS.png
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_INVOICE.png
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_OVERDUE.png
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\JunX.NET.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\JunX.NET.xml
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_THEMED_GOTO.png
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_DASHBOARD_SIDEBAR_BILLING.png
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_DASHBOARD_SIDEBAR_PAYMENT.png
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_DASHBOARD_SIDEBAR_TENANTS.png
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_DASHBOARD_SIDEBAR_ROOMS.png
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_DASHBOARD_SIDEBAR_INTERNET.png
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_DASHBOARD_SIDEBAR_LOGOUT.png
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_DASHBOARD_SIDEBAR_SETTINGS.png
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_DASHBOARD_BILLS_ISSUED.png
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_DASHBOARD_CASH-ON-HAND.png
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_DASHBOARD_EXPENSES.png
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_DASHBOARD_PAID_BILLS.png
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_DASHBOARD_RECEIVABLES.png
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_DASHBOARD_RECEIVED.png
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_DASHBOARD_PAID_BILLS1.png
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\obj\Debug\net8.0-windows\Real_Estate_Management_System.Login.Login.resources
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_USER.png
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_DASHBOARD_SIDEBAR_OTHERS.png
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_DASHBOARD_SIDEBAR_UTILITIES.png
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_LOGIN.png
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_LOGIN_BUTTON.png
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_LOGIN_PASSWORD.png
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_USER_DARK.png
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS LOGO - DARK_TRANSLUCENT.png
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\WinForms.DataVisualization.Utilities.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\WinForms.DataVisualization.dll
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_INVOICE-LIGHT.png
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_INVOICE-LIGHT1.png
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_PAYMENTS_LIGHT.png
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_PAYMENTS_LIGHT1.png
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_INTERNET_LIGHT.png
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_LOGOUT_LIGHT.png
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_REPORTS_LIGHT.png
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_ROOMS_LIGHT.png
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_SETTINGS_LIGHT.png
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_TENANTS_LIGHT.png
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_UTILITIES_LIGHT.png
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\obj\Debug\net8.0-windows\Real_Estate_Management_System.Billing.NewBill.resources
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_TENANTS_LIST_BG.png
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_TENANTS_LIST_BG1.png
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_BILLING_BILL_PREVIEW.png
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_BILLING_EXPORT_TO_PDF.png
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_BILLING_SAVE_BILL.png
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_RESET_ICON.png
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_BILLING_ELECTRICITY.png
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_BILLING_INTERNET.png
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_BILLING_RENTAL.png
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_BILLING_WATER.png
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\obj\Debug\net8.0-windows\Real_Estate_Management_System.Billing.Manage.ElectricityBill.resources
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\obj\Debug\net8.0-windows\Real Estate Management System.sourcelink.json
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\obj\Debug\net8.0-windows\Real_Estate_Management_System.Billing.Manage.RentalBill.resources
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\obj\Debug\net8.0-windows\Real_Estate_Management_System.Billing.Manage.InternetBill.resources
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_BILLING_SET_DUE_DATES.png
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\obj\Debug\net8.0-windows\Real_Estate_Management_System.Billing.Manage.WaterBill.resources
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_INTERNET_DARK.png
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_RENTAL_DARK.png
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_UTILITIES_DARK.png
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\obj\Debug\net8.0-windows\Real_Estate_Management_System.Billing.FunctionButtons.SetDueDates.resources

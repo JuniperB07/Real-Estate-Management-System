@@ -32,9 +32,9 @@
             pnlHeader = new Panel();
             label1 = new Label();
             label4 = new Label();
-            label5 = new Label();
+            lblDueDate = new Label();
             label2 = new Label();
-            label3 = new Label();
+            lblAvailedPlan = new Label();
             label12 = new Label();
             lblTotal = new Label();
             label8 = new Label();
@@ -44,7 +44,7 @@
             label6 = new Label();
             label7 = new Label();
             lblCurrentCharge = new Label();
-            lblConsumption = new Label();
+            lblSubscriptionFee = new Label();
             pnlHeader.SuspendLayout();
             SuspendLayout();
             // 
@@ -81,14 +81,14 @@
             label4.Text = "DUE DATE:";
             label4.TextAlign = ContentAlignment.MiddleRight;
             // 
-            // label5
+            // lblDueDate
             // 
-            label5.Location = new Point(305, 178);
-            label5.Name = "label5";
-            label5.Size = new Size(225, 25);
-            label5.TabIndex = 49;
-            label5.Text = "September 10, 2000";
-            label5.TextAlign = ContentAlignment.MiddleCenter;
+            lblDueDate.Location = new Point(305, 178);
+            lblDueDate.Name = "lblDueDate";
+            lblDueDate.Size = new Size(225, 25);
+            lblDueDate.TabIndex = 49;
+            lblDueDate.Text = "September 10, 2000";
+            lblDueDate.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
@@ -99,14 +99,14 @@
             label2.Text = "AVAILED PLAN:";
             label2.TextAlign = ContentAlignment.MiddleRight;
             // 
-            // label3
+            // lblAvailedPlan
             // 
-            label3.Location = new Point(305, 220);
-            label3.Name = "label3";
-            label3.Size = new Size(225, 25);
-            label3.TabIndex = 47;
-            label3.Text = "None";
-            label3.TextAlign = ContentAlignment.MiddleCenter;
+            lblAvailedPlan.Location = new Point(305, 220);
+            lblAvailedPlan.Name = "lblAvailedPlan";
+            lblAvailedPlan.Size = new Size(225, 25);
+            lblAvailedPlan.TabIndex = 47;
+            lblAvailedPlan.Text = "None";
+            lblAvailedPlan.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label12
             // 
@@ -195,14 +195,14 @@
             lblCurrentCharge.Text = "0.00";
             lblCurrentCharge.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // lblConsumption
+            // lblSubscriptionFee
             // 
-            lblConsumption.Location = new Point(305, 262);
-            lblConsumption.Name = "lblConsumption";
-            lblConsumption.Size = new Size(225, 25);
-            lblConsumption.TabIndex = 37;
-            lblConsumption.Text = "0.00";
-            lblConsumption.TextAlign = ContentAlignment.MiddleCenter;
+            lblSubscriptionFee.Location = new Point(305, 262);
+            lblSubscriptionFee.Name = "lblSubscriptionFee";
+            lblSubscriptionFee.Size = new Size(225, 25);
+            lblSubscriptionFee.TabIndex = 37;
+            lblSubscriptionFee.Text = "0.00";
+            lblSubscriptionFee.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // InternetBill
             // 
@@ -210,9 +210,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(542, 505);
             Controls.Add(label4);
-            Controls.Add(label5);
+            Controls.Add(lblDueDate);
             Controls.Add(label2);
-            Controls.Add(label3);
+            Controls.Add(lblAvailedPlan);
             Controls.Add(label12);
             Controls.Add(lblTotal);
             Controls.Add(label8);
@@ -222,7 +222,7 @@
             Controls.Add(label6);
             Controls.Add(label7);
             Controls.Add(lblCurrentCharge);
-            Controls.Add(lblConsumption);
+            Controls.Add(lblSubscriptionFee);
             Controls.Add(pnlHeader);
             Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.FixedDialog;
@@ -243,9 +243,9 @@
         private Panel pnlHeader;
         private Label label1;
         private Label label4;
-        private Label label5;
+        private Label lblDueDate;
         private Label label2;
-        private Label label3;
+        private Label lblAvailedPlan;
         private Label label12;
         private Label lblTotal;
         private Label label8;
@@ -255,6 +255,6 @@
         private Label label6;
         private Label label7;
         private Label lblCurrentCharge;
-        private Label lblConsumption;
+        private Label lblSubscriptionFee;
     }
 }

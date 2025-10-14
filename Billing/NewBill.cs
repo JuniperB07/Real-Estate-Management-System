@@ -63,5 +63,11 @@ namespace Real_Estate_Management_System.Billing
             Manage.InternetBill MIB = new Manage.InternetBill();
             MIB.ShowDialog();
         }
+
+        private void btnSetDueDates_Click(object sender, EventArgs e)
+        {
+            FunctionButtons.SetDueDates SDD = new FunctionButtons.SetDueDates();
+            SDD.ShowDialog();
+        }
     }
 }

@@ -38,11 +38,10 @@
             pictureBox2 = new PictureBox();
             pnlBillSummary = new Panel();
             panel4 = new Panel();
-            button1 = new Button();
+            btnSetDueDates = new Button();
             pictureBox7 = new PictureBox();
             label7 = new Label();
             label6 = new Label();
-            label5 = new Label();
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
@@ -184,7 +183,6 @@
             pnlBillSummary.Controls.Add(panel4);
             pnlBillSummary.Controls.Add(label7);
             pnlBillSummary.Controls.Add(label6);
-            pnlBillSummary.Controls.Add(label5);
             pnlBillSummary.Controls.Add(label4);
             pnlBillSummary.Controls.Add(label3);
             pnlBillSummary.Controls.Add(label2);
@@ -200,26 +198,27 @@
             // 
             // panel4
             // 
-            panel4.Controls.Add(button1);
+            panel4.Controls.Add(btnSetDueDates);
             panel4.Controls.Add(pictureBox7);
             panel4.Location = new Point(7, 62);
             panel4.Name = "panel4";
             panel4.Size = new Size(300, 50);
             panel4.TabIndex = 3;
             // 
-            // button1
+            // btnSetDueDates
             // 
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Arial Narrow", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = SystemColors.Control;
-            button1.Location = new Point(75, 3);
-            button1.Name = "button1";
-            button1.Size = new Size(222, 44);
-            button1.TabIndex = 1;
-            button1.Text = "SET DUE DATES";
-            button1.TextAlign = ContentAlignment.MiddleLeft;
-            button1.UseVisualStyleBackColor = true;
+            btnSetDueDates.FlatAppearance.BorderSize = 0;
+            btnSetDueDates.FlatStyle = FlatStyle.Flat;
+            btnSetDueDates.Font = new Font("Arial Narrow", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSetDueDates.ForeColor = SystemColors.Control;
+            btnSetDueDates.Location = new Point(75, 3);
+            btnSetDueDates.Name = "btnSetDueDates";
+            btnSetDueDates.Size = new Size(222, 44);
+            btnSetDueDates.TabIndex = 1;
+            btnSetDueDates.Text = "SET DUE DATES";
+            btnSetDueDates.TextAlign = ContentAlignment.MiddleLeft;
+            btnSetDueDates.UseVisualStyleBackColor = true;
+            btnSetDueDates.Click += btnSetDueDates_Click;
             // 
             // pictureBox7
             // 
@@ -254,18 +253,6 @@
             label6.TabIndex = 10;
             label6.Text = "₱1,000.00";
             label6.TextAlign = ContentAlignment.MiddleRight;
-            // 
-            // label5
-            // 
-            label5.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            label5.BackColor = Color.Transparent;
-            label5.Font = new Font("Arial", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.Location = new Point(313, 166);
-            label5.Name = "label5";
-            label5.Size = new Size(898, 27);
-            label5.TabIndex = 9;
-            label5.Text = "Invoice Date";
-            label5.TextAlign = ContentAlignment.MiddleRight;
             // 
             // label4
             // 
@@ -769,7 +756,6 @@
         private Label label3;
         private Label label7;
         private Label label6;
-        private Label label5;
         private Label label4;
         private Panel pnlWaterBill;
         private Panel pnlRentalBill;
@@ -792,7 +778,7 @@
         private Label label19;
         private Button btnManage_InternetBill;
         private Panel panel4;
-        private Button button1;
+        private Button btnSetDueDates;
         private PictureBox pictureBox7;
     }
 }

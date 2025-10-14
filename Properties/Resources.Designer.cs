@@ -233,6 +233,16 @@ namespace Real_Estate_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap REMS_INTERNET_DARK {
+            get {
+                object obj = ResourceManager.GetObject("REMS_INTERNET_DARK", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap REMS_INTERNET_LIGHT {
             get {
                 object obj = ResourceManager.GetObject("REMS_INTERNET_LIGHT", resourceCulture);
@@ -373,6 +383,16 @@ namespace Real_Estate_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap REMS_RENTAL_DARK {
+            get {
+                object obj = ResourceManager.GetObject("REMS_RENTAL_DARK", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap REMS_REPORTS_LIGHT {
             get {
                 object obj = ResourceManager.GetObject("REMS_REPORTS_LIGHT", resourceCulture);
@@ -466,6 +486,16 @@ namespace Real_Estate_Management_System.Properties {
         internal static System.Drawing.Bitmap REMS_USER_DARK {
             get {
                 object obj = ResourceManager.GetObject("REMS_USER_DARK", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap REMS_UTILITIES_DARK {
+            get {
+                object obj = ResourceManager.GetObject("REMS_UTILITIES_DARK", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
