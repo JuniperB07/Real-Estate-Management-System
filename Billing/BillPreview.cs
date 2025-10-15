@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.Reporting.WinForms;
+using Real_Estate_Management_System.Billing.Helper;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,7 +9,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Microsoft.Reporting.WinForms;
 
 namespace Real_Estate_Management_System.Billing
 {
@@ -30,7 +31,11 @@ namespace Real_Estate_Management_System.Billing
 
         private void BillPreview_Load(object sender, EventArgs e)
         {
-
+            if (PreviewHelper.PreviewMode == PreviewHelperMode.ExportToPDF)
+            {
+                ExportToPDF ETPDF = new ExportToPDF();
+                ETPDF.ShowDialog();
+            }
         }
     }
 }

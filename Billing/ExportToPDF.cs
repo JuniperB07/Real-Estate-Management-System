@@ -23,11 +23,7 @@ namespace Real_Estate_Management_System.Billing
 
         private void ExportToPDF_Load(object sender, EventArgs e)
         {
-            if(PreviewHelper.PreviewMode == PreviewHelperMode.ExportToPDF)
-            {
-                ExportToPDF ETPDF = new ExportToPDF();
-                ETPDF.ShowDialog();
-            }
+            
         }
     }
 }
