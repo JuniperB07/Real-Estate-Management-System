@@ -43,6 +43,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Real Estate Management System - Bill Preview";
             WindowState = FormWindowState.Maximized;
+            FormClosing += BillPreview_FormClosing;
             Load += BillPreview_Load;
             ResumeLayout(false);
         }

@@ -37,5 +37,11 @@ namespace Real_Estate_Management_System.Billing
                 ETPDF.ShowDialog();
             }
         }
+
+        private void BillPreview_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+        }
     }
 }

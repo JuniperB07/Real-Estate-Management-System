@@ -73,6 +73,7 @@
             Name = "ExportToPDF";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Exporting to PDF...";
+            FormClosing += ExportToPDF_FormClosing;
             Load += ExportToPDF_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);

@@ -23,7 +23,13 @@ namespace Real_Estate_Management_System.Billing
 
         private void ExportToPDF_Load(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void ExportToPDF_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
         }
     }
 }
