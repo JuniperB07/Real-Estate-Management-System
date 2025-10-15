@@ -413,6 +413,26 @@ namespace Real_Estate_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap REMS_PAYMENTS_ELECTRICITY {
+            get {
+                object obj = ResourceManager.GetObject("REMS_PAYMENTS_ELECTRICITY", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap REMS_PAYMENTS_INTERNET {
+            get {
+                object obj = ResourceManager.GetObject("REMS_PAYMENTS_INTERNET", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap REMS_PAYMENTS_LIGHT {
             get {
                 object obj = ResourceManager.GetObject("REMS_PAYMENTS_LIGHT", resourceCulture);
@@ -426,6 +446,36 @@ namespace Real_Estate_Management_System.Properties {
         internal static System.Drawing.Bitmap REMS_PAYMENTS_LIGHT1 {
             get {
                 object obj = ResourceManager.GetObject("REMS_PAYMENTS_LIGHT1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap REMS_PAYMENTS_RENTAL {
+            get {
+                object obj = ResourceManager.GetObject("REMS_PAYMENTS_RENTAL", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap REMS_PAYMENTS_WATER {
+            get {
+                object obj = ResourceManager.GetObject("REMS_PAYMENTS_WATER", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap REMS_PRINT_ICON {
+            get {
+                object obj = ResourceManager.GetObject("REMS_PRINT_ICON", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -466,6 +516,16 @@ namespace Real_Estate_Management_System.Properties {
         internal static System.Drawing.Bitmap REMS_ROOMS_LIGHT {
             get {
                 object obj = ResourceManager.GetObject("REMS_ROOMS_LIGHT", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap REMS_SAVE_ICON {
+            get {
+                object obj = ResourceManager.GetObject("REMS_SAVE_ICON", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

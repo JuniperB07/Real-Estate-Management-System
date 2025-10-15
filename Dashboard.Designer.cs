@@ -850,7 +850,7 @@
             label21.Name = "label21";
             label21.Size = new Size(352, 55);
             label21.TabIndex = 5;
-            label21.Text = "View All Bills";
+            label21.Text = "View Bills Issued";
             label21.TextAlign = ContentAlignment.MiddleRight;
             // 
             // pnlPaidBills
@@ -998,7 +998,7 @@
             label23.Name = "label23";
             label23.Size = new Size(352, 55);
             label23.TabIndex = 7;
-            label23.Text = "View Total Receivables";
+            label23.Text = "View Receivables Report";
             label23.TextAlign = ContentAlignment.MiddleRight;
             // 
             // pnlRevenue
@@ -1071,7 +1071,7 @@
             label24.Name = "label24";
             label24.Size = new Size(352, 55);
             label24.TabIndex = 7;
-            label24.Text = "View Total Payments Received";
+            label24.Text = "View Revenue Report";
             label24.TextAlign = ContentAlignment.MiddleRight;
             // 
             // pnlExpenses
@@ -1144,7 +1144,7 @@
             label25.Name = "label25";
             label25.Size = new Size(352, 55);
             label25.TabIndex = 7;
-            label25.Text = "View && Manage Expenses";
+            label25.Text = "Manage Expenses";
             label25.TextAlign = ContentAlignment.MiddleRight;
             // 
             // pnlProfit
@@ -1217,7 +1217,7 @@
             label26.Name = "label26";
             label26.Size = new Size(352, 55);
             label26.TabIndex = 7;
-            label26.Text = "Profit Reports";
+            label26.Text = "View Profit Report";
             label26.TextAlign = ContentAlignment.MiddleRight;
             // 
             // lblSummaryHeader

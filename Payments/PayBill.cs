@@ -20,6 +20,34 @@ namespace Real_Estate_Management_System.Payments
             InitializeComponent();
             Internals.SetFormColors(this);
             Forms.SetControlForeColor(Forms.ControlType<Label>.Extract(this), Internals.SandDune);
+
+            pnlHeader.BackColor = Internals.Cyprus;
+            Forms.SetControlBackColor(new Panel[]
+            {
+                pnlSelectTenant,
+                pnlTransactionInformation,
+                pnlOverallInvoiceInformation,
+                pnlSidebar
+            }, Internals.BrunswickGreen);
+
+            lstTenantsList.BackColor = Internals.BrunswickGreen;
+            lstTenantsList.ForeColor = Internals.SandDune;
+            txtSearchTenant.BackColor = Internals.SandDune;
+            txtSearchTenant.ForeColor = Internals.BrunswickGreen;
+
+            Forms.SetControlBackColor(new Control[]
+            {
+                txtORNumber,
+                btnGenerateOR,
+                btnStartTransaction
+            }, Internals.BrunswickGreen);
+
+            Forms.SetControlForeColor(new Control[]
+            {
+                txtORNumber,
+                btnStartTransaction,
+                btnGenerateOR
+            }, Internals.SandDune);
         }
 
         private void PayBill_Load(object sender, EventArgs e)

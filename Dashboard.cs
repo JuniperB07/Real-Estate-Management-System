@@ -35,9 +35,6 @@ namespace Real_Estate_Management_System
             Forms.SetControlForeColor(Forms.ControlType<Button>.Extract(pnlSidebar), Internals.SandDune);
 
             Internals.Logger.AddLog(DateTime.Now, LogCategories.DASHBOARD.ToString(), "Dashboard initialized.");
-
-            //Initialize ProcessingRequest form for use.
-            Internals.MSG_Processing = new ProcessingRequest();
         }
 
         private void Dashboard_Load(object sender, EventArgs e)

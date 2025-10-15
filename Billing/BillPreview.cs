@@ -1,5 +1,6 @@
 ﻿using Microsoft.Reporting.WinForms;
 using Real_Estate_Management_System.Billing.Helper;
+using Real_Estate_Management_System.Dialogs;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -31,7 +32,8 @@ namespace Real_Estate_Management_System.Billing
 
         private void BillPreview_Load(object sender, EventArgs e)
         {
-            Internals.MSG_Processing.Show();
+            ProcessingRequest PR = new ProcessingRequest();
+            PR.Show();
             Application.DoEvents();
 
             if (PreviewHelper.PreviewMode == PreviewHelperMode.ExportToPDF)
@@ -39,7 +41,7 @@ namespace Real_Estate_Management_System.Billing
                 ExportToPDF ETPDF = new ExportToPDF();
                 ETPDF.ShowDialog();
             }
-            Internals.MSG_Processing.Close();
+            PR.Close();
         }
 
         private void BillPreview_FormClosing(object sender, FormClosingEventArgs e)

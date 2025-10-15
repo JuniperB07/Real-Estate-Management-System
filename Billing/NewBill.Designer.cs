@@ -151,6 +151,7 @@
             txtSearchTenant.Font = new Font("Arial", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtSearchTenant.Location = new Point(3, 214);
             txtSearchTenant.Name = "txtSearchTenant";
+            txtSearchTenant.PlaceholderText = "Search Tenant...";
             txtSearchTenant.Size = new Size(349, 34);
             txtSearchTenant.TabIndex = 2;
             // 
