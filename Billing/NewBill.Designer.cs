@@ -378,6 +378,7 @@
             btnExportToPDF.Text = "EXPORT TO PDF";
             btnExportToPDF.TextAlign = ContentAlignment.MiddleLeft;
             btnExportToPDF.UseVisualStyleBackColor = true;
+            btnExportToPDF.Click += btnExportToPDF_Click;
             // 
             // pictureBox4
             // 

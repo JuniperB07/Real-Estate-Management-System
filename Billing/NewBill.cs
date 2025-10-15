@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Real_Estate_Management_System.Billing.Helper;
 using JunX.NET8.WinForms;
 
 namespace Real_Estate_Management_System.Billing
@@ -78,6 +79,14 @@ namespace Real_Estate_Management_System.Billing
 
         private void btnBillPreview_Click(object sender, EventArgs e)
         {
+            PreviewHelper.PreviewMode = PreviewHelperMode.Preview;
+            BillPreview BP = new BillPreview();
+            BP.ShowDialog();
+        }
+
+        private void btnExportToPDF_Click(object sender, EventArgs e)
+        {
+            PreviewHelper.PreviewMode = PreviewHelperMode.ExportToPDF;
             BillPreview BP = new BillPreview();
             BP.ShowDialog();
         }

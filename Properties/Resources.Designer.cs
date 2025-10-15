@@ -93,6 +93,16 @@ namespace Real_Estate_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap REMS_BILLING_EXPORT_TO_PDF_RED {
+            get {
+                object obj = ResourceManager.GetObject("REMS_BILLING_EXPORT_TO_PDF_RED", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap REMS_BILLING_INTERNET {
             get {
                 object obj = ResourceManager.GetObject("REMS_BILLING_INTERNET", resourceCulture);
