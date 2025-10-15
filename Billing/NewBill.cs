@@ -75,5 +75,11 @@ namespace Real_Estate_Management_System.Billing
             GC.Collect();
             GC.WaitForPendingFinalizers();
         }
+
+        private void btnBillPreview_Click(object sender, EventArgs e)
+        {
+            BillPreview BP = new BillPreview();
+            BP.ShowDialog();
+        }
     }
 }

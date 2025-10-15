@@ -235,7 +235,7 @@
             label7.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             label7.BackColor = Color.Transparent;
             label7.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(607, 249);
+            label7.Location = new Point(486, 249);
             label7.Name = "label7";
             label7.Size = new Size(241, 38);
             label7.TabIndex = 11;
@@ -246,10 +246,10 @@
             // 
             label6.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             label6.BackColor = Color.Transparent;
-            label6.Font = new Font("Arial", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(854, 193);
+            label6.Font = new Font("Arial", 48F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.Location = new Point(733, 159);
             label6.Name = "label6";
-            label6.Size = new Size(357, 94);
+            label6.Size = new Size(478, 128);
             label6.TabIndex = 10;
             label6.Text = "₱1,000.00";
             label6.TextAlign = ContentAlignment.MiddleRight;
@@ -411,6 +411,7 @@
             btnBillPreview.Text = "BILL PREVIEW";
             btnBillPreview.TextAlign = ContentAlignment.MiddleLeft;
             btnBillPreview.UseVisualStyleBackColor = true;
+            btnBillPreview.Click += btnBillPreview_Click;
             // 
             // pictureBox3
             // 
@@ -479,7 +480,7 @@
             // 
             label15.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             label15.BackColor = Color.Transparent;
-            label15.Font = new Font("Arial", 43.8F, FontStyle.Bold);
+            label15.Font = new Font("Arial", 36F, FontStyle.Bold);
             label15.ForeColor = Color.Cornsilk;
             label15.Location = new Point(64, 0);
             label15.Name = "label15";
@@ -545,7 +546,7 @@
             // 
             label12.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             label12.BackColor = Color.Transparent;
-            label12.Font = new Font("Arial", 43.8F, FontStyle.Bold);
+            label12.Font = new Font("Arial", 36F, FontStyle.Bold);
             label12.ForeColor = Color.Cornsilk;
             label12.Location = new Point(64, 0);
             label12.Name = "label12";
@@ -611,7 +612,7 @@
             // 
             label14.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             label14.BackColor = Color.Transparent;
-            label14.Font = new Font("Arial", 43.8F, FontStyle.Bold);
+            label14.Font = new Font("Arial", 36F, FontStyle.Bold);
             label14.ForeColor = Color.Cornsilk;
             label14.Location = new Point(64, 0);
             label14.Name = "label14";
@@ -677,7 +678,7 @@
             // 
             label9.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             label9.BackColor = Color.Transparent;
-            label9.Font = new Font("Arial", 43.8F, FontStyle.Bold);
+            label9.Font = new Font("Arial", 36F, FontStyle.Bold);
             label9.ForeColor = Color.Cornsilk;
             label9.Location = new Point(64, 0);
             label9.Name = "label9";
