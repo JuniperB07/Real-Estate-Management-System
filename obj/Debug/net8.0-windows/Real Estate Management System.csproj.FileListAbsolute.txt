@@ -188,3 +188,8 @@ C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug
 C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_PAYMENTS_WATER.png
 C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_PRINT_ICON.png
 C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_SAVE_ICON.png
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_MAKE_PAYMENT_ELECTRICITY.png
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_MAKE_PAYMENT_INTERNET.png
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_MAKE_PAYMENT_RENTAL.png
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_MAKE_PAYMENT_WATER.png
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\obj\Debug\net8.0-windows\Real_Estate_Management_System.Payments.MakePayment.resources

@@ -640,6 +640,7 @@
             btnWater_MakePayment.Size = new Size(83, 52);
             btnWater_MakePayment.TabIndex = 18;
             btnWater_MakePayment.UseVisualStyleBackColor = false;
+            btnWater_MakePayment.Click += btnWater_MakePayment_Click;
             // 
             // lblWater_DueDate
             // 
@@ -812,6 +813,7 @@
             btnElectricity_MakePayment.Size = new Size(83, 52);
             btnElectricity_MakePayment.TabIndex = 19;
             btnElectricity_MakePayment.UseVisualStyleBackColor = false;
+            btnElectricity_MakePayment.Click += btnElectricity_MakePayment_Click;
             // 
             // lblElectricity_DueDate
             // 
@@ -1120,6 +1122,7 @@
             btnInternet_MakePayment.Size = new Size(83, 52);
             btnInternet_MakePayment.TabIndex = 21;
             btnInternet_MakePayment.UseVisualStyleBackColor = false;
+            btnInternet_MakePayment.Click += btnInternet_MakePayment_Click;
             // 
             // lblInternet_DueDate
             // 
@@ -1271,6 +1274,7 @@
             btnRental_MakePayment.Size = new Size(83, 52);
             btnRental_MakePayment.TabIndex = 20;
             btnRental_MakePayment.UseVisualStyleBackColor = false;
+            btnRental_MakePayment.Click += btnRental_MakePayment_Click;
             // 
             // PayBill
             // 

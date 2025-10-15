@@ -286,4 +286,16 @@
   <data name="REMS_PRINT_ICON" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\REMS_PRINT_ICON.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="REMS_MAKE_PAYMENT_WATER" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REMS_MAKE_PAYMENT_WATER.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="REMS_MAKE_PAYMENT_ELECTRICITY" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REMS_MAKE_PAYMENT_ELECTRICITY.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="REMS_MAKE_PAYMENT_RENTAL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REMS_MAKE_PAYMENT_RENTAL.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="REMS_MAKE_PAYMENT_INTERNET" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REMS_MAKE_PAYMENT_INTERNET.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

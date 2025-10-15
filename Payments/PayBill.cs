@@ -41,7 +41,6 @@ namespace Real_Estate_Management_System.Payments
                 btnGenerateOR,
                 btnStartTransaction
             }, Internals.BrunswickGreen);
-
             Forms.SetControlForeColor(new Control[]
             {
                 txtORNumber,
@@ -53,6 +52,34 @@ namespace Real_Estate_Management_System.Payments
         private void PayBill_Load(object sender, EventArgs e)
         {
             Text = DEFAULT_TEXT;
+        }
+
+        private void btnWater_MakePayment_Click(object sender, EventArgs e)
+        {
+            PaymentsHelper.PaymentBillType = PaymentBillTypes.Water;
+            MakePayment MP = new MakePayment();
+            MP.ShowDialog();
+        }
+
+        private void btnElectricity_MakePayment_Click(object sender, EventArgs e)
+        {
+            PaymentsHelper.PaymentBillType = PaymentBillTypes.Electricity;
+            MakePayment MP = new MakePayment();
+            MP.ShowDialog();
+        }
+
+        private void btnRental_MakePayment_Click(object sender, EventArgs e)
+        {
+            PaymentsHelper.PaymentBillType = PaymentBillTypes.Rental;
+            MakePayment MP = new MakePayment();
+            MP.ShowDialog();
+        }
+
+        private void btnInternet_MakePayment_Click(object sender, EventArgs e)
+        {
+            PaymentsHelper.PaymentBillType = PaymentBillTypes.Internet;
+            MakePayment MP = new MakePayment();
+            MP.ShowDialog();
         }
     }
 }
