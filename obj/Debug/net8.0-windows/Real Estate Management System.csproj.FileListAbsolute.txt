@@ -181,3 +181,4 @@ C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\obj\Debug
 C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_BILLING_EXPORT_TO_PDF_RED.png
 C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\obj\Debug\net8.0-windows\Real_Estate_Management_System.Billing.ExportToPDF.resources
 C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\obj\Debug\net8.0-windows\Real_Estate_Management_System.Payments.PayBill.resources
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\RDLC_INVOICE_LOGO.png

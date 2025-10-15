@@ -27,6 +27,7 @@ namespace Real_Estate_Management_System
         internal static readonly Color RoyalPurple = Utility.HexToRGB("#643B9F"); //Rental Theme
         internal static readonly string LogPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "REMSLog.csv");
 
+
         internal static DBConnect DBC;
         internal static Logger Logger;
         internal static ProcessingRequest MSG_Processing;
