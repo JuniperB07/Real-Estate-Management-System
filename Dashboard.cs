@@ -15,7 +15,7 @@ namespace Real_Estate_Management_System
 {
     public partial class Dashboard : Form
     {
-        private const string SUMMARY_HEADER = "PREVIEW FOR THE MONTH OF ";
+        private const string SUMMARY_HEADER = "SUMMARY FOR THE MONTH OF ";
 
         public Dashboard()
         {
