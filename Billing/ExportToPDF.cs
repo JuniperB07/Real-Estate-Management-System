@@ -23,7 +23,11 @@ namespace Real_Estate_Management_System.Billing
 
         private void ExportToPDF_Load(object sender, EventArgs e)
         {
+            Show();
+            Application.DoEvents();
 
+            MessageBox.Show("Invoice exported to: ");
+            Close();
         }
 
         private void ExportToPDF_FormClosing(object sender, FormClosingEventArgs e)

@@ -31,15 +31,6 @@
             }
         }
 
-        protected override void OnFormClosing(FormClosingEventArgs e)
-        {
-            if (e.CloseReason == CloseReason.UserClosing)
-            {
-                e.Cancel = true; // Prevent close
-            }
-            base.OnFormClosing(e);
-        }
-
 
         #region Windows Form Designer generated code
 

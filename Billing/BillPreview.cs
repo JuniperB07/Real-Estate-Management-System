@@ -31,11 +31,15 @@ namespace Real_Estate_Management_System.Billing
 
         private void BillPreview_Load(object sender, EventArgs e)
         {
+            Internals.MSG_Processing.Show();
+            Application.DoEvents();
+
             if (PreviewHelper.PreviewMode == PreviewHelperMode.ExportToPDF)
             {
                 ExportToPDF ETPDF = new ExportToPDF();
                 ETPDF.ShowDialog();
             }
+            Internals.MSG_Processing.Close();
         }
 
         private void BillPreview_FormClosing(object sender, FormClosingEventArgs e)

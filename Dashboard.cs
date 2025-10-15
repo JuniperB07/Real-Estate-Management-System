@@ -39,7 +39,7 @@ namespace Real_Estate_Management_System
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-
+            Internals.MSG_Processing = new ProcessingRequest();
         }
 
         private void tmrClock_Tick(object sender, EventArgs e)

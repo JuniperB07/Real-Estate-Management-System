@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Real_Estate_Management_System.Dialogs;
 using JunX.NETStandard.Utility;
 using JunX.NETStandard.MySQL;
 
@@ -28,6 +29,7 @@ namespace Real_Estate_Management_System
 
         internal static DBConnect DBC;
         internal static Logger Logger;
+        internal static ProcessingRequest MSG_Processing;
 
         /// <summary>
         /// Sets the BackColor property of the specified form to <c><see cref="Internals.Cyprus"/></c> and the ForeColor property to
