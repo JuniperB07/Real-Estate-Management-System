@@ -18,7 +18,7 @@ namespace Real_Estate_Management_System.Payments
         {
             InitializeComponent();
 
-            //SET pnlHeader Image
+            #region Set Header UI
             switch (PaymentsHelper.PaymentBillType)
             {
                 case PaymentBillTypes.Water:
@@ -46,6 +46,7 @@ namespace Real_Estate_Management_System.Payments
                     Text = DEFAULT_TEXT + "]";
                     break;
             }
+            #endregion
         }
 
         private void MakePayment_Load(object sender, EventArgs e)

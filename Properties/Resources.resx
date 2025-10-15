@@ -130,6 +130,9 @@
   <data name="REMS_OVERDUE" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\REMS_OVERDUE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="REMS_PRINT_ICON" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REMS_PRINT_ICON.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="REMS_PAYMENTS_INTERNET" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\REMS_PAYMENTS_INTERNET.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -172,6 +175,9 @@
   <data name="REMS_DASHBOARD_TENANTS" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\REMS_DASHBOARD_TENANTS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="REMS_RESET_ICON" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REMS_RESET_ICON.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="REMS_BILLING_BILL_PREVIEW" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\REMS_BILLING_BILL_PREVIEW.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -195,6 +201,9 @@
   </data>
   <data name="REMS_BILLING_INTERNET" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\REMS_BILLING_INTERNET.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="REMS_MAKE_PAYMENT_RENTAL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REMS_MAKE_PAYMENT_RENTAL.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="REMS_DASHBOARD_RECEIVED" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\REMS_DASHBOARD_RECEIVED.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -220,6 +229,9 @@
   <data name="REMS_TENANTS_LIST_BG1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\REMS_TENANTS_LIST_BG1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="REMS_MAKE_PAYMENT_INTERNET" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REMS_MAKE_PAYMENT_INTERNET.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="REMS_USER" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\REMS_USER.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -231,6 +243,9 @@
   </data>
   <data name="REMS_DASHBOARD_EXPENSES" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\REMS_DASHBOARD_EXPENSES.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="REMS_PAYMENTS_CHANGE_TO_CREDITS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REMS_PAYMENTS_CHANGE_TO_CREDITS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="REMS_LOGIN_PASSWORD" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\REMS_LOGIN_PASSWORD.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -256,8 +271,8 @@
   <data name="REMS_LOGOUT_LIGHT" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\REMS_LOGOUT_LIGHT.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="REMS_LOGIN" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\REMS_LOGIN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="REMS_MAKE_PAYMENT_ELECTRICITY" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REMS_MAKE_PAYMENT_ELECTRICITY.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="REMS_PAYMENTS_LIGHT" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\REMS_PAYMENTS_LIGHT.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -271,8 +286,8 @@
   <data name="REMS LOGO - LIGHT" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\REMS LOGO - LIGHT.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="REMS_RESET_ICON" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\REMS_RESET_ICON.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="REMS_LOGIN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REMS_LOGIN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="REMS_ICON_INFORMATION" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\REMS_ICON_INFORMATION.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -280,22 +295,13 @@
   <data name="REMS_PAYMENTS_LIGHT1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\REMS_PAYMENTS_LIGHT1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="REMS_TENANTS_LIST_BG" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\REMS_TENANTS_LIST_BG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="REMS_PRINT_ICON" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\REMS_PRINT_ICON.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="REMS_MAKE_PAYMENT_WATER" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\REMS_MAKE_PAYMENT_WATER.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="REMS_MAKE_PAYMENT_ELECTRICITY" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\REMS_MAKE_PAYMENT_ELECTRICITY.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="REMS_TENANTS_LIST_BG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REMS_TENANTS_LIST_BG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="REMS_MAKE_PAYMENT_RENTAL" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\REMS_MAKE_PAYMENT_RENTAL.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="REMS_MAKE_PAYMENT_INTERNET" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\REMS_MAKE_PAYMENT_INTERNET.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="REMS_PAYMENTS_CREDITS_TO_CHANGE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REMS_PAYMENTS_CREDITS_TO_CHANGE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

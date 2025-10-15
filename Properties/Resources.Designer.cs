@@ -453,6 +453,26 @@ namespace Real_Estate_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap REMS_PAYMENTS_CHANGE_TO_CREDITS {
+            get {
+                object obj = ResourceManager.GetObject("REMS_PAYMENTS_CHANGE_TO_CREDITS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap REMS_PAYMENTS_CREDITS_TO_CHANGE {
+            get {
+                object obj = ResourceManager.GetObject("REMS_PAYMENTS_CREDITS_TO_CHANGE", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap REMS_PAYMENTS_ELECTRICITY {
             get {
                 object obj = ResourceManager.GetObject("REMS_PAYMENTS_ELECTRICITY", resourceCulture);

@@ -193,3 +193,5 @@ C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug
 C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_MAKE_PAYMENT_RENTAL.png
 C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_MAKE_PAYMENT_WATER.png
 C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\obj\Debug\net8.0-windows\Real_Estate_Management_System.Payments.MakePayment.resources
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_PAYMENTS_CHANGE_TO_CREDITS.png
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_PAYMENTS_CREDITS_TO_CHANGE.png
