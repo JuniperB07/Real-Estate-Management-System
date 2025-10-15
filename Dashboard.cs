@@ -15,6 +15,8 @@ namespace Real_Estate_Management_System
 {
     public partial class Dashboard : Form
     {
+        private const string SUMMARY_HEADER = "PREVIEW FOR THE MONTH OF ";
+
         public Dashboard()
         {
             Internals.Logger.AddLog(DateTime.Now, LogCategories.DASHBOARD.ToString(), "Initializing Dashboard...");
@@ -22,24 +24,25 @@ namespace Real_Estate_Management_System
             InitializeComponent();
             Internals.SetFormColors(this);
             WindowState = FormWindowState.Maximized;
+            Forms.SetControlForeColor(Forms.ControlType<Label>.Extract(this), Internals.SandDune);
 
             pnlHeader.BackColor = Internals.Cyprus;
             pnlSidebar.BackColor = Internals.Cyprus;
+            lblSummaryHeader.ForeColor = Internals.Cyprus;
 
-            Forms.SetControlForeColor(Forms.ControlType<Label>.Extract(pnlHeader), Internals.SandDune);
-            Forms.SetControlForeColor(Forms.ControlType<Label>.Extract(pnlUnpaid), Internals.SandDune);
-            Forms.SetControlForeColor(Forms.ControlType<Label>.Extract(pnlOverdue), Internals.SandDune);
-            Forms.SetControlForeColor(Forms.ControlType<Label>.Extract(pnlActiveTenants), Internals.SandDune);
 
             Forms.SetControlBackColor(Forms.ControlType<Button>.Extract(pnlSidebar), Internals.Cyprus);
             Forms.SetControlForeColor(Forms.ControlType<Button>.Extract(pnlSidebar), Internals.SandDune);
 
             Internals.Logger.AddLog(DateTime.Now, LogCategories.DASHBOARD.ToString(), "Dashboard initialized.");
+
+            //Initialize ProcessingRequest form for use.
+            Internals.MSG_Processing = new ProcessingRequest();
         }
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-            Internals.MSG_Processing = new ProcessingRequest();
+            lblSummaryHeader.Text = SUMMARY_HEADER + DateTime.Now.ToString("MMMM yyyy").ToUpper();
         }
 
         private void tmrClock_Tick(object sender, EventArgs e)
@@ -73,6 +76,14 @@ namespace Real_Estate_Management_System
         {
             GC.Collect();
             GC.WaitForPendingFinalizers();
+        }
+
+        private void btnPayments_Click(object sender, EventArgs e)
+        {
+            Hide();
+            Payments.PayBill PB = new Payments.PayBill();
+            PB.ShowDialog();
+            Show();
         }
     }
 }

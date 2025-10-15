@@ -65,60 +65,61 @@
             btnBilling = new Button();
             pictureBox3 = new PictureBox();
             pnlUnpaid = new Panel();
-            label1 = new Label();
+            lblUnpaidBills = new Label();
             label2 = new Label();
             panel4 = new Panel();
             btnViewUnpaid = new Button();
             label4 = new Label();
             pnlActiveTenants = new Panel();
-            label3 = new Label();
+            lblActiveTenants = new Label();
             label_ActiveTenants = new Label();
             panel6 = new Panel();
             label6 = new Label();
             btnViewAllTenants = new Button();
             pnlOverdue = new Panel();
-            label27 = new Label();
+            lblOverdueBills = new Label();
             label28 = new Label();
             panel1 = new Panel();
             label5 = new Label();
             btnViewOverdue = new Button();
             tmrClock = new System.Windows.Forms.Timer(components);
-            pnlIssuedBills = new Panel();
-            label9 = new Label();
+            pnlBillsIssued = new Panel();
+            lblBillsIssued = new Label();
             label10 = new Label();
             panel3 = new Panel();
             btnViewAllBills = new Button();
             label21 = new Label();
             pnlPaidBills = new Panel();
-            label11 = new Label();
+            lblPaidBills = new Label();
             label12 = new Label();
             panel5 = new Panel();
             btnViewPaid = new Button();
             label22 = new Label();
             pnlReceivables = new Panel();
-            label13 = new Label();
+            lblReceivables = new Label();
             label14 = new Label();
             panel7 = new Panel();
             btnTotalReceivables = new Button();
             label23 = new Label();
-            pnlReceived = new Panel();
-            label15 = new Label();
+            pnlRevenue = new Panel();
+            lblRevenue = new Label();
             label16 = new Label();
             panel8 = new Panel();
             btnTotalPaymentsReceived = new Button();
             label24 = new Label();
             pnlExpenses = new Panel();
-            label17 = new Label();
+            lblExpenses = new Label();
             label18 = new Label();
             panel9 = new Panel();
             btnManageExpenses = new Button();
             label25 = new Label();
-            panel2 = new Panel();
-            label19 = new Label();
+            pnlProfit = new Panel();
+            lblProfit = new Label();
             label20 = new Label();
             panel10 = new Panel();
             btnProfitReports = new Button();
             label26 = new Label();
+            lblSummaryHeader = new Label();
             pnlHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -147,17 +148,17 @@
             panel6.SuspendLayout();
             pnlOverdue.SuspendLayout();
             panel1.SuspendLayout();
-            pnlIssuedBills.SuspendLayout();
+            pnlBillsIssued.SuspendLayout();
             panel3.SuspendLayout();
             pnlPaidBills.SuspendLayout();
             panel5.SuspendLayout();
             pnlReceivables.SuspendLayout();
             panel7.SuspendLayout();
-            pnlReceived.SuspendLayout();
+            pnlRevenue.SuspendLayout();
             panel8.SuspendLayout();
             pnlExpenses.SuspendLayout();
             panel9.SuspendLayout();
-            panel2.SuspendLayout();
+            pnlProfit.SuspendLayout();
             panel10.SuspendLayout();
             SuspendLayout();
             // 
@@ -190,9 +191,9 @@
             lblDateTime.BackColor = Color.Transparent;
             lblDateTime.Font = new Font("Arial Narrow", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblDateTime.ForeColor = Color.Cornsilk;
-            lblDateTime.Location = new Point(988, 115);
+            lblDateTime.Location = new Point(1053, 115);
             lblDateTime.Name = "lblDateTime";
-            lblDateTime.Size = new Size(551, 46);
+            lblDateTime.Size = new Size(486, 46);
             lblDateTime.TabIndex = 5;
             lblDateTime.Text = "Date Time";
             lblDateTime.TextAlign = ContentAlignment.MiddleRight;
@@ -217,7 +218,7 @@
             label_REMS.ForeColor = Color.Cornsilk;
             label_REMS.Location = new Point(3, 10);
             label_REMS.Name = "label_REMS";
-            label_REMS.Size = new Size(1536, 114);
+            label_REMS.Size = new Size(1536, 68);
             label_REMS.TabIndex = 1;
             label_REMS.Text = "REAL ESTATE MANAGEMENT SYSTEM";
             label_REMS.TextAlign = ContentAlignment.MiddleCenter;
@@ -509,6 +510,7 @@
             btnPayments.Text = "PAYMENTS";
             btnPayments.TextAlign = ContentAlignment.MiddleLeft;
             btnPayments.UseVisualStyleBackColor = true;
+            btnPayments.Click += btnPayments_Click;
             // 
             // pictureBox4
             // 
@@ -558,26 +560,26 @@
             // 
             pnlUnpaid.BackgroundImage = Properties.Resources.REMS_DASHBOARD_UNPAIDS;
             pnlUnpaid.BackgroundImageLayout = ImageLayout.Stretch;
-            pnlUnpaid.Controls.Add(label1);
+            pnlUnpaid.Controls.Add(lblUnpaidBills);
             pnlUnpaid.Controls.Add(label2);
             pnlUnpaid.Controls.Add(panel4);
-            pnlUnpaid.Location = new Point(348, 196);
+            pnlUnpaid.Location = new Point(348, 236);
             pnlUnpaid.Name = "pnlUnpaid";
             pnlUnpaid.Size = new Size(440, 242);
             pnlUnpaid.TabIndex = 2;
             // 
-            // label1
+            // lblUnpaidBills
             // 
-            label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Arial", 48F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.Cornsilk;
-            label1.Location = new Point(265, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(172, 94);
-            label1.TabIndex = 10;
-            label1.Text = "0";
-            label1.TextAlign = ContentAlignment.MiddleRight;
+            lblUnpaidBills.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            lblUnpaidBills.BackColor = Color.Transparent;
+            lblUnpaidBills.Font = new Font("Arial", 48F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblUnpaidBills.ForeColor = Color.Cornsilk;
+            lblUnpaidBills.Location = new Point(265, 0);
+            lblUnpaidBills.Name = "lblUnpaidBills";
+            lblUnpaidBills.Size = new Size(172, 94);
+            lblUnpaidBills.TabIndex = 10;
+            lblUnpaidBills.Text = "0";
+            lblUnpaidBills.TextAlign = ContentAlignment.MiddleRight;
             // 
             // label2
             // 
@@ -589,7 +591,7 @@
             label2.Name = "label2";
             label2.Size = new Size(275, 80);
             label2.TabIndex = 9;
-            label2.Text = "UNPAID BILLS FOR\r\nTHIS MONTH";
+            label2.Text = "UNPAID BILLS";
             label2.TextAlign = ContentAlignment.MiddleRight;
             // 
             // panel4
@@ -631,26 +633,26 @@
             pnlActiveTenants.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pnlActiveTenants.BackgroundImage = Properties.Resources.REMS_DASHBOARD_TENANTS;
             pnlActiveTenants.BackgroundImageLayout = ImageLayout.Stretch;
-            pnlActiveTenants.Controls.Add(label3);
+            pnlActiveTenants.Controls.Add(lblActiveTenants);
             pnlActiveTenants.Controls.Add(label_ActiveTenants);
             pnlActiveTenants.Controls.Add(panel6);
-            pnlActiveTenants.Location = new Point(1346, 196);
+            pnlActiveTenants.Location = new Point(1346, 236);
             pnlActiveTenants.Name = "pnlActiveTenants";
             pnlActiveTenants.Size = new Size(440, 242);
             pnlActiveTenants.TabIndex = 3;
             // 
-            // label3
+            // lblActiveTenants
             // 
-            label3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Arial", 48F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.Honeydew;
-            label3.Location = new Point(265, 11);
-            label3.Name = "label3";
-            label3.Size = new Size(172, 117);
-            label3.TabIndex = 4;
-            label3.Text = "0";
-            label3.TextAlign = ContentAlignment.MiddleRight;
+            lblActiveTenants.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            lblActiveTenants.BackColor = Color.Transparent;
+            lblActiveTenants.Font = new Font("Arial", 48F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblActiveTenants.ForeColor = Color.Cornsilk;
+            lblActiveTenants.Location = new Point(265, 0);
+            lblActiveTenants.Name = "lblActiveTenants";
+            lblActiveTenants.Size = new Size(172, 94);
+            lblActiveTenants.TabIndex = 7;
+            lblActiveTenants.Text = "0";
+            lblActiveTenants.TextAlign = ContentAlignment.MiddleRight;
             // 
             // label_ActiveTenants
             // 
@@ -704,26 +706,26 @@
             pnlOverdue.Anchor = AnchorStyles.Top;
             pnlOverdue.BackgroundImage = Properties.Resources.REMS_DASHBOARD_OVERDUES;
             pnlOverdue.BackgroundImageLayout = ImageLayout.Stretch;
-            pnlOverdue.Controls.Add(label27);
+            pnlOverdue.Controls.Add(lblOverdueBills);
             pnlOverdue.Controls.Add(label28);
             pnlOverdue.Controls.Add(panel1);
-            pnlOverdue.Location = new Point(847, 196);
+            pnlOverdue.Location = new Point(847, 236);
             pnlOverdue.Name = "pnlOverdue";
             pnlOverdue.Size = new Size(440, 242);
             pnlOverdue.TabIndex = 4;
             // 
-            // label27
+            // lblOverdueBills
             // 
-            label27.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            label27.BackColor = Color.Transparent;
-            label27.Font = new Font("Arial", 48F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label27.ForeColor = Color.Cornsilk;
-            label27.Location = new Point(265, 0);
-            label27.Name = "label27";
-            label27.Size = new Size(172, 94);
-            label27.TabIndex = 6;
-            label27.Text = "0";
-            label27.TextAlign = ContentAlignment.MiddleRight;
+            lblOverdueBills.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            lblOverdueBills.BackColor = Color.Transparent;
+            lblOverdueBills.Font = new Font("Arial", 48F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblOverdueBills.ForeColor = Color.Cornsilk;
+            lblOverdueBills.Location = new Point(265, 0);
+            lblOverdueBills.Name = "lblOverdueBills";
+            lblOverdueBills.Size = new Size(172, 94);
+            lblOverdueBills.TabIndex = 6;
+            lblOverdueBills.Text = "0";
+            lblOverdueBills.TextAlign = ContentAlignment.MiddleRight;
             // 
             // label28
             // 
@@ -735,7 +737,7 @@
             label28.Name = "label28";
             label28.Size = new Size(335, 80);
             label28.TabIndex = 5;
-            label28.Text = "OVERDUE BILLS FOR\r\nTHIS MONTH";
+            label28.Text = "OVERDUE BILLS";
             label28.TextAlign = ContentAlignment.MiddleRight;
             // 
             // panel1
@@ -777,31 +779,31 @@
             tmrClock.Enabled = true;
             tmrClock.Tick += tmrClock_Tick;
             // 
-            // pnlIssuedBills
+            // pnlBillsIssued
             // 
-            pnlIssuedBills.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            pnlIssuedBills.BackgroundImage = Properties.Resources.REMS_DASHBOARD_BILLS_ISSUED;
-            pnlIssuedBills.BackgroundImageLayout = ImageLayout.Stretch;
-            pnlIssuedBills.Controls.Add(label9);
-            pnlIssuedBills.Controls.Add(label10);
-            pnlIssuedBills.Controls.Add(panel3);
-            pnlIssuedBills.Location = new Point(349, 468);
-            pnlIssuedBills.Name = "pnlIssuedBills";
-            pnlIssuedBills.Size = new Size(440, 242);
-            pnlIssuedBills.TabIndex = 3;
+            pnlBillsIssued.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            pnlBillsIssued.BackgroundImage = Properties.Resources.REMS_DASHBOARD_BILLS_ISSUED;
+            pnlBillsIssued.BackgroundImageLayout = ImageLayout.Stretch;
+            pnlBillsIssued.Controls.Add(lblBillsIssued);
+            pnlBillsIssued.Controls.Add(label10);
+            pnlBillsIssued.Controls.Add(panel3);
+            pnlBillsIssued.Location = new Point(349, 490);
+            pnlBillsIssued.Name = "pnlBillsIssued";
+            pnlBillsIssued.Size = new Size(440, 242);
+            pnlBillsIssued.TabIndex = 3;
             // 
-            // label9
+            // lblBillsIssued
             // 
-            label9.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            label9.BackColor = Color.Transparent;
-            label9.Font = new Font("Arial", 48F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label9.ForeColor = Color.Cornsilk;
-            label9.Location = new Point(265, 3);
-            label9.Name = "label9";
-            label9.Size = new Size(172, 94);
-            label9.TabIndex = 4;
-            label9.Text = "0";
-            label9.TextAlign = ContentAlignment.MiddleRight;
+            lblBillsIssued.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            lblBillsIssued.BackColor = Color.Transparent;
+            lblBillsIssued.Font = new Font("Arial", 48F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblBillsIssued.ForeColor = Color.Cornsilk;
+            lblBillsIssued.Location = new Point(265, 3);
+            lblBillsIssued.Name = "lblBillsIssued";
+            lblBillsIssued.Size = new Size(172, 94);
+            lblBillsIssued.TabIndex = 4;
+            lblBillsIssued.Text = "0";
+            lblBillsIssued.TextAlign = ContentAlignment.MiddleRight;
             // 
             // label10
             // 
@@ -813,7 +815,7 @@
             label10.Name = "label10";
             label10.Size = new Size(275, 80);
             label10.TabIndex = 3;
-            label10.Text = "BILLS ISSUED\r\nTHIS MONTH";
+            label10.Text = "BILLS ISSUED";
             label10.TextAlign = ContentAlignment.MiddleRight;
             // 
             // panel3
@@ -856,26 +858,26 @@
             pnlPaidBills.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             pnlPaidBills.BackgroundImage = Properties.Resources.REMS_DASHBOARD_PAID_BILLS;
             pnlPaidBills.BackgroundImageLayout = ImageLayout.Stretch;
-            pnlPaidBills.Controls.Add(label11);
+            pnlPaidBills.Controls.Add(lblPaidBills);
             pnlPaidBills.Controls.Add(label12);
             pnlPaidBills.Controls.Add(panel5);
-            pnlPaidBills.Location = new Point(847, 468);
+            pnlPaidBills.Location = new Point(847, 490);
             pnlPaidBills.Name = "pnlPaidBills";
             pnlPaidBills.Size = new Size(440, 242);
             pnlPaidBills.TabIndex = 4;
             // 
-            // label11
+            // lblPaidBills
             // 
-            label11.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            label11.BackColor = Color.Transparent;
-            label11.Font = new Font("Arial", 48F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label11.ForeColor = Color.Cornsilk;
-            label11.Location = new Point(265, 3);
-            label11.Name = "label11";
-            label11.Size = new Size(172, 94);
-            label11.TabIndex = 11;
-            label11.Text = "0";
-            label11.TextAlign = ContentAlignment.MiddleRight;
+            lblPaidBills.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            lblPaidBills.BackColor = Color.Transparent;
+            lblPaidBills.Font = new Font("Arial", 48F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblPaidBills.ForeColor = Color.Cornsilk;
+            lblPaidBills.Location = new Point(265, 3);
+            lblPaidBills.Name = "lblPaidBills";
+            lblPaidBills.Size = new Size(172, 94);
+            lblPaidBills.TabIndex = 11;
+            lblPaidBills.Text = "0";
+            lblPaidBills.TextAlign = ContentAlignment.MiddleRight;
             // 
             // label12
             // 
@@ -887,7 +889,7 @@
             label12.Name = "label12";
             label12.Size = new Size(264, 81);
             label12.TabIndex = 10;
-            label12.Text = "PAID BILLS FOR THIS MONTH";
+            label12.Text = "PAID BILLS";
             label12.TextAlign = ContentAlignment.MiddleRight;
             // 
             // panel5
@@ -930,26 +932,26 @@
             pnlReceivables.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             pnlReceivables.BackgroundImage = Properties.Resources.REMS_DASHBOARD_RECEIVABLES;
             pnlReceivables.BackgroundImageLayout = ImageLayout.Stretch;
-            pnlReceivables.Controls.Add(label13);
+            pnlReceivables.Controls.Add(lblReceivables);
             pnlReceivables.Controls.Add(label14);
             pnlReceivables.Controls.Add(panel7);
-            pnlReceivables.Location = new Point(1346, 468);
+            pnlReceivables.Location = new Point(1346, 490);
             pnlReceivables.Name = "pnlReceivables";
             pnlReceivables.Size = new Size(440, 242);
             pnlReceivables.TabIndex = 5;
             // 
-            // label13
+            // lblReceivables
             // 
-            label13.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            label13.BackColor = Color.Transparent;
-            label13.Font = new Font("Arial", 43.8F, FontStyle.Bold);
-            label13.ForeColor = Color.Cornsilk;
-            label13.Location = new Point(3, 3);
-            label13.Name = "label13";
-            label13.Size = new Size(434, 94);
-            label13.TabIndex = 13;
-            label13.Text = "₱1,000.00";
-            label13.TextAlign = ContentAlignment.MiddleRight;
+            lblReceivables.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            lblReceivables.BackColor = Color.Transparent;
+            lblReceivables.Font = new Font("Arial", 43.8F, FontStyle.Bold);
+            lblReceivables.ForeColor = Color.Cornsilk;
+            lblReceivables.Location = new Point(3, 3);
+            lblReceivables.Name = "lblReceivables";
+            lblReceivables.Size = new Size(434, 94);
+            lblReceivables.TabIndex = 13;
+            lblReceivables.Text = "₱1,000.00";
+            lblReceivables.TextAlign = ContentAlignment.MiddleRight;
             // 
             // label14
             // 
@@ -957,11 +959,11 @@
             label14.BackColor = Color.Transparent;
             label14.Font = new Font("Arial", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label14.ForeColor = Color.Cornsilk;
-            label14.Location = new Point(94, 97);
+            label14.Location = new Point(219, 97);
             label14.Name = "label14";
-            label14.Size = new Size(343, 81);
+            label14.Size = new Size(218, 81);
             label14.TabIndex = 12;
-            label14.Text = "THIS MONTH'S\r\nTOTAL RECEIVABLES";
+            label14.Text = "RECEIVABLES";
             label14.TextAlign = ContentAlignment.MiddleRight;
             // 
             // panel7
@@ -999,31 +1001,31 @@
             label23.Text = "View Total Receivables";
             label23.TextAlign = ContentAlignment.MiddleRight;
             // 
-            // pnlReceived
+            // pnlRevenue
             // 
-            pnlReceived.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            pnlReceived.BackgroundImage = Properties.Resources.REMS_DASHBOARD_RECEIVED;
-            pnlReceived.BackgroundImageLayout = ImageLayout.Stretch;
-            pnlReceived.Controls.Add(label15);
-            pnlReceived.Controls.Add(label16);
-            pnlReceived.Controls.Add(panel8);
-            pnlReceived.Location = new Point(349, 743);
-            pnlReceived.Name = "pnlReceived";
-            pnlReceived.Size = new Size(440, 242);
-            pnlReceived.TabIndex = 4;
+            pnlRevenue.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            pnlRevenue.BackgroundImage = Properties.Resources.REMS_DASHBOARD_RECEIVED;
+            pnlRevenue.BackgroundImageLayout = ImageLayout.Stretch;
+            pnlRevenue.Controls.Add(lblRevenue);
+            pnlRevenue.Controls.Add(label16);
+            pnlRevenue.Controls.Add(panel8);
+            pnlRevenue.Location = new Point(349, 745);
+            pnlRevenue.Name = "pnlRevenue";
+            pnlRevenue.Size = new Size(440, 242);
+            pnlRevenue.TabIndex = 4;
             // 
-            // label15
+            // lblRevenue
             // 
-            label15.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            label15.BackColor = Color.Transparent;
-            label15.Font = new Font("Arial", 43.8F, FontStyle.Bold);
-            label15.ForeColor = Color.Cornsilk;
-            label15.Location = new Point(0, 0);
-            label15.Name = "label15";
-            label15.Size = new Size(434, 94);
-            label15.TabIndex = 13;
-            label15.Text = "₱1,000.00";
-            label15.TextAlign = ContentAlignment.MiddleRight;
+            lblRevenue.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            lblRevenue.BackColor = Color.Transparent;
+            lblRevenue.Font = new Font("Arial", 43.8F, FontStyle.Bold);
+            lblRevenue.ForeColor = Color.Cornsilk;
+            lblRevenue.Location = new Point(0, 0);
+            lblRevenue.Name = "lblRevenue";
+            lblRevenue.Size = new Size(434, 94);
+            lblRevenue.TabIndex = 13;
+            lblRevenue.Text = "₱1,000.00";
+            lblRevenue.TextAlign = ContentAlignment.MiddleRight;
             // 
             // label16
             // 
@@ -1031,11 +1033,11 @@
             label16.BackColor = Color.Transparent;
             label16.Font = new Font("Arial", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label16.ForeColor = Color.Cornsilk;
-            label16.Location = new Point(24, 94);
+            label16.Location = new Point(265, 94);
             label16.Name = "label16";
-            label16.Size = new Size(410, 81);
+            label16.Size = new Size(171, 81);
             label16.TabIndex = 12;
-            label16.Text = "THIS MONTH'S\r\nTOTAL PAYMENTS RECEIVED";
+            label16.Text = "REVENUE";
             label16.TextAlign = ContentAlignment.MiddleRight;
             // 
             // panel8
@@ -1077,26 +1079,26 @@
             pnlExpenses.Anchor = AnchorStyles.Bottom;
             pnlExpenses.BackgroundImage = Properties.Resources.REMS_DASHBOARD_EXPENSES;
             pnlExpenses.BackgroundImageLayout = ImageLayout.Stretch;
-            pnlExpenses.Controls.Add(label17);
+            pnlExpenses.Controls.Add(lblExpenses);
             pnlExpenses.Controls.Add(label18);
             pnlExpenses.Controls.Add(panel9);
-            pnlExpenses.Location = new Point(847, 743);
+            pnlExpenses.Location = new Point(847, 745);
             pnlExpenses.Name = "pnlExpenses";
             pnlExpenses.Size = new Size(440, 242);
             pnlExpenses.TabIndex = 6;
             // 
-            // label17
+            // lblExpenses
             // 
-            label17.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            label17.BackColor = Color.Transparent;
-            label17.Font = new Font("Arial", 43.8F, FontStyle.Bold);
-            label17.ForeColor = Color.Cornsilk;
-            label17.Location = new Point(3, 0);
-            label17.Name = "label17";
-            label17.Size = new Size(434, 94);
-            label17.TabIndex = 13;
-            label17.Text = "₱1,000.00";
-            label17.TextAlign = ContentAlignment.MiddleRight;
+            lblExpenses.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            lblExpenses.BackColor = Color.Transparent;
+            lblExpenses.Font = new Font("Arial", 43.8F, FontStyle.Bold);
+            lblExpenses.ForeColor = Color.Cornsilk;
+            lblExpenses.Location = new Point(3, 0);
+            lblExpenses.Name = "lblExpenses";
+            lblExpenses.Size = new Size(434, 94);
+            lblExpenses.TabIndex = 13;
+            lblExpenses.Text = "₱1,000.00";
+            lblExpenses.TextAlign = ContentAlignment.MiddleRight;
             // 
             // label18
             // 
@@ -1104,11 +1106,11 @@
             label18.BackColor = Color.Transparent;
             label18.Font = new Font("Arial", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label18.ForeColor = Color.Cornsilk;
-            label18.Location = new Point(173, 94);
+            label18.Location = new Point(265, 94);
             label18.Name = "label18";
-            label18.Size = new Size(264, 81);
+            label18.Size = new Size(172, 81);
             label18.TabIndex = 12;
-            label18.Text = "THIS MONTH'S\r\nTOTAL EXPENSES";
+            label18.Text = "EXPENSES";
             label18.TextAlign = ContentAlignment.MiddleRight;
             // 
             // panel9
@@ -1145,31 +1147,31 @@
             label25.Text = "View && Manage Expenses";
             label25.TextAlign = ContentAlignment.MiddleRight;
             // 
-            // panel2
+            // pnlProfit
             // 
-            panel2.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            panel2.BackgroundImage = Properties.Resources.REMS_DASHBOARD_CASH_ON_HAND;
-            panel2.BackgroundImageLayout = ImageLayout.Stretch;
-            panel2.Controls.Add(label19);
-            panel2.Controls.Add(label20);
-            panel2.Controls.Add(panel10);
-            panel2.Location = new Point(1346, 743);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(440, 242);
-            panel2.TabIndex = 7;
+            pnlProfit.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            pnlProfit.BackgroundImage = Properties.Resources.REMS_DASHBOARD_CASH_ON_HAND;
+            pnlProfit.BackgroundImageLayout = ImageLayout.Stretch;
+            pnlProfit.Controls.Add(lblProfit);
+            pnlProfit.Controls.Add(label20);
+            pnlProfit.Controls.Add(panel10);
+            pnlProfit.Location = new Point(1346, 745);
+            pnlProfit.Name = "pnlProfit";
+            pnlProfit.Size = new Size(440, 242);
+            pnlProfit.TabIndex = 7;
             // 
-            // label19
+            // lblProfit
             // 
-            label19.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            label19.BackColor = Color.Transparent;
-            label19.Font = new Font("Arial", 43.8F, FontStyle.Bold);
-            label19.ForeColor = Color.Cornsilk;
-            label19.Location = new Point(3, 0);
-            label19.Name = "label19";
-            label19.Size = new Size(434, 94);
-            label19.TabIndex = 13;
-            label19.Text = "₱1,000.00";
-            label19.TextAlign = ContentAlignment.MiddleRight;
+            lblProfit.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            lblProfit.BackColor = Color.Transparent;
+            lblProfit.Font = new Font("Arial", 43.8F, FontStyle.Bold);
+            lblProfit.ForeColor = Color.Cornsilk;
+            lblProfit.Location = new Point(3, 0);
+            lblProfit.Name = "lblProfit";
+            lblProfit.Size = new Size(434, 94);
+            lblProfit.TabIndex = 13;
+            lblProfit.Text = "₱1,000.00";
+            lblProfit.TextAlign = ContentAlignment.MiddleRight;
             // 
             // label20
             // 
@@ -1177,11 +1179,11 @@
             label20.BackColor = Color.Transparent;
             label20.Font = new Font("Arial", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label20.ForeColor = Color.Cornsilk;
-            label20.Location = new Point(94, 94);
+            label20.Location = new Point(314, 94);
             label20.Name = "label20";
-            label20.Size = new Size(343, 81);
+            label20.Size = new Size(123, 81);
             label20.TabIndex = 12;
-            label20.Text = "REMAINING CASH-ON-HAND";
+            label20.Text = "PROFIT";
             label20.TextAlign = ContentAlignment.MiddleRight;
             // 
             // panel10
@@ -1218,17 +1220,30 @@
             label26.Text = "Profit Reports";
             label26.TextAlign = ContentAlignment.MiddleRight;
             // 
+            // lblSummaryHeader
+            // 
+            lblSummaryHeader.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            lblSummaryHeader.Font = new Font("Arial Black", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblSummaryHeader.ForeColor = Color.Black;
+            lblSummaryHeader.Location = new Point(305, 173);
+            lblSummaryHeader.Name = "lblSummaryHeader";
+            lblSummaryHeader.Size = new Size(1517, 60);
+            lblSummaryHeader.TabIndex = 8;
+            lblSummaryHeader.Text = "SUMMARY FOR THE MONTH OF ";
+            lblSummaryHeader.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // Dashboard
             // 
             AutoScaleDimensions = new SizeF(11F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1834, 1008);
-            Controls.Add(panel2);
+            Controls.Add(lblSummaryHeader);
+            Controls.Add(pnlProfit);
             Controls.Add(pnlExpenses);
-            Controls.Add(pnlReceived);
+            Controls.Add(pnlRevenue);
             Controls.Add(pnlReceivables);
             Controls.Add(pnlPaidBills);
-            Controls.Add(pnlIssuedBills);
+            Controls.Add(pnlBillsIssued);
             Controls.Add(pnlOverdue);
             Controls.Add(pnlActiveTenants);
             Controls.Add(pnlUnpaid);
@@ -1272,17 +1287,17 @@
             panel6.ResumeLayout(false);
             pnlOverdue.ResumeLayout(false);
             panel1.ResumeLayout(false);
-            pnlIssuedBills.ResumeLayout(false);
+            pnlBillsIssued.ResumeLayout(false);
             panel3.ResumeLayout(false);
             pnlPaidBills.ResumeLayout(false);
             panel5.ResumeLayout(false);
             pnlReceivables.ResumeLayout(false);
             panel7.ResumeLayout(false);
-            pnlReceived.ResumeLayout(false);
+            pnlRevenue.ResumeLayout(false);
             panel8.ResumeLayout(false);
             pnlExpenses.ResumeLayout(false);
             panel9.ResumeLayout(false);
-            panel2.ResumeLayout(false);
+            pnlProfit.ResumeLayout(false);
             panel10.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -1298,7 +1313,6 @@
         private Panel pnlOverdue;
         private Panel panel4;
         private Panel panel6;
-        private Label label3;
         private Label label_ActiveTenants;
         private Panel panel1;
         private Label label4;
@@ -1310,35 +1324,35 @@
         private Label lblDateTime;
         private Label lblUsername;
         private System.Windows.Forms.Timer tmrClock;
-        private Panel pnlIssuedBills;
+        private Panel pnlBillsIssued;
         private Panel pnlPaidBills;
         private Panel pnlReceivables;
-        private Panel pnlReceived;
+        private Panel pnlRevenue;
         private Panel pnlExpenses;
-        private Panel panel2;
+        private Panel pnlProfit;
         private Panel panel3;
         private Panel panel5;
         private Panel panel7;
         private Panel panel8;
         private Panel panel9;
         private Panel panel10;
-        private Label label9;
+        private Label lblBillsIssued;
         private Label label10;
-        private Label label11;
+        private Label lblPaidBills;
         private Label label12;
-        private Label label13;
+        private Label lblReceivables;
         private Label label14;
-        private Label label15;
+        private Label lblRevenue;
         private Label label16;
-        private Label label17;
+        private Label lblExpenses;
         private Label label18;
-        private Label label19;
+        private Label lblProfit;
         private Label label20;
         private Button btnViewAllBills;
         private Label label21;
-        private Label label1;
+        private Label lblUnpaidBills;
         private Label label2;
-        private Label label27;
+        private Label lblOverdueBills;
         private Label label28;
         private Button btnViewPaid;
         private Label label22;
@@ -1378,5 +1392,7 @@
         private Panel panel17;
         private Button btnReports;
         private PictureBox pictureBox9;
+        private Label lblSummaryHeader;
+        private Label lblActiveTenants;
     }
 }
