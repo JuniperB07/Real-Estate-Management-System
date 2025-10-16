@@ -2,6 +2,7 @@ using JunX.NETStandard.MySQL;
 using JunX.NETStandard.Utility;
 using Real_Estate_Management_System.Splash_Screen;
 using System.Data;
+using System.Security.Cryptography;
 
 namespace Real_Estate_Management_System
 {
@@ -82,6 +83,7 @@ namespace Real_Estate_Management_System
                 }
 
                 SplashHelper.Splash_LoadingText = "Loading main forms...";
+                await Task.Delay(500);
                 List<Form> preLoadedForms = new List<Form>
                 {
                     new Dashboard(),
@@ -91,7 +93,11 @@ namespace Real_Estate_Management_System
                     new Tenants.Tenants()
                 };
                 Internals.Forms = preLoadedForms.ToDictionary(f => f.Name, f => f);
-                await Task.Delay(2500);
+                foreach(Form form in Internals.Forms.Values)
+                {
+                    SplashHelper.Splash_LoadingText = "Loading " + form.Name + "...";
+                    await Task.Delay(500);
+                }
 
                 Splash.Close();
                 Internals.Forms["Dashboard"].ShowDialog();
