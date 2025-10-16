@@ -36,23 +36,35 @@ namespace Real_Estate_Management_System
                 SplashHelper.Splash_LoadingText = "Checking Log file...";
                 Internals.Logger = new Logger(Internals.LogPath);
                 if (!Internals.Logger.LogFileExists())
+                {
                     Internals.Logger.CreateLogFile();
-                await Task.Delay(1000);
+                    await Task.Delay(500);
+                }
+                await Task.Delay(500);
 
                 Internals.Logger.AddLog(DateTime.Now, LogCategories.SYSTEM.ToString(), "System Launched.");
                 Internals.Logger.AddLog(DateTime.Now, LogCategories.SYSTEM.ToString(), "Connecting to Database...");
                 SplashHelper.Splash_LoadingText = "Connecting to Database...";
 
                 if (!DBConnect.ConfigGenerator.ConfigExists())
+                {
                     DBConnect.ConfigGenerator.GenerateDBConfig(Internals.CONN_STR);
+                    await Task.Delay(500);
+                }
                 Internals.DBC = new DBConnect(DBConnect.ConfigGenerator.GetConnectionString());
-                Internals.DBC.Open();
+                Internals.DBC.Open(out bool opened);
+                if (!opened)
+                {
+                    MessageBox.Show("An error occured while trying to connect to database.");
+                    Splash.Close();
+                    Application.Exit();
+                }
+                await Task.Delay(500);
 
                 Internals.Logger.AddLog(DateTime.Now, LogCategories.SYSTEM.ToString(), "Database connection established.");
                 Internals.Logger.AddLog(DateTime.Now, LogCategories.SYSTEM.ToString(), "Retrieving table column metadata and creating enum files...");
-                await Task.Delay(4000);
 
-                SplashHelper.Splash_LoadingText = "Checking && creating required files...";
+                SplashHelper.Splash_LoadingText = "Checking && creating required enum files...";
 
                 string folder = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Tables");
                 EnumGenerator EG = new EnumGenerator(Internals.SERVER_CONN_STR, out ConnectionState state);
@@ -60,10 +72,10 @@ namespace Real_Estate_Management_System
                 {
                     EG.DatabaseName = Internals.DB_NAME;
                     EG.GenerateEnumFiles(folder);
+                    await Task.Delay(1000);
                 }
 
                 Internals.Logger.AddLog(DateTime.Now, LogCategories.SYSTEM.ToString(), "Enum files generated.");
-                await Task.Delay(1000);
 
                 SplashHelper.Splash_LoadingText = "Checking RDLCs...";
                 List<string> RDLCs = new List<string>

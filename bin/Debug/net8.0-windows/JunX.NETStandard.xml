@@ -943,7 +943,7 @@
             Intended for use with multi-parameter SQL statements that modify data without returning rows.
             </remarks>
         </member>
-        <member name="M:JunX.NETStandard.MySQL.DBConnect.Open">
+        <member name="M:JunX.NETStandard.MySQL.DBConnect.Open(System.Boolean@)">
             <summary>
             Opens the internal MySQL connection and configures the command object for text-based execution.
             </summary>
@@ -998,7 +998,7 @@
             </summary>
             <remarks>
             This method ensures the connection is in a clean state by explicitly closing it if necessary,
-            then invoking <see cref="M:JunX.NETStandard.MySQL.DBConnect.Open"/> to reinitialize the connection using the current connection string.
+            then invoking <see cref="M:JunX.NETStandard.MySQL.DBConnect.Open(System.Boolean@)"/> to reinitialize the connection using the current connection string.
             Useful for recovering from transient connection issues or refreshing stale connections.
             </remarks>
         </member>
