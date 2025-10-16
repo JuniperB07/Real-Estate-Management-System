@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 
 namespace Real_Estate_Management_System.Payments
 {
-    internal static class PaymentsHelper
+    internal enum PaymentBillTypes
     {
-        internal static PaymentBillTypes PaymentBillType { get; set; }
+        None,
+        Water,
+        Electricity,
+        Rental,
+        Internet
     }
 }

@@ -314,6 +314,7 @@
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(4, 3, 4, 3);
+            MaximizeBox = false;
             Name = "MakePayment";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Real Estate Management System - Make Payment [ELECTRICITY]";
