@@ -111,6 +111,8 @@ namespace Real_Estate_Management_System
                     await Task.Delay(500);
                 }
 
+                SplashHelper.Splash_LoadingText = "Finalizing initializations...";
+                await Task.Delay(2000);
                 Splash.Close();
                 Internals.Forms["Dashboard"].ShowDialog();
                 Application.Exit();
