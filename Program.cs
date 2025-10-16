@@ -51,7 +51,7 @@ namespace Real_Estate_Management_System
                 Internals.Logger.AddLog(DateTime.Now, LogCategories.SYSTEM.ToString(), "Retrieving table column metadata and creating enum files...");
                 await Task.Delay(4000);
 
-                SplashHelper.Splash_LoadingText = "Checking & creating required files...";
+                SplashHelper.Splash_LoadingText = "Checking && creating required files...";
 
                 string folder = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Tables");
                 EnumGenerator EG = new EnumGenerator(Internals.SERVER_CONN_STR, out ConnectionState state);
@@ -64,12 +64,37 @@ namespace Real_Estate_Management_System
                 Internals.Logger.AddLog(DateTime.Now, LogCategories.SYSTEM.ToString(), "Enum files generated.");
                 await Task.Delay(1000);
 
-                SplashHelper.Splash_LoadingText = "Initializing application configuration...";
-                await Task.Delay(1000);
+                SplashHelper.Splash_LoadingText = "Checking RDLCs...";
+                List<string> RDLCs = new List<string>
+                {
+                    @"RDLCs\Invoice.rdlc"
+                };
+                foreach(string file in RDLCs)
+                {
+                    await Task.Delay(500);
+
+                    if(!File.Exists(file))
+                    {
+                        MessageBox.Show("Missing RDLC file: " + file);
+                        Splash.Close();
+                        Application.Exit();
+                    }
+                }
+
+                SplashHelper.Splash_LoadingText = "Loading main forms...";
+                List<Form> preLoadedForms = new List<Form>
+                {
+                    new Dashboard(),
+                    new Login.Login(),
+                    new Billing.NewBill(),
+                    new Payments.PayBill(),
+                    new Tenants.Tenants()
+                };
+                Internals.Forms = preLoadedForms.ToDictionary(f => f.Name, f => f);
+                await Task.Delay(2500);
 
                 Splash.Close();
-                Dashboard DB = new Dashboard();
-                DB.ShowDialog();
+                Internals.Forms["Dashboard"].ShowDialog();
                 Application.Exit();
             };
 

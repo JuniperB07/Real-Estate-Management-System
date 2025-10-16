@@ -50,16 +50,14 @@ namespace Real_Estate_Management_System
         private void btnBilling_Click(object sender, EventArgs e)
         {
             Hide();
-            Billing.NewBill BN = new Billing.NewBill();
-            BN.ShowDialog();
+            Internals.Forms["NewBill"].ShowDialog();
             Show();
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
             Hide();
-            Login.Login L = new Login.Login();
-            L.ShowDialog();
+            Internals.Forms["Login"].ShowDialog();
             Show();
         }
 
@@ -78,16 +76,14 @@ namespace Real_Estate_Management_System
         private void btnPayments_Click(object sender, EventArgs e)
         {
             Hide();
-            Payments.PayBill PB = new Payments.PayBill();
-            PB.ShowDialog();
+            Internals.Forms["PayBill"].ShowDialog();
             Show();
         }
 
         private void btnTenants_Click(object sender, EventArgs e)
         {
             Hide();
-            Tenants.Tenants T = new Tenants.Tenants();
-            T.ShowDialog();
+            Internals.Forms["Tenants"].ShowDialog();
             Show();
         }
 

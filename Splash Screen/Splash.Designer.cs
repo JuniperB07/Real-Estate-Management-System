@@ -66,7 +66,6 @@
             lblLoading.Name = "lblLoading";
             lblLoading.Size = new Size(506, 27);
             lblLoading.TabIndex = 1;
-            lblLoading.Text = "System is loading. Please wait...";
             lblLoading.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label1

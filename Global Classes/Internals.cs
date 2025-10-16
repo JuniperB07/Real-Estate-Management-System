@@ -31,6 +31,8 @@ namespace Real_Estate_Management_System
         internal static DBConnect DBC;
         internal static Logger Logger;
 
+        internal static Dictionary<string, Form> Forms { get; set; } = new();
+
         /// <summary>
         /// Sets the BackColor property of the specified form to <c><see cref="Internals.Cyprus"/></c> and the ForeColor property to
         /// <c><see cref="Internals.SandDune"/></c>.
