@@ -35,7 +35,27 @@ namespace Real_Estate_Management_System.Tenants
 
         private void Tenants_Load(object sender, EventArgs e)
         {
+            lblStatus.Text = "ACTIVE";
+        }
 
+        private void lblStatus_TextChanged(object sender, EventArgs e)
+        {
+            switch (lblStatus.Text)
+            {
+                case "ACTIVE":
+                    lblStatus.ForeColor = Color.LimeGreen;
+                    break;
+                case "INACTIVE":
+                case "TERMINATED":
+                    lblStatus.ForeColor = Color.Red;
+                    break;
+                case "PENDING":
+                    lblStatus.ForeColor = Color.Yellow;
+                    break;
+                default:
+                    lblStatus.ForeColor = Color.Black;
+                    break;
+            }
         }
     }
 }
