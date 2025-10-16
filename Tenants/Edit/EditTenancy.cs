@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Real_Estate_Management_System.Tenants
+namespace Real_Estate_Management_System.Tenants.Edit
 {
-    public partial class EditTenant : Form
+    public partial class EditTenancy : Form
     {
-        public EditTenant()
+        public EditTenancy()
         {
             InitializeComponent();
+        }
+
+        private void EditTenancy_Load(object sender, EventArgs e)
+        {
+            Text = EditHelper.FormTitle_EditTenancy;
         }
     }
 }

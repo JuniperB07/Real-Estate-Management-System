@@ -22,5 +22,11 @@ namespace Real_Estate_Management_System
         {
             lblLoading.Text = SplashHelper.Splash_LoadingText;
         }
+
+        private void Splash_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+        }
     }
 }

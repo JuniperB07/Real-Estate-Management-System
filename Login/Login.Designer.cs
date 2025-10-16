@@ -56,6 +56,7 @@
             textBox1.Font = new Font("Arial Narrow", 16.2F);
             textBox1.Location = new Point(167, 502);
             textBox1.Name = "textBox1";
+            textBox1.PlaceholderText = "Username";
             textBox1.Size = new Size(312, 38);
             textBox1.TabIndex = 1;
             // 
@@ -67,8 +68,10 @@
             textBox2.Location = new Point(167, 570);
             textBox2.Name = "textBox2";
             textBox2.PasswordChar = '•';
+            textBox2.PlaceholderText = "Password";
             textBox2.Size = new Size(312, 38);
             textBox2.TabIndex = 2;
+            textBox2.UseSystemPasswordChar = true;
             // 
             // pictureBox1
             // 

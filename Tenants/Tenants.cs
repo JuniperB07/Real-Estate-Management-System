@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using JunX.NET8.WinForms;
+using Real_Estate_Management_System.Tenants.Edit;
 
 namespace Real_Estate_Management_System.Tenants
 {
@@ -56,6 +57,27 @@ namespace Real_Estate_Management_System.Tenants
                     lblStatus.ForeColor = Color.Black;
                     break;
             }
+        }
+
+        private void btnTenant_Edit_Click(object sender, EventArgs e)
+        {
+            EditHelper.FormTitle_EditTenant = lblTenantName.Text;
+            EditTenant ET = new EditTenant();
+            ET.ShowDialog();
+        }
+
+        private void btnEmergency_Edit_Click(object sender, EventArgs e)
+        {
+            EditHelper.FormTitle_EditEmergency = lblTenantName.Text;
+            EditEmergency EE = new EditEmergency();
+            EE.ShowDialog();
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            EditHelper.FormTitle_EditTenancy = lblTenantName.Text;
+            EditTenancy ET = new EditTenancy();
+            ET.ShowDialog();
         }
     }
 }

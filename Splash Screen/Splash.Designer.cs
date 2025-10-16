@@ -101,6 +101,7 @@
             Name = "Splash";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Splash";
+            FormClosing += Splash_FormClosing;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);

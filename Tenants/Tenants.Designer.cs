@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Tenants));
             pnlHeader = new Panel();
             label1 = new Label();
             pictureBox1 = new PictureBox();
@@ -323,9 +324,10 @@
             // 
             // panel1
             // 
+            panel1.BackColor = Color.Transparent;
             panel1.Controls.Add(btnTenant_Edit);
             panel1.Controls.Add(pictureBox5);
-            panel1.Location = new Point(301, 152);
+            panel1.Location = new Point(704, 151);
             panel1.Name = "panel1";
             panel1.Size = new Size(211, 50);
             panel1.TabIndex = 14;
@@ -333,17 +335,19 @@
             // btnTenant_Edit
             // 
             btnTenant_Edit.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            btnTenant_Edit.BackColor = Color.Transparent;
             btnTenant_Edit.FlatAppearance.BorderSize = 0;
             btnTenant_Edit.FlatStyle = FlatStyle.Flat;
-            btnTenant_Edit.Font = new Font("Arial Narrow", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnTenant_Edit.Font = new Font("Arial Narrow", 13.8F, FontStyle.Bold | FontStyle.Underline);
             btnTenant_Edit.ForeColor = SystemColors.Control;
-            btnTenant_Edit.Location = new Point(72, 3);
+            btnTenant_Edit.Location = new Point(72, 6);
             btnTenant_Edit.Name = "btnTenant_Edit";
-            btnTenant_Edit.Size = new Size(136, 44);
+            btnTenant_Edit.Size = new Size(136, 41);
             btnTenant_Edit.TabIndex = 1;
             btnTenant_Edit.Text = "VIEW/EDIT";
             btnTenant_Edit.TextAlign = ContentAlignment.MiddleLeft;
-            btnTenant_Edit.UseVisualStyleBackColor = true;
+            btnTenant_Edit.UseVisualStyleBackColor = false;
+            btnTenant_Edit.Click += btnTenant_Edit_Click;
             // 
             // pictureBox5
             // 
@@ -484,7 +488,7 @@
             btnEmergency_Edit.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             btnEmergency_Edit.FlatAppearance.BorderSize = 0;
             btnEmergency_Edit.FlatStyle = FlatStyle.Flat;
-            btnEmergency_Edit.Font = new Font("Arial Narrow", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnEmergency_Edit.Font = new Font("Arial Narrow", 13.8F, FontStyle.Bold | FontStyle.Underline);
             btnEmergency_Edit.ForeColor = SystemColors.Control;
             btnEmergency_Edit.Location = new Point(72, 3);
             btnEmergency_Edit.Name = "btnEmergency_Edit";
@@ -493,6 +497,7 @@
             btnEmergency_Edit.Text = "EDIT";
             btnEmergency_Edit.TextAlign = ContentAlignment.MiddleLeft;
             btnEmergency_Edit.UseVisualStyleBackColor = true;
+            btnEmergency_Edit.Click += btnEmergency_Edit_Click;
             // 
             // button3
             // 
@@ -654,7 +659,7 @@
             btnEdit.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             btnEdit.FlatAppearance.BorderSize = 0;
             btnEdit.FlatStyle = FlatStyle.Flat;
-            btnEdit.Font = new Font("Arial Narrow", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnEdit.Font = new Font("Arial Narrow", 13.8F, FontStyle.Bold | FontStyle.Underline);
             btnEdit.ForeColor = SystemColors.Control;
             btnEdit.Location = new Point(72, 3);
             btnEdit.Name = "btnEdit";
@@ -663,6 +668,7 @@
             btnEdit.Text = "EDIT";
             btnEdit.TextAlign = ContentAlignment.MiddleLeft;
             btnEdit.UseVisualStyleBackColor = true;
+            btnEdit.Click += btnEdit_Click;
             // 
             // button5
             // 
@@ -872,11 +878,12 @@
             Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ForeColor = Color.FromArgb(0, 70, 67);
             FormBorderStyle = FormBorderStyle.FixedDialog;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(4, 3, 4, 3);
             MaximizeBox = false;
             Name = "Tenants";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Tenants";
+            Text = "Real Estate Management System - Tenant Management";
             Load += Tenants_Load;
             pnlHeader.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
