@@ -477,6 +477,7 @@
             btnTenants.Text = "TENANTS";
             btnTenants.TextAlign = ContentAlignment.MiddleLeft;
             btnTenants.UseVisualStyleBackColor = true;
+            btnTenants.Click += btnTenants_Click;
             // 
             // pictureBox5
             // 
@@ -700,6 +701,7 @@
             btnViewAllTenants.Size = new Size(76, 49);
             btnViewAllTenants.TabIndex = 5;
             btnViewAllTenants.UseVisualStyleBackColor = true;
+            btnViewAllTenants.Click += btnViewAllTenants_Click;
             // 
             // pnlOverdue
             // 

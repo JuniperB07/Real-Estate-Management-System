@@ -603,6 +603,36 @@ namespace Real_Estate_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap REMS_TENANTS_ACTIVITY {
+            get {
+                object obj = ResourceManager.GetObject("REMS_TENANTS_ACTIVITY", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap REMS_TENANTS_DEFAULT_ID {
+            get {
+                object obj = ResourceManager.GetObject("REMS_TENANTS_DEFAULT_ID", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap REMS_TENANTS_EDIT {
+            get {
+                object obj = ResourceManager.GetObject("REMS_TENANTS_EDIT", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap REMS_TENANTS_LIGHT {
             get {
                 object obj = ResourceManager.GetObject("REMS_TENANTS_LIGHT", resourceCulture);
@@ -626,6 +656,26 @@ namespace Real_Estate_Management_System.Properties {
         internal static System.Drawing.Bitmap REMS_TENANTS_LIST_BG1 {
             get {
                 object obj = ResourceManager.GetObject("REMS_TENANTS_LIST_BG1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap REMS_TENANTS_NEW {
+            get {
+                object obj = ResourceManager.GetObject("REMS_TENANTS_NEW", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap REMS_TENANTS_TENANT_INFORMATION {
+            get {
+                object obj = ResourceManager.GetObject("REMS_TENANTS_TENANT_INFORMATION", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

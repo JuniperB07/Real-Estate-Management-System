@@ -82,5 +82,18 @@ namespace Real_Estate_Management_System
             PB.ShowDialog();
             Show();
         }
+
+        private void btnTenants_Click(object sender, EventArgs e)
+        {
+            Hide();
+            Tenants.Tenants T = new Tenants.Tenants();
+            T.ShowDialog();
+            Show();
+        }
+
+        private void btnViewAllTenants_Click(object sender, EventArgs e)
+        {
+            btnTenants.PerformClick();
+        }
     }
 }

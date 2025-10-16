@@ -1,0 +1,41 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using JunX.NET8.WinForms;
+
+namespace Real_Estate_Management_System.Tenants
+{
+    public partial class Tenants : Form
+    {
+        public Tenants()
+        {
+            InitializeComponent();
+            Forms.SetControlForeColor(Forms.ControlType<Label>.Extract(this), Internals.SandDune);
+            pnlHeader.BackColor = Internals.Cyprus;
+
+            lstTenantsList.BackColor = Internals.BrunswickGreen;
+            lstTenantsList.ForeColor = Internals.SandDune;
+            txtSearchTenant.BackColor = Internals.SandDune;
+            txtSearchTenant.ForeColor = Internals.BrunswickGreen;
+
+            Forms.SetControlBackColor(new Panel[]
+            {
+                pnlSelectTenant,
+                pnlButtons
+            }, Internals.BrunswickGreen);
+
+            pcbIDPhoto.Image = Properties.Resources.REMS_TENANTS_DEFAULT_ID;
+        }
+
+        private void Tenants_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
