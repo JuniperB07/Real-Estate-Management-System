@@ -291,6 +291,7 @@
             btnNew.Text = "NEW TENANT";
             btnNew.TextAlign = ContentAlignment.MiddleLeft;
             btnNew.UseVisualStyleBackColor = true;
+            btnNew.Click += btnNew_Click;
             // 
             // pictureBox9
             // 

@@ -743,6 +743,26 @@ namespace Real_Estate_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap REMS_TENANTS_NEW_EMERGENCY_INFO {
+            get {
+                object obj = ResourceManager.GetObject("REMS_TENANTS_NEW_EMERGENCY_INFO", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap REMS_TENANTS_NEW_TENANCY_INFO {
+            get {
+                object obj = ResourceManager.GetObject("REMS_TENANTS_NEW_TENANCY_INFO", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap REMS_TENANTS_TENANCY_INFORMATION {
             get {
                 object obj = ResourceManager.GetObject("REMS_TENANTS_TENANCY_INFORMATION", resourceCulture);

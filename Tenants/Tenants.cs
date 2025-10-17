@@ -79,5 +79,17 @@ namespace Real_Estate_Management_System.Tenants
             EditTenancy ET = new EditTenancy();
             ET.ShowDialog();
         }
+
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+            New.NewTenant NT = new New.NewTenant();
+            NT.ShowDialog();
+
+            New.NewEmergency NE = new New.NewEmergency();
+            NE.ShowDialog();
+
+            New.NewTenancy NTC = new New.NewTenancy();
+            NTC.ShowDialog();
+        }
     }
 }
