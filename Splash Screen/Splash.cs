@@ -56,18 +56,12 @@ namespace Real_Estate_Management_System
 
         private void pcbLogo_MouseDown(object sender, MouseEventArgs e)
         {
-            dragging = true;
-            dragCursorPoint = Cursor.Position;
-            dragFormPoint = this.Location;
+            pnlBG_MouseDown(sender, e);
         }
 
         private void pcbLogo_MouseMove(object sender, MouseEventArgs e)
         {
-            if (dragging)
-            {
-                Point diff = Point.Subtract(Cursor.Position, new Size(dragCursorPoint));
-                this.Location = Point.Add(dragFormPoint, new Size(diff));
-            }
+            pnlBG_MouseMove(sender, e);
         }
 
         private void pcbLogo_MouseUp(object sender, MouseEventArgs e)
