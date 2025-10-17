@@ -18,6 +18,7 @@ namespace Real_Estate_Management_System
         internal const string SERVER_CONN_STR = "server=localhost; user=root; sslmode=none;";
         internal const string DB_NAME = "dbREMS";
         internal const string PESO = "₱";
+        internal const string DEFAULT_ID_LOCATION = @"Resources\REMS_TENANTS_DEFAULT_ID.png";
 
         internal static readonly Color Cyprus = Utility.HexToRGB("#004643");
         internal static readonly Color SandDune = Utility.HexToRGB("#F0EDE5");

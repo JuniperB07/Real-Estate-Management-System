@@ -53,6 +53,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Configs\Tenants.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Configs\Tenants\TenantsConfig.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="RDLCs\Invoice.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

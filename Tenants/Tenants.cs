@@ -30,13 +30,12 @@ namespace Real_Estate_Management_System.Tenants
                 pnlSelectTenant,
                 pnlButtons
             }, Internals.BrunswickGreen);
-
-            pcbIDPhoto.Image = Properties.Resources.REMS_TENANTS_DEFAULT_ID;
         }
 
         private void Tenants_Load(object sender, EventArgs e)
         {
             lblStatus.Text = "ACTIVE";
+            pcbIDPhoto.ImageLocation = Configs.Tenants.ConfigReader.Default_IDLocation;
         }
 
         private void lblStatus_TextChanged(object sender, EventArgs e)
