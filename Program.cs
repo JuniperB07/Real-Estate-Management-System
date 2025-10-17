@@ -81,7 +81,7 @@ namespace Real_Estate_Management_System
                 SplashHelper.Splash_LoadingText = "Checking RDLCs...";
                 List<string> RDLCs = new List<string>
                 {
-                    @"RDLCs\Invoice.rdlc"
+                    "RDLCs\\Invoice.rdlc"
                 };
                 foreach(string file in RDLCs)
                 {
@@ -90,6 +90,23 @@ namespace Real_Estate_Management_System
                     if(!File.Exists(file))
                     {
                         MessageBox.Show("Missing RDLC file: " + file);
+                        Splash.Close();
+                        Application.Exit();
+                    }
+                }
+
+                SplashHelper.Splash_LoadingText = "Checking configuration files...";
+                List<string> Configs = new List<string>
+                {
+                    "Configs\\Tenants.config"
+                };
+                foreach(string file in Configs)
+                {
+                    await Task.Delay(500);
+
+                    if (!File.Exists(file))
+                    {
+                        MessageBox.Show("Missing configuration file: " + file);
                         Splash.Close();
                         Application.Exit();
                     }
