@@ -90,6 +90,9 @@
             lblRoomNumber = new Label();
             label17 = new Label();
             label16 = new Label();
+            panel5 = new Panel();
+            btnMore = new Button();
+            pictureBox8 = new PictureBox();
             pnlHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             pnlSelectTenant.SuspendLayout();
@@ -111,6 +114,8 @@
             pnlTenancyInformation.SuspendLayout();
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
+            panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             SuspendLayout();
             // 
             // pnlHeader
@@ -195,6 +200,7 @@
             // pnlButtons
             // 
             pnlButtons.BackColor = Color.FromArgb(64, 64, 64);
+            pnlButtons.Controls.Add(panel5);
             pnlButtons.Controls.Add(panel9);
             pnlButtons.Controls.Add(panel2);
             pnlButtons.Controls.Add(panel17);
@@ -240,7 +246,7 @@
             // 
             panel2.Controls.Add(btnViewActivity);
             panel2.Controls.Add(pictureBox3);
-            panel2.Location = new Point(6, 62);
+            panel2.Location = new Point(6, 52);
             panel2.Name = "panel2";
             panel2.Size = new Size(300, 50);
             panel2.TabIndex = 9;
@@ -273,7 +279,7 @@
             // 
             panel17.Controls.Add(btnNew);
             panel17.Controls.Add(pictureBox9);
-            panel17.Location = new Point(6, 6);
+            panel17.Location = new Point(6, 2);
             panel17.Name = "panel17";
             panel17.Size = new Size(300, 50);
             panel17.TabIndex = 8;
@@ -864,6 +870,39 @@
             label16.Text = "TENANCY INFORMATION";
             label16.TextAlign = ContentAlignment.MiddleLeft;
             // 
+            // panel5
+            // 
+            panel5.Controls.Add(btnMore);
+            panel5.Controls.Add(pictureBox8);
+            panel5.Location = new Point(6, 103);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(300, 50);
+            panel5.TabIndex = 10;
+            // 
+            // btnMore
+            // 
+            btnMore.FlatAppearance.BorderSize = 0;
+            btnMore.FlatStyle = FlatStyle.Flat;
+            btnMore.Font = new Font("Arial Narrow", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnMore.ForeColor = SystemColors.Control;
+            btnMore.Location = new Point(72, 3);
+            btnMore.Name = "btnMore";
+            btnMore.Size = new Size(225, 44);
+            btnMore.TabIndex = 1;
+            btnMore.Text = "MORE ACTIONS";
+            btnMore.TextAlign = ContentAlignment.MiddleLeft;
+            btnMore.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox8
+            // 
+            pictureBox8.Image = Properties.Resources.REMS_MORE_ACTIONS_LIGHT;
+            pictureBox8.Location = new Point(10, 3);
+            pictureBox8.Name = "pictureBox8";
+            pictureBox8.Size = new Size(56, 44);
+            pictureBox8.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox8.TabIndex = 0;
+            pictureBox8.TabStop = false;
+            // 
             // Tenants
             // 
             AutoScaleDimensions = new SizeF(11F, 23F);
@@ -908,6 +947,8 @@
             pnlTenancyInformation.ResumeLayout(false);
             panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
+            panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
             ResumeLayout(false);
         }
 
@@ -974,5 +1015,8 @@
         private Label label28;
         private Label lblStartDate;
         private Label label26;
+        private Panel panel5;
+        private Button btnMore;
+        private PictureBox pictureBox8;
     }
 }
