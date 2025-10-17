@@ -7,7 +7,7 @@ using System.Xml.Linq;
 
 namespace Real_Estate_Management_System.Configs.Tenants
 {
-    internal static partial class ConfigReader
+    internal static partial class DefaultValues
     {
         private static string configPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Configs\\Tenants.config");
         private static XDocument doc;

@@ -35,7 +35,7 @@ namespace Real_Estate_Management_System.Tenants
         private void Tenants_Load(object sender, EventArgs e)
         {
             lblStatus.Text = "ACTIVE";
-            pcbIDPhoto.ImageLocation = Configs.Tenants.ConfigReader.Default_IDLocation;
+            pcbIDPhoto.ImageLocation = Configs.Tenants.DefaultValues.Default_IDLocation;
         }
 
         private void lblStatus_TextChanged(object sender, EventArgs e)
