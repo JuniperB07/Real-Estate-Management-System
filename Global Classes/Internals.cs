@@ -25,6 +25,7 @@ namespace Real_Estate_Management_System
         internal static readonly Color Dive = Utility.HexToRGB("#1F3F74"); //Water Theme
         internal static readonly Color DijonYellow = Utility.HexToRGB("#C49102"); //Electricity Theme
         internal static readonly Color RoyalPurple = Utility.HexToRGB("#643B9F"); //Rental Theme
+        internal static readonly Color Cyprus_Active = Utility.HexToRGB("#00b9b1");
         internal static readonly string LogPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "REMSLog.csv");
 
 

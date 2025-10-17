@@ -91,5 +91,12 @@ namespace Real_Estate_Management_System.Tenants
             New.NewTenancy NTC = new New.NewTenancy();
             NTC.ShowDialog();
         }
+
+        private void btnViewActivity_Click(object sender, EventArgs e)
+        {
+            Activity.ViewActivity VA = new Activity.ViewActivity(this);
+            VA.ShowDialog();
+
+        }
     }
 }
