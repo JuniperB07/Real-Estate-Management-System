@@ -31,6 +31,7 @@ namespace Real_Estate_Management_System
             Splash.Shown += async (s, e) =>
             {
                 SplashHelper.Splash_LoadingText = "Initializing System Startup Process...";
+                SplashHelper.IsClosedPrematurely = true;
                 await Task.Delay(2000);
 
                 SplashHelper.Splash_LoadingText = "Checking Log file...";
@@ -112,10 +113,17 @@ namespace Real_Estate_Management_System
                 }
 
                 SplashHelper.Splash_LoadingText = "Finalizing initializations...";
+                SplashHelper.IsClosedPrematurely = false;
                 await Task.Delay(2000);
                 Splash.Close();
                 Internals.Forms["Dashboard"].ShowDialog();
                 Application.Exit();
+            };
+
+            Splash.FormClosed += async (s, e) =>
+            {
+                if (SplashHelper.IsClosedPrematurely)
+                    Application.Exit();
             };
 
             Splash.Show();

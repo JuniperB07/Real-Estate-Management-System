@@ -9,5 +9,6 @@ namespace Real_Estate_Management_System.Splash_Screen
     internal static class SplashHelper
     {
         internal static string Splash_LoadingText { get; set; }
+        internal static bool IsClosedPrematurely { get; set; }
     }
 }
