@@ -326,6 +326,7 @@
             btnRoom_New.Text = "NEW";
             btnRoom_New.TextAlign = ContentAlignment.MiddleLeft;
             btnRoom_New.UseVisualStyleBackColor = false;
+            btnRoom_New.Click += btnRoom_New_Click;
             // 
             // pictureBox2
             // 

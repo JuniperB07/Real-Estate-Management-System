@@ -93,5 +93,16 @@ namespace Real_Estate_Management_System.Rooms
             GC.Collect();
             GC.WaitForPendingFinalizers();
         }
+
+        private void btnRoom_New_Click(object sender, EventArgs e)
+        {
+            if (RMHelper.BuildingID == -1)
+                return;
+
+            NewRoom NR = new NewRoom();
+            NR.ShowDialog();
+            ResetRoomsPanel();
+            RefreshRoomsList();
+        }
     }
 }
