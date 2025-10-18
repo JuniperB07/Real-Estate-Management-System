@@ -91,6 +91,18 @@
 		<Compile Update="Dialogs\MSGBox_OK.IconSetter.cs">
 			<DependentUpon>MSGBox_OK.cs</DependentUpon>
 		</Compile>
+		
+		<Compile Update="Rooms\RoomManagement.Methods.cs">
+			<DependentUpon>RoomManagement.cs</DependentUpon>
+		</Compile>
+
+		<Compile Update="Tenants\New\NewEmergency.Methods.cs">
+			<DependentUpon>NewEmergency.cs</DependentUpon>
+		</Compile>
+		
+		<Compile Update="Tenants\New\NewTenant.Methods.cs">
+			<DependentUpon>NewTenant.cs</DependentUpon>
+		</Compile>
 	</ItemGroup>
 
 </Project>
