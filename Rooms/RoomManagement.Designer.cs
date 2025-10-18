@@ -44,7 +44,7 @@
             label2 = new Label();
             pnlRoomInfo = new Panel();
             panel2 = new Panel();
-            button1 = new Button();
+            btnEdit = new Button();
             pictureBox4 = new PictureBox();
             lstRooms = new ListBox();
             panel1 = new Panel();
@@ -257,27 +257,28 @@
             // panel2
             // 
             panel2.BackColor = Color.Transparent;
-            panel2.Controls.Add(button1);
+            panel2.Controls.Add(btnEdit);
             panel2.Controls.Add(pictureBox4);
             panel2.Location = new Point(311, 168);
             panel2.Name = "panel2";
             panel2.Size = new Size(215, 50);
             panel2.TabIndex = 14;
             // 
-            // button1
+            // btnEdit
             // 
-            button1.BackColor = Color.FromArgb(236, 98, 6);
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Arial Narrow", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = SystemColors.Control;
-            button1.Location = new Point(75, 3);
-            button1.Name = "button1";
-            button1.Size = new Size(137, 44);
-            button1.TabIndex = 1;
-            button1.Text = "EDIT";
-            button1.TextAlign = ContentAlignment.MiddleLeft;
-            button1.UseVisualStyleBackColor = false;
+            btnEdit.BackColor = Color.FromArgb(236, 98, 6);
+            btnEdit.FlatAppearance.BorderSize = 0;
+            btnEdit.FlatStyle = FlatStyle.Flat;
+            btnEdit.Font = new Font("Arial Narrow", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnEdit.ForeColor = SystemColors.Control;
+            btnEdit.Location = new Point(75, 3);
+            btnEdit.Name = "btnEdit";
+            btnEdit.Size = new Size(137, 44);
+            btnEdit.TabIndex = 1;
+            btnEdit.Text = "EDIT";
+            btnEdit.TextAlign = ContentAlignment.MiddleLeft;
+            btnEdit.UseVisualStyleBackColor = false;
+            btnEdit.Click += btnEdit_Click;
             // 
             // pictureBox4
             // 
@@ -483,7 +484,7 @@
         private Label label7;
         private Label label6;
         private Panel panel2;
-        private Button button1;
+        private Button btnEdit;
         private PictureBox pictureBox4;
     }
 }
