@@ -16,5 +16,10 @@ namespace Real_Estate_Management_System.Tenants.New
         {
             InitializeComponent();
         }
+
+        private void NewTenancy_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

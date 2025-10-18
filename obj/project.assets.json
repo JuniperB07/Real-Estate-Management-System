@@ -939,6 +939,16 @@
         "runtime": {
           "lib/net8.0/ZstdSharp.dll": {}
         }
+      },
+      "REMS/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/REMS.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/REMS.dll": {}
+        }
       }
     }
   },
@@ -3246,11 +3256,17 @@
         "zstdsharp.port.0.8.5.nupkg.sha512",
         "zstdsharp.port.nuspec"
       ]
+    },
+    "REMS/1.0.0": {
+      "type": "project",
+      "path": "../REMS/REMS.csproj",
+      "msbuildProject": "../REMS/REMS.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0-windows7.0": [
       "MySql.Data >= 9.4.0",
+      "REMS >= 1.0.0",
       "ReportViewerCore.WinForms >= 15.1.26",
       "WinForms.DataVisualization >= 1.10.0"
     ]
@@ -3286,7 +3302,11 @@
       "frameworks": {
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\USER\\Documents\\Visual Studio\\C#\\REMS\\REMS.csproj": {
+              "projectPath": "C:\\Users\\USER\\Documents\\Visual Studio\\C#\\REMS\\REMS.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

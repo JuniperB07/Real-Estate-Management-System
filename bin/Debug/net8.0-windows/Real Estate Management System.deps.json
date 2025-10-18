@@ -9,6 +9,7 @@
       "Real Estate Management System/1.0.0": {
         "dependencies": {
           "MySql.Data": "9.4.0",
+          "REMS": "1.0.0",
           "ReportViewerCore.WinForms": "15.1.26",
           "WinForms.DataVisualization": "1.10.0",
           "JunX.NET": "1.0.0.0",
@@ -447,6 +448,14 @@
           }
         }
       },
+      "REMS/1.0.0": {
+        "runtime": {
+          "REMS.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "JunX.NET/1.0.0.0": {
         "runtime": {
           "JunX.NET.dll": {
@@ -610,6 +619,11 @@
       "sha512": "sha512-TR4j17WeVSEb3ncgL2NqlXEqcy04I+Kk9CaebNDplUeL8XOgjkZ7fP4Wg4grBdPLIqsV86p2QaXTkZoRMVOsew==",
       "path": "zstdsharp.port/0.8.5",
       "hashPath": "zstdsharp.port.0.8.5.nupkg.sha512"
+    },
+    "REMS/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "JunX.NET/1.0.0.0": {
       "type": "reference",

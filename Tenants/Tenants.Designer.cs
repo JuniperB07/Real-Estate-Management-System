@@ -37,13 +37,13 @@
             lstTenantsList = new ListBox();
             pictureBox2 = new PictureBox();
             pnlButtons = new Panel();
-            panel5 = new Panel();
+            pnlMoreActions = new Panel();
             btnMore = new Button();
             pictureBox8 = new PictureBox();
             panel9 = new Panel();
             btnReset = new Button();
             pictureBox6 = new PictureBox();
-            panel2 = new Panel();
+            pnlViewActivity = new Panel();
             btnViewActivity = new Button();
             pictureBox3 = new PictureBox();
             panel17 = new Panel();
@@ -98,11 +98,11 @@
             pnlSelectTenant.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             pnlButtons.SuspendLayout();
-            panel5.SuspendLayout();
+            pnlMoreActions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
-            panel2.SuspendLayout();
+            pnlViewActivity.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             panel17.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
@@ -200,23 +200,23 @@
             // pnlButtons
             // 
             pnlButtons.BackColor = Color.FromArgb(64, 64, 64);
-            pnlButtons.Controls.Add(panel5);
+            pnlButtons.Controls.Add(pnlMoreActions);
             pnlButtons.Controls.Add(panel9);
-            pnlButtons.Controls.Add(panel2);
+            pnlButtons.Controls.Add(pnlViewActivity);
             pnlButtons.Controls.Add(panel17);
             pnlButtons.Location = new Point(354, 166);
             pnlButtons.Name = "pnlButtons";
             pnlButtons.Size = new Size(311, 207);
             pnlButtons.TabIndex = 4;
             // 
-            // panel5
+            // pnlMoreActions
             // 
-            panel5.Controls.Add(btnMore);
-            panel5.Controls.Add(pictureBox8);
-            panel5.Location = new Point(6, 103);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(300, 50);
-            panel5.TabIndex = 10;
+            pnlMoreActions.Controls.Add(btnMore);
+            pnlMoreActions.Controls.Add(pictureBox8);
+            pnlMoreActions.Location = new Point(6, 103);
+            pnlMoreActions.Name = "pnlMoreActions";
+            pnlMoreActions.Size = new Size(300, 50);
+            pnlMoreActions.TabIndex = 10;
             // 
             // btnMore
             // 
@@ -275,14 +275,14 @@
             pictureBox6.TabIndex = 0;
             pictureBox6.TabStop = false;
             // 
-            // panel2
+            // pnlViewActivity
             // 
-            panel2.Controls.Add(btnViewActivity);
-            panel2.Controls.Add(pictureBox3);
-            panel2.Location = new Point(6, 52);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(300, 50);
-            panel2.TabIndex = 9;
+            pnlViewActivity.Controls.Add(btnViewActivity);
+            pnlViewActivity.Controls.Add(pictureBox3);
+            pnlViewActivity.Location = new Point(6, 52);
+            pnlViewActivity.Name = "pnlViewActivity";
+            pnlViewActivity.Size = new Size(300, 50);
+            pnlViewActivity.TabIndex = 9;
             // 
             // btnViewActivity
             // 
@@ -932,11 +932,11 @@
             pnlSelectTenant.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             pnlButtons.ResumeLayout(false);
-            panel5.ResumeLayout(false);
+            pnlMoreActions.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
             panel9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
-            panel2.ResumeLayout(false);
+            pnlViewActivity.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             panel17.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
@@ -963,7 +963,7 @@
         private PictureBox pictureBox2;
         private Label label1;
         private Panel pnlButtons;
-        private Panel panel2;
+        private Panel pnlViewActivity;
         private Button btnViewActivity;
         private PictureBox pictureBox3;
         private Panel panel17;
@@ -1016,7 +1016,7 @@
         private Label label28;
         private Label lblStartDate;
         private Label label26;
-        private Panel panel5;
+        private Panel pnlMoreActions;
         private Button btnMore;
         private PictureBox pictureBox8;
     }

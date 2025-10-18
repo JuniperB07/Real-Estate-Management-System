@@ -34,24 +34,25 @@
             pictureBox1 = new PictureBox();
             pcbIDPhoto = new PictureBox();
             label2 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            txtFirstName = new TextBox();
+            txtLastName = new TextBox();
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
-            dateTimePicker1 = new DateTimePicker();
+            dtpDateOfBirth = new DateTimePicker();
             label6 = new Label();
-            textBox3 = new TextBox();
+            txtPhone = new TextBox();
             label7 = new Label();
-            comboBox1 = new ComboBox();
+            cmbValidID = new ComboBox();
             label8 = new Label();
-            textBox4 = new TextBox();
+            txtIDNumber = new TextBox();
             panel2 = new Panel();
-            button2 = new Button();
+            btnUploadID = new Button();
             button1 = new Button();
             btnTenant_Edit = new Button();
             pictureBox5 = new PictureBox();
-            button3 = new Button();
+            btnSave = new Button();
+            ofdUploadID = new OpenFileDialog();
             pnlHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pcbIDPhoto).BeginInit();
@@ -111,25 +112,25 @@
             label2.TabIndex = 2;
             label2.Text = "Tenant Name:";
             // 
-            // textBox1
+            // txtFirstName
             // 
-            textBox1.BorderStyle = BorderStyle.FixedSingle;
-            textBox1.Font = new Font("Arial", 13.8F);
-            textBox1.ForeColor = Color.FromArgb(0, 70, 67);
-            textBox1.Location = new Point(306, 210);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(200, 34);
-            textBox1.TabIndex = 3;
+            txtFirstName.BorderStyle = BorderStyle.FixedSingle;
+            txtFirstName.Font = new Font("Arial", 13.8F);
+            txtFirstName.ForeColor = Color.FromArgb(0, 70, 67);
+            txtFirstName.Location = new Point(306, 210);
+            txtFirstName.Name = "txtFirstName";
+            txtFirstName.Size = new Size(200, 34);
+            txtFirstName.TabIndex = 3;
             // 
-            // textBox2
+            // txtLastName
             // 
-            textBox2.BorderStyle = BorderStyle.FixedSingle;
-            textBox2.Font = new Font("Arial", 13.8F);
-            textBox2.ForeColor = Color.FromArgb(0, 70, 67);
-            textBox2.Location = new Point(512, 210);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(200, 34);
-            textBox2.TabIndex = 4;
+            txtLastName.BorderStyle = BorderStyle.FixedSingle;
+            txtLastName.Font = new Font("Arial", 13.8F);
+            txtLastName.ForeColor = Color.FromArgb(0, 70, 67);
+            txtLastName.Location = new Point(512, 210);
+            txtLastName.Name = "txtLastName";
+            txtLastName.Size = new Size(200, 34);
+            txtLastName.TabIndex = 4;
             // 
             // label3
             // 
@@ -161,14 +162,14 @@
             label5.Text = "Date Of Birth:";
             label5.TextAlign = ContentAlignment.TopRight;
             // 
-            // dateTimePicker1
+            // dtpDateOfBirth
             // 
-            dateTimePicker1.CustomFormat = "MMMM d, yyyy";
-            dateTimePicker1.Format = DateTimePickerFormat.Custom;
-            dateTimePicker1.Location = new Point(470, 287);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(242, 30);
-            dateTimePicker1.TabIndex = 8;
+            dtpDateOfBirth.CustomFormat = "MMMM d, yyyy";
+            dtpDateOfBirth.Format = DateTimePickerFormat.Custom;
+            dtpDateOfBirth.Location = new Point(470, 287);
+            dtpDateOfBirth.Name = "dtpDateOfBirth";
+            dtpDateOfBirth.Size = new Size(242, 30);
+            dtpDateOfBirth.TabIndex = 8;
             // 
             // label6
             // 
@@ -180,14 +181,14 @@
             label6.Text = "Phone/Email:";
             label6.TextAlign = ContentAlignment.TopRight;
             // 
-            // textBox3
+            // txtPhone
             // 
-            textBox3.BorderStyle = BorderStyle.FixedSingle;
-            textBox3.ForeColor = Color.FromArgb(0, 70, 67);
-            textBox3.Location = new Point(470, 341);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(242, 30);
-            textBox3.TabIndex = 10;
+            txtPhone.BorderStyle = BorderStyle.FixedSingle;
+            txtPhone.ForeColor = Color.FromArgb(0, 70, 67);
+            txtPhone.Location = new Point(470, 341);
+            txtPhone.Name = "txtPhone";
+            txtPhone.Size = new Size(242, 30);
+            txtPhone.TabIndex = 10;
             // 
             // label7
             // 
@@ -199,15 +200,16 @@
             label7.Text = "Valid ID:";
             label7.TextAlign = ContentAlignment.TopRight;
             // 
-            // comboBox1
+            // cmbValidID
             // 
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox1.ForeColor = Color.FromArgb(0, 70, 67);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(176, 396);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(288, 31);
-            comboBox1.TabIndex = 12;
+            cmbValidID.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbValidID.ForeColor = Color.FromArgb(0, 70, 67);
+            cmbValidID.FormattingEnabled = true;
+            cmbValidID.Location = new Point(176, 396);
+            cmbValidID.Name = "cmbValidID";
+            cmbValidID.Size = new Size(288, 31);
+            cmbValidID.TabIndex = 12;
+            cmbValidID.SelectedIndexChanged += cmbValidID_SelectedIndexChanged;
             // 
             // label8
             // 
@@ -219,18 +221,18 @@
             label8.Text = "ID Number:";
             label8.TextAlign = ContentAlignment.TopRight;
             // 
-            // textBox4
+            // txtIDNumber
             // 
-            textBox4.BorderStyle = BorderStyle.FixedSingle;
-            textBox4.ForeColor = Color.FromArgb(0, 70, 67);
-            textBox4.Location = new Point(176, 444);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(288, 30);
-            textBox4.TabIndex = 14;
+            txtIDNumber.BorderStyle = BorderStyle.FixedSingle;
+            txtIDNumber.ForeColor = Color.FromArgb(0, 70, 67);
+            txtIDNumber.Location = new Point(176, 444);
+            txtIDNumber.Name = "txtIDNumber";
+            txtIDNumber.Size = new Size(288, 30);
+            txtIDNumber.TabIndex = 14;
             // 
             // panel2
             // 
-            panel2.Controls.Add(button2);
+            panel2.Controls.Add(btnUploadID);
             panel2.Controls.Add(button1);
             panel2.Controls.Add(btnTenant_Edit);
             panel2.Controls.Add(pictureBox5);
@@ -239,20 +241,21 @@
             panel2.Size = new Size(242, 50);
             panel2.TabIndex = 19;
             // 
-            // button2
+            // btnUploadID
             // 
-            button2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Arial Narrow", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.ForeColor = Color.FromArgb(0, 70, 67);
-            button2.Location = new Point(72, 3);
-            button2.Name = "button2";
-            button2.Size = new Size(166, 44);
-            button2.TabIndex = 20;
-            button2.Text = "UPLOAD ID";
-            button2.TextAlign = ContentAlignment.MiddleLeft;
-            button2.UseVisualStyleBackColor = true;
+            btnUploadID.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            btnUploadID.FlatAppearance.BorderSize = 0;
+            btnUploadID.FlatStyle = FlatStyle.Flat;
+            btnUploadID.Font = new Font("Arial Narrow", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnUploadID.ForeColor = Color.FromArgb(0, 70, 67);
+            btnUploadID.Location = new Point(72, 3);
+            btnUploadID.Name = "btnUploadID";
+            btnUploadID.Size = new Size(166, 44);
+            btnUploadID.TabIndex = 20;
+            btnUploadID.Text = "UPLOAD ID";
+            btnUploadID.TextAlign = ContentAlignment.MiddleLeft;
+            btnUploadID.UseVisualStyleBackColor = true;
+            btnUploadID.Click += btnUploadID_Click;
             // 
             // button1
             // 
@@ -294,20 +297,21 @@
             pictureBox5.TabIndex = 0;
             pictureBox5.TabStop = false;
             // 
-            // button3
+            // btnSave
             // 
-            button3.Anchor = AnchorStyles.Bottom;
-            button3.FlatAppearance.BorderColor = Color.FromArgb(0, 70, 67);
-            button3.FlatAppearance.BorderSize = 2;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Arial Narrow", 13.8F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
-            button3.ForeColor = Color.FromArgb(0, 70, 67);
-            button3.Location = new Point(259, 490);
-            button3.Name = "button3";
-            button3.Size = new Size(203, 44);
-            button3.TabIndex = 20;
-            button3.Text = "SAVE CHANGES";
-            button3.UseVisualStyleBackColor = true;
+            btnSave.Anchor = AnchorStyles.Bottom;
+            btnSave.FlatAppearance.BorderColor = Color.FromArgb(0, 70, 67);
+            btnSave.FlatAppearance.BorderSize = 2;
+            btnSave.FlatStyle = FlatStyle.Flat;
+            btnSave.Font = new Font("Arial Narrow", 13.8F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
+            btnSave.ForeColor = Color.FromArgb(0, 70, 67);
+            btnSave.Location = new Point(259, 490);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(203, 44);
+            btnSave.TabIndex = 20;
+            btnSave.Text = "SAVE CHANGES";
+            btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click;
             // 
             // NewTenant
             // 
@@ -315,20 +319,20 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(240, 237, 229);
             ClientSize = new Size(720, 546);
-            Controls.Add(button3);
+            Controls.Add(btnSave);
             Controls.Add(panel2);
-            Controls.Add(textBox4);
+            Controls.Add(txtIDNumber);
             Controls.Add(label8);
-            Controls.Add(comboBox1);
+            Controls.Add(cmbValidID);
             Controls.Add(label7);
-            Controls.Add(textBox3);
+            Controls.Add(txtPhone);
             Controls.Add(label6);
-            Controls.Add(dateTimePicker1);
+            Controls.Add(dtpDateOfBirth);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(txtLastName);
+            Controls.Add(txtFirstName);
             Controls.Add(label2);
             Controls.Add(pcbIDPhoto);
             Controls.Add(pnlHeader);
@@ -358,23 +362,24 @@
         private Label label1;
         private PictureBox pcbIDPhoto;
         private Label label2;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox txtFirstName;
+        private TextBox txtLastName;
         private Label label3;
         private Label label4;
         private Label label5;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dtpDateOfBirth;
         private Label label6;
-        private TextBox textBox3;
+        private TextBox txtPhone;
         private Label label7;
-        private ComboBox comboBox1;
+        private ComboBox cmbValidID;
         private Label label8;
-        private TextBox textBox4;
+        private TextBox txtIDNumber;
         private Panel panel2;
         private Button button1;
         private Button btnTenant_Edit;
         private PictureBox pictureBox5;
-        private Button button2;
-        private Button button3;
+        private Button btnUploadID;
+        private Button btnSave;
+        private OpenFileDialog ofdUploadID;
     }
 }

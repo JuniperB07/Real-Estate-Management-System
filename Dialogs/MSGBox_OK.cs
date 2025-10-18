@@ -48,6 +48,7 @@ namespace Real_Estate_Management_System.Dialogs
 
         private void MSGBox_OK_FormClosing(object sender, FormClosingEventArgs e)
         {
+            Dialogs.Result = DialogResult.OK;
             GC.Collect();
             GC.WaitForPendingFinalizers();
         }

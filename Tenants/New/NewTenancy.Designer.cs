@@ -257,6 +257,7 @@
             Name = "NewTenancy";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Real Estate Management System - New Tenant: Tenancy Information";
+            Load += NewTenancy_Load;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);

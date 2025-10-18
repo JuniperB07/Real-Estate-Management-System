@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>REMS</name>
+    </assembly>
+    <members>
+        <member name="T:REMS.Tenants.TenantInformation">
+            <summary>
+            Represents a tenant's personal and identification details within the BBH Records Keeping System.
+            Encapsulates name, contact, birthdate, and valid ID metadata for validation and comparison operations.
+            </summary>
+        </member>
+        <member name="P:REMS.Tenants.TenantInformation.FirstName">
+            <summary>
+            Gets or sets the tenant's first name used for identification and display purposes.
+            </summary>
+        </member>
+        <member name="P:REMS.Tenants.TenantInformation.LastName">
+            <summary>
+            Gets or sets the tenant's last name used for identification and display purposes.
+            </summary>
+        </member>
+        <member name="P:REMS.Tenants.TenantInformation.FullName">
+            <summary>
+            Gets the tenant's full name in the format "LastName, FirstName" for display and sorting purposes.
+            </summary>
+        </member>
+        <member name="P:REMS.Tenants.TenantInformation.DateOfBirth">
+            <summary>
+            Gets or sets the tenant's date of birth used for age verification and identity validation.
+            </summary>
+        </member>
+        <member name="P:REMS.Tenants.TenantInformation.Phone">
+            <summary>
+            Gets or sets the tenant's contact phone number used for communication and verification.
+            </summary>
+        </member>
+        <member name="P:REMS.Tenants.TenantInformation.ValidID">
+            <summary>
+            Gets or sets the tenant's selected valid ID type used for identity verification and classification.
+            </summary>
+        </member>
+        <member name="P:REMS.Tenants.TenantInformation.IDNumber">
+            <summary>
+            Gets or sets the tenant's identification number associated with the selected valid ID type.
+            </summary>
+        </member>
+        <member name="P:REMS.Tenants.TenantInformation.IDLocation">
+            <summary>
+            Gets or sets the file path or resource location of the tenant's valid ID image used for verification.
+            </summary>
+        </member>
+        <member name="M:REMS.Tenants.TenantInformation.#ctor(System.String,System.String,System.DateTime,System.String,System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:REMS.Tenants.TenantInformation"/> struct with optional tenant metadata.
+            Converts the valid ID string to its corresponding <see cref="T:REMS.Tenants.ValidIDs"/> enumeration value.
+            </summary>
+        </member>
+        <member name="M:REMS.Tenants.TenantInformation.IsValid">
+            <summary>
+            Determines whether all tenant fields are meaningfully initialized and suitable for identity validation.
+            </summary>
+        </member>
+        <member name="M:REMS.Tenants.TenantInformation.op_Equality(REMS.Tenants.TenantInformation,REMS.Tenants.TenantInformation)">
+            <summary>
+            Determines whether two <see cref="T:REMS.Tenants.TenantInformation"/> instances are equal by comparing all validated fields.
+            Throws an exception if either operand is missing required data.
+            </summary>
+        </member>
+        <member name="M:REMS.Tenants.TenantInformation.op_Inequality(REMS.Tenants.TenantInformation,REMS.Tenants.TenantInformation)">
+            <summary>
+            Determines whether two <see cref="T:REMS.Tenants.TenantInformation"/> instances are not equal by comparing all validated fields.
+            Relies on the equality operator to perform the comparison.
+            </summary>
+        </member>
+    </members>
+</doc>

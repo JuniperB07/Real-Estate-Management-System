@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using JunX.NET8.WinForms;
 using Real_Estate_Management_System.Tenants.Edit;
+using Real_Estate_Management_System.Tenants.New;
 
 namespace Real_Estate_Management_System.Tenants
 {
@@ -81,14 +82,25 @@ namespace Real_Estate_Management_System.Tenants
 
         private void btnNew_Click(object sender, EventArgs e)
         {
+            NewTenantHelper.NT = new REMS.Tenants.NewTenant(Internals.DBC);
+
             New.NewTenant NT = new New.NewTenant();
             NT.ShowDialog();
+
+            if (!NewTenantHelper.AllowProceed)
+                return;
 
             New.NewEmergency NE = new New.NewEmergency();
             NE.ShowDialog();
 
+            if (!NewTenantHelper.AllowProceed)
+                return;
+
             New.NewTenancy NTC = new New.NewTenancy();
             NTC.ShowDialog();
+
+            if (!NewTenantHelper.AllowProceed)
+                return;
         }
 
         private void btnViewActivity_Click(object sender, EventArgs e)
