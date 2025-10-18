@@ -63,6 +63,16 @@ namespace Real_Estate_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap REMS_ADD_ICON {
+            get {
+                object obj = ResourceManager.GetObject("REMS_ADD_ICON", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap REMS_BILLING_BILL_PREVIEW {
             get {
                 object obj = ResourceManager.GetObject("REMS_BILLING_BILL_PREVIEW", resourceCulture);
@@ -236,6 +246,16 @@ namespace Real_Estate_Management_System.Properties {
         internal static System.Drawing.Bitmap REMS_DASHBOARD_UNPAIDS {
             get {
                 object obj = ResourceManager.GetObject("REMS_DASHBOARD_UNPAIDS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap REMS_EDIT_ICON {
+            get {
+                object obj = ResourceManager.GetObject("REMS_EDIT_ICON", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -583,9 +603,29 @@ namespace Real_Estate_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap REMS_ROOMS_BUILDING {
+            get {
+                object obj = ResourceManager.GetObject("REMS_ROOMS_BUILDING", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap REMS_ROOMS_LIGHT {
             get {
                 object obj = ResourceManager.GetObject("REMS_ROOMS_LIGHT", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap REMS_ROOMS_ROOM {
+            get {
+                object obj = ResourceManager.GetObject("REMS_ROOMS_ROOM", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

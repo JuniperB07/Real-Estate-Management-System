@@ -134,7 +134,7 @@
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Arial", 28.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = SystemColors.ControlLightLight;
+            label1.ForeColor = Color.FromArgb(240, 237, 229);
             label1.Location = new Point(157, 2);
             label1.Name = "label1";
             label1.Size = new Size(1415, 161);

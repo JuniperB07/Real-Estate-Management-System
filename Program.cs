@@ -49,6 +49,7 @@ namespace Real_Estate_Management_System
 
                 if (!DBConnect.ConfigGenerator.ConfigExists())
                 {
+                    SplashHelper.Splash_LoadingText = "Creating DB Config file...";
                     DBConnect.ConfigGenerator.GenerateDBConfig(Internals.CONN_STR);
                     await Task.Delay(500);
                 }
@@ -120,7 +121,8 @@ namespace Real_Estate_Management_System
                     new Login.Login(),
                     new Billing.NewBill(),
                     new Payments.PayBill(),
-                    new Tenants.Tenants()
+                    new Tenants.Tenants(),
+                    new Rooms.RoomManagement()
                 };
                 Internals.Forms = preLoadedForms.ToDictionary(f => f.Name, f => f);
                 foreach(Form form in Internals.Forms.Values)

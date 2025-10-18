@@ -91,5 +91,13 @@ namespace Real_Estate_Management_System
         {
             btnTenants.PerformClick();
         }
+
+        private void btnRooms_Click(object sender, EventArgs e)
+        {
+            Hide();
+            Rooms.RoomManagement RM = new Rooms.RoomManagement();
+            RM.ShowDialog();
+            Show();
+        }
     }
 }

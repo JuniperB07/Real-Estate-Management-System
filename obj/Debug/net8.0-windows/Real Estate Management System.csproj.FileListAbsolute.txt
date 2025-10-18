@@ -232,3 +232,9 @@ C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug
 C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\REMS.dll
 C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\REMS.pdb
 C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\REMS.xml
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_ROOMS_BUILDING.png
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_ROOMS_ROOM.png
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\obj\Debug\net8.0-windows\Real_Estate_Management_System.Rooms.RoomManagement.resources
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_ADD_ICON.png
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\obj\Debug\net8.0-windows\Real_Estate_Management_System.Rooms.NewBuilding.resources
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Resources\REMS_EDIT_ICON.png

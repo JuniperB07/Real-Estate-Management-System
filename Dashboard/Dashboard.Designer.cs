@@ -444,6 +444,7 @@
             btnRooms.Text = "ROOMS";
             btnRooms.TextAlign = ContentAlignment.MiddleLeft;
             btnRooms.UseVisualStyleBackColor = true;
+            btnRooms.Click += btnRooms_Click;
             // 
             // pictureBox6
             // 

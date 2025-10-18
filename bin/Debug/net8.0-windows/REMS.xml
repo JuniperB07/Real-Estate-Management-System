@@ -6,7 +6,7 @@
     <members>
         <member name="T:REMS.Tenants.TenantInformation">
             <summary>
-            Represents a tenant's personal and identification details within the BBH Records Keeping System.
+            Represents a tenant's personal and identification details.
             Encapsulates name, contact, birthdate, and valid ID metadata for validation and comparison operations.
             </summary>
         </member>
@@ -63,15 +63,162 @@
         </member>
         <member name="M:REMS.Tenants.TenantInformation.op_Equality(REMS.Tenants.TenantInformation,REMS.Tenants.TenantInformation)">
             <summary>
-            Determines whether two <see cref="T:REMS.Tenants.TenantInformation"/> instances are equal by comparing all validated fields.
-            Throws an exception if either operand is missing required data.
+            Compares two <see cref="T:REMS.Tenants.TenantInformation"/> instances for equality by evaluating all validated fields.
+            Returns <c>true</c> only if both instances are valid and all corresponding properties match.
+            Returns <c>false</c> if either instance fails validation or any field differs.
             </summary>
+            <param name="Left">The first <see cref="T:REMS.Tenants.TenantInformation"/> instance to compare.</param>
+            <param name="Right">The second <see cref="T:REMS.Tenants.TenantInformation"/> instance to compare.</param>
+            <returns><c>true</c> if both instances are valid and equal; otherwise, <c>false</c>.</returns>
         </member>
         <member name="M:REMS.Tenants.TenantInformation.op_Inequality(REMS.Tenants.TenantInformation,REMS.Tenants.TenantInformation)">
             <summary>
             Determines whether two <see cref="T:REMS.Tenants.TenantInformation"/> instances are not equal by comparing all validated fields.
             Relies on the equality operator to perform the comparison.
             </summary>
+        </member>
+        <member name="T:REMS.Tenants.EmergencyInformation">
+            <summary>
+            Represents emergency contact details associated with a tenant.
+            Includes contact name, phone number, relationship, and address for use in urgent situations.
+            </summary>
+        </member>
+        <member name="P:REMS.Tenants.EmergencyInformation.EmergencyContact">
+            <summary>
+            Gets or sets the name of the emergency contact person associated with the tenant.
+            </summary>
+        </member>
+        <member name="P:REMS.Tenants.EmergencyInformation.Phone">
+            <summary>
+            Gets or sets the phone number of the emergency contact person for urgent communication.
+            </summary>
+        </member>
+        <member name="P:REMS.Tenants.EmergencyInformation.Relationship">
+            <summary>
+            Gets or sets the nature of the relationship between the tenant and their emergency contact person.
+            </summary>
+        </member>
+        <member name="P:REMS.Tenants.EmergencyInformation.Address">
+            <summary>
+            Gets or sets the physical address of the emergency contact person for location reference and correspondence.
+            </summary>
+        </member>
+        <member name="M:REMS.Tenants.EmergencyInformation.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:REMS.Tenants.EmergencyInformation"/> struct with optional emergency contact details.
+            Assigns values for contact name, phone number, relationship, and address.
+            </summary>
+            <param name="SetEmergencyContact">The name of the emergency contact person.</param>
+            <param name="SetPhone">The phone number of the emergency contact person.</param>
+            <param name="SetRelationship">The relationship between the tenant and the emergency contact.</param>
+            <param name="SetAddress">The address of the emergency contact person.</param>
+        </member>
+        <member name="M:REMS.Tenants.EmergencyInformation.IsValid">
+            <summary>
+            Determines whether all emergency contact fields are meaningfully initialized and suitable for validation.
+            Returns <c>true</c> if none of the fields are null, empty, or whitespace-only; otherwise, <c>false</c>.
+            </summary>
+        </member>
+        <member name="M:REMS.Tenants.EmergencyInformation.op_Equality(REMS.Tenants.EmergencyInformation,REMS.Tenants.EmergencyInformation)">
+            <summary>
+            Compares two <see cref="T:REMS.Tenants.EmergencyInformation"/> instances for equality by evaluating all validated fields.
+            Returns <c>true</c> only if both instances are valid and all corresponding properties match.
+            Returns <c>false</c> if either instance fails validation or any field differs.
+            </summary>
+            <param name="Left">The first <see cref="T:REMS.Tenants.EmergencyInformation"/> instance to compare.</param>
+            <param name="Right">The second <see cref="T:REMS.Tenants.EmergencyInformation"/> instance to compare.</param>
+            <returns><c>true</c> if both instances are valid and equal; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:REMS.Tenants.EmergencyInformation.op_Inequality(REMS.Tenants.EmergencyInformation,REMS.Tenants.EmergencyInformation)">
+            <summary>
+            Determines whether two <see cref="T:REMS.Tenants.EmergencyInformation"/> instances are not equal by comparing all validated fields.
+            Returns <c>true</c> only if both instances are valid and at least one property differs.
+            Returns <c>false</c> if either instance fails validation or all fields match.
+            </summary>
+            <param name="Left">The first <see cref="T:REMS.Tenants.EmergencyInformation"/> instance to compare.</param>
+            <param name="Right">The second <see cref="T:REMS.Tenants.EmergencyInformation"/> instance to compare.</param>
+            <returns><c>true</c> if both instances are valid and not equal; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="T:REMS.Tenants.TenancyInformation">
+            <summary>
+            Represents the tenancy details of a tenant.
+            Includes room type, duration, assigned room number, internet plan, and tenancy status.
+            </summary>
+        </member>
+        <member name="P:REMS.Tenants.TenancyInformation.RoomType">
+            <summary>
+            Gets or sets the type of room assigned to the tenant, such as single, double, or shared.
+            </summary>
+        </member>
+        <member name="P:REMS.Tenants.TenancyInformation.StartDate">
+            <summary>
+            Gets or sets the start date of the tenant's occupancy period within the assigned room.
+            </summary>
+        </member>
+        <member name="P:REMS.Tenants.TenancyInformation.EndDate">
+            <summary>
+            Gets or sets the end date of the tenant's occupancy period, marking the conclusion of the tenancy.
+            </summary>
+        </member>
+        <member name="P:REMS.Tenants.TenancyInformation.RoomNumber">
+            <summary>
+            Gets or sets the designated room number assigned to the tenant for the duration of their stay.
+            </summary>
+        </member>
+        <member name="P:REMS.Tenants.TenancyInformation.InternetPlan">
+            <summary>
+            Gets or sets the internet subscription plan selected by the tenant for their room.
+            </summary>
+        </member>
+        <member name="P:REMS.Tenants.TenancyInformation.Status">
+            <summary>
+            Gets or sets the current status of the tenancy, such as active, pending, terminated, or completed.
+            </summary>
+        </member>
+        <member name="P:REMS.Tenants.TenancyInformation.Duration">
+            <summary>
+            Gets the duration of the tenancy in days, excluding monthly rentals.
+            Returns -1 if the room type is monthly.
+            Throws an exception if the end date is earlier than the start date.
+            </summary>
+        </member>
+        <member name="M:REMS.Tenants.TenancyInformation.#ctor(System.String,System.DateTime,System.DateTime,System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:REMS.Tenants.TenancyInformation"/> struct with optional tenancy details.
+            Assigns values for room type, tenancy duration, room number, internet plan, and status.
+            </summary>
+            <param name="SetRoomType">The type of room assigned to the tenant.</param>
+            <param name="SetStartDate">The start date of the tenancy period.</param>
+            <param name="SetEndDate">The end date of the tenancy period.</param>
+            <param name="SetRoomNumber">The room number assigned to the tenant.</param>
+            <param name="SetInternetPlan">The internet plan selected for the room.</param>
+            <param name="SetStatus">The current status of the tenancy.</param>
+        </member>
+        <member name="M:REMS.Tenants.TenancyInformation.IsValid">
+            <summary>
+            Determines whether the tenancy information is valid by ensuring all required fields are properly initialized.
+            Returns <c>true</c> if none of the fields are null, empty, or default; otherwise, <c>false</c>.
+            </summary>
+        </member>
+        <member name="M:REMS.Tenants.TenancyInformation.op_Equality(REMS.Tenants.TenancyInformation,REMS.Tenants.TenancyInformation)">
+            <summary>
+            Compares two <see cref="T:REMS.Tenants.TenancyInformation"/> instances for equality by evaluating all validated fields.
+            Returns <c>true</c> only if both instances are valid and all corresponding properties match.
+            Returns <c>false</c> if either instance fails validation or any field differs.
+            </summary>
+            <param name="Left">The first <see cref="T:REMS.Tenants.TenancyInformation"/> instance to compare.</param>
+            <param name="Right">The second <see cref="T:REMS.Tenants.TenancyInformation"/> instance to compare.</param>
+            <returns><c>true</c> if both instances are valid and equal; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:REMS.Tenants.TenancyInformation.op_Inequality(REMS.Tenants.TenancyInformation,REMS.Tenants.TenancyInformation)">
+            <summary>
+            Determines whether two <see cref="T:REMS.Tenants.TenancyInformation"/> instances are not equal by comparing all validated fields.
+            Returns <c>true</c> only if both instances are valid and at least one property differs.
+            Returns <c>false</c> if either instance fails validation or all fields match.
+            </summary>
+            <param name="Left">The first <see cref="T:REMS.Tenants.TenancyInformation"/> instance to compare.</param>
+            <param name="Right">The second <see cref="T:REMS.Tenants.TenancyInformation"/> instance to compare.</param>
+            <returns><c>true</c> if both instances are valid and not equal; otherwise, <c>false</c>.</returns>
         </member>
     </members>
 </doc>
