@@ -89,7 +89,7 @@
             Controls.Add(rtxtMessage);
             Controls.Add(pictureBox1);
             Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            FormBorderStyle = FormBorderStyle.FixedDialog;
+            FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(4, 3, 4, 3);
             MaximizeBox = false;

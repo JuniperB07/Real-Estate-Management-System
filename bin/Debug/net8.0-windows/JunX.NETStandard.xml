@@ -2829,6 +2829,28 @@
             Useful for generating SQL table names, logging, or metadata tagging based on enum identity.
             </remarks>
         </member>
+        <member name="M:JunX.NETStandard.Utility.EnumHelper`1.GetEnumValue(System.String,System.Char,System.Char)">
+            <summary>
+            Converts a human-readable string into its corresponding enum value of type <typeparamref name="T"/>.
+            Replaces the specified <paramref name="ReadableValueDelimiter"/> with <paramref name="EnumDelimiter"/> to match the enum's internal format,
+            then parses the result against the available enum values returned by <c>ToList()</c>.
+            Throws an exception if no matching enum value is found.
+            </summary>
+            <param name="ReadableValue">The input string representing the enum value in a readable format.</param>
+            <param name="ReadableValueDelimiter">The delimiter used in the readable string format.</param>
+            <param name="EnumDelimiter">The delimiter used in the actual enum value format.</param>
+            <returns>The parsed enum value of type <typeparamref name="T"/>.</returns>
+            <exception cref="T:System.Exception">Thrown when the formatted string does not match any known enum value.</exception>
+        </member>
+        <member name="M:JunX.NETStandard.Utility.EnumHelper`1.GetReadableValue(`0,System.Char)">
+            <summary>
+            Converts an enum value of type <typeparamref name="T"/> into a human-readable string by replacing the specified delimiter with spaces.
+            Useful for displaying enum values in UI or reports with improved clarity.
+            </summary>
+            <param name="EnumValue">The enum value to convert.</param>
+            <param name="EnumValueDelimiter">The delimiter used in the enum's internal format (e.g., underscore or hyphen).</param>
+            <returns>A human-readable string representation of the enum value.</returns>
+        </member>
         <member name="T:JunX.NETStandard.Utility.Logger">
             <summary>
             Provides basic logging functionality for structured CSV-style log files, including file creation and entry appending.
