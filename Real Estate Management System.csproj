@@ -53,6 +53,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Configs\DueDates.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Configs\Tenants.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

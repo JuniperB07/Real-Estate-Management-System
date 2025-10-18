@@ -11,6 +11,7 @@ namespace Real_Estate_Management_System.Configs.Utilities
         internal static void RestoreDefaults()
         {
             Restore_Default_Electricity_Unit();
+            Restore_Default_Water_Unit();
         }
 
         #region Private Restores
