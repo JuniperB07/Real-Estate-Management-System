@@ -8,11 +8,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using JunX.NETStandard.MySQL;
+using JunX.NETStandard.SQLBuilder;
 
 namespace Real_Estate_Management_System.Tenants.New
 {
     public partial class NewTenant : Form
     {
+        Dialogs.MSGBox_OK MBOK;
         private REMS.Tenants.TenantInformation NewTenantInfo;
 
         public NewTenant()
@@ -57,6 +60,23 @@ namespace Real_Estate_Management_System.Tenants.New
                 MBOK.ShowDialog();
                 return;
             }
+
+            //Check if tenant exists
+            new SelectCommand<tbtenants>()
+                .SelectAll.From
+                .StartWhere
+                    .Where(tbtenants.FullName, SQLOperator.Equal, "@FullName")
+                .EndWhere
+                .ExecuteReader(Internals.DBC, new ParametersMetadata("@FullName", NewTenantInfo.FullName));
+            if (Internals.DBC.HasRows)
+            {
+                Internals.DBC.CloseReader();
+
+                MBOK = new Dialogs.MSGBox_OK(this.Text, "This tenant already exists on record.", Dialogs.DialogIcons.Error);
+                MBOK.ShowDialog();
+                return;
+            }
+            Internals.DBC.CloseReader();
 
             NewTenantHelper.NewTenantInformation = NewTenantInfo;
             NewTenantHelper.AllowProceed = true;
