@@ -48,7 +48,7 @@ namespace Real_Estate_Management_System.Internet
 
         private void lstInternetPlans_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            string planName = lstInternetPlans.SelectedItem.ToString();
+            string? planName = lstInternetPlans.SelectedItem?.ToString();
 
             if (!string.IsNullOrWhiteSpace(planName))
             {
@@ -74,6 +74,18 @@ namespace Real_Estate_Management_System.Internet
                 lblSubscribers.Text = IMHelper.SubscribersCount.ToString();
                 FillSubscribersList();
             }
+        }
+
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+            NewPlan NP = new NewPlan();
+            NP.ShowDialog();
+        }
+
+        private void InternetManagement_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
         }
     }
 }

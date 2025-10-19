@@ -398,6 +398,7 @@
             btnNew.Text = "NEW";
             btnNew.TextAlign = ContentAlignment.MiddleLeft;
             btnNew.UseVisualStyleBackColor = false;
+            btnNew.Click += btnNew_Click;
             // 
             // pictureBox2
             // 
@@ -466,6 +467,7 @@
             Name = "InternetManagement";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Real Estate Management System - Internet Service Management";
+            FormClosing += InternetManagement_FormClosing;
             Load += InternetManagement_Load;
             pnlHeader.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
