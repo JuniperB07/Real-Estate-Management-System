@@ -131,7 +131,7 @@ namespace Real_Estate_Management_System.Tenants.New
                 .From
                 .StartWhere
                     .Where(tbrooms.RoomID, SQLOperator.Equal, tenancyInfo.RoomID.ToString())
-                    .And(tbrooms.Status, SQLOperator.Equal, Rooms.AvailabilityStatus.Vacant.ToString())
+                    .And(tbrooms.Status, SQLOperator.Equal, "'" +  Rooms.AvailabilityStatus.Vacant.ToString() + "'")
                 .EndWhere
                 .ExecuteReader(Internals.DBC);
             if (!Internals.DBC.HasRows)
