@@ -33,6 +33,24 @@ namespace Real_Estate_Management_System.Internet
         }
 
         internal static int? PlanID { get; set; }
+        internal static string? PlanName
+        {
+            get
+            {
+                if(PlanID != null && PlanID > 0)
+                {
+                    new SelectCommand<tbinternetplans>()
+                        .Select(tbinternetplans.PlanName)
+                        .From
+                        .StartWhere
+                            .Where(tbinternetplans.PlanID, SQLOperator.Equal, PlanID.ToString())
+                        .EndWhere
+                        .ExecuteReader(Internals.DBC);
+                    return Internals.DBC.Values[0];
+                }
+                return null;
+            }
+        }
         internal static double? PlanPrice
         {
             get

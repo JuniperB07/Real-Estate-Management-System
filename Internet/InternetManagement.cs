@@ -99,6 +99,12 @@ namespace Real_Estate_Management_System.Internet
             {
                 EditPlan EP = new EditPlan();
                 EP.ShowDialog();
+
+                lblPlanName.Text = IMHelper.PlanName;
+                lblPlanPrice.Text = IMHelper.PlanPrice?.ToString("0,0.00");
+                lblBuilding.Text = IMHelper.BuildingName;
+                lblSubscribers.Text = IMHelper.SubscribersCount.ToString();
+                FillSubscribersList();
             }
         }
     }
