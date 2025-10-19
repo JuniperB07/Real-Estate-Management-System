@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            pictureBox1 = new PictureBox();
             label1 = new Label();
+            pictureBox1 = new PictureBox();
             label3 = new Label();
             cmbBuilding = new ComboBox();
             label2 = new Label();
@@ -56,16 +56,6 @@
             panel1.Size = new Size(706, 162);
             panel1.TabIndex = 0;
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.REMS_INTERNET_NEW_PLAN;
-            pictureBox1.Location = new Point(12, 12);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(138, 138);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 3;
-            pictureBox1.TabStop = false;
-            // 
             // label1
             // 
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
@@ -78,6 +68,16 @@
             label1.TabIndex = 6;
             label1.Text = "INTERNET SERVICE MANAGER\r\nCREATE NEW PLAN";
             label1.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.REMS_INTERNET_NEW_PLAN;
+            pictureBox1.Location = new Point(12, 12);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(138, 138);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 3;
+            pictureBox1.TabStop = false;
             // 
             // label3
             // 
@@ -101,6 +101,7 @@
             cmbBuilding.Name = "cmbBuilding";
             cmbBuilding.Size = new Size(396, 35);
             cmbBuilding.TabIndex = 12;
+            cmbBuilding.SelectedIndexChanged += cmbBuilding_SelectedIndexChanged;
             // 
             // label2
             // 
@@ -121,6 +122,7 @@
             txtPlanName.Name = "txtPlanName";
             txtPlanName.Size = new Size(396, 34);
             txtPlanName.TabIndex = 14;
+            txtPlanName.TextChanged += txtPlanName_TextChanged;
             // 
             // txtPlanPrice
             // 
@@ -130,6 +132,7 @@
             txtPlanPrice.Name = "txtPlanPrice";
             txtPlanPrice.Size = new Size(396, 34);
             txtPlanPrice.TabIndex = 16;
+            txtPlanPrice.TextChanged += txtPlanPrice_TextChanged;
             // 
             // label4
             // 
@@ -153,6 +156,7 @@
             cmbAvailabilityStatus.Name = "cmbAvailabilityStatus";
             cmbAvailabilityStatus.Size = new Size(396, 35);
             cmbAvailabilityStatus.TabIndex = 18;
+            cmbAvailabilityStatus.SelectedIndexChanged += cmbAvailabilityStatus_SelectedIndexChanged;
             // 
             // label5
             // 
@@ -179,6 +183,7 @@
             btnSave.TabIndex = 29;
             btnSave.Text = "SAVE CHANGES";
             btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click;
             // 
             // NewPlan
             // 
@@ -199,8 +204,9 @@
             Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ForeColor = Color.FromArgb(1, 53, 60);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             Name = "NewPlan";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Internet Service Manager - Create New Plan";
             Load += NewPlan_Load;
             panel1.ResumeLayout(false);

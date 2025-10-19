@@ -99,6 +99,7 @@
             Text = "MSGBox_OK";
             FormClosing += MSGBox_OK_FormClosing;
             Load += MSGBox_OK_Load;
+            Shown += MSGBox_OK_Shown;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pcbIcon).EndInit();
             ResumeLayout(false);

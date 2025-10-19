@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,7 +17,7 @@ namespace Real_Estate_Management_System.Dialogs
         private string text, message;
         private DialogIcons icon;
 
-        public MSGBox_OK(string SetText="", string SetMessage="", DialogIcons SetIcon = DialogIcons.None)
+        public MSGBox_OK(string SetText = "", string SetMessage = "", DialogIcons SetIcon = DialogIcons.None)
         {
             InitializeComponent();
             Internals.SetFormColors(this);
@@ -51,6 +52,23 @@ namespace Real_Estate_Management_System.Dialogs
             Dialogs.Result = DialogResult.OK;
             GC.Collect();
             GC.WaitForPendingFinalizers();
+        }
+
+        private void MSGBox_OK_Shown(object sender, EventArgs e)
+        {
+            switch (icon)
+            {
+                case DialogIcons.Exclamation:
+                case DialogIcons.Error:
+                    SystemSounds.Exclamation.Play();
+                    break;
+                case DialogIcons.Question:
+                    SystemSounds.Question.Play();
+                    break;
+                default:
+                    SystemSounds.Asterisk.Play();
+                    break;
+            }
         }
     }
 }

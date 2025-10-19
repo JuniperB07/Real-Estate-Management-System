@@ -87,5 +87,10 @@ namespace Real_Estate_Management_System.Internet
             GC.Collect();
             GC.WaitForPendingFinalizers();
         }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            InternetManagement_Load(this, EventArgs.Empty);
+        }
     }
 }

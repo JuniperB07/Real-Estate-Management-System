@@ -72,18 +72,4 @@ namespace Real_Estate_Management_System.Internet
             }
         }
     }
-
-    internal struct SubscribersListMetadata
-    {
-        public int TenantID { get; set; }
-        public string TenantName { get; set; }
-        public string RoomName { get; set; }
-
-        public SubscribersListMetadata(int SetTenantID, string SetTenantName, string SetRoomName)
-        {
-            TenantID = SetTenantID;
-            TenantName = SetTenantName;
-            RoomName = SetRoomName;
-        }
-    }
 }

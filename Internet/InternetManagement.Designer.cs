@@ -328,6 +328,7 @@
             btnReset.Text = "RESET";
             btnReset.TextAlign = ContentAlignment.MiddleLeft;
             btnReset.UseVisualStyleBackColor = false;
+            btnReset.Click += btnReset_Click;
             // 
             // pictureBox4
             // 
