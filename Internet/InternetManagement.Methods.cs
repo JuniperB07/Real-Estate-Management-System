@@ -91,6 +91,9 @@ namespace Real_Estate_Management_System.Internet
 
                 SubsList.dtbSubscribersList.Rows.Add(newRow);
             }
+
+            dgvSubscribers.DataSource = null;
+            dgvSubscribers.DataSource = SubsList.dtbSubscribersList;
         }
     }
 }
