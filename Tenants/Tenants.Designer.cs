@@ -93,6 +93,8 @@
             lblRoomNumber = new Label();
             label17 = new Label();
             label16 = new Label();
+            label2 = new Label();
+            label3 = new Label();
             pnlHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             pnlSelectTenant.SuspendLayout();
@@ -664,6 +666,8 @@
             pnlTenancyInformation.BackColor = Color.FromArgb(64, 64, 64);
             pnlTenancyInformation.BackgroundImage = Properties.Resources.REMS_TENANTS_TENANCY_INFORMATION;
             pnlTenancyInformation.BackgroundImageLayout = ImageLayout.Stretch;
+            pnlTenancyInformation.Controls.Add(label3);
+            pnlTenancyInformation.Controls.Add(label2);
             pnlTenancyInformation.Controls.Add(panel4);
             pnlTenancyInformation.Controls.Add(lblEndDate);
             pnlTenancyInformation.Controls.Add(label28);
@@ -851,9 +855,9 @@
             lblInternetPlan.BackColor = Color.Transparent;
             lblInternetPlan.Font = new Font("Arial", 40.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblInternetPlan.ForeColor = SystemColors.ControlLightLight;
-            lblInternetPlan.Location = new Point(250, 104);
+            lblInternetPlan.Location = new Point(311, 104);
             lblInternetPlan.Name = "lblInternetPlan";
-            lblInternetPlan.Size = new Size(356, 181);
+            lblInternetPlan.Size = new Size(295, 181);
             lblInternetPlan.TabIndex = 23;
             lblInternetPlan.Text = "20Mbps";
             lblInternetPlan.TextAlign = ContentAlignment.MiddleCenter;
@@ -863,7 +867,7 @@
             label20.BackColor = Color.Transparent;
             label20.Font = new Font("Arial", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label20.ForeColor = SystemColors.ControlLightLight;
-            label20.Location = new Point(250, 77);
+            label20.Location = new Point(250, 67);
             label20.Name = "label20";
             label20.Size = new Size(356, 27);
             label20.TabIndex = 24;
@@ -872,11 +876,11 @@
             // lblRoomNumber
             // 
             lblRoomNumber.BackColor = Color.Transparent;
-            lblRoomNumber.Font = new Font("Arial", 72F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblRoomNumber.Font = new Font("Arial", 48F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblRoomNumber.ForeColor = SystemColors.ControlLightLight;
-            lblRoomNumber.Location = new Point(7, 104);
+            lblRoomNumber.Location = new Point(7, 94);
             lblRoomNumber.Name = "lblRoomNumber";
-            lblRoomNumber.Size = new Size(219, 181);
+            lblRoomNumber.Size = new Size(219, 93);
             lblRoomNumber.TabIndex = 22;
             lblRoomNumber.Text = "0";
             lblRoomNumber.TextAlign = ContentAlignment.MiddleCenter;
@@ -886,11 +890,11 @@
             label17.BackColor = Color.Transparent;
             label17.Font = new Font("Arial", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label17.ForeColor = SystemColors.ControlLightLight;
-            label17.Location = new Point(7, 77);
+            label17.Location = new Point(7, 67);
             label17.Name = "label17";
             label17.Size = new Size(219, 27);
             label17.TabIndex = 22;
-            label17.Text = "Current Room #:";
+            label17.Text = "Current Room:";
             // 
             // label16
             // 
@@ -903,6 +907,28 @@
             label16.TabIndex = 22;
             label16.Text = "TENANCY INFORMATION";
             label16.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // label2
+            // 
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Arial", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = SystemColors.ControlLightLight;
+            label2.Location = new Point(7, 188);
+            label2.Name = "label2";
+            label2.Size = new Size(219, 27);
+            label2.TabIndex = 31;
+            label2.Text = "Current Building:";
+            // 
+            // label3
+            // 
+            label3.BackColor = Color.Transparent;
+            label3.Font = new Font("Arial", 12F);
+            label3.ForeColor = SystemColors.ControlLightLight;
+            label3.Location = new Point(34, 221);
+            label3.Name = "label3";
+            label3.Size = new Size(273, 71);
+            label3.TabIndex = 32;
+            label3.Text = "Building Name";
             // 
             // Tenants
             // 
@@ -1019,5 +1045,7 @@
         private Panel pnlMoreActions;
         private Button btnMore;
         private PictureBox pictureBox8;
+        private Label label3;
+        private Label label2;
     }
 }
