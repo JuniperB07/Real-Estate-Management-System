@@ -39,8 +39,7 @@ namespace Real_Estate_Management_System.Tenants
 
         private void Tenants_Load(object sender, EventArgs e)
         {
-            lblStatus.Text = "ACTIVE";
-            pcbIDPhoto.ImageLocation = Configs.Tenants.DefaultValues.Default_IDLocation;
+            ResetForm();
         }
 
         private void lblStatus_TextChanged(object sender, EventArgs e)
@@ -86,8 +85,6 @@ namespace Real_Estate_Management_System.Tenants
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-            NewTenantHelper.NT = new REMS.Tenants.NewTenant(Internals.DBC);
-
             New.NewTenant NT = new New.NewTenant();
             NT.ShowDialog();
 

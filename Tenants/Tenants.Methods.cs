@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using JunX.NET8.WinForms;
 using JunX.NETStandard.MySQL;
 using JunX.NETStandard.SQLBuilder;
 using JunX.NETStandard.Utility;
@@ -13,6 +14,39 @@ namespace Real_Estate_Management_System.Tenants
 {
     partial class Tenants
     {
+        private void ResetForm()
+        {
+            Forms.ClearControlText(new Label[]
+            {
+                lblTenantName,
+                lblDateOfBirth,
+                lblIDType,
+                lblTenant_ContactInformation,
+
+                lblEmergencyName,
+                lblEmergency_ContactInformation,
+                lblRelationship,
+                lblEmergencyAddress,
+
+                lblRoom,
+                lblBuilding,
+                lblRentType,
+                lblStatus,
+                lblStartDate,
+                lblEndDate
+            });
+            Forms.SetControlVisible(new Panel[]
+            {
+                pnlViewActivity,
+                pnlMoreActions,
+                pnlTenantInformation,
+                pnlEmergencyInformation,
+                pnlTenancyInformation }, false);
+
+            lstTenantsList.Items.Clear();
+            txtSearchTenant.Text = "";
+        }
+
         private void SaveNewTenant()
         {
             if(NewTenantHelper.NewTenancyInformation.RentType != RentType.Fixed)

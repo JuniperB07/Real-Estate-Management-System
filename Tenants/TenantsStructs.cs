@@ -41,7 +41,7 @@ namespace Real_Estate_Management_System.Tenants
         {
             get
             {
-                if (!string.IsNullOrWhiteSpace(BuildingName))
+                if (string.IsNullOrWhiteSpace(BuildingName))
                     return -1;
 
                 if (!string.IsNullOrWhiteSpace(RoomName))
@@ -63,7 +63,7 @@ namespace Real_Estate_Management_System.Tenants
         {
             get
             {
-                if (!string.IsNullOrWhiteSpace(BuildingName))
+                if (string.IsNullOrWhiteSpace(BuildingName))
                     return -1;
 
                 if (!string.IsNullOrWhiteSpace(InternetPlan))

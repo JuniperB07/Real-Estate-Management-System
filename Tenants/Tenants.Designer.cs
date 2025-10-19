@@ -75,13 +75,15 @@
             lblEmergencyName = new Label();
             label8 = new Label();
             pnlTenancyInformation = new Panel();
+            lblBuilding = new Label();
+            label2 = new Label();
             panel4 = new Panel();
             btnEdit = new Button();
             button5 = new Button();
             button6 = new Button();
             pictureBox7 = new PictureBox();
             lblEndDate = new Label();
-            label28 = new Label();
+            lblEndDateLabel = new Label();
             lblStartDate = new Label();
             lblStatus = new Label();
             label26 = new Label();
@@ -90,11 +92,9 @@
             label21 = new Label();
             lblInternetPlan = new Label();
             label20 = new Label();
-            lblRoomNumber = new Label();
+            lblRoom = new Label();
             label17 = new Label();
             label16 = new Label();
-            label2 = new Label();
-            label3 = new Label();
             pnlHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             pnlSelectTenant.SuspendLayout();
@@ -666,11 +666,11 @@
             pnlTenancyInformation.BackColor = Color.FromArgb(64, 64, 64);
             pnlTenancyInformation.BackgroundImage = Properties.Resources.REMS_TENANTS_TENANCY_INFORMATION;
             pnlTenancyInformation.BackgroundImageLayout = ImageLayout.Stretch;
-            pnlTenancyInformation.Controls.Add(label3);
+            pnlTenancyInformation.Controls.Add(lblBuilding);
             pnlTenancyInformation.Controls.Add(label2);
             pnlTenancyInformation.Controls.Add(panel4);
             pnlTenancyInformation.Controls.Add(lblEndDate);
-            pnlTenancyInformation.Controls.Add(label28);
+            pnlTenancyInformation.Controls.Add(lblEndDateLabel);
             pnlTenancyInformation.Controls.Add(lblStartDate);
             pnlTenancyInformation.Controls.Add(lblStatus);
             pnlTenancyInformation.Controls.Add(label26);
@@ -679,13 +679,35 @@
             pnlTenancyInformation.Controls.Add(label21);
             pnlTenancyInformation.Controls.Add(lblInternetPlan);
             pnlTenancyInformation.Controls.Add(label20);
-            pnlTenancyInformation.Controls.Add(lblRoomNumber);
+            pnlTenancyInformation.Controls.Add(lblRoom);
             pnlTenancyInformation.Controls.Add(label17);
             pnlTenancyInformation.Controls.Add(label16);
             pnlTenancyInformation.Location = new Point(353, 573);
             pnlTenancyInformation.Name = "pnlTenancyInformation";
             pnlTenancyInformation.Size = new Size(1232, 298);
             pnlTenancyInformation.TabIndex = 7;
+            // 
+            // lblBuilding
+            // 
+            lblBuilding.BackColor = Color.Transparent;
+            lblBuilding.Font = new Font("Arial", 12F);
+            lblBuilding.ForeColor = SystemColors.ControlLightLight;
+            lblBuilding.Location = new Point(34, 221);
+            lblBuilding.Name = "lblBuilding";
+            lblBuilding.Size = new Size(273, 71);
+            lblBuilding.TabIndex = 32;
+            lblBuilding.Text = "Building Name";
+            // 
+            // label2
+            // 
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Arial", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = SystemColors.ControlLightLight;
+            label2.Location = new Point(7, 188);
+            label2.Name = "label2";
+            label2.Size = new Size(219, 27);
+            label2.TabIndex = 31;
+            label2.Text = "Current Building:";
             // 
             // panel4
             // 
@@ -767,17 +789,17 @@
             lblEndDate.Text = "September 30, 2000";
             lblEndDate.TextAlign = ContentAlignment.TopRight;
             // 
-            // label28
+            // lblEndDateLabel
             // 
-            label28.BackColor = Color.Transparent;
-            label28.Font = new Font("Arial", 12F, FontStyle.Bold);
-            label28.ForeColor = SystemColors.ControlLightLight;
-            label28.Location = new Point(612, 215);
-            label28.Name = "label28";
-            label28.Size = new Size(219, 27);
-            label28.TabIndex = 29;
-            label28.Text = "End Date:";
-            label28.TextAlign = ContentAlignment.TopRight;
+            lblEndDateLabel.BackColor = Color.Transparent;
+            lblEndDateLabel.Font = new Font("Arial", 12F, FontStyle.Bold);
+            lblEndDateLabel.ForeColor = SystemColors.ControlLightLight;
+            lblEndDateLabel.Location = new Point(612, 215);
+            lblEndDateLabel.Name = "lblEndDateLabel";
+            lblEndDateLabel.Size = new Size(219, 27);
+            lblEndDateLabel.TabIndex = 29;
+            lblEndDateLabel.Text = "End Date:";
+            lblEndDateLabel.TextAlign = ContentAlignment.TopRight;
             // 
             // lblStartDate
             // 
@@ -873,17 +895,17 @@
             label20.TabIndex = 24;
             label20.Text = "Internet Subscription Plan:";
             // 
-            // lblRoomNumber
+            // lblRoom
             // 
-            lblRoomNumber.BackColor = Color.Transparent;
-            lblRoomNumber.Font = new Font("Arial", 48F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblRoomNumber.ForeColor = SystemColors.ControlLightLight;
-            lblRoomNumber.Location = new Point(7, 94);
-            lblRoomNumber.Name = "lblRoomNumber";
-            lblRoomNumber.Size = new Size(219, 93);
-            lblRoomNumber.TabIndex = 22;
-            lblRoomNumber.Text = "0";
-            lblRoomNumber.TextAlign = ContentAlignment.MiddleCenter;
+            lblRoom.BackColor = Color.Transparent;
+            lblRoom.Font = new Font("Arial", 48F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblRoom.ForeColor = SystemColors.ControlLightLight;
+            lblRoom.Location = new Point(7, 94);
+            lblRoom.Name = "lblRoom";
+            lblRoom.Size = new Size(219, 93);
+            lblRoom.TabIndex = 22;
+            lblRoom.Text = "0";
+            lblRoom.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label17
             // 
@@ -907,28 +929,6 @@
             label16.TabIndex = 22;
             label16.Text = "TENANCY INFORMATION";
             label16.TextAlign = ContentAlignment.MiddleLeft;
-            // 
-            // label2
-            // 
-            label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Arial", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = SystemColors.ControlLightLight;
-            label2.Location = new Point(7, 188);
-            label2.Name = "label2";
-            label2.Size = new Size(219, 27);
-            label2.TabIndex = 31;
-            label2.Text = "Current Building:";
-            // 
-            // label3
-            // 
-            label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Arial", 12F);
-            label3.ForeColor = SystemColors.ControlLightLight;
-            label3.Location = new Point(34, 221);
-            label3.Name = "label3";
-            label3.Size = new Size(273, 71);
-            label3.TabIndex = 32;
-            label3.Text = "Building Name";
             // 
             // Tenants
             // 
@@ -1024,7 +1024,7 @@
         private Button button3;
         private PictureBox pictureBox4;
         private Panel pnlTenancyInformation;
-        private Label lblRoomNumber;
+        private Label lblRoom;
         private Label label17;
         private Label label16;
         private Label lblInternetPlan;
@@ -1039,13 +1039,13 @@
         private Button button6;
         private PictureBox pictureBox7;
         private Label lblEndDate;
-        private Label label28;
+        private Label lblEndDateLabel;
         private Label lblStartDate;
         private Label label26;
         private Panel pnlMoreActions;
         private Button btnMore;
         private PictureBox pictureBox8;
-        private Label label3;
+        private Label lblBuilding;
         private Label label2;
     }
 }
