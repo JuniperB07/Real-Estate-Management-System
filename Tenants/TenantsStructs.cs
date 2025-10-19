@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using JunX.NETStandard.MySQL;
 using JunX.NETStandard.SQLBuilder;
+using Org.BouncyCastle.Asn1.Mozilla;
 
 namespace Real_Estate_Management_System.Tenants
 {
@@ -199,8 +200,7 @@ namespace Real_Estate_Management_System.Tenants
                 return Internals.DBC.Values;
             }
         }
-
-        public int TenantID { get; set; }
+        private int TenantID { get; set; }
 
         public string FullName => TInfo[0];
         public DateTime DateOfBirth => Convert.ToDateTime(TInfo[1]);
@@ -211,6 +211,41 @@ namespace Real_Estate_Management_System.Tenants
         public TenantInfo_UI(int SetTenantID)
         {
             TenantID = SetTenantID;
+        }
+    }
+    
+    internal struct EmergencyInfo_UI
+    {
+        private List<string> EInfo
+        {
+            get
+            {
+                new SelectCommand<tbtenants>()
+                    .Select(new tbtenants[]
+                    {
+                        tbtenants.EmergencyContact,
+                        tbtenants.EmergencyPhone,
+                        tbtenants.EmergencyRelationship,
+                        tbtenants.EmergencyAddress
+                    })
+                    .From
+                    .StartWhere
+                        .Where(tbtenants.TenantID, SQLOperator.Equal, TenantID.ToString())
+                    .EndWhere
+                    .ExecuteReader(Internals.DBC);
+                return Internals.DBC.Values;
+            }
+        }
+        private int TenantID { get; set; }
+
+        public string EmergencyContact => EInfo[0];
+        public string EmergencyPhone => EInfo[1];
+        public string EmergencyRelationship => EInfo[2];
+        public string EmergencyAddress => EInfo[3];
+
+        public EmergencyInfo_UI(int SetTenantID)
+        {
+            TenantID = SetTenantID; 
         }
     }
 }

@@ -149,6 +149,7 @@ namespace Real_Estate_Management_System.Tenants
                 THelper.TenantID = Convert.ToInt32(Internals.DBC.Values[0]);
 
                 TenantInfo_UI TIUI = new TenantInfo_UI(THelper.TenantID);
+
                 lblTenantName.Text = TIUI.FullName;
                 lblDateOfBirth.Text = TIUI.DateOfBirth.ToString("MMMM d, yyyy");
                 lblTenant_ContactInformation.Text = TIUI.Phone;
