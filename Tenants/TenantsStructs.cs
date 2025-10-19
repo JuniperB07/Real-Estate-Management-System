@@ -175,4 +175,35 @@ namespace Real_Estate_Management_System.Tenants
             return true;
         }
     }
+
+    internal struct TenantInfo_UI
+    {
+        private List<string> TInfo
+        {
+            get
+            {
+                new SelectCommand<tbtenants>()
+                    .Select(new tbtenants[]
+                    {
+                        tbtenants.FullName,
+                        tbtenants.DateOfBirth,
+                        tbtenants.Phone,
+                        tbtenants.ValidID,
+                        tbtenants.IDLocation
+                    })
+                    .From
+                    .StartWhere
+                        .Where(tbtenants.TenantID, SQLOperator.Equal, THelper.TenantID.ToString())
+                    .EndWhere
+                    .ExecuteReader(Internals.DBC);
+                return Internals.DBC.Values;
+            }
+        }
+
+        public string FullName => TInfo[0];
+        public DateTime DateOfBirth => Convert.ToDateTime(TInfo[1]);
+        public string Phone => TInfo[2];
+        public string ValidID => TInfo[3];
+        public string IDLocation => TInfo[4];
+    }
 }
