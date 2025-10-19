@@ -114,6 +114,8 @@ namespace Real_Estate_Management_System.Tenants
             NewTenantHelper.NewTenancyInformation = new TenancyMetadata();
 
             PR.Close();
+            Forms.FillListBox(lstTenantsList, Internals.TenantsList);
+            txtSearchTenant.Text = "";
         }
 
         private void btnViewActivity_Click(object sender, EventArgs e)
@@ -121,6 +123,14 @@ namespace Real_Estate_Management_System.Tenants
             Activity.ViewActivity VA = new Activity.ViewActivity(this);
             VA.ShowDialog();
 
+        }
+
+        private void txtSearchTenant_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(txtSearchTenant.Text))
+                Forms.FillListBox(lstTenantsList, Internals.SearchTenant(txtSearchTenant.Text));
+            else
+                Forms.FillListBox(lstTenantsList, Internals.TenantsList);
         }
     }
 }

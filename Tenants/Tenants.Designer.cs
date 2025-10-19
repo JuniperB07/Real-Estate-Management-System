@@ -176,6 +176,7 @@
             txtSearchTenant.PlaceholderText = "Search Tenant...";
             txtSearchTenant.Size = new Size(349, 34);
             txtSearchTenant.TabIndex = 2;
+            txtSearchTenant.TextChanged += txtSearchTenant_TextChanged;
             // 
             // lstTenantsList
             // 

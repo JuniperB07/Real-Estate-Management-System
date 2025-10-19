@@ -45,6 +45,8 @@ namespace Real_Estate_Management_System.Tenants
 
             lstTenantsList.Items.Clear();
             txtSearchTenant.Text = "";
+
+            Forms.FillListBox(lstTenantsList, Internals.TenantsList);
         }
 
         private void SaveNewTenant()
