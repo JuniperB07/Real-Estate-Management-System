@@ -19,7 +19,7 @@ namespace Real_Estate_Management_System.Internet
 
         private void NewPlan_Load(object sender, EventArgs e)
         {
-
+            ResetForm();
         }
     }
 }
