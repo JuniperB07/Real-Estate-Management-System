@@ -113,6 +113,10 @@
 			<DependentUpon>NewTenant.cs</DependentUpon>
 		</Compile>
 
+		<Compile Update ="Tenants\New\NewTenancy.Methods.cs">
+			<DependentUpon>NewTenancy.cs</DependentUpon>
+		</Compile>
+
 		<Compile Update="Internet\InternetManagement.Methods.cs">
 			<DependentUpon>InternetManagement.cs</DependentUpon>
 		</Compile>
