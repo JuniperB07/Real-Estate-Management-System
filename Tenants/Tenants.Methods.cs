@@ -49,7 +49,8 @@ namespace Real_Estate_Management_System.Tenants
 
         private void SaveNewTenant()
         {
-            if(NewTenantHelper.NewTenancyInformation.RentType != RentType.Fixed)
+            //Save new tenant
+            if (NewTenantHelper.NewTenancyInformation.RentType != RentType.Fixed)
             {
                 new InsertIntoCommand<tbtenants>()
                 .Column(new tbtenants[]

@@ -109,6 +109,10 @@ namespace Real_Estate_Management_System.Tenants
 
             SaveNewTenant();
 
+            NewTenantHelper.NewTenantInformation = new REMS.Tenants.TenantInformation();
+            NewTenantHelper.NewEmergencyInformation = new REMS.Tenants.EmergencyInformation();
+            NewTenantHelper.NewTenancyInformation = new TenancyMetadata();
+
             PR.Close();
         }
 

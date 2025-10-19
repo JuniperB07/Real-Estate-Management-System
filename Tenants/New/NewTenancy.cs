@@ -8,8 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using JunX.NETStandard.Utility;
+using JunX.NETStandard.MySQL;
+using JunX.NETStandard.SQLBuilder;
 using JunX.NET8.WinForms;
-using System.Runtime.InteropServices;
 
 namespace Real_Estate_Management_System.Tenants.New
 {
@@ -123,6 +124,25 @@ namespace Real_Estate_Management_System.Tenants.New
                 MBOK.ShowDialog();
                 return;
             }
+
+            //Check if selected room is vacant
+            new SelectCommand<tbrooms>()
+                .Select(tbrooms.Status)
+                .From
+                .StartWhere
+                    .Where(tbrooms.RoomID, SQLOperator.Equal, tenancyInfo.RoomID.ToString())
+                    .And(tbrooms.Status, SQLOperator.Equal, Rooms.AvailabilityStatus.Vacant.ToString())
+                .EndWhere
+                .ExecuteReader(Internals.DBC);
+            if (!Internals.DBC.HasRows)
+            {
+                Internals.DBC.CloseReader();
+
+                MBOK = new Dialogs.MSGBox_OK(this.Text, "The selected room is already occupied.\nPlease select another room.", Dialogs.DialogIcons.Error);
+                MBOK.ShowDialog();
+                return;
+            }
+            Internals.DBC.CloseReader();
 
             NewTenantHelper.NewTenancyInformation = tenancyInfo;
             NewTenantHelper.AllowProceed = true;
