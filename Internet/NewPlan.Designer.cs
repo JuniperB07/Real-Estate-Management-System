@@ -202,6 +202,7 @@
             Margin = new Padding(4, 4, 4, 4);
             Name = "NewPlan";
             Text = "Internet Service Manager - Create New Plan";
+            Load += NewPlan_Load;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);

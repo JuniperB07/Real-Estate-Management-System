@@ -116,6 +116,10 @@
 		<Compile Update="Internet\InternetManagement.Methods.cs">
 			<DependentUpon>InternetManagement.cs</DependentUpon>
 		</Compile>
+
+		<Compile Update ="Internet\NewPlan.Methods.cs">
+			<DependentUpon>NewPlan.cs</DependentUpon>
+		</Compile>
 	</ItemGroup>
 
 </Project>

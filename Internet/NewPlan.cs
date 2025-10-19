@@ -16,5 +16,10 @@ namespace Real_Estate_Management_System.Internet
         {
             InitializeComponent();
         }
+
+        private void NewPlan_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
