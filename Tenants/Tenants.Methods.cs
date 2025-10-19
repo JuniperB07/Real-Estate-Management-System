@@ -45,6 +45,7 @@ namespace Real_Estate_Management_System.Tenants
 
             lstTenantsList.Items.Clear();
             txtSearchTenant.Text = "";
+            pcbIDPhoto.Image = null;
 
             Forms.FillListBox(lstTenantsList, Internals.TenantsList);
         }

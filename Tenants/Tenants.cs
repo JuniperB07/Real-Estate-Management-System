@@ -132,5 +132,35 @@ namespace Real_Estate_Management_System.Tenants
             else
                 Forms.FillListBox(lstTenantsList, Internals.TenantsList);
         }
+
+        private void lstTenantsList_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            string? tName = lstTenantsList.SelectedItem?.ToString();
+
+            if (!string.IsNullOrWhiteSpace(tName))
+            {
+                new SelectCommand<tbtenants>()
+                    .Select(tbtenants.TenantID)
+                    .From
+                    .StartWhere
+                        .Where(tbtenants.FullName, SQLOperator.Equal, "@FullName")
+                    .EndWhere
+                    .ExecuteReader(Internals.DBC, new ParametersMetadata("@FullName", tName));
+                THelper.TenantID = Convert.ToInt32(Internals.DBC.Values[0]);
+
+                TenantInfo_UI TIUI = new TenantInfo_UI(THelper.TenantID);
+                lblTenantName.Text = TIUI.FullName;
+                lblDateOfBirth.Text = TIUI.DateOfBirth.ToString("MMMM d, yyyy");
+                lblTenant_ContactInformation.Text = TIUI.Phone;
+                lblIDType.Text = TIUI.ValidID;
+                pcbIDPhoto.ImageLocation = TIUI.IDLocation;
+                pnlTenantInformation.Visible = true;
+            }
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            Tenants_Load(this, EventArgs.Empty);
+        }
     }
 }

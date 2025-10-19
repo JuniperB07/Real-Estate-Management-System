@@ -188,6 +188,7 @@
             lstTenantsList.Name = "lstTenantsList";
             lstTenantsList.Size = new Size(349, 439);
             lstTenantsList.TabIndex = 1;
+            lstTenantsList.MouseDoubleClick += lstTenantsList_MouseDoubleClick;
             // 
             // pictureBox2
             // 
@@ -267,6 +268,7 @@
             btnReset.Text = "RESET FORM";
             btnReset.TextAlign = ContentAlignment.MiddleLeft;
             btnReset.UseVisualStyleBackColor = true;
+            btnReset.Click += btnReset_Click;
             // 
             // pictureBox6
             // 

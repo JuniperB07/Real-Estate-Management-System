@@ -68,7 +68,7 @@ namespace Real_Estate_Management_System
                     .Where(tbtenants.FullName, SQLOperator.Like, "@SearchTenant")
                 .EndWhere
                 .OrderBy(tbtenants.FullName, OrderByModes.ASC)
-                .ExecuteReader(DBC, new ParametersMetadata("@SearchTenant", SearchString));
+                .ExecuteReader(DBC, new ParametersMetadata("@SearchTenant", "%" + SearchString + "%"));
             return DBC.Values;
         }
     }

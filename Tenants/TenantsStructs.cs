@@ -193,17 +193,24 @@ namespace Real_Estate_Management_System.Tenants
                     })
                     .From
                     .StartWhere
-                        .Where(tbtenants.TenantID, SQLOperator.Equal, THelper.TenantID.ToString())
+                        .Where(tbtenants.TenantID, SQLOperator.Equal, TenantID.ToString())
                     .EndWhere
                     .ExecuteReader(Internals.DBC);
                 return Internals.DBC.Values;
             }
         }
 
+        public int TenantID { get; set; }
+
         public string FullName => TInfo[0];
         public DateTime DateOfBirth => Convert.ToDateTime(TInfo[1]);
         public string Phone => TInfo[2];
         public string ValidID => TInfo[3];
         public string IDLocation => TInfo[4];
+
+        public TenantInfo_UI(int SetTenantID)
+        {
+            TenantID = SetTenantID;
+        }
     }
 }
