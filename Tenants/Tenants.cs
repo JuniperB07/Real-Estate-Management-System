@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using JunX.NET8.WinForms;
+using JunX.NETStandard.MySQL;
+using JunX.NETStandard.SQLBuilder;
 using Real_Estate_Management_System.Tenants.Edit;
 using Real_Estate_Management_System.Tenants.New;
 
@@ -15,6 +17,8 @@ namespace Real_Estate_Management_System.Tenants
 {
     public partial class Tenants : Form
     {
+        Dialogs.MSGBox_OK MBOK;
+
         public Tenants()
         {
             InitializeComponent();
@@ -101,6 +105,14 @@ namespace Real_Estate_Management_System.Tenants
 
             if (!NewTenantHelper.AllowProceed)
                 return;
+
+            Dialogs.ProcessingRequest PR = new Dialogs.ProcessingRequest();
+            PR.Show();
+            Application.DoEvents();
+
+            SaveNewTenant();
+
+            PR.Close();
         }
 
         private void btnViewActivity_Click(object sender, EventArgs e)

@@ -41,6 +41,9 @@ namespace Real_Estate_Management_System.Tenants
         {
             get
             {
+                if (!string.IsNullOrWhiteSpace(BuildingName))
+                    return -1;
+
                 if (!string.IsNullOrWhiteSpace(RoomName))
                 {
                     new SelectCommand<tbrooms>()
@@ -60,6 +63,9 @@ namespace Real_Estate_Management_System.Tenants
         {
             get
             {
+                if (!string.IsNullOrWhiteSpace(BuildingName))
+                    return -1;
+
                 if (!string.IsNullOrWhiteSpace(InternetPlan))
                 {
                     new SelectCommand<tbinternetplans>()

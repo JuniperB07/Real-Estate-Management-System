@@ -44,7 +44,8 @@ namespace Real_Estate_Management_System.Tenants.New
 
         private void FillRentTypeCMB()
         {
-            Forms.FillComboBox(cmbRentType, EnumHelper<RoomTypes>.ToList());
+            Forms.FillComboBox(cmbRentType, EnumHelper<RentType>.ToList());
+            cmbRentType.Items.Remove("None");
         }
 
         private void FillBuildingCMB()
@@ -60,6 +61,45 @@ namespace Real_Estate_Management_System.Tenants.New
         private void FillStatusCMB()
         {
             Forms.FillComboBox(cmbStatus, EnumHelper<TenancyStatuses>.ToList());
+            cmbStatus.Items.Remove("None");
+        }
+
+        private void FillRoomNameCMB()
+        {
+            cmbRoomName.Items.Clear();
+
+            if(tenancyInfo.BuildingID != -1)
+            {
+                new SelectCommand<tbrooms>()
+                    .Select(tbrooms.RoomName)
+                    .From
+                    .StartWhere
+                        .Where(tbrooms.BuildingID, SQLOperator.Equal, tenancyInfo.BuildingID.ToString())
+                    .EndWhere
+                    .OrderBy(tbrooms.RoomName, OrderByModes.ASC)
+                    .ExecuteReader(Internals.DBC);
+                Forms.FillComboBox(cmbRoomName, Internals.DBC.Values);
+            }
+        }
+
+        private void FillInternetPlanCMB()
+        {
+            cmbInternetPlan.Items.Clear();
+
+            if(tenancyInfo.BuildingID != -1)
+            {
+                cmbInternetPlan.Items.Add("None");
+
+                new SelectCommand<tbinternetplans>()
+                    .Select(tbinternetplans.PlanName)
+                    .From
+                    .StartWhere
+                        .Where(tbinternetplans.BuildingID, SQLOperator.Equal, tenancyInfo.BuildingID.ToString())
+                    .EndWhere
+                    .OrderBy(tbinternetplans.PlanName, OrderByModes.ASC)
+                    .ExecuteReader(Internals.DBC);
+                Forms.AppendComboBox(cmbInternetPlan, Internals.DBC.Values);
+            }
         }
     }
 }

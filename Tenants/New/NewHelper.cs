@@ -17,5 +17,6 @@ namespace Real_Estate_Management_System.Tenants.New
         internal static bool AllowProceed { get; set; }
         internal static TenantInformation NewTenantInformation { get; set; }
         internal static EmergencyInformation NewEmergencyInformation { get; set; }
+        internal static TenancyMetadata NewTenancyInformation { get; set; }
     }
 }

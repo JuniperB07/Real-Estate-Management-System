@@ -44,7 +44,7 @@
             lblInternetPlan = new Label();
             cmbStatus = new ComboBox();
             label6 = new Label();
-            button3 = new Button();
+            btnSave = new Button();
             cmbBuilding = new ComboBox();
             label7 = new Label();
             panel1.SuspendLayout();
@@ -140,6 +140,7 @@
             dtpStartDate.Name = "dtpStartDate";
             dtpStartDate.Size = new Size(344, 30);
             dtpStartDate.TabIndex = 27;
+            dtpStartDate.ValueChanged += dtpStartDate_ValueChanged;
             // 
             // dtpEndDate
             // 
@@ -149,6 +150,7 @@
             dtpEndDate.Name = "dtpEndDate";
             dtpEndDate.Size = new Size(344, 30);
             dtpEndDate.TabIndex = 28;
+            dtpEndDate.ValueChanged += dtpEndDate_ValueChanged;
             // 
             // cmbRoomName
             // 
@@ -159,6 +161,7 @@
             cmbRoomName.Name = "cmbRoomName";
             cmbRoomName.Size = new Size(344, 31);
             cmbRoomName.TabIndex = 30;
+            cmbRoomName.SelectedIndexChanged += cmbRoomName_SelectedIndexChanged;
             // 
             // lblRoomName
             // 
@@ -181,6 +184,7 @@
             cmbInternetPlan.Name = "cmbInternetPlan";
             cmbInternetPlan.Size = new Size(344, 31);
             cmbInternetPlan.TabIndex = 32;
+            cmbInternetPlan.SelectedIndexChanged += cmbInternetPlan_SelectedIndexChanged;
             // 
             // lblInternetPlan
             // 
@@ -203,6 +207,7 @@
             cmbStatus.Name = "cmbStatus";
             cmbStatus.Size = new Size(344, 31);
             cmbStatus.TabIndex = 34;
+            cmbStatus.SelectedIndexChanged += cmbStatus_SelectedIndexChanged;
             // 
             // label6
             // 
@@ -216,20 +221,21 @@
             label6.Text = "Status:";
             label6.TextAlign = ContentAlignment.TopRight;
             // 
-            // button3
+            // btnSave
             // 
-            button3.Anchor = AnchorStyles.Bottom;
-            button3.FlatAppearance.BorderColor = Color.FromArgb(0, 70, 67);
-            button3.FlatAppearance.BorderSize = 2;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Arial Narrow", 13.8F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
-            button3.ForeColor = Color.FromArgb(0, 70, 67);
-            button3.Location = new Point(220, 521);
-            button3.Name = "button3";
-            button3.Size = new Size(203, 44);
-            button3.TabIndex = 35;
-            button3.Text = "SAVE CHANGES";
-            button3.UseVisualStyleBackColor = true;
+            btnSave.Anchor = AnchorStyles.Bottom;
+            btnSave.FlatAppearance.BorderColor = Color.FromArgb(0, 70, 67);
+            btnSave.FlatAppearance.BorderSize = 2;
+            btnSave.FlatStyle = FlatStyle.Flat;
+            btnSave.Font = new Font("Arial Narrow", 13.8F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
+            btnSave.ForeColor = Color.FromArgb(0, 70, 67);
+            btnSave.Location = new Point(220, 521);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(203, 44);
+            btnSave.TabIndex = 35;
+            btnSave.Text = "SAVE CHANGES";
+            btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click;
             // 
             // cmbBuilding
             // 
@@ -240,6 +246,7 @@
             cmbBuilding.Name = "cmbBuilding";
             cmbBuilding.Size = new Size(344, 31);
             cmbBuilding.TabIndex = 37;
+            cmbBuilding.SelectedIndexChanged += cmbBuilding_SelectedIndexChanged;
             // 
             // label7
             // 
@@ -261,7 +268,7 @@
             ClientSize = new Size(660, 577);
             Controls.Add(cmbBuilding);
             Controls.Add(label7);
-            Controls.Add(button3);
+            Controls.Add(btnSave);
             Controls.Add(cmbStatus);
             Controls.Add(label6);
             Controls.Add(cmbInternetPlan);
@@ -307,7 +314,7 @@
         private Label lblInternetPlan;
         private ComboBox cmbStatus;
         private Label label6;
-        private Button button3;
+        private Button btnSave;
         private ComboBox cmbBuilding;
         private Label label7;
     }
