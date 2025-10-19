@@ -38,6 +38,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Internet\SubscribersList.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>SubscribersList.xsd</DependentUpon>
+    </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -64,6 +69,10 @@
     </None>
     <None Update="Configs\Utilities.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Internet\SubscribersList.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SubscribersList.Designer.cs</LastGenOutput>
     </None>
     <None Update="RDLCs\Invoice.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -102,6 +111,10 @@
 		
 		<Compile Update="Tenants\New\NewTenant.Methods.cs">
 			<DependentUpon>NewTenant.cs</DependentUpon>
+		</Compile>
+
+		<Compile Update="Internet\InternetManagement.Methods.cs">
+			<DependentUpon>InternetManagement.cs</DependentUpon>
 		</Compile>
 	</ItemGroup>
 

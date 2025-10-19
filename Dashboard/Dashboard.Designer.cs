@@ -378,6 +378,7 @@
             btnInternetPlans.Text = "INTERNET PLANS";
             btnInternetPlans.TextAlign = ContentAlignment.MiddleLeft;
             btnInternetPlans.UseVisualStyleBackColor = true;
+            btnInternetPlans.Click += btnInternetPlans_Click;
             // 
             // pictureBox8
             // 

@@ -63,7 +63,7 @@ namespace Real_Estate_Management_System
 
         private void btnSettings_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void Dashboard_FormClosing(object sender, FormClosingEventArgs e)
@@ -96,6 +96,14 @@ namespace Real_Estate_Management_System
             Hide();
             Rooms.RoomManagement RM = new Rooms.RoomManagement();
             RM.ShowDialog();
+            Show();
+        }
+
+        private void btnInternetPlans_Click(object sender, EventArgs e)
+        {
+            Hide();
+            Internet.InternetManagement IM = new Internet.InternetManagement();
+            IM.ShowDialog();
             Show();
         }
     }

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="SubscribersList" targetNamespace="http://tempuri.org/SubscribersList.xsd" xmlns:mstns="http://tempuri.org/SubscribersList.xsd" xmlns="http://tempuri.org/SubscribersList.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="SubscribersList" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="SubscribersList" msprop:Generator_DataSetName="SubscribersList">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtbSubscribersList" msprop:Generator_RowEvHandlerName="dtbSubscribersListRowChangeEventHandler" msprop:Generator_RowDeletedName="dtbSubscribersListRowDeleted" msprop:Generator_RowDeletingName="dtbSubscribersListRowDeleting" msprop:Generator_RowEvArgName="dtbSubscribersListRowChangeEvent" msprop:Generator_TablePropName="dtbSubscribersList" msprop:Generator_RowChangedName="dtbSubscribersListRowChanged" msprop:Generator_RowChangingName="dtbSubscribersListRowChanging" msprop:Generator_TableClassName="dtbSubscribersListDataTable" msprop:Generator_RowClassName="dtbSubscribersListRow" msprop:Generator_TableVarName="tabledtbSubscribersList" msprop:Generator_UserTableName="dtbSubscribersList">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Tenant_x0020_Name" msprop:Generator_ColumnPropNameInRow="Tenant_Name" msprop:Generator_ColumnPropNameInTable="Tenant_NameColumn" msprop:Generator_ColumnVarNameInTable="columnTenant_Name" msprop:Generator_UserColumnName="Tenant Name" type="xs:string" minOccurs="0" />
+              <xs:element name="Room_x0020_Name" msprop:Generator_ColumnPropNameInRow="Room_Name" msprop:Generator_ColumnPropNameInTable="Room_NameColumn" msprop:Generator_ColumnVarNameInTable="columnRoom_Name" msprop:Generator_UserColumnName="Room Name" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
