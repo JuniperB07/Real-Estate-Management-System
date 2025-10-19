@@ -15,7 +15,7 @@ namespace Real_Estate_Management_System.Tenants
         Pending
     }
 
-    internal enum RoomTypes
+    internal enum RentType
     {
         None = -1,
         Fixed,

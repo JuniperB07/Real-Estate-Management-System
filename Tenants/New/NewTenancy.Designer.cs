@@ -32,17 +32,17 @@
             panel1 = new Panel();
             label1 = new Label();
             pictureBox1 = new PictureBox();
-            comboBox1 = new ComboBox();
+            cmbRentType = new ComboBox();
             label8 = new Label();
             label2 = new Label();
-            label3 = new Label();
-            dateTimePicker1 = new DateTimePicker();
-            dateTimePicker2 = new DateTimePicker();
-            comboBox2 = new ComboBox();
-            label4 = new Label();
-            comboBox3 = new ComboBox();
-            label5 = new Label();
-            comboBox4 = new ComboBox();
+            lblEndDate = new Label();
+            dtpStartDate = new DateTimePicker();
+            dtpEndDate = new DateTimePicker();
+            cmbRoomName = new ComboBox();
+            lblRoomName = new Label();
+            cmbInternetPlan = new ComboBox();
+            lblInternetPlan = new Label();
+            cmbStatus = new ComboBox();
             label6 = new Label();
             button3 = new Button();
             cmbBuilding = new ComboBox();
@@ -85,15 +85,16 @@
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
             // 
-            // comboBox1
+            // cmbRentType
             // 
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox1.ForeColor = Color.FromArgb(0, 70, 67);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(304, 182);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(344, 31);
-            comboBox1.TabIndex = 22;
+            cmbRentType.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbRentType.ForeColor = Color.FromArgb(0, 70, 67);
+            cmbRentType.FormattingEnabled = true;
+            cmbRentType.Location = new Point(304, 182);
+            cmbRentType.Name = "cmbRentType";
+            cmbRentType.Size = new Size(344, 31);
+            cmbRentType.TabIndex = 22;
+            cmbRentType.SelectedIndexChanged += cmbRentType_SelectedIndexChanged;
             // 
             // label8
             // 
@@ -104,7 +105,7 @@
             label8.Name = "label8";
             label8.Size = new Size(285, 27);
             label8.TabIndex = 21;
-            label8.Text = "Room Type:";
+            label8.Text = "Rent Type:";
             label8.TextAlign = ContentAlignment.TopRight;
             // 
             // label2
@@ -119,89 +120,89 @@
             label2.Text = "Tenancy Start Date:";
             label2.TextAlign = ContentAlignment.TopRight;
             // 
-            // label3
+            // lblEndDate
             // 
-            label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Arial", 12F, FontStyle.Bold);
-            label3.ForeColor = Color.FromArgb(0, 70, 67);
-            label3.Location = new Point(13, 279);
-            label3.Name = "label3";
-            label3.Size = new Size(285, 27);
-            label3.TabIndex = 25;
-            label3.Text = "Tenancy End Date:";
-            label3.TextAlign = ContentAlignment.TopRight;
+            lblEndDate.BackColor = Color.Transparent;
+            lblEndDate.Font = new Font("Arial", 12F, FontStyle.Bold);
+            lblEndDate.ForeColor = Color.FromArgb(0, 70, 67);
+            lblEndDate.Location = new Point(13, 279);
+            lblEndDate.Name = "lblEndDate";
+            lblEndDate.Size = new Size(285, 27);
+            lblEndDate.TabIndex = 25;
+            lblEndDate.Text = "Tenancy End Date:";
+            lblEndDate.TextAlign = ContentAlignment.TopRight;
             // 
-            // dateTimePicker1
+            // dtpStartDate
             // 
-            dateTimePicker1.CustomFormat = "MMMM d, yyyy";
-            dateTimePicker1.Format = DateTimePickerFormat.Custom;
-            dateTimePicker1.Location = new Point(304, 226);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(344, 30);
-            dateTimePicker1.TabIndex = 27;
+            dtpStartDate.CustomFormat = "MMMM d, yyyy";
+            dtpStartDate.Format = DateTimePickerFormat.Custom;
+            dtpStartDate.Location = new Point(304, 226);
+            dtpStartDate.Name = "dtpStartDate";
+            dtpStartDate.Size = new Size(344, 30);
+            dtpStartDate.TabIndex = 27;
             // 
-            // dateTimePicker2
+            // dtpEndDate
             // 
-            dateTimePicker2.CustomFormat = "MMMM d, yyyy";
-            dateTimePicker2.Format = DateTimePickerFormat.Custom;
-            dateTimePicker2.Location = new Point(304, 273);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(344, 30);
-            dateTimePicker2.TabIndex = 28;
+            dtpEndDate.CustomFormat = "MMMM d, yyyy";
+            dtpEndDate.Format = DateTimePickerFormat.Custom;
+            dtpEndDate.Location = new Point(304, 273);
+            dtpEndDate.Name = "dtpEndDate";
+            dtpEndDate.Size = new Size(344, 30);
+            dtpEndDate.TabIndex = 28;
             // 
-            // comboBox2
+            // cmbRoomName
             // 
-            comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox2.ForeColor = Color.FromArgb(0, 70, 67);
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(304, 366);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(344, 31);
-            comboBox2.TabIndex = 30;
+            cmbRoomName.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbRoomName.ForeColor = Color.FromArgb(0, 70, 67);
+            cmbRoomName.FormattingEnabled = true;
+            cmbRoomName.Location = new Point(304, 366);
+            cmbRoomName.Name = "cmbRoomName";
+            cmbRoomName.Size = new Size(344, 31);
+            cmbRoomName.TabIndex = 30;
             // 
-            // label4
+            // lblRoomName
             // 
-            label4.BackColor = Color.Transparent;
-            label4.Font = new Font("Arial", 12F, FontStyle.Bold);
-            label4.ForeColor = Color.FromArgb(0, 70, 67);
-            label4.Location = new Point(13, 369);
-            label4.Name = "label4";
-            label4.Size = new Size(285, 27);
-            label4.TabIndex = 29;
-            label4.Text = "Occupied Room:";
-            label4.TextAlign = ContentAlignment.TopRight;
+            lblRoomName.BackColor = Color.Transparent;
+            lblRoomName.Font = new Font("Arial", 12F, FontStyle.Bold);
+            lblRoomName.ForeColor = Color.FromArgb(0, 70, 67);
+            lblRoomName.Location = new Point(13, 369);
+            lblRoomName.Name = "lblRoomName";
+            lblRoomName.Size = new Size(285, 27);
+            lblRoomName.TabIndex = 29;
+            lblRoomName.Text = "Occupied Room:";
+            lblRoomName.TextAlign = ContentAlignment.TopRight;
             // 
-            // comboBox3
+            // cmbInternetPlan
             // 
-            comboBox3.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox3.ForeColor = Color.FromArgb(0, 70, 67);
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(304, 413);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(344, 31);
-            comboBox3.TabIndex = 32;
+            cmbInternetPlan.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbInternetPlan.ForeColor = Color.FromArgb(0, 70, 67);
+            cmbInternetPlan.FormattingEnabled = true;
+            cmbInternetPlan.Location = new Point(304, 413);
+            cmbInternetPlan.Name = "cmbInternetPlan";
+            cmbInternetPlan.Size = new Size(344, 31);
+            cmbInternetPlan.TabIndex = 32;
             // 
-            // label5
+            // lblInternetPlan
             // 
-            label5.BackColor = Color.Transparent;
-            label5.Font = new Font("Arial", 12F, FontStyle.Bold);
-            label5.ForeColor = Color.FromArgb(0, 70, 67);
-            label5.Location = new Point(13, 416);
-            label5.Name = "label5";
-            label5.Size = new Size(285, 27);
-            label5.TabIndex = 31;
-            label5.Text = "Internet Subscription Plan:";
-            label5.TextAlign = ContentAlignment.TopRight;
+            lblInternetPlan.BackColor = Color.Transparent;
+            lblInternetPlan.Font = new Font("Arial", 12F, FontStyle.Bold);
+            lblInternetPlan.ForeColor = Color.FromArgb(0, 70, 67);
+            lblInternetPlan.Location = new Point(13, 416);
+            lblInternetPlan.Name = "lblInternetPlan";
+            lblInternetPlan.Size = new Size(285, 27);
+            lblInternetPlan.TabIndex = 31;
+            lblInternetPlan.Text = "Internet Subscription Plan:";
+            lblInternetPlan.TextAlign = ContentAlignment.TopRight;
             // 
-            // comboBox4
+            // cmbStatus
             // 
-            comboBox4.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox4.ForeColor = Color.FromArgb(0, 70, 67);
-            comboBox4.FormattingEnabled = true;
-            comboBox4.Location = new Point(304, 460);
-            comboBox4.Name = "comboBox4";
-            comboBox4.Size = new Size(344, 31);
-            comboBox4.TabIndex = 34;
+            cmbStatus.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbStatus.ForeColor = Color.FromArgb(0, 70, 67);
+            cmbStatus.FormattingEnabled = true;
+            cmbStatus.Location = new Point(304, 460);
+            cmbStatus.Name = "cmbStatus";
+            cmbStatus.Size = new Size(344, 31);
+            cmbStatus.TabIndex = 34;
             // 
             // label6
             // 
@@ -223,7 +224,7 @@
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Arial Narrow", 13.8F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
             button3.ForeColor = Color.FromArgb(0, 70, 67);
-            button3.Location = new Point(225, 559);
+            button3.Location = new Point(220, 521);
             button3.Name = "button3";
             button3.Size = new Size(203, 44);
             button3.TabIndex = 35;
@@ -257,21 +258,21 @@
             AutoScaleDimensions = new SizeF(11F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(240, 237, 229);
-            ClientSize = new Size(660, 615);
+            ClientSize = new Size(660, 577);
             Controls.Add(cmbBuilding);
             Controls.Add(label7);
             Controls.Add(button3);
-            Controls.Add(comboBox4);
+            Controls.Add(cmbStatus);
             Controls.Add(label6);
-            Controls.Add(comboBox3);
-            Controls.Add(label5);
-            Controls.Add(comboBox2);
-            Controls.Add(label4);
-            Controls.Add(dateTimePicker2);
-            Controls.Add(dateTimePicker1);
-            Controls.Add(label3);
+            Controls.Add(cmbInternetPlan);
+            Controls.Add(lblInternetPlan);
+            Controls.Add(cmbRoomName);
+            Controls.Add(lblRoomName);
+            Controls.Add(dtpEndDate);
+            Controls.Add(dtpStartDate);
+            Controls.Add(lblEndDate);
             Controls.Add(label2);
-            Controls.Add(comboBox1);
+            Controls.Add(cmbRentType);
             Controls.Add(label8);
             Controls.Add(panel1);
             Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -294,17 +295,17 @@
         private Panel panel1;
         private Label label1;
         private PictureBox pictureBox1;
-        private ComboBox comboBox1;
+        private ComboBox cmbRentType;
         private Label label8;
         private Label label2;
-        private Label label3;
-        private DateTimePicker dateTimePicker1;
-        private DateTimePicker dateTimePicker2;
-        private ComboBox comboBox2;
-        private Label label4;
-        private ComboBox comboBox3;
-        private Label label5;
-        private ComboBox comboBox4;
+        private Label lblEndDate;
+        private DateTimePicker dtpStartDate;
+        private DateTimePicker dtpEndDate;
+        private ComboBox cmbRoomName;
+        private Label lblRoomName;
+        private ComboBox cmbInternetPlan;
+        private Label lblInternetPlan;
+        private ComboBox cmbStatus;
         private Label label6;
         private Button button3;
         private ComboBox cmbBuilding;

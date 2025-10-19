@@ -17,7 +17,7 @@ public enum tbtenants
     RentType,
     StartDate,
     EndDate,
-    RoomNumber,
+    RoomID,
     ISPlanID,
     TenancyStatus,
 }
