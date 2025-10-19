@@ -120,6 +120,10 @@
 		<Compile Update ="Internet\NewPlan.Methods.cs">
 			<DependentUpon>NewPlan.cs</DependentUpon>
 		</Compile>
+
+		<Compile Update ="Internet\EditPlan.Methods.cs">
+			<DependentUpon>EditPlan.cs</DependentUpon>
+		</Compile>
 	</ItemGroup>
 
 </Project>
