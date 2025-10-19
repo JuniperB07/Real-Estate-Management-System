@@ -364,6 +364,7 @@
             btnEdit.Text = "EDIT";
             btnEdit.TextAlign = ContentAlignment.MiddleLeft;
             btnEdit.UseVisualStyleBackColor = false;
+            btnEdit.Click += btnEdit_Click;
             // 
             // pictureBox3
             // 

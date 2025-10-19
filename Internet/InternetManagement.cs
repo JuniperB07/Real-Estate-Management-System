@@ -92,5 +92,14 @@ namespace Real_Estate_Management_System.Internet
         {
             InternetManagement_Load(this, EventArgs.Empty);
         }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if(IMHelper.PlanID != null || IMHelper.PlanID > 0)
+            {
+                EditPlan EP = new EditPlan();
+                EP.ShowDialog();
+            }
+        }
     }
 }

@@ -208,6 +208,7 @@
             Name = "NewPlan";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Internet Service Manager - Create New Plan";
+            FormClosing += NewPlan_FormClosing;
             Load += NewPlan_Load;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

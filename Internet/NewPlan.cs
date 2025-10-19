@@ -69,7 +69,7 @@ namespace Real_Estate_Management_System.Internet
         private void btnSave_Click(object sender, EventArgs e)
         {
             //Check if all fields are valid
-            if(!newPlanMetadata.IsValid())
+            if (!newPlanMetadata.IsValid())
             {
                 MBOK = new Dialogs.MSGBox_OK(
                     this.Text,
@@ -118,6 +118,12 @@ namespace Real_Estate_Management_System.Internet
             MBOK = new Dialogs.MSGBox_OK(this.Text, "New service plan saved.", Dialogs.DialogIcons.Information);
             MBOK.ShowDialog();
             NewPlan_Load(this, EventArgs.Empty);
+        }
+
+        private void NewPlan_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
         }
     }
 }
