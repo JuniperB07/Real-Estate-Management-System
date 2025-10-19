@@ -188,9 +188,10 @@ namespace Real_Estate_Management_System.Tenants
             tID = Convert.ToInt32(Internals.DBC.Values[0]);
             #endregion
 
-            #region Update selected room's Status & Tenant ID
-            //Update selected room's Status and Tenant ID
-            new UpdateCommand<tbrooms>()
+            #region Update selected room's Status & Tenant ID IF Tenancy Status is ACTIVE
+            if(NewTenantHelper.NewTenancyInformation.Status == TenancyStatuses.Active)
+            {
+                new UpdateCommand<tbrooms>()
                 .Set(new UpdateMetadata<tbrooms>[]
                 {
                     new UpdateMetadata<tbrooms>(tbrooms.TenantID, tID.ToString(), DataTypes.Numeric),
@@ -200,6 +201,7 @@ namespace Real_Estate_Management_System.Tenants
                     .Where(tbrooms.RoomID, SQLOperator.Equal, NewTenantHelper.NewTenancyInformation.RoomID.ToString())
                 .EndWhere
                 .ExecuteNonQuery(Internals.DBC);
+            }
             #endregion
 
             MBOK = new Dialogs.MSGBox_OK(this.Text, "New tenant added.", Dialogs.DialogIcons.Information);
