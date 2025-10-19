@@ -207,5 +207,40 @@ namespace Real_Estate_Management_System.Tenants
             MBOK = new Dialogs.MSGBox_OK(this.Text, "New tenant added.", Dialogs.DialogIcons.Information);
             MBOK.ShowDialog();
         }
+
+        private void DisplayAllTenantInformation()
+        {
+            TenantInfo_UI TIUI = new TenantInfo_UI(THelper.TenantID);
+            EmergencyInfo_UI EIUI = new EmergencyInfo_UI(THelper.TenantID);
+            TenancyInfo_UI TCIUI = new TenancyInfo_UI(THelper.TenantID);
+
+            //Display Tenant Info & Show Tenant Info Panel
+            lblTenantName.Text = TIUI.FullName;
+            lblDateOfBirth.Text = TIUI.DateOfBirth.ToString("MMMM d, yyyy");
+            lblTenant_ContactInformation.Text = TIUI.Phone;
+            lblIDType.Text = TIUI.ValidID;
+            pcbIDPhoto.ImageLocation = TIUI.IDLocation;
+            pnlTenantInformation.Visible = true;
+
+            //Display Tenant's Emergency Info & show Emergency Info Panel
+            lblEmergencyName.Text = EIUI.EmergencyContact;
+            lblEmergency_ContactInformation.Text = EIUI.EmergencyPhone;
+            lblRelationship.Text = EIUI.EmergencyRelationship;
+            lblEmergencyAddress.Text = EIUI.EmergencyAddress;
+            pnlEmergencyInformation.Visible = true;
+
+            //Display Tenant's Tenancy Info & show Tenancy Info Panel
+            lblRoom.Text = TCIUI.RoomName;
+            lblBuilding.Text = TCIUI.Building;
+            lblInternetPlan.Text = TCIUI.PlanName;
+            lblRentType.Text = TCIUI.RentType;
+            lblStatus.Text = TCIUI.TenancyStatus;
+            lblStartDate.Text = TCIUI.StartDate.ToString("MMMM d, yyyy");
+            lblEndDate.Text = TCIUI.EndDate.ToString("MMMM d, yyyy");
+            pnlTenancyInformation.Visible = true;
+
+            pnlViewActivity.Visible = true;
+            pnlMoreActions.Visible = true;
+        }
     }
 }

@@ -613,7 +613,7 @@
             label13.Name = "label13";
             label13.Size = new Size(219, 27);
             label13.TabIndex = 17;
-            label13.Text = "Relationthip:";
+            label13.Text = "Relationship:";
             label13.TextAlign = ContentAlignment.TopRight;
             // 
             // lblEmergency_ContactInformation

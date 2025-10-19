@@ -44,7 +44,7 @@ namespace Real_Estate_Management_System.Tenants
 
         private void lblStatus_TextChanged(object sender, EventArgs e)
         {
-            switch (lblStatus.Text)
+            switch (lblStatus.Text.ToUpper())
             {
                 case "ACTIVE":
                     lblStatus.ForeColor = Color.LimeGreen;
@@ -148,14 +148,7 @@ namespace Real_Estate_Management_System.Tenants
                     .ExecuteReader(Internals.DBC, new ParametersMetadata("@FullName", tName));
                 THelper.TenantID = Convert.ToInt32(Internals.DBC.Values[0]);
 
-                TenantInfo_UI TIUI = new TenantInfo_UI(THelper.TenantID);
-
-                lblTenantName.Text = TIUI.FullName;
-                lblDateOfBirth.Text = TIUI.DateOfBirth.ToString("MMMM d, yyyy");
-                lblTenant_ContactInformation.Text = TIUI.Phone;
-                lblIDType.Text = TIUI.ValidID;
-                pcbIDPhoto.ImageLocation = TIUI.IDLocation;
-                pnlTenantInformation.Visible = true;
+                DisplayAllTenantInformation();
             }
         }
 

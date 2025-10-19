@@ -248,4 +248,94 @@ namespace Real_Estate_Management_System.Tenants
             TenantID = SetTenantID; 
         }
     }
+
+    internal struct TenancyInfo_UI
+    {
+        private int TenantID { get; set; }
+        private List<string> TInfo
+        {
+            get
+            {
+                new SelectCommand<tbtenants>()
+                    .Select(new tbtenants[]
+                    {
+                        tbtenants.RoomID,
+                        tbtenants.ISPlanID,
+                        tbtenants.RentType,
+                        tbtenants.TenancyStatus,
+                        tbtenants.StartDate,
+                        tbtenants.EndDate
+                    })
+                    .From
+                    .StartWhere
+                        .Where(tbtenants.TenantID, SQLOperator.Equal, TenantID.ToString())
+                    .EndWhere
+                    .ExecuteReader(Internals.DBC);
+                return Internals.DBC.Values;
+            }
+        }
+
+        public string RoomName
+        {
+            get
+            {
+                new SelectCommand<tbrooms>()
+                    .Select(tbrooms.RoomName)
+                    .From
+                    .StartWhere
+                        .Where(tbrooms.RoomID, SQLOperator.Equal, TInfo[0])
+                    .EndWhere
+                    .ExecuteReader(Internals.DBC);
+                return Internals.DBC.Values[0];
+            }
+        }
+        public string Building
+        {
+            get
+            {
+                int bID = -1;
+
+                new SelectCommand<tbrooms>()
+                    .Select(tbrooms.BuildingID)
+                    .From
+                    .StartWhere
+                        .Where(tbrooms.RoomID, SQLOperator.Equal, TInfo[0])
+                    .EndWhere
+                    .ExecuteReader(Internals.DBC);
+                bID = Convert.ToInt32(Internals.DBC.Values[0]);
+
+                new SelectCommand<tbbuilding>()
+                    .Select(tbbuilding.BuildingName)
+                    .From
+                    .StartWhere
+                        .Where(tbbuilding.BuildingID, SQLOperator.Equal, bID.ToString())
+                    .EndWhere
+                    .ExecuteReader(Internals.DBC);
+                return Internals.DBC.Values[0];
+            }
+        }
+        public string PlanName
+        {
+            get
+            {
+                new SelectCommand<tbinternetplans>()
+                    .Select(tbinternetplans.PlanName)
+                    .From
+                    .StartWhere
+                        .Where(tbinternetplans.PlanID, SQLOperator.Equal, TInfo[1])
+                    .EndWhere
+                    .ExecuteReader(Internals.DBC);
+                return Internals.DBC.Values[0];
+            }
+        }
+        public string RentType => TInfo[2];
+        public string TenancyStatus => TInfo[3];
+        public DateTime StartDate => Convert.ToDateTime(TInfo[4]);
+        public DateTime EndDate => Convert.ToDateTime(TInfo[5]);
+
+        public TenancyInfo_UI(int SetTenantID)
+        {
+            TenantID = SetTenantID;
+        }
+    }
 }
