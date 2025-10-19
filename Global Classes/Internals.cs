@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Real_Estate_Management_System.Dialogs;
 using JunX.NETStandard.Utility;
 using JunX.NETStandard.MySQL;
+using JunX.NETStandard.SQLBuilder;
 
 namespace Real_Estate_Management_System
 {
@@ -30,10 +31,23 @@ namespace Real_Estate_Management_System
         internal static readonly string LogPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "REMSLog.csv");
 
 
-        internal static DBConnect DBC;
+        internal static DBConnect DBC { get; set; }
         internal static Logger Logger;
 
         internal static Dictionary<string, Form> Forms { get; set; } = new();
+
+        internal static List<string> TenantsList
+        {
+            get
+            {
+                new SelectCommand<tbtenants>()
+                    .Select(tbtenants.FullName)
+                    .From
+                    .OrderBy(tbtenants.FullName, OrderByModes.ASC)
+                    .ExecuteReader(DBC);
+                return DBC.Values;
+            }
+        }
 
         /// <summary>
         /// Sets the BackColor property of the specified form to <c><see cref="Internals.Cyprus"/></c> and the ForeColor property to
@@ -44,6 +58,18 @@ namespace Real_Estate_Management_System
         {
             ThisForm.BackColor = SandDune;
             ThisForm.ForeColor = Cyprus;
+        }
+        internal static List<string> SearchTenant(string SearchString)
+        {
+            new SelectCommand<tbtenants>()
+                .Select(tbtenants.FullName)
+                .From
+                .StartWhere
+                    .Where(tbtenants.FullName, SQLOperator.Like, "@SearchTenant")
+                .EndWhere
+                .OrderBy(tbtenants.FullName, OrderByModes.ASC)
+                .ExecuteReader(DBC, new ParametersMetadata("@SearchTenant", SearchString));
+            return DBC.Values;
         }
     }
 

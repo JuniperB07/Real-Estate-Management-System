@@ -49,6 +49,9 @@ namespace Real_Estate_Management_System.Tenants
 
         private void SaveNewTenant()
         {
+            int tID = -1;
+
+            #region Save New Tenant
             //Save new tenant
             if (NewTenantHelper.NewTenancyInformation.RentType != RentType.Fixed)
             {
@@ -168,6 +171,33 @@ namespace Real_Estate_Management_System.Tenants
                     new ParametersMetadata("@EmergencyRelationship", NewTenantHelper.NewEmergencyInformation.Relationship),
                     new ParametersMetadata("@EmergencyAddress", NewTenantHelper.NewEmergencyInformation.Address), });
             }
+            #endregion
+
+            #region Get New Tenant's Tenant ID
+            //Get new tenant's Tenant ID
+            new SelectCommand<tbtenants>()
+                .Select(tbtenants.TenantID)
+                .From
+                .StartWhere
+                    .Where(tbtenants.FullName, SQLOperator.Equal, "@FullName")
+                .EndWhere
+                .ExecuteReader(Internals.DBC, new ParametersMetadata("@FullName", NewTenantHelper.NewTenantInformation.FullName));
+            tID = Convert.ToInt32(Internals.DBC.Values[0]);
+            #endregion
+
+            #region Update selected room's Status & Tenant ID
+            //Update selected room's Status and Tenant ID
+            new UpdateCommand<tbrooms>()
+                .Set(new UpdateMetadata<tbrooms>[]
+                {
+                    new UpdateMetadata<tbrooms>(tbrooms.TenantID, tID.ToString(), DataTypes.Numeric),
+                    new UpdateMetadata<tbrooms>(tbrooms.Status, Rooms.AvailabilityStatus.Occupied.ToString(), DataTypes.NonNumeric)
+                })
+                .StartWhere
+                    .Where(tbrooms.RoomID, SQLOperator.Equal, NewTenantHelper.NewTenancyInformation.RoomID.ToString())
+                .EndWhere
+                .ExecuteNonQuery(Internals.DBC);
+            #endregion
 
             MBOK = new Dialogs.MSGBox_OK(this.Text, "New tenant added.", Dialogs.DialogIcons.Information);
             MBOK.ShowDialog();
