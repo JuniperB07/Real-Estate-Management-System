@@ -45,6 +45,8 @@
             comboBox4 = new ComboBox();
             label6 = new Label();
             button3 = new Button();
+            cmbBuilding = new ComboBox();
+            label7 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -152,7 +154,7 @@
             comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox2.ForeColor = Color.FromArgb(0, 70, 67);
             comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(304, 319);
+            comboBox2.Location = new Point(304, 366);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(344, 31);
             comboBox2.TabIndex = 30;
@@ -162,11 +164,11 @@
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Arial", 12F, FontStyle.Bold);
             label4.ForeColor = Color.FromArgb(0, 70, 67);
-            label4.Location = new Point(13, 322);
+            label4.Location = new Point(13, 369);
             label4.Name = "label4";
             label4.Size = new Size(285, 27);
             label4.TabIndex = 29;
-            label4.Text = "Room #:";
+            label4.Text = "Occupied Room:";
             label4.TextAlign = ContentAlignment.TopRight;
             // 
             // comboBox3
@@ -174,7 +176,7 @@
             comboBox3.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox3.ForeColor = Color.FromArgb(0, 70, 67);
             comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(304, 366);
+            comboBox3.Location = new Point(304, 413);
             comboBox3.Name = "comboBox3";
             comboBox3.Size = new Size(344, 31);
             comboBox3.TabIndex = 32;
@@ -184,7 +186,7 @@
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("Arial", 12F, FontStyle.Bold);
             label5.ForeColor = Color.FromArgb(0, 70, 67);
-            label5.Location = new Point(13, 369);
+            label5.Location = new Point(13, 416);
             label5.Name = "label5";
             label5.Size = new Size(285, 27);
             label5.TabIndex = 31;
@@ -196,7 +198,7 @@
             comboBox4.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox4.ForeColor = Color.FromArgb(0, 70, 67);
             comboBox4.FormattingEnabled = true;
-            comboBox4.Location = new Point(304, 413);
+            comboBox4.Location = new Point(304, 460);
             comboBox4.Name = "comboBox4";
             comboBox4.Size = new Size(344, 31);
             comboBox4.TabIndex = 34;
@@ -206,7 +208,7 @@
             label6.BackColor = Color.Transparent;
             label6.Font = new Font("Arial", 12F, FontStyle.Bold);
             label6.ForeColor = Color.FromArgb(0, 70, 67);
-            label6.Location = new Point(13, 416);
+            label6.Location = new Point(13, 463);
             label6.Name = "label6";
             label6.Size = new Size(285, 27);
             label6.TabIndex = 33;
@@ -221,19 +223,43 @@
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Arial Narrow", 13.8F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
             button3.ForeColor = Color.FromArgb(0, 70, 67);
-            button3.Location = new Point(225, 466);
+            button3.Location = new Point(225, 559);
             button3.Name = "button3";
             button3.Size = new Size(203, 44);
             button3.TabIndex = 35;
             button3.Text = "SAVE CHANGES";
             button3.UseVisualStyleBackColor = true;
             // 
+            // cmbBuilding
+            // 
+            cmbBuilding.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbBuilding.ForeColor = Color.FromArgb(0, 70, 67);
+            cmbBuilding.FormattingEnabled = true;
+            cmbBuilding.Location = new Point(304, 319);
+            cmbBuilding.Name = "cmbBuilding";
+            cmbBuilding.Size = new Size(344, 31);
+            cmbBuilding.TabIndex = 37;
+            // 
+            // label7
+            // 
+            label7.BackColor = Color.Transparent;
+            label7.Font = new Font("Arial", 12F, FontStyle.Bold);
+            label7.ForeColor = Color.FromArgb(0, 70, 67);
+            label7.Location = new Point(13, 322);
+            label7.Name = "label7";
+            label7.Size = new Size(285, 27);
+            label7.TabIndex = 36;
+            label7.Text = "Building Name:";
+            label7.TextAlign = ContentAlignment.TopRight;
+            // 
             // NewTenancy
             // 
             AutoScaleDimensions = new SizeF(11F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(240, 237, 229);
-            ClientSize = new Size(660, 522);
+            ClientSize = new Size(660, 615);
+            Controls.Add(cmbBuilding);
+            Controls.Add(label7);
             Controls.Add(button3);
             Controls.Add(comboBox4);
             Controls.Add(label6);
@@ -281,5 +307,7 @@
         private ComboBox comboBox4;
         private Label label6;
         private Button button3;
+        private ComboBox cmbBuilding;
+        private Label label7;
     }
 }
