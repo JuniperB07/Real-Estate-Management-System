@@ -48,6 +48,7 @@ namespace Real_Estate_Management_System.Tenants
             pcbIDPhoto.Image = null;
 
             Forms.FillListBox(lstTenantsList, Internals.TenantsList);
+            THelper.TenantID = 0;
         }
 
         private void SaveNewTenant()

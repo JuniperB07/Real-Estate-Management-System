@@ -132,6 +132,10 @@
 		<Compile Update ="Internet\EditPlan.Methods.cs">
 			<DependentUpon>EditPlan.cs</DependentUpon>
 		</Compile>
+
+		<Compile Update ="Tenants\Edit\EditTenant.Methods.cs">
+			<DependentUpon>EditTenant.cs</DependentUpon>
+		</Compile>
 	</ItemGroup>
 
 </Project>

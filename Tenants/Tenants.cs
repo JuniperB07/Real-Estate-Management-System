@@ -64,13 +64,21 @@ namespace Real_Estate_Management_System.Tenants
 
         private void btnTenant_Edit_Click(object sender, EventArgs e)
         {
+            if (!(THelper.TenantID > 0))
+                return;
+
             EditHelper.FormTitle_EditTenant = lblTenantName.Text;
             EditTenant ET = new EditTenant();
             ET.ShowDialog();
+
+            pcbIDPhoto.ImageLocation = THelper.TenantInfo.Value.IDLocation;
         }
 
         private void btnEmergency_Edit_Click(object sender, EventArgs e)
         {
+            if (!(THelper.TenantID > 0))
+                return;
+
             EditHelper.FormTitle_EditEmergency = lblTenantName.Text;
             EditEmergency EE = new EditEmergency();
             EE.ShowDialog();
@@ -78,6 +86,9 @@ namespace Real_Estate_Management_System.Tenants
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
+            if (!(THelper.TenantID > 0))
+                return;
+
             EditHelper.FormTitle_EditTenancy = lblTenantName.Text;
             EditTenancy ET = new EditTenancy();
             ET.ShowDialog();

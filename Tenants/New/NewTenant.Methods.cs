@@ -40,7 +40,7 @@ namespace Real_Estate_Management_System.Tenants.New
             NewTenantInfo.IDLocation = DefaultValues.Default_IDLocation;
 
             ofdUploadID = new OpenFileDialog();
-            ofdUploadID.Title = "Select Valid ID to upload";
+            ofdUploadID.Title = "Select a Valid ID to upload...";
             ofdUploadID.Filter = "Image Files (*.png;*.jpg;*.jpeg)|*.png;*.jpg;*.jpeg";
             ofdUploadID.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
         }

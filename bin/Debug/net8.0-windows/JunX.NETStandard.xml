@@ -2900,6 +2900,26 @@
             This method assumes the log file path has been initialized and is writable.
             </remarks>
         </member>
+        <member name="T:JunX.NETStandard.Utility.StructHelper`1">
+            <summary>
+            Provides a centralized set of utility methods for working with value-type instances of <typeparamref name="T"/>.
+            Designed to support structural comparison, inspection, and future extensibility for common operations on structs.
+            </summary>
+            <typeparam name="T">
+            The value type (struct) to operate on. Must be a non-nullable struct.
+            </typeparam>
+        </member>
+        <member name="M:JunX.NETStandard.Utility.StructHelper`1.AreEqual(`0,`0)">
+            <summary>
+            Determines whether two instances of <typeparamref name="T"/> are equal by comparing the values of all public properties.
+            Uses reflection to perform a shallow, property-level comparison.
+            </summary>
+            <param name="Left">The first struct instance to compare.</param>
+            <param name="Right">The second struct instance to compare.</param>
+            <returns>
+            <c>true</c> if all public property values are equal; otherwise, <c>false</c>.
+            </returns>
+        </member>
         <member name="M:JunX.NETStandard.Utility.Utility.HexToRGB(System.String)">
             <summary>
             Converts a 6-digit hexadecimal color string into a <see cref="T:System.Drawing.Color"/> instance usable in WinForms.
