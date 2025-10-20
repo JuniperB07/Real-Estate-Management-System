@@ -253,9 +253,29 @@ namespace Real_Estate_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap REMS_DECREASE_ICON {
+            get {
+                object obj = ResourceManager.GetObject("REMS_DECREASE_ICON", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap REMS_EDIT_ICON {
             get {
                 object obj = ResourceManager.GetObject("REMS_EDIT_ICON", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap REMS_EQUALITY_ICON {
+            get {
+                object obj = ResourceManager.GetObject("REMS_EQUALITY_ICON", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -296,6 +316,16 @@ namespace Real_Estate_Management_System.Properties {
         internal static System.Drawing.Bitmap REMS_ICON_QUESTION {
             get {
                 object obj = ResourceManager.GetObject("REMS_ICON_QUESTION", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap REMS_INCREASE_ICON {
+            get {
+                object obj = ResourceManager.GetObject("REMS_INCREASE_ICON", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

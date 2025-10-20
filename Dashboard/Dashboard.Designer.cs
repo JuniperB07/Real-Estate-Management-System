@@ -120,6 +120,12 @@
             btnProfitReports = new Button();
             label26 = new Label();
             lblSummaryHeader = new Label();
+            pictureBox12 = new PictureBox();
+            label1 = new Label();
+            label3 = new Label();
+            pictureBox13 = new PictureBox();
+            label7 = new Label();
+            pictureBox14 = new PictureBox();
             pnlHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -160,6 +166,9 @@
             panel9.SuspendLayout();
             pnlProfit.SuspendLayout();
             panel10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox12).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox13).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox14).BeginInit();
             SuspendLayout();
             // 
             // pnlHeader
@@ -1010,6 +1019,8 @@
             pnlRevenue.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             pnlRevenue.BackgroundImage = Properties.Resources.REMS_DASHBOARD_RECEIVED;
             pnlRevenue.BackgroundImageLayout = ImageLayout.Stretch;
+            pnlRevenue.Controls.Add(label1);
+            pnlRevenue.Controls.Add(pictureBox12);
             pnlRevenue.Controls.Add(lblRevenue);
             pnlRevenue.Controls.Add(label16);
             pnlRevenue.Controls.Add(panel8);
@@ -1083,6 +1094,8 @@
             pnlExpenses.Anchor = AnchorStyles.Bottom;
             pnlExpenses.BackgroundImage = Properties.Resources.REMS_DASHBOARD_EXPENSES;
             pnlExpenses.BackgroundImageLayout = ImageLayout.Stretch;
+            pnlExpenses.Controls.Add(label3);
+            pnlExpenses.Controls.Add(pictureBox13);
             pnlExpenses.Controls.Add(lblExpenses);
             pnlExpenses.Controls.Add(label18);
             pnlExpenses.Controls.Add(panel9);
@@ -1156,6 +1169,8 @@
             pnlProfit.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             pnlProfit.BackgroundImage = Properties.Resources.REMS_DASHBOARD_CASH_ON_HAND;
             pnlProfit.BackgroundImageLayout = ImageLayout.Stretch;
+            pnlProfit.Controls.Add(label7);
+            pnlProfit.Controls.Add(pictureBox14);
             pnlProfit.Controls.Add(lblProfit);
             pnlProfit.Controls.Add(label20);
             pnlProfit.Controls.Add(panel10);
@@ -1236,6 +1251,78 @@
             lblSummaryHeader.Text = "SUMMARY FOR THE MONTH OF ";
             lblSummaryHeader.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // pictureBox12
+            // 
+            pictureBox12.BackColor = Color.Transparent;
+            pictureBox12.Image = Properties.Resources.REMS_INCREASE_ICON;
+            pictureBox12.Location = new Point(214, 100);
+            pictureBox12.Name = "pictureBox12";
+            pictureBox12.Size = new Size(45, 69);
+            pictureBox12.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox12.TabIndex = 14;
+            pictureBox12.TabStop = false;
+            // 
+            // label1
+            // 
+            label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Arial", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.Cornsilk;
+            label1.Location = new Point(122, 111);
+            label1.Name = "label1";
+            label1.Size = new Size(97, 46);
+            label1.TabIndex = 15;
+            label1.Text = "25%";
+            label1.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // label3
+            // 
+            label3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            label3.BackColor = Color.Transparent;
+            label3.Font = new Font("Arial", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.Cornsilk;
+            label3.Location = new Point(122, 108);
+            label3.Name = "label3";
+            label3.Size = new Size(97, 46);
+            label3.TabIndex = 17;
+            label3.Text = "25%";
+            label3.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // pictureBox13
+            // 
+            pictureBox13.BackColor = Color.Transparent;
+            pictureBox13.Image = Properties.Resources.REMS_DECREASE_ICON;
+            pictureBox13.Location = new Point(214, 97);
+            pictureBox13.Name = "pictureBox13";
+            pictureBox13.Size = new Size(45, 69);
+            pictureBox13.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox13.TabIndex = 16;
+            pictureBox13.TabStop = false;
+            // 
+            // label7
+            // 
+            label7.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            label7.BackColor = Color.Transparent;
+            label7.Font = new Font("Arial", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.ForeColor = Color.Cornsilk;
+            label7.Location = new Point(171, 108);
+            label7.Name = "label7";
+            label7.Size = new Size(97, 46);
+            label7.TabIndex = 17;
+            label7.Text = "5%";
+            label7.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // pictureBox14
+            // 
+            pictureBox14.BackColor = Color.Transparent;
+            pictureBox14.Image = Properties.Resources.REMS_EQUALITY_ICON;
+            pictureBox14.Location = new Point(263, 97);
+            pictureBox14.Name = "pictureBox14";
+            pictureBox14.Size = new Size(45, 69);
+            pictureBox14.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox14.TabIndex = 16;
+            pictureBox14.TabStop = false;
+            // 
             // Dashboard
             // 
             AutoScaleDimensions = new SizeF(11F, 22F);
@@ -1303,6 +1390,9 @@
             panel9.ResumeLayout(false);
             pnlProfit.ResumeLayout(false);
             panel10.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox12).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox13).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox14).EndInit();
             ResumeLayout(false);
         }
 
@@ -1398,5 +1488,11 @@
         private PictureBox pictureBox9;
         private Label lblSummaryHeader;
         private Label lblActiveTenants;
+        private Label label1;
+        private PictureBox pictureBox12;
+        private Label label3;
+        private PictureBox pictureBox13;
+        private Label label7;
+        private PictureBox pictureBox14;
     }
 }
