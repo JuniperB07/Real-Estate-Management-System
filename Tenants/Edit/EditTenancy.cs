@@ -12,14 +12,22 @@ namespace Real_Estate_Management_System.Tenants.Edit
 {
     public partial class EditTenancy : Form
     {
+        TenancyMetadata OriginalTM;
+        TenancyMetadata UpdatedTM;
+        Dialogs.MSGBox_OK MBOK;
+
         public EditTenancy()
         {
             InitializeComponent();
+            MBOK = new Dialogs.MSGBox_OK();
         }
 
         private void EditTenancy_Load(object sender, EventArgs e)
         {
             Text = EditHelper.FormTitle_EditTenancy;
+            OriginalTM = THelper.TenancyInfo.Value;
+
+            ResetForm();
         }
     }
 }

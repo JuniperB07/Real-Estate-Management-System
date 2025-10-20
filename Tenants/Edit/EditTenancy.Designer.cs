@@ -44,16 +44,11 @@
             label5 = new Label();
             comboBox4 = new ComboBox();
             label6 = new Label();
-            panel2 = new Panel();
-            button1 = new Button();
-            btnTenant_Edit = new Button();
-            pictureBox5 = new PictureBox();
-            button2 = new Button();
             button3 = new Button();
+            cmbBuilding = new ComboBox();
+            label7 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -158,7 +153,7 @@
             comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox2.ForeColor = Color.FromArgb(0, 70, 67);
             comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(394, 301);
+            comboBox2.Location = new Point(394, 348);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(344, 31);
             comboBox2.TabIndex = 26;
@@ -168,7 +163,7 @@
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Arial", 12F, FontStyle.Bold);
             label4.ForeColor = Color.FromArgb(0, 70, 67);
-            label4.Location = new Point(12, 304);
+            label4.Location = new Point(12, 351);
             label4.Name = "label4";
             label4.Size = new Size(376, 27);
             label4.TabIndex = 25;
@@ -180,7 +175,7 @@
             comboBox3.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox3.ForeColor = Color.FromArgb(0, 70, 67);
             comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(394, 338);
+            comboBox3.Location = new Point(394, 390);
             comboBox3.Name = "comboBox3";
             comboBox3.Size = new Size(344, 31);
             comboBox3.TabIndex = 28;
@@ -190,7 +185,7 @@
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("Arial", 12F, FontStyle.Bold);
             label5.ForeColor = Color.FromArgb(0, 70, 67);
-            label5.Location = new Point(12, 341);
+            label5.Location = new Point(12, 393);
             label5.Name = "label5";
             label5.Size = new Size(376, 27);
             label5.TabIndex = 27;
@@ -202,7 +197,7 @@
             comboBox4.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox4.ForeColor = Color.FromArgb(0, 70, 67);
             comboBox4.FormattingEnabled = true;
-            comboBox4.Location = new Point(394, 375);
+            comboBox4.Location = new Point(394, 432);
             comboBox4.Name = "comboBox4";
             comboBox4.Size = new Size(344, 31);
             comboBox4.TabIndex = 30;
@@ -212,102 +207,59 @@
             label6.BackColor = Color.Transparent;
             label6.Font = new Font("Arial", 12F, FontStyle.Bold);
             label6.ForeColor = Color.FromArgb(0, 70, 67);
-            label6.Location = new Point(12, 378);
+            label6.Location = new Point(12, 435);
             label6.Name = "label6";
             label6.Size = new Size(376, 27);
             label6.TabIndex = 29;
             label6.Text = "Tenancy Status:";
             label6.TextAlign = ContentAlignment.TopRight;
             // 
-            // panel2
-            // 
-            panel2.Controls.Add(button2);
-            panel2.Controls.Add(button1);
-            panel2.Controls.Add(btnTenant_Edit);
-            panel2.Controls.Add(pictureBox5);
-            panel2.Location = new Point(522, 412);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(216, 50);
-            panel2.TabIndex = 31;
-            // 
-            // button1
-            // 
-            button1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Arial Narrow", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.FromArgb(0, 70, 67);
-            button1.Location = new Point(72, 3);
-            button1.Name = "button1";
-            button1.Size = new Size(229, 0);
-            button1.TabIndex = 2;
-            button1.Text = "UPLOAD ID";
-            button1.TextAlign = ContentAlignment.MiddleLeft;
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // btnTenant_Edit
-            // 
-            btnTenant_Edit.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            btnTenant_Edit.FlatAppearance.BorderSize = 0;
-            btnTenant_Edit.FlatStyle = FlatStyle.Flat;
-            btnTenant_Edit.Font = new Font("Arial Narrow", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnTenant_Edit.ForeColor = SystemColors.Control;
-            btnTenant_Edit.Location = new Point(72, 6);
-            btnTenant_Edit.Name = "btnTenant_Edit";
-            btnTenant_Edit.Size = new Size(240, 0);
-            btnTenant_Edit.TabIndex = 1;
-            btnTenant_Edit.Text = "VIEW/EDIT";
-            btnTenant_Edit.TextAlign = ContentAlignment.MiddleLeft;
-            btnTenant_Edit.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox5
-            // 
-            pictureBox5.Image = Properties.Resources.REMS_TENANTS_TERMINATE;
-            pictureBox5.Location = new Point(10, 3);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(56, 44);
-            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox5.TabIndex = 0;
-            pictureBox5.TabStop = false;
-            // 
-            // button2
-            // 
-            button2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Arial Narrow", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.ForeColor = Color.FromArgb(0, 70, 67);
-            button2.Location = new Point(72, 3);
-            button2.Name = "button2";
-            button2.Size = new Size(141, 44);
-            button2.TabIndex = 3;
-            button2.Text = "TERMINATE";
-            button2.TextAlign = ContentAlignment.MiddleLeft;
-            button2.UseVisualStyleBackColor = true;
-            // 
             // button3
             // 
-            button3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            button3.Anchor = AnchorStyles.Bottom;
             button3.FlatAppearance.BorderColor = Color.FromArgb(0, 70, 67);
             button3.FlatAppearance.BorderSize = 2;
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Arial Narrow", 13.8F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
             button3.ForeColor = Color.FromArgb(0, 70, 67);
-            button3.Location = new Point(274, 478);
+            button3.Location = new Point(274, 489);
             button3.Name = "button3";
             button3.Size = new Size(203, 44);
             button3.TabIndex = 32;
             button3.Text = "SAVE CHANGES";
             button3.UseVisualStyleBackColor = true;
             // 
+            // cmbBuilding
+            // 
+            cmbBuilding.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbBuilding.ForeColor = Color.FromArgb(0, 70, 67);
+            cmbBuilding.FormattingEnabled = true;
+            cmbBuilding.Location = new Point(394, 306);
+            cmbBuilding.Name = "cmbBuilding";
+            cmbBuilding.Size = new Size(344, 31);
+            cmbBuilding.TabIndex = 39;
+            // 
+            // label7
+            // 
+            label7.BackColor = Color.Transparent;
+            label7.Font = new Font("Arial", 12F, FontStyle.Bold);
+            label7.ForeColor = Color.FromArgb(0, 70, 67);
+            label7.Location = new Point(103, 309);
+            label7.Name = "label7";
+            label7.Size = new Size(285, 27);
+            label7.TabIndex = 38;
+            label7.Text = "Building Name:";
+            label7.TextAlign = ContentAlignment.TopRight;
+            // 
             // EditTenancy
             // 
             AutoScaleDimensions = new SizeF(11F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(240, 237, 229);
-            ClientSize = new Size(750, 534);
+            ClientSize = new Size(750, 545);
+            Controls.Add(cmbBuilding);
+            Controls.Add(label7);
             Controls.Add(button3);
-            Controls.Add(panel2);
             Controls.Add(comboBox4);
             Controls.Add(label6);
             Controls.Add(comboBox3);
@@ -333,8 +285,6 @@
             Load += EditTenancy_Load;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ResumeLayout(false);
         }
 
@@ -355,11 +305,8 @@
         private Label label5;
         private ComboBox comboBox4;
         private Label label6;
-        private Panel panel2;
-        private Button button1;
-        private Button btnTenant_Edit;
-        private PictureBox pictureBox5;
-        private Button button2;
         private Button button3;
+        private ComboBox cmbBuilding;
+        private Label label7;
     }
 }

@@ -140,6 +140,10 @@
 		<Compile Update ="Tenants\Edit\EditEmergency.Methods.cs">
 			<DependentUpon>EditEmergency.cs</DependentUpon>
 		</Compile>
+
+		<Compile Update ="Tenants\Edit\EditTenancy.Methods.cs">
+			<DependentUpon>EditTenancy.cs</DependentUpon>
+		</Compile>
 	</ItemGroup>
 
 </Project>
