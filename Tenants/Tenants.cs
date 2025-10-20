@@ -71,7 +71,7 @@ namespace Real_Estate_Management_System.Tenants
             EditTenant ET = new EditTenant();
             ET.ShowDialog();
 
-            pcbIDPhoto.ImageLocation = THelper.TenantInfo.Value.IDLocation;
+            DisplayTenantInformation();
         }
 
         private void btnEmergency_Edit_Click(object sender, EventArgs e)
@@ -82,6 +82,8 @@ namespace Real_Estate_Management_System.Tenants
             EditHelper.FormTitle_EditEmergency = lblTenantName.Text;
             EditEmergency EE = new EditEmergency();
             EE.ShowDialog();
+
+            DisplayEmergencyInformation();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)

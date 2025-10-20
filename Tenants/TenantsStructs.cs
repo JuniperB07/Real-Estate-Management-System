@@ -266,6 +266,10 @@ namespace Real_Estate_Management_System.Tenants
                     IDNumber = "";
                     IDLocation = "";
                     break;
+                case ValidIDList.None:
+                    IDNumber = "N/A";
+                    IDLocation = Internals.DEFAULT_ID_LOCATION;
+                    break;
                 default:
                     IDNumber = SetIDNumber;
                     IDLocation = SetIDLocation;

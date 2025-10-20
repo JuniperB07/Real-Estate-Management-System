@@ -32,15 +32,15 @@
             panel1 = new Panel();
             label1 = new Label();
             pictureBox1 = new PictureBox();
-            textBox4 = new TextBox();
+            txtEmergencyContact = new TextBox();
             label8 = new Label();
-            textBox1 = new TextBox();
+            txtPhone = new TextBox();
             label2 = new Label();
-            textBox2 = new TextBox();
+            txtRelationship = new TextBox();
             label3 = new Label();
-            textBox3 = new TextBox();
+            txtAddress = new TextBox();
             label4 = new Label();
-            button2 = new Button();
+            btnSave = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -79,16 +79,17 @@
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
             // 
-            // textBox4
+            // txtEmergencyContact
             // 
-            textBox4.BackColor = Color.White;
-            textBox4.BorderStyle = BorderStyle.FixedSingle;
-            textBox4.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox4.ForeColor = Color.FromArgb(0, 70, 67);
-            textBox4.Location = new Point(322, 181);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(447, 30);
-            textBox4.TabIndex = 18;
+            txtEmergencyContact.BackColor = Color.White;
+            txtEmergencyContact.BorderStyle = BorderStyle.FixedSingle;
+            txtEmergencyContact.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtEmergencyContact.ForeColor = Color.FromArgb(0, 70, 67);
+            txtEmergencyContact.Location = new Point(322, 181);
+            txtEmergencyContact.Name = "txtEmergencyContact";
+            txtEmergencyContact.Size = new Size(447, 30);
+            txtEmergencyContact.TabIndex = 18;
+            txtEmergencyContact.TextChanged += txtEmergencyContact_TextChanged;
             // 
             // label8
             // 
@@ -102,16 +103,17 @@
             label8.Text = "Emergency Contact:";
             label8.TextAlign = ContentAlignment.TopRight;
             // 
-            // textBox1
+            // txtPhone
             // 
-            textBox1.BackColor = Color.White;
-            textBox1.BorderStyle = BorderStyle.FixedSingle;
-            textBox1.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.ForeColor = Color.FromArgb(0, 70, 67);
-            textBox1.Location = new Point(322, 222);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(447, 30);
-            textBox1.TabIndex = 20;
+            txtPhone.BackColor = Color.White;
+            txtPhone.BorderStyle = BorderStyle.FixedSingle;
+            txtPhone.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtPhone.ForeColor = Color.FromArgb(0, 70, 67);
+            txtPhone.Location = new Point(322, 222);
+            txtPhone.Name = "txtPhone";
+            txtPhone.Size = new Size(447, 30);
+            txtPhone.TabIndex = 20;
+            txtPhone.TextChanged += txtPhone_TextChanged;
             // 
             // label2
             // 
@@ -125,16 +127,17 @@
             label2.Text = "Phone/Email:";
             label2.TextAlign = ContentAlignment.TopRight;
             // 
-            // textBox2
+            // txtRelationship
             // 
-            textBox2.BackColor = Color.White;
-            textBox2.BorderStyle = BorderStyle.FixedSingle;
-            textBox2.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox2.ForeColor = Color.FromArgb(0, 70, 67);
-            textBox2.Location = new Point(322, 263);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(447, 30);
-            textBox2.TabIndex = 22;
+            txtRelationship.BackColor = Color.White;
+            txtRelationship.BorderStyle = BorderStyle.FixedSingle;
+            txtRelationship.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtRelationship.ForeColor = Color.FromArgb(0, 70, 67);
+            txtRelationship.Location = new Point(322, 263);
+            txtRelationship.Name = "txtRelationship";
+            txtRelationship.Size = new Size(447, 30);
+            txtRelationship.TabIndex = 22;
+            txtRelationship.TextChanged += txtRelationship_TextChanged;
             // 
             // label3
             // 
@@ -148,17 +151,18 @@
             label3.Text = "Relationship:";
             label3.TextAlign = ContentAlignment.TopRight;
             // 
-            // textBox3
+            // txtAddress
             // 
-            textBox3.BackColor = Color.White;
-            textBox3.BorderStyle = BorderStyle.FixedSingle;
-            textBox3.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox3.ForeColor = Color.FromArgb(0, 70, 67);
-            textBox3.Location = new Point(322, 304);
-            textBox3.Multiline = true;
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(447, 135);
-            textBox3.TabIndex = 24;
+            txtAddress.BackColor = Color.White;
+            txtAddress.BorderStyle = BorderStyle.FixedSingle;
+            txtAddress.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtAddress.ForeColor = Color.FromArgb(0, 70, 67);
+            txtAddress.Location = new Point(322, 304);
+            txtAddress.Multiline = true;
+            txtAddress.Name = "txtAddress";
+            txtAddress.Size = new Size(447, 135);
+            txtAddress.TabIndex = 24;
+            txtAddress.TextChanged += txtAddress_TextChanged;
             // 
             // label4
             // 
@@ -172,20 +176,21 @@
             label4.Text = "Address:";
             label4.TextAlign = ContentAlignment.TopRight;
             // 
-            // button2
+            // btnSave
             // 
-            button2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            button2.FlatAppearance.BorderColor = Color.FromArgb(0, 70, 67);
-            button2.FlatAppearance.BorderSize = 2;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Arial Narrow", 13.8F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
-            button2.ForeColor = Color.FromArgb(0, 70, 67);
-            button2.Location = new Point(288, 457);
-            button2.Name = "button2";
-            button2.Size = new Size(203, 44);
-            button2.TabIndex = 25;
-            button2.Text = "SAVE CHANGES";
-            button2.UseVisualStyleBackColor = true;
+            btnSave.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            btnSave.FlatAppearance.BorderColor = Color.FromArgb(0, 70, 67);
+            btnSave.FlatAppearance.BorderSize = 2;
+            btnSave.FlatStyle = FlatStyle.Flat;
+            btnSave.Font = new Font("Arial Narrow", 13.8F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
+            btnSave.ForeColor = Color.FromArgb(0, 70, 67);
+            btnSave.Location = new Point(288, 457);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(203, 44);
+            btnSave.TabIndex = 25;
+            btnSave.Text = "SAVE CHANGES";
+            btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click;
             // 
             // EditEmergency
             // 
@@ -193,14 +198,14 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(240, 237, 229);
             ClientSize = new Size(777, 513);
-            Controls.Add(button2);
-            Controls.Add(textBox3);
+            Controls.Add(btnSave);
+            Controls.Add(txtAddress);
             Controls.Add(label4);
-            Controls.Add(textBox2);
+            Controls.Add(txtRelationship);
             Controls.Add(label3);
-            Controls.Add(textBox1);
+            Controls.Add(txtPhone);
             Controls.Add(label2);
-            Controls.Add(textBox4);
+            Controls.Add(txtEmergencyContact);
             Controls.Add(label8);
             Controls.Add(panel1);
             Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -224,14 +229,14 @@
         private Panel panel1;
         private PictureBox pictureBox1;
         private Label label1;
-        private TextBox textBox4;
+        private TextBox txtEmergencyContact;
         private Label label8;
-        private TextBox textBox1;
+        private TextBox txtPhone;
         private Label label2;
-        private TextBox textBox2;
+        private TextBox txtRelationship;
         private Label label3;
-        private TextBox textBox3;
+        private TextBox txtAddress;
         private Label label4;
-        private Button button2;
+        private Button btnSave;
     }
 }

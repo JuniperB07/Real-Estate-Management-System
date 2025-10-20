@@ -211,37 +211,41 @@ namespace Real_Estate_Management_System.Tenants
 
         private void DisplayAllTenantInformation()
         {
-            TenantInfo_UI TIUI = new TenantInfo_UI(THelper.TenantID);
-            EmergencyInfo_UI EIUI = new EmergencyInfo_UI(THelper.TenantID);
-            TenancyInfo_UI TCIUI = new TenancyInfo_UI(THelper.TenantID);
-
-            //Display Tenant Info & Show Tenant Info Panel
-            lblTenantName.Text = TIUI.FullName;
-            lblDateOfBirth.Text = TIUI.DateOfBirth.ToString("MMMM d, yyyy");
-            lblTenant_ContactInformation.Text = TIUI.Phone;
-            lblIDType.Text = TIUI.ValidID;
-            pcbIDPhoto.ImageLocation = TIUI.IDLocation;
-            pnlTenantInformation.Visible = true;
-
-            //Display Tenant's Emergency Info & show Emergency Info Panel
-            lblEmergencyName.Text = EIUI.EmergencyContact;
-            lblEmergency_ContactInformation.Text = EIUI.EmergencyPhone;
-            lblRelationship.Text = EIUI.EmergencyRelationship;
-            lblEmergencyAddress.Text = EIUI.EmergencyAddress;
-            pnlEmergencyInformation.Visible = true;
-
-            //Display Tenant's Tenancy Info & show Tenancy Info Panel
-            lblRoom.Text = TCIUI.RoomName;
-            lblBuilding.Text = TCIUI.Building;
-            lblInternetPlan.Text = TCIUI.PlanName;
-            lblRentType.Text = TCIUI.RentType;
-            lblStatus.Text = TCIUI.TenancyStatus;
-            lblStartDate.Text = TCIUI.StartDate.ToString("MMMM d, yyyy");
-            lblEndDate.Text = TCIUI.EndDate.ToString("MMMM d, yyyy");
-            pnlTenancyInformation.Visible = true;
+            DisplayTenantInformation();
+            DisplayEmergencyInformation();
+            DisplayTenancyInformation();
 
             pnlViewActivity.Visible = true;
             pnlMoreActions.Visible = true;
+        }
+
+        private void DisplayTenantInformation()
+        {
+            lblTenantName.Text = THelper.TenantInfo.Value.FullName;
+            lblDateOfBirth.Text = THelper.TenantInfo.Value.DateOfBirth.ToString("MMMM d, yyyy");
+            lblTenant_ContactInformation.Text = THelper.TenantInfo.Value.Phone;
+            lblIDType.Text = EnumHelper<ValidIDList>.GetReadableValue(THelper.TenantInfo.Value.ValidID, '_');
+            pcbIDPhoto.ImageLocation = THelper.TenantInfo.Value.IDLocation;
+            pnlTenantInformation.Visible = true;
+        }
+        private void DisplayEmergencyInformation()
+        {
+            lblEmergencyName.Text = THelper.EmergencyInfo.Value.EmergencyContact;
+            lblEmergency_ContactInformation.Text = THelper.EmergencyInfo.Value.Phone;
+            lblRelationship.Text = THelper.EmergencyInfo.Value.Relationship;
+            lblEmergencyAddress.Text = THelper.EmergencyInfo.Value.Address;
+            pnlEmergencyInformation.Visible = true;
+        }
+        private void DisplayTenancyInformation()
+        {
+            lblRoom.Text = THelper.TenancyInfo.Value.RoomName;
+            lblBuilding.Text = THelper.TenancyInfo.Value.BuildingName;
+            lblInternetPlan.Text = THelper.TenancyInfo.Value.InternetPlan;
+            lblRentType.Text = EnumHelper<RentType>.GetReadableValue(THelper.TenancyInfo.Value.RentType, '_');
+            lblStatus.Text = EnumHelper<TenancyStatuses>.GetReadableValue(THelper.TenancyInfo.Value.Status, '_');
+            lblStartDate.Text = THelper.TenancyInfo.Value.StartDate.ToString("MMMM d, yyyy");
+            lblEndDate.Text = THelper.TenancyInfo.Value.EndDate.ToString("MMMM d, yyyy");
+            pnlTenancyInformation.Visible = true;
         }
     }
 }
