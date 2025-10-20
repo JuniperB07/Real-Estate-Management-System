@@ -11,6 +11,8 @@ namespace Real_Estate_Management_System.Tenants
 {
     internal static class THelper
     {
+        internal static readonly DateTime DEFAULT_END_DATE = Convert.ToDateTime("2000-01-01");
+
         internal static int TenantID { get; set; }
         internal static TenantMetadata? TenantInfo
         {

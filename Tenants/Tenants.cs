@@ -94,6 +94,8 @@ namespace Real_Estate_Management_System.Tenants
             EditHelper.FormTitle_EditTenancy = lblTenantName.Text;
             EditTenancy ET = new EditTenancy();
             ET.ShowDialog();
+
+            DisplayTenancyInformation();
         }
 
         private void btnNew_Click(object sender, EventArgs e)

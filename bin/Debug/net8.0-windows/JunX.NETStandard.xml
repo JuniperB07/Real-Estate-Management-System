@@ -2851,6 +2851,18 @@
             <param name="EnumValueDelimiter">The delimiter used in the enum's internal format (e.g., underscore or hyphen).</param>
             <returns>A human-readable string representation of the enum value.</returns>
         </member>
+        <member name="M:JunX.NETStandard.Utility.EnumHelper`1.GetReadableValues(System.Char)">
+            <summary>
+            Converts a sequence of enum values into a list of human-readable strings by replacing delimiter characters.
+            Useful for displaying enum values in UI or reports with improved readability.
+            </summary>
+            <typeparam name="T">The enum type to process.</typeparam>
+            <param name="EnumValues">The collection of enum values to convert.</param>
+            <param name="EnumValueDelimiter">The character used in enum names that should be replaced with a space.</param>
+            <returns>
+            A list of strings where each enum value has its delimiters replaced with spaces for readability.
+            </returns>
+        </member>
         <member name="T:JunX.NETStandard.Utility.Logger">
             <summary>
             Provides basic logging functionality for structured CSV-style log files, including file creation and entry appending.
