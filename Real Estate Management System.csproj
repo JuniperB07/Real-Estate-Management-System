@@ -146,6 +146,10 @@
 		<Compile Update="Tenants\Edit\EditTenancy.Methods.cs">
 			<DependentUpon>EditTenancy.cs</DependentUpon>
 		</Compile>
+
+		<Compile Update ="Utilities\Utilities.Methods.cs">
+			<DependentUpon>Utilities.cs</DependentUpon>
+		</Compile>
 	</ItemGroup>
 
 </Project>

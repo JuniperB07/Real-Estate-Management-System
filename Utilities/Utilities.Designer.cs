@@ -28,15 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Utilities));
             SuspendLayout();
             // 
             // Utilities
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(11F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackColor = Color.FromArgb(240, 237, 229);
+            ClientSize = new Size(1100, 518);
+            Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ForeColor = Color.FromArgb(0, 70, 67);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(4, 3, 4, 3);
+            MaximizeBox = false;
             Name = "Utilities";
-            Text = "Utilities";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Real Estate Management System - Utilities";
             Load += Utilities_Load;
             ResumeLayout(false);
         }
