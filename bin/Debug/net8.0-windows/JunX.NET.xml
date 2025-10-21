@@ -5085,8 +5085,12 @@
         </member>
         <member name="M:JunX.NET8.WinForms.Forms.AddChartSeriesPoint(System.Windows.Forms.DataVisualization.Charting.Series,System.String,System.Int32,System.Double)">
             <summary>
-            Adds a data point to the specified chart series with a custom axis label, X-value, and Y-values.
+            Adds a data point to the specified chart series with a custom axis label, X-value, and Y-value.
             </summary>
+            <param name="ChartSeries">The chart series to which the data point will be added.</param>
+            <param name="AxisLabel">The label to display on the X-axis for this data point.</param>
+            <param name="XValue">The numeric X-value used to position the data point.</param>
+            <param name="YValue">The Y-value representing the height of the data point.</param>
         </member>
         <member name="T:JunX.NET8.WinForms.Forms.ControlType`1">
             <summary>

@@ -76,5 +76,11 @@ namespace Real_Estate_Management_System.Utilities
                 chrtUtilitiesChart.Visible = false;
             }
         }
+
+        private void Utilities_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+        }
     }
 }

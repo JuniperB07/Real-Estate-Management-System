@@ -383,6 +383,7 @@
             Name = "Utilities";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Real Estate Management System - Utilities";
+            FormClosing += Utilities_FormClosing;
             Load += Utilities_Load;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
