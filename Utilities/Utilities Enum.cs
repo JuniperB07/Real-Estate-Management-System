@@ -8,17 +8,17 @@ namespace Real_Estate_Management_System.Utilities
 {
     internal enum MonthsList
     {
-        Jan,
-        Feb,
-        Mar,
-        Apr,
+        January,
+        February,
+        March,
+        April,
         May,
-        Jun,
-        Jul,
-        Aug,
-        Sept,
-        Oct,
-        Nov,
-        Dec
+        June,
+        July,
+        August,
+        September,
+        October,
+        November,
+        December
     }
 }
