@@ -45,8 +45,6 @@ namespace Real_Estate_Management_System
                 await Task.Delay(500);
                 #endregion
 
-                Internals.Logger.AddLog(DateTime.Now, LogCategories.SYSTEM.ToString(), "System Launched.");
-
                 #region Connect To Database
                 Internals.Logger.AddLog(DateTime.Now, LogCategories.SYSTEM.ToString(), "Connecting to Database...");
                 SplashHelper.Splash_LoadingText = "Connecting to Database...";
@@ -149,6 +147,8 @@ namespace Real_Estate_Management_System
                 SplashHelper.IsClosedPrematurely = false;
                 await Task.Delay(2000);
                 Splash.Close();
+                Internals.Logger.AddLog(DateTime.Now, LogCategories.SYSTEM.ToString(), "System Launched.");
+
                 Internals.Forms["Dashboard"].ShowDialog();
                 Application.Exit();
             };
