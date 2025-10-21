@@ -49,6 +49,7 @@ namespace Real_Estate_Management_System.Utilities
 
             Forms.SetControlVisible(new Control[]
             {
+                lblNotice,
                 lblYear,
                 cmbYear }, true);
         }
@@ -68,7 +69,10 @@ namespace Real_Estate_Management_System.Utilities
         private void cmbYear_TextChanged(object sender, EventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(cmbYear.Text))
+            {
+                UHelper.SelectedYear = Convert.ToInt32(cmbYear.Text);
                 FillChart();
+            }
             else
             {
                 chrtUtilitiesChart.Series["Water"].Points.Clear();
@@ -91,6 +95,12 @@ namespace Real_Estate_Management_System.Utilities
 
             FillCMB_Year();
             cmbYear.Text = "";
+        }
+
+        private void chrtUtilitiesChart_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            ViewConsumptions VC = new ViewConsumptions();
+            VC.ShowDialog();
         }
     }
 }

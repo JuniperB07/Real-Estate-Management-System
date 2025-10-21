@@ -26,7 +26,8 @@ namespace Real_Estate_Management_System.Utilities
             {
                 pnlUtilitiesInformation,
                 lblYear,
-                cmbYear }, false);
+                cmbYear,
+                lblNotice }, false);
 
             UHelper.BuildingID = 0;
         }

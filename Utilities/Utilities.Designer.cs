@@ -58,6 +58,7 @@
             chrtUtilitiesChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             lblYear = new Label();
             cmbYear = new ComboBox();
+            lblNotice = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -109,7 +110,7 @@
             panel2.ForeColor = Color.FromArgb(255, 186, 8);
             panel2.Location = new Point(0, 167);
             panel2.Name = "panel2";
-            panel2.Size = new Size(296, 635);
+            panel2.Size = new Size(296, 644);
             panel2.TabIndex = 1;
             // 
             // lstBuildingsList
@@ -123,7 +124,7 @@
             lstBuildingsList.ItemHeight = 26;
             lstBuildingsList.Location = new Point(28, 46);
             lstBuildingsList.Name = "lstBuildingsList";
-            lstBuildingsList.Size = new Size(262, 546);
+            lstBuildingsList.Size = new Size(262, 572);
             lstBuildingsList.TabIndex = 1;
             lstBuildingsList.MouseDoubleClick += lstBuildingsList_MouseDoubleClick;
             // 
@@ -309,15 +310,28 @@
             // 
             // chrtUtilitiesChart
             // 
-            chrtUtilitiesChart.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            chrtUtilitiesChart.Anchor = AnchorStyles.None;
             chrtUtilitiesChart.BackColor = Color.FromArgb(240, 237, 229);
             chartArea1.AxisX.IsLabelAutoFit = false;
             chartArea1.AxisX.LabelStyle.Angle = -45;
+            chartArea1.AxisX.Title = "Months";
+            chartArea1.AxisX.TitleFont = new Font("Arial Narrow", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            chartArea1.AxisX.TitleForeColor = Color.FromArgb(0, 70, 67);
+            chartArea1.AxisY.Title = "Consumption";
+            chartArea1.AxisY.TitleFont = new Font("Arial Narrow", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            chartArea1.AxisY.TitleForeColor = Color.FromArgb(0, 70, 67);
+            chartArea1.BackColor = Color.FromArgb(240, 237, 229);
+            chartArea1.BorderColor = Color.FromArgb(0, 70, 67);
             chartArea1.Name = "ChartArea1";
+            chartArea1.ShadowOffset = 5;
             chrtUtilitiesChart.ChartAreas.Add(chartArea1);
+            legend1.BackColor = Color.FromArgb(240, 237, 229);
+            legend1.Font = new Font("Arial Narrow", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            legend1.ForeColor = Color.FromArgb(0, 70, 67);
+            legend1.IsTextAutoFit = false;
             legend1.Name = "Legend1";
             chrtUtilitiesChart.Legends.Add(legend1);
-            chrtUtilitiesChart.Location = new Point(302, 397);
+            chrtUtilitiesChart.Location = new Point(302, 405);
             chrtUtilitiesChart.Name = "chrtUtilitiesChart";
             chrtUtilitiesChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
             chrtUtilitiesChart.PaletteCustomColors = new Color[]
@@ -341,6 +355,7 @@
             title1.Name = "Title1";
             title1.Text = "Utility Consumption Graph for the Current Year";
             chrtUtilitiesChart.Titles.Add(title1);
+            chrtUtilitiesChart.MouseDoubleClick += chrtUtilitiesChart_MouseDoubleClick;
             // 
             // lblYear
             // 
@@ -364,12 +379,24 @@
             cmbYear.TabIndex = 5;
             cmbYear.TextChanged += cmbYear_TextChanged;
             // 
+            // lblNotice
+            // 
+            lblNotice.Font = new Font("Arial", 10.2F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            lblNotice.ForeColor = Color.FromArgb(0, 70, 67);
+            lblNotice.Location = new Point(860, 359);
+            lblNotice.Name = "lblNotice";
+            lblNotice.Size = new Size(346, 27);
+            lblNotice.TabIndex = 32;
+            lblNotice.Text = "*Double click the chart to view more details.";
+            lblNotice.TextAlign = ContentAlignment.TopRight;
+            // 
             // Utilities
             // 
             AutoScaleDimensions = new SizeF(11F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(240, 237, 229);
-            ClientSize = new Size(1218, 799);
+            ClientSize = new Size(1218, 807);
+            Controls.Add(lblNotice);
             Controls.Add(cmbYear);
             Controls.Add(lblYear);
             Controls.Add(chrtUtilitiesChart);
@@ -422,5 +449,6 @@
         private Button btnReset;
         private Label lblYear;
         private ComboBox cmbYear;
+        private Label lblNotice;
     }
 }

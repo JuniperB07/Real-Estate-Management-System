@@ -12,6 +12,7 @@ namespace Real_Estate_Management_System.Utilities
     internal static class UHelper
     {
         internal static int BuildingID { get; set; }
+        internal static int SelectedYear { get; set; }
 
         internal static UtilityChargeMetadata? UtilityChargeInfo
         {
