@@ -49,4 +49,33 @@ namespace Real_Estate_Management_System.Utilities
             return !(Left == Right);
         }
     }
+
+    internal struct ConsumptionMetadata
+    {
+        public int Year { get; set; }
+        public string Month { get; set; }
+        public double WaterConsumption { get; set; }
+        public double ElectricityConsumption { get; set; }
+
+        public ConsumptionMetadata
+            (int SetYear = 1999,
+            string SetMonth = "",
+            double SetWaterConsumption = -1,
+            double SetElectricityConsumption = -1)
+        {
+            Year = SetYear;
+            Month = SetMonth;
+            WaterConsumption = SetWaterConsumption;
+            ElectricityConsumption = SetElectricityConsumption;
+        }
+
+        public bool IsValid()
+        {
+            return
+                (Year >= 2000 && Year <= DateTime.Now.Year) &&
+                !string.IsNullOrWhiteSpace(Month) &&
+                !(WaterConsumption < 0) &&
+                !(ElectricityConsumption < 0);
+        }
+    }
 }

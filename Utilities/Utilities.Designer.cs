@@ -196,6 +196,7 @@
             btnAddConsumption.TabIndex = 12;
             btnAddConsumption.Text = "Add Consumption";
             btnAddConsumption.UseVisualStyleBackColor = true;
+            btnAddConsumption.Click += btnAddConsumption_Click;
             // 
             // label10
             // 
@@ -346,9 +347,10 @@
             lblYear.Font = new Font("Arial", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblYear.Location = new Point(302, 359);
             lblYear.Name = "lblYear";
-            lblYear.Size = new Size(147, 33);
+            lblYear.Size = new Size(203, 33);
             lblYear.TabIndex = 4;
             lblYear.Text = "Select Year:";
+            lblYear.TextAlign = ContentAlignment.TopRight;
             // 
             // cmbYear
             // 
@@ -356,9 +358,9 @@
             cmbYear.Font = new Font("Arial", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cmbYear.ForeColor = Color.FromArgb(0, 70, 67);
             cmbYear.FormattingEnabled = true;
-            cmbYear.Location = new Point(455, 357);
+            cmbYear.Location = new Point(511, 357);
             cmbYear.Name = "cmbYear";
-            cmbYear.Size = new Size(202, 34);
+            cmbYear.Size = new Size(146, 34);
             cmbYear.TabIndex = 5;
             cmbYear.TextChanged += cmbYear_TextChanged;
             // 

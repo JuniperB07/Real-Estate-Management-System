@@ -73,6 +73,7 @@ namespace Real_Estate_Management_System.Utilities
             {
                 chrtUtilitiesChart.Series["Water"].Points.Clear();
                 chrtUtilitiesChart.Series["Electricity"].Points.Clear();
+                chrtUtilitiesChart.Titles[0].Text = "";
                 chrtUtilitiesChart.Visible = false;
             }
         }
@@ -81,6 +82,15 @@ namespace Real_Estate_Management_System.Utilities
         {
             GC.Collect();
             GC.WaitForPendingFinalizers();
+        }
+
+        private void btnAddConsumption_Click(object sender, EventArgs e)
+        {
+            AddConsumption AC = new AddConsumption();
+            AC.ShowDialog();
+
+            FillCMB_Year();
+            cmbYear.Text = "";
         }
     }
 }

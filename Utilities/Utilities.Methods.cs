@@ -76,19 +76,18 @@ namespace Real_Estate_Management_System.Utilities
 
                 if (Internals.DBC.HasRows)
                 {
-                    Forms.AddChartSeriesPoint(chrtUtilitiesChart.Series["Water"], mon, index, Convert.ToDouble(Internals.DBC.Values[0]));
-                    Forms.AddChartSeriesPoint(chrtUtilitiesChart.Series["Electricity"], mon, index, Convert.ToDouble(Internals.DBC.Values[1]));
+                    double water = Convert.ToDouble(Internals.DBC.Values[0]);
+                    double electricity = Convert.ToDouble(Internals.DBC.Values[1]);
 
+                    Forms.AddChartSeriesPoint(chrtUtilitiesChart.Series["Water"], mon, index, water);
+                    Forms.AddChartSeriesPoint(chrtUtilitiesChart.Series["Electricity"], mon, index, electricity);
                     index++;
                 }
                 else
-                {
                     Internals.DBC.CloseReader();
-                    break;
-                }
             }
 
-            chrtUtilitiesChart.Titles[0].Text = "Utilities Consumption Graph for Year " + cmbYear.Text;
+            chrtUtilitiesChart.Titles[0].Text = "Utilities Consumption Graph for the Year " + cmbYear.Text;
             chrtUtilitiesChart.Visible = true;
         }
 
