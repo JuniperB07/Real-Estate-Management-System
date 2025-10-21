@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Real_Estate_Management_System.Utilities
 {
-    partial class Utilities
+    partial class EditCharges
     {
-        
+
     }
 }

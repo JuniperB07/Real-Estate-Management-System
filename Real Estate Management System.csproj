@@ -150,6 +150,10 @@
 		<Compile Update ="Utilities\Utilities.Methods.cs">
 			<DependentUpon>Utilities.cs</DependentUpon>
 		</Compile>
+
+		<Compile Update ="Utilities\EditCharges.Methods.cs">
+			<DependentUpon>EditCharges.cs</DependentUpon>
+		</Compile>
 	</ItemGroup>
 
 </Project>
