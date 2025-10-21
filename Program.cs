@@ -34,6 +34,7 @@ namespace Real_Estate_Management_System
                 SplashHelper.IsClosedPrematurely = true;
                 await Task.Delay(2000);
 
+                #region Check Log File
                 SplashHelper.Splash_LoadingText = "Checking Log file...";
                 Internals.Logger = new Logger(Internals.LogPath);
                 if (!Internals.Logger.LogFileExists())
@@ -42,15 +43,17 @@ namespace Real_Estate_Management_System
                     await Task.Delay(500);
                 }
                 await Task.Delay(500);
+                #endregion
 
                 Internals.Logger.AddLog(DateTime.Now, LogCategories.SYSTEM.ToString(), "System Launched.");
+
+                #region Connect To Database
                 Internals.Logger.AddLog(DateTime.Now, LogCategories.SYSTEM.ToString(), "Connecting to Database...");
                 SplashHelper.Splash_LoadingText = "Connecting to Database...";
-
                 if (!DBConnect.ConfigGenerator.ConfigExists())
                 {
                     SplashHelper.Splash_LoadingText = "Creating DB Config file...";
-                    DBConnect.ConfigGenerator.GenerateDBConfig(Internals.CONN_STR);
+                    DBConnect.ConfigGenerator.GenerateDBConfig(Internals.CONN_STR_METADATA.ConnectionString);
                     await Task.Delay(500);
                 }
                 Internals.DBC = new DBConnect(DBConnect.ConfigGenerator.GetConnectionString());
@@ -62,10 +65,11 @@ namespace Real_Estate_Management_System
                     Application.Exit();
                 }
                 await Task.Delay(500);
-
                 Internals.Logger.AddLog(DateTime.Now, LogCategories.SYSTEM.ToString(), "Database connection established.");
-                Internals.Logger.AddLog(DateTime.Now, LogCategories.SYSTEM.ToString(), "Retrieving table column metadata and creating enum files...");
+                #endregion
 
+                #region Check/Generate Enum Files
+                Internals.Logger.AddLog(DateTime.Now, LogCategories.SYSTEM.ToString(), "Retrieving table column metadata and creating enum files...");
                 SplashHelper.Splash_LoadingText = "Checking && creating required enum files...";
 
                 string folder = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Tables");
@@ -78,7 +82,9 @@ namespace Real_Estate_Management_System
                 }
 
                 Internals.Logger.AddLog(DateTime.Now, LogCategories.SYSTEM.ToString(), "Enum files generated.");
+                #endregion
 
+                #region Check RDLCs
                 SplashHelper.Splash_LoadingText = "Checking RDLCs...";
                 List<string> RDLCs = new List<string>
                 {
@@ -95,11 +101,15 @@ namespace Real_Estate_Management_System
                         Application.Exit();
                     }
                 }
+                #endregion
 
+                #region Check Configuration Files
                 SplashHelper.Splash_LoadingText = "Checking configuration files...";
                 List<string> Configs = new List<string>
                 {
-                    "Configs\\Tenants.config"
+                    "Configs\\Tenants.config",
+                    "Configs\\DueDates.config",
+                    "Configs\\Utilities.config"
                 };
                 foreach(string file in Configs)
                 {
@@ -112,7 +122,9 @@ namespace Real_Estate_Management_System
                         Application.Exit();
                     }
                 }
+                #endregion
 
+                #region Load Main Forms
                 SplashHelper.Splash_LoadingText = "Loading main forms...";
                 await Task.Delay(500);
                 List<Form> preLoadedForms = new List<Form>
@@ -131,6 +143,7 @@ namespace Real_Estate_Management_System
                     SplashHelper.Splash_LoadingText = "Loading " + form.Name + "...";
                     await Task.Delay(500);
                 }
+                #endregion
 
                 SplashHelper.Splash_LoadingText = "Finalizing initializations...";
                 SplashHelper.IsClosedPrematurely = false;
