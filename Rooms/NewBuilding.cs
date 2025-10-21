@@ -82,6 +82,22 @@ namespace Real_Estate_Management_System.Rooms
                     new ValuesMetadata(BuildingInfo.Address, DataTypes.NonNumeric) })
                 .ExecuteNonQuery(Internals.DBC);
 
+            //---GET NEW BUILDING'S BUILDING ID---
+            new SelectCommand<tbbuilding>()
+                .Select(tbbuilding.BuildingID)
+                .From
+                .StartWhere
+                    .Where(tbbuilding.BuildingName, SQLOperator.Equal, "@BuildingName")
+                .EndWhere
+                .ExecuteReader(Internals.DBC, new ParametersMetadata("@BuildignName", BuildingInfo.Name));
+            int bID = Convert.ToInt32(Internals.DBC.Values[0]);
+
+            //---INSERT NEW BUILDING ID TO UTILITIES SETTINGS TABLE---
+            new InsertIntoCommand<tbutilities_settings>()
+                .Column(tbutilities_settings.BuildingID)
+                .Values(bID.ToString(), DataTypes.Numeric)
+                .ExecuteNonQuery(Internals.DBC);
+
             MBOK = new Dialogs.MSGBox_OK(
                 "Room Management - Add New Building",
                 "New building added.", Dialogs.DialogIcons.Information);
