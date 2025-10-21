@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Real Estate Management System")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bc069c708da638eeedbe90f0743084b5e83e1ba1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+16940318a85d9ddd391f6cfd246c507b2b5a0e2d")]
 [assembly: System.Reflection.AssemblyProductAttribute("Real Estate Management System")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Real Estate Management System")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

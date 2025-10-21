@@ -153,6 +153,10 @@
 		<Compile Update="Utilities\EditCharges.Methods.cs">
 			<DependentUpon>EditCharges.cs</DependentUpon>
 		</Compile>
+
+		<Compile Update ="Utilities\AddConsumption.Methods.cs">
+			<DependentUpon>AddConsumption.cs</DependentUpon>
+		</Compile>
 	</ItemGroup>
 
 </Project>
