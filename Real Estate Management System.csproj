@@ -31,7 +31,6 @@
   <ItemGroup>
     <Reference Include="JunX.NET">
       <HintPath>..\JunX.NET\bin\Release\net8.0-windows7.0\JunX.NET.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="JunX.NETStandard">
       <HintPath>..\JunX.NETStandard\bin\Release\netstandard2.0\JunX.NETStandard.dll</HintPath>
@@ -147,11 +146,11 @@
 			<DependentUpon>EditTenancy.cs</DependentUpon>
 		</Compile>
 
-		<Compile Update ="Utilities\Utilities.Methods.cs">
+		<Compile Update="Utilities\Utilities.Methods.cs">
 			<DependentUpon>Utilities.cs</DependentUpon>
 		</Compile>
 
-		<Compile Update ="Utilities\EditCharges.Methods.cs">
+		<Compile Update="Utilities\EditCharges.Methods.cs">
 			<DependentUpon>EditCharges.cs</DependentUpon>
 		</Compile>
 	</ItemGroup>
