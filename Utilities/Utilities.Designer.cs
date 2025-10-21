@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Utilities));
             panel1 = new Panel();
             label1 = new Label();
@@ -310,10 +310,12 @@
             // 
             chrtUtilitiesChart.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             chrtUtilitiesChart.BackColor = Color.FromArgb(240, 237, 229);
-            chartArea2.Name = "ChartArea1";
-            chrtUtilitiesChart.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            chrtUtilitiesChart.Legends.Add(legend2);
+            chartArea1.AxisX.IsLabelAutoFit = false;
+            chartArea1.AxisX.LabelStyle.Angle = -45;
+            chartArea1.Name = "ChartArea1";
+            chrtUtilitiesChart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            chrtUtilitiesChart.Legends.Add(legend1);
             chrtUtilitiesChart.Location = new Point(302, 397);
             chrtUtilitiesChart.Name = "chrtUtilitiesChart";
             chrtUtilitiesChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
@@ -322,22 +324,22 @@
     Color.FromArgb(10, 36, 114),
     Color.FromArgb(255, 186, 8)
     };
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Water";
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Electricity";
-            chrtUtilitiesChart.Series.Add(series3);
-            chrtUtilitiesChart.Series.Add(series4);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Water";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Electricity";
+            chrtUtilitiesChart.Series.Add(series1);
+            chrtUtilitiesChart.Series.Add(series2);
             chrtUtilitiesChart.Size = new Size(904, 390);
             chrtUtilitiesChart.TabIndex = 3;
             chrtUtilitiesChart.Text = "chart1";
-            title2.Font = new Font("Arial", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            title2.ForeColor = Color.FromArgb(0, 70, 67);
-            title2.Name = "Title1";
-            title2.Text = "Utility Consumption Graph for the Current Year";
-            chrtUtilitiesChart.Titles.Add(title2);
+            title1.Font = new Font("Arial", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            title1.ForeColor = Color.FromArgb(0, 70, 67);
+            title1.Name = "Title1";
+            title1.Text = "Utility Consumption Graph for the Current Year";
+            chrtUtilitiesChart.Titles.Add(title1);
             // 
             // lblYear
             // 
