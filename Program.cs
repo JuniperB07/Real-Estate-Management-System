@@ -128,7 +128,8 @@ namespace Real_Estate_Management_System
                 Splash.Close();
                 Internals.Logger.AddLog(DateTime.Now, LogCategories.SYSTEM.ToString(), "System Launched.");
 
-                Internals.Forms["Dashboard"].ShowDialog();
+                Dashboard D = new Dashboard();
+                D.ShowDialog();
                 Application.Exit();
             };
 
