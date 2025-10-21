@@ -10,6 +10,9 @@ using System.Windows.Forms;
 using JunX.NETStandard.Utility;
 using JunX.NET8.WinForms;
 using Real_Estate_Management_System.Dialogs;
+using Real_Estate_Management_System.Billing;
+using Real_Estate_Management_System.Login;
+using Real_Estate_Management_System.Payments;
 
 namespace Real_Estate_Management_System
 {
@@ -50,14 +53,16 @@ namespace Real_Estate_Management_System
         private void btnBilling_Click(object sender, EventArgs e)
         {
             Hide();
-            Internals.Forms["NewBill"].ShowDialog();
+            NewBill NB = new NewBill();
+            NB.ShowDialog();
             Show();
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
             Hide();
-            Internals.Forms["Login"].ShowDialog();
+            Login.Login L = new Login.Login();
+            L.ShowDialog();
             Show();
         }
 
@@ -75,13 +80,15 @@ namespace Real_Estate_Management_System
         private void btnPayments_Click(object sender, EventArgs e)
         {
             Hide();
-            Internals.Forms["PayBill"].ShowDialog();
+            PayBill PB = new PayBill();
+            PB.ShowDialog();
             Show();
         }
 
         private void btnTenants_Click(object sender, EventArgs e)
         {
-            Internals.Forms["Tenants"].Show();
+            Tenants.Tenants T = new Tenants.Tenants();
+            T.Show();
         }
 
         private void btnViewAllTenants_Click(object sender, EventArgs e)
@@ -91,17 +98,20 @@ namespace Real_Estate_Management_System
 
         private void btnRooms_Click(object sender, EventArgs e)
         {
-            Internals.Forms["RoomManagement"].Show();
+            Rooms.RoomManagement RM = new Rooms.RoomManagement();
+            RM.Show();
         }
 
         private void btnInternetPlans_Click(object sender, EventArgs e)
         {
-            Internals.Forms["InternetManagement"].Show();
+            Internet.InternetManagement IM = new Internet.InternetManagement();
+            IM.Show();
         }
 
         private void btnUtilities_Click(object sender, EventArgs e)
         {
-            Internals.Forms["Utilities"].Show();
+            Utilities.Utilities U = new Utilities.Utilities();
+            U.Show();
         }
     }
 }

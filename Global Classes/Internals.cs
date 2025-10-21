@@ -35,8 +35,6 @@ namespace Real_Estate_Management_System
         internal static DBConnect DBC { get; set; }
         internal static Logger Logger;
 
-        internal static Dictionary<string, Form> Forms { get; set; } = new();
-
         internal static List<string> TenantsList
         {
             get

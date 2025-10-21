@@ -122,28 +122,6 @@ namespace Real_Estate_Management_System
                 }
                 #endregion
 
-                #region Load Main Forms
-                SplashHelper.Splash_LoadingText = "Loading main forms...";
-                await Task.Delay(500);
-                List<Form> preLoadedForms = new List<Form>
-                {
-                    new Dashboard(),
-                    new Login.Login(),
-                    new Billing.NewBill(),
-                    new Payments.PayBill(),
-                    new Tenants.Tenants(),
-                    new Rooms.RoomManagement(),
-                    new Internet.InternetManagement(),
-                    new Utilities.Utilities()
-                };
-                Internals.Forms = preLoadedForms.ToDictionary(f => f.Name, f => f);
-                foreach(Form form in Internals.Forms.Values)
-                {
-                    SplashHelper.Splash_LoadingText = "Loading " + form.Name + "...";
-                    await Task.Delay(500);
-                }
-                #endregion
-
                 SplashHelper.Splash_LoadingText = "Finalizing initializations...";
                 SplashHelper.IsClosedPrematurely = false;
                 await Task.Delay(2000);
