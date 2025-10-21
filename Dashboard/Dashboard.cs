@@ -98,5 +98,10 @@ namespace Real_Estate_Management_System
         {
             Internals.Forms["InternetManagement"].Show();
         }
+
+        private void btnUtilities_Click(object sender, EventArgs e)
+        {
+            Internals.Forms["Utilities"].Show();
+        }
     }
 }

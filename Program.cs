@@ -133,7 +133,8 @@ namespace Real_Estate_Management_System
                     new Payments.PayBill(),
                     new Tenants.Tenants(),
                     new Rooms.RoomManagement(),
-                    new Internet.InternetManagement()
+                    new Internet.InternetManagement(),
+                    new Utilities.Utilities()
                 };
                 Internals.Forms = preLoadedForms.ToDictionary(f => f.Name, f => f);
                 foreach(Form form in Internals.Forms.Values)

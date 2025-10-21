@@ -421,6 +421,7 @@
             btnUtilities.Text = "UTILITIES";
             btnUtilities.TextAlign = ContentAlignment.MiddleLeft;
             btnUtilities.UseVisualStyleBackColor = true;
+            btnUtilities.Click += btnUtilities_Click;
             // 
             // pictureBox7
             // 
