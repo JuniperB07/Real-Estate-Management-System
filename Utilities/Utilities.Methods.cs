@@ -19,6 +19,7 @@ namespace Real_Estate_Management_System.Utilities
             cmbYear.Items.Clear();
             chrtUtilitiesChart.Series["Water"].Points.Clear();
             chrtUtilitiesChart.Series["Electricity"].Points.Clear();
+            chrtUtilitiesChart.Titles[0].Text = "";
             chrtUtilitiesChart.Visible = false;
 
             Forms.SetControlVisible(new Control[]
@@ -87,6 +88,7 @@ namespace Real_Estate_Management_System.Utilities
                 }
             }
 
+            chrtUtilitiesChart.Titles[0].Text = "Utilities Consumption Graph for Year " + cmbYear.Text;
             chrtUtilitiesChart.Visible = true;
         }
 
