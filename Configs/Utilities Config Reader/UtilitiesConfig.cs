@@ -18,7 +18,7 @@ namespace Real_Estate_Management_System.Configs.Utilities
             {
                 return Doc
                     .Descendants("add")
-                    .FirstOrDefault(x => x.Attribute("key")?.Value == "Utilities:Water_Unit")
+                    .FirstOrDefault(x => x.Attribute("key")?.Value == "Utilities:Water_Unit")?
                     .Attribute("value")?.Value;
             }
         }

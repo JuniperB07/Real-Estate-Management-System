@@ -1761,6 +1761,11 @@
             </summary>
             <returns>The current <see cref="T:JunX.NETStandard.SQLBuilder.SelectCommand`2"/> instance for fluent chaining.</returns>
         </member>
+        <member name="P:JunX.NETStandard.SQLBuilder.SelectCommand`2.Distinct">
+            <summary>
+            Appends a DISTINCT clause to the SQL command to ensure unique rows in the result set.
+            </summary>
+        </member>
         <member name="P:JunX.NETStandard.SQLBuilder.SelectCommand`2.StartWhere">
             <summary>
             Begins composition of a SQL <c>WHERE</c> clause for a <c>SELECT</c> command involving a primary and joined table.
@@ -1988,6 +1993,11 @@
             </summary>
             <returns>A new <see cref="!:WhereClause&lt;SelectCommand&lt;T&gt;, T&gt;"/> instance bound to this command.</returns>
         </member>
+        <member name="P:JunX.NETStandard.SQLBuilder.SelectCommand`1.Distinct">
+            <summary>
+            Appends a DISTINCT clause to the SQL command to ensure unique rows in the result set.
+            </summary>
+        </member>
         <member name="M:JunX.NETStandard.SQLBuilder.SelectCommand`1.Select(`0,System.Boolean)">
             <summary>
             Appends a column to the SQL <c>SELECT</c> clause using an enum-defined column, with optional full qualification.
@@ -2101,6 +2111,11 @@
             <remarks>
             This override finalizes the query for execution or inspection by appending a terminating semicolon.
             </remarks>
+        </member>
+        <member name="P:JunX.NETStandard.SQLBuilder.SelectCommand.Distinct">
+            <summary>
+            Appends a DISTINCT clause to the SQL command to eliminate duplicate rows from the result set.
+            </summary>
         </member>
         <member name="P:JunX.NETStandard.SQLBuilder.SelectCommand.StartWhere">
             <summary>

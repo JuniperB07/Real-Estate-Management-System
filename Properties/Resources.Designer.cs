@@ -943,9 +943,29 @@ namespace Real_Estate_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap REMS_UTILITIES_ELECTRICITY {
+            get {
+                object obj = ResourceManager.GetObject("REMS_UTILITIES_ELECTRICITY", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap REMS_UTILITIES_LIGHT {
             get {
                 object obj = ResourceManager.GetObject("REMS_UTILITIES_LIGHT", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap REMS_UTILITIES_WATER {
+            get {
+                object obj = ResourceManager.GetObject("REMS_UTILITIES_WATER", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -5083,6 +5083,11 @@
             <param name="FormControls">The collection of <see cref="T:System.Windows.Forms.Control"/> objects to update.</param>
             <param name="IsVisible"><c>true</c> to make all controls visible; <c>false</c> to hide them.</param>
         </member>
+        <member name="M:JunX.NET8.WinForms.Forms.AddChartSeriesPoint(System.Windows.Forms.DataVisualization.Charting.Series,System.String,System.Int32,System.Double)">
+            <summary>
+            Adds a data point to the specified chart series with a custom axis label, X-value, and Y-values.
+            </summary>
+        </member>
         <member name="T:JunX.NET8.WinForms.Forms.ControlType`1">
             <summary>
             Provides recursive extraction of controls of type <typeparamref name="T"/> from a container,
