@@ -59,4 +59,33 @@ namespace Real_Estate_Management_System.Billing
             return base.GetHashCode();
         }
     }
+    internal struct DueDatesMetadata
+    {
+        public DateTime UtilitiesDueDate { get; set; }
+        public DateTime RentalDueDate { get; set; }
+        public DateTime InternetDueDate { get; set; }
+
+        public DueDatesMetadata(
+            DateTime SetUtilitiesDueDate = default,
+            DateTime SetRentalDueDate = default,
+            DateTime SetInternetDueDate = default)
+        {
+            UtilitiesDueDate = SetUtilitiesDueDate;
+            RentalDueDate = SetRentalDueDate;
+            InternetDueDate = SetInternetDueDate;
+        }
+
+        public bool IsValid()
+        {
+            if (BHelper.IncludeInternet == true)
+                return
+                    UtilitiesDueDate != default &&
+                    RentalDueDate != default &&
+                    InternetDueDate != default;
+            else
+                return
+                    UtilitiesDueDate != default &&
+                    RentalDueDate != default;
+        }
+    }
 }
