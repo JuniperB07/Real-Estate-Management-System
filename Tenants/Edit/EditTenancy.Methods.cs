@@ -145,7 +145,7 @@ namespace Real_Estate_Management_System.Tenants.Edit
             //If no changes were made:
             //1. Close form.
             if (UpdatedTM == OriginalTM)
-                Close();
+                goto Close;
 
             //---CHECK FOR TENANCY STATUS CHANGES---
             /*
@@ -193,7 +193,8 @@ namespace Real_Estate_Management_System.Tenants.Edit
                         //1.2.2)
                         MBOK = new Dialogs.MSGBox_OK(this.Text, "Selected room is currently occupied\nUnable to activate tenant.", Dialogs.DialogIcons.Error);
                         MBOK.ShowDialog();
-                        Close(); //1.2.3)
+                        goto Close;
+                        //Close(); //1.2.3)
                     }
                 }
                 else //1) -New Tenancy Status != ACTIVE
@@ -312,6 +313,9 @@ namespace Real_Estate_Management_System.Tenants.Edit
             //---NOTIFY THEN CLOSE---
             MBOK = new Dialogs.MSGBox_OK(this.Text, "Changes saved.", Dialogs.DialogIcons.Information);
             MBOK.ShowDialog();
+            goto Close;
+
+        Close:
             Close();
         }
     }
