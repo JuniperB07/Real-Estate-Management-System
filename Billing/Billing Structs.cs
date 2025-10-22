@@ -9,6 +9,7 @@ namespace Real_Estate_Management_System.Billing
 {
     internal struct InvoiceMetadata
     {
+        public int TenantID { get; set; }
         public string InvoiceNumber { get; set; }
         public DateTime InvoiceDate { get; set; }
         public int WaterInvoiceID { get; set; }
@@ -19,6 +20,7 @@ namespace Real_Estate_Management_System.Billing
         public InvoiceStatuses Status { get; set; }
 
         public InvoiceMetadata(
+            int SetTenantID = -1,
             string SetInvoiceNumber = "",
             DateTime SetInvoiceDate = default,
             int SetWaterInvoiceID = -1,
@@ -28,6 +30,7 @@ namespace Real_Estate_Management_System.Billing
             double SetInvoiceTotal = -1,
             InvoiceStatuses SetStatus = InvoiceStatuses.Unknown)
         {
+            TenantID = SetTenantID;
             InvoiceNumber = SetInvoiceNumber;
             InvoiceDate = SetInvoiceDate;
             WaterInvoiceID = SetWaterInvoiceID;
@@ -41,6 +44,7 @@ namespace Real_Estate_Management_System.Billing
         public bool IsValid()
         {
             return
+                TenantID > 0 &&
                 !string.IsNullOrWhiteSpace(InvoiceNumber) &&
                 InvoiceDate != default &&
                 WaterInvoiceID >= 0 &&
