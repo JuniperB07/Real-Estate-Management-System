@@ -16,6 +16,7 @@ namespace Real_Estate_Management_System.Billing
         public int ElectricityInvoiceID { get; set; }
         public int RentalInvoiceID { get; set; }
         public int InternetInvoiceID { get; set; }
+        public int IncludeInternet { get; set; }
         public double InvoiceTotal { get; set; }
         public InvoiceStatuses Status { get; set; }
 
@@ -27,6 +28,7 @@ namespace Real_Estate_Management_System.Billing
             int SetElectricityInvoiceID = -1,
             int SetRentalInvoiceID = -1,
             int SetInternetInvoiceID = -1,
+            int SetIncludeInternet = 0,
             double SetInvoiceTotal = -1,
             InvoiceStatuses SetStatus = InvoiceStatuses.Unknown)
         {
@@ -37,6 +39,7 @@ namespace Real_Estate_Management_System.Billing
             ElectricityInvoiceID = SetElectricityInvoiceID;
             RentalInvoiceID = SetRentalInvoiceID;
             InternetInvoiceID = SetInternetInvoiceID;
+            IncludeInternet = SetIncludeInternet;
             InvoiceTotal = SetInvoiceTotal;
             Status = SetStatus;
         }

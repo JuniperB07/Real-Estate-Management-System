@@ -41,5 +41,20 @@ namespace Real_Estate_Management_System.Billing
             foreach (string TN in Internals.TenantsList)
                 txtSearchTenant.AutoCompleteCustomSource.Add(TN);
         }
+
+        private void InitiateNewInvoice()
+        {
+            BHelper.NewInvoice = new InvoiceMetadata(
+                SetTenantID: BHelper.TenantID,
+                SetInvoiceNumber: Methods.GenerateInvoiceNumber(BHelper.TenantID),
+                SetInvoiceDate: DateTime.Now,
+                SetIncludeInternet: Convert.ToInt32(Configs.Billing.BillingConfig.IncludeInternet),
+                SetStatus: InvoiceStatuses.UNPAID);
+        }
+
+        private void RefreshBillingSummary()
+        {
+
+        }
     }
 }
