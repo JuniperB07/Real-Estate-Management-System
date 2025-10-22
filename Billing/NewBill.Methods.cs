@@ -49,12 +49,17 @@ namespace Real_Estate_Management_System.Billing
                 SetInvoiceNumber: Methods.GenerateInvoiceNumber(BHelper.TenantID),
                 SetInvoiceDate: DateTime.Now,
                 SetIncludeInternet: Convert.ToInt32(Configs.Billing.BillingConfig.IncludeInternet),
+                SetInvoiceTotal: 0,
                 SetStatus: InvoiceStatuses.UNPAID);
         }
 
         private void RefreshBillingSummary()
         {
-
+            lblTenantName.Text = BHelper.TenantName;
+            lblBillNumber.Text = BHelper.NewInvoice.InvoiceNumber;
+            lblInvoiceDate.Text = BHelper.NewInvoice.InvoiceDate.ToString("MMMM d, yyyy");
+            lblInvoiceTotal.Text = Internals.PESO + BHelper.NewInvoice.InvoiceTotal.ToString("0,0.00");
+            pnlBillSummary.Visible = true;
         }
     }
 }

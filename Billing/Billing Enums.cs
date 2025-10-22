@@ -11,6 +11,16 @@ namespace Real_Estate_Management_System.Billing
         Unknown=-1,
         PAID,
         UNPAID,
+        PARTIAL,
         TRANSFERRED
+    }
+
+    internal enum InvoiceTypes
+    {
+        WATER,
+        ELECTRICITY,
+        RENTAL,
+        INTERNET,
+        Unknown = -1
     }
 }

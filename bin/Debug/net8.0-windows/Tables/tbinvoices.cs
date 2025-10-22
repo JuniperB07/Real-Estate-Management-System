@@ -2,6 +2,7 @@ public enum tbinvoices
 {
     tbinvoices,
     InvoiceID,
+    TenantID,
     InvoiceNumber,
     InvoiceDate,
     WaterInvoiceID,

@@ -59,6 +59,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Configs\Billing.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Configs\DueDates.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

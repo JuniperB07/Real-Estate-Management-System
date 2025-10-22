@@ -107,7 +107,8 @@ namespace Real_Estate_Management_System
                 {
                     "Configs\\Tenants.config",
                     "Configs\\DueDates.config",
-                    "Configs\\Utilities.config"
+                    "Configs\\Utilities.config",
+                    "Configs\\Billing.config"
                 };
                 foreach(string file in Configs)
                 {

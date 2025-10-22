@@ -11,6 +11,7 @@ namespace Real_Estate_Management_System.Billing
     internal static class BHelper
     {
         internal static InvoiceMetadata NewInvoice;
+        internal static WaterInvoice NewWaterInvoice;
 
 
         internal static int TenantID { get; set; }
