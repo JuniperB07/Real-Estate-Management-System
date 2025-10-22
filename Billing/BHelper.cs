@@ -10,5 +10,6 @@ namespace Real_Estate_Management_System.Billing
     {
         internal static bool IncludeInternet { get { return Configs.Billing.BillingConfig.IncludeInternet; } }
         internal static InvoiceMetadata NewInvoice { get; set; }
+        internal static int TenantID { get; set; }
     }
 }

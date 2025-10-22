@@ -167,6 +167,7 @@
             lstTenantsList.Name = "lstTenantsList";
             lstTenantsList.Size = new Size(349, 416);
             lstTenantsList.TabIndex = 1;
+            lstTenantsList.MouseDoubleClick += lstTenantsList_MouseDoubleClick;
             // 
             // pictureBox2
             // 

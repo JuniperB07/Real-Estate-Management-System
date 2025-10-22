@@ -102,5 +102,10 @@ namespace Real_Estate_Management_System.Billing
             else
                 FillTenantsList();
         }
+
+        private void lstTenantsList_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            
+        }
     }
 }
