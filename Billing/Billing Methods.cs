@@ -8,6 +8,5 @@ namespace Real_Estate_Management_System.Billing
 {
     internal static class Methods
     {
-
     }
 }
