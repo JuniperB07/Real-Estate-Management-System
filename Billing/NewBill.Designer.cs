@@ -41,10 +41,10 @@
             btnSetDueDates = new Button();
             pictureBox7 = new PictureBox();
             label7 = new Label();
-            label6 = new Label();
-            label4 = new Label();
-            label3 = new Label();
-            label2 = new Label();
+            lblInvoiceTotal = new Label();
+            lblInvoiceDate = new Label();
+            lblBillNumber = new Label();
+            lblTenantName = new Label();
             panel3 = new Panel();
             btnReset = new Button();
             pictureBox6 = new PictureBox();
@@ -61,22 +61,22 @@
             label16 = new Label();
             btnManage_WaterBill = new Button();
             label10 = new Label();
-            label15 = new Label();
+            lblWaterBillTotal = new Label();
             pnlRentalBill = new Panel();
             label18 = new Label();
             label11 = new Label();
             btnManage_RentalBill = new Button();
-            label12 = new Label();
+            lblRentalBillTotal = new Label();
             pnlInternetBill = new Panel();
             label19 = new Label();
             btnManage_InternetBill = new Button();
             label13 = new Label();
-            label14 = new Label();
+            lblInternetBillTotal = new Label();
             pnlElectricityBill = new Panel();
             label17 = new Label();
             btnManage_ElectricityBill = new Button();
             label8 = new Label();
-            label9 = new Label();
+            lblElectricityBillTotal = new Label();
             pnlHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             pnlSelectTenant.SuspendLayout();
@@ -183,10 +183,10 @@
             pnlBillSummary.BackColor = SystemColors.ControlDarkDark;
             pnlBillSummary.Controls.Add(panel4);
             pnlBillSummary.Controls.Add(label7);
-            pnlBillSummary.Controls.Add(label6);
-            pnlBillSummary.Controls.Add(label4);
-            pnlBillSummary.Controls.Add(label3);
-            pnlBillSummary.Controls.Add(label2);
+            pnlBillSummary.Controls.Add(lblInvoiceTotal);
+            pnlBillSummary.Controls.Add(lblInvoiceDate);
+            pnlBillSummary.Controls.Add(lblBillNumber);
+            pnlBillSummary.Controls.Add(lblTenantName);
             pnlBillSummary.Controls.Add(panel3);
             pnlBillSummary.Controls.Add(panel2);
             pnlBillSummary.Controls.Add(panel1);
@@ -243,53 +243,53 @@
             label7.Text = "Bill Total:";
             label7.TextAlign = ContentAlignment.MiddleRight;
             // 
-            // label6
+            // lblInvoiceTotal
             // 
-            label6.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            label6.BackColor = Color.Transparent;
-            label6.Font = new Font("Arial", 48F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(733, 159);
-            label6.Name = "label6";
-            label6.Size = new Size(478, 128);
-            label6.TabIndex = 10;
-            label6.Text = "₱1,000.00";
-            label6.TextAlign = ContentAlignment.MiddleRight;
+            lblInvoiceTotal.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            lblInvoiceTotal.BackColor = Color.Transparent;
+            lblInvoiceTotal.Font = new Font("Arial", 48F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblInvoiceTotal.Location = new Point(733, 159);
+            lblInvoiceTotal.Name = "lblInvoiceTotal";
+            lblInvoiceTotal.Size = new Size(478, 128);
+            lblInvoiceTotal.TabIndex = 10;
+            lblInvoiceTotal.Text = "₱1,000.00";
+            lblInvoiceTotal.TextAlign = ContentAlignment.MiddleRight;
             // 
-            // label4
+            // lblInvoiceDate
             // 
-            label4.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            label4.BackColor = Color.Transparent;
-            label4.Font = new Font("Arial", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(313, 132);
-            label4.Name = "label4";
-            label4.Size = new Size(898, 27);
-            label4.TabIndex = 8;
-            label4.Text = "Invoice Date";
-            label4.TextAlign = ContentAlignment.MiddleRight;
+            lblInvoiceDate.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            lblInvoiceDate.BackColor = Color.Transparent;
+            lblInvoiceDate.Font = new Font("Arial", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblInvoiceDate.Location = new Point(313, 132);
+            lblInvoiceDate.Name = "lblInvoiceDate";
+            lblInvoiceDate.Size = new Size(898, 27);
+            lblInvoiceDate.TabIndex = 8;
+            lblInvoiceDate.Text = "Invoice Date";
+            lblInvoiceDate.TextAlign = ContentAlignment.MiddleRight;
             // 
-            // label3
+            // lblBillNumber
             // 
-            label3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Arial", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(313, 84);
-            label3.Name = "label3";
-            label3.Size = new Size(898, 38);
-            label3.TabIndex = 7;
-            label3.Text = "Bill Number";
-            label3.TextAlign = ContentAlignment.MiddleRight;
+            lblBillNumber.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            lblBillNumber.BackColor = Color.Transparent;
+            lblBillNumber.Font = new Font("Arial", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblBillNumber.Location = new Point(313, 84);
+            lblBillNumber.Name = "lblBillNumber";
+            lblBillNumber.Size = new Size(898, 38);
+            lblBillNumber.TabIndex = 7;
+            lblBillNumber.Text = "Bill Number";
+            lblBillNumber.TextAlign = ContentAlignment.MiddleRight;
             // 
-            // label2
+            // lblTenantName
             // 
-            label2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Arial", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(313, 3);
-            label2.Name = "label2";
-            label2.Size = new Size(898, 78);
-            label2.TabIndex = 6;
-            label2.Text = "Dela Cruz, Juan";
-            label2.TextAlign = ContentAlignment.MiddleRight;
+            lblTenantName.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            lblTenantName.BackColor = Color.Transparent;
+            lblTenantName.Font = new Font("Arial", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTenantName.Location = new Point(313, 3);
+            lblTenantName.Name = "lblTenantName";
+            lblTenantName.Size = new Size(898, 78);
+            lblTenantName.TabIndex = 6;
+            lblTenantName.Text = "Dela Cruz, Juan";
+            lblTenantName.TextAlign = ContentAlignment.MiddleRight;
             // 
             // panel3
             // 
@@ -432,7 +432,7 @@
             pnlWaterBill.Controls.Add(label16);
             pnlWaterBill.Controls.Add(btnManage_WaterBill);
             pnlWaterBill.Controls.Add(label10);
-            pnlWaterBill.Controls.Add(label15);
+            pnlWaterBill.Controls.Add(lblWaterBillTotal);
             pnlWaterBill.Location = new Point(372, 483);
             pnlWaterBill.Name = "pnlWaterBill";
             pnlWaterBill.Size = new Size(592, 178);
@@ -478,18 +478,18 @@
             label10.Text = "WATER BILL TOTAL";
             label10.TextAlign = ContentAlignment.MiddleRight;
             // 
-            // label15
+            // lblWaterBillTotal
             // 
-            label15.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            label15.BackColor = Color.Transparent;
-            label15.Font = new Font("Arial", 36F, FontStyle.Bold);
-            label15.ForeColor = Color.Cornsilk;
-            label15.Location = new Point(64, 0);
-            label15.Name = "label15";
-            label15.Size = new Size(525, 86);
-            label15.TabIndex = 14;
-            label15.Text = "₱1,000.00";
-            label15.TextAlign = ContentAlignment.MiddleRight;
+            lblWaterBillTotal.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            lblWaterBillTotal.BackColor = Color.Transparent;
+            lblWaterBillTotal.Font = new Font("Arial", 36F, FontStyle.Bold);
+            lblWaterBillTotal.ForeColor = Color.Cornsilk;
+            lblWaterBillTotal.Location = new Point(64, 0);
+            lblWaterBillTotal.Name = "lblWaterBillTotal";
+            lblWaterBillTotal.Size = new Size(525, 86);
+            lblWaterBillTotal.TabIndex = 14;
+            lblWaterBillTotal.Text = "₱1,000.00";
+            lblWaterBillTotal.TextAlign = ContentAlignment.MiddleRight;
             // 
             // pnlRentalBill
             // 
@@ -498,7 +498,7 @@
             pnlRentalBill.Controls.Add(label18);
             pnlRentalBill.Controls.Add(label11);
             pnlRentalBill.Controls.Add(btnManage_RentalBill);
-            pnlRentalBill.Controls.Add(label12);
+            pnlRentalBill.Controls.Add(lblRentalBillTotal);
             pnlRentalBill.Location = new Point(970, 483);
             pnlRentalBill.Name = "pnlRentalBill";
             pnlRentalBill.Size = new Size(592, 178);
@@ -544,18 +544,18 @@
             btnManage_RentalBill.UseVisualStyleBackColor = false;
             btnManage_RentalBill.Click += btnManage_RentalBill_Click;
             // 
-            // label12
+            // lblRentalBillTotal
             // 
-            label12.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            label12.BackColor = Color.Transparent;
-            label12.Font = new Font("Arial", 36F, FontStyle.Bold);
-            label12.ForeColor = Color.Cornsilk;
-            label12.Location = new Point(64, 0);
-            label12.Name = "label12";
-            label12.Size = new Size(525, 86);
-            label12.TabIndex = 16;
-            label12.Text = "₱1,000.00";
-            label12.TextAlign = ContentAlignment.MiddleRight;
+            lblRentalBillTotal.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            lblRentalBillTotal.BackColor = Color.Transparent;
+            lblRentalBillTotal.Font = new Font("Arial", 36F, FontStyle.Bold);
+            lblRentalBillTotal.ForeColor = Color.Cornsilk;
+            lblRentalBillTotal.Location = new Point(64, 0);
+            lblRentalBillTotal.Name = "lblRentalBillTotal";
+            lblRentalBillTotal.Size = new Size(525, 86);
+            lblRentalBillTotal.TabIndex = 16;
+            lblRentalBillTotal.Text = "₱1,000.00";
+            lblRentalBillTotal.TextAlign = ContentAlignment.MiddleRight;
             // 
             // pnlInternetBill
             // 
@@ -564,7 +564,7 @@
             pnlInternetBill.Controls.Add(label19);
             pnlInternetBill.Controls.Add(btnManage_InternetBill);
             pnlInternetBill.Controls.Add(label13);
-            pnlInternetBill.Controls.Add(label14);
+            pnlInternetBill.Controls.Add(lblInternetBillTotal);
             pnlInternetBill.Location = new Point(970, 667);
             pnlInternetBill.Name = "pnlInternetBill";
             pnlInternetBill.Size = new Size(592, 178);
@@ -610,18 +610,18 @@
             label13.Text = "INTERNET BILL TOTAL";
             label13.TextAlign = ContentAlignment.MiddleRight;
             // 
-            // label14
+            // lblInternetBillTotal
             // 
-            label14.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            label14.BackColor = Color.Transparent;
-            label14.Font = new Font("Arial", 36F, FontStyle.Bold);
-            label14.ForeColor = Color.Cornsilk;
-            label14.Location = new Point(64, 0);
-            label14.Name = "label14";
-            label14.Size = new Size(525, 86);
-            label14.TabIndex = 16;
-            label14.Text = "₱1,000.00";
-            label14.TextAlign = ContentAlignment.MiddleRight;
+            lblInternetBillTotal.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            lblInternetBillTotal.BackColor = Color.Transparent;
+            lblInternetBillTotal.Font = new Font("Arial", 36F, FontStyle.Bold);
+            lblInternetBillTotal.ForeColor = Color.Cornsilk;
+            lblInternetBillTotal.Location = new Point(64, 0);
+            lblInternetBillTotal.Name = "lblInternetBillTotal";
+            lblInternetBillTotal.Size = new Size(525, 86);
+            lblInternetBillTotal.TabIndex = 16;
+            lblInternetBillTotal.Text = "₱1,000.00";
+            lblInternetBillTotal.TextAlign = ContentAlignment.MiddleRight;
             // 
             // pnlElectricityBill
             // 
@@ -630,7 +630,7 @@
             pnlElectricityBill.Controls.Add(label17);
             pnlElectricityBill.Controls.Add(btnManage_ElectricityBill);
             pnlElectricityBill.Controls.Add(label8);
-            pnlElectricityBill.Controls.Add(label9);
+            pnlElectricityBill.Controls.Add(lblElectricityBillTotal);
             pnlElectricityBill.Location = new Point(372, 667);
             pnlElectricityBill.Name = "pnlElectricityBill";
             pnlElectricityBill.Size = new Size(592, 178);
@@ -676,18 +676,18 @@
             label8.Text = "ELECTRICITY BILL TOTAL";
             label8.TextAlign = ContentAlignment.MiddleRight;
             // 
-            // label9
+            // lblElectricityBillTotal
             // 
-            label9.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            label9.BackColor = Color.Transparent;
-            label9.Font = new Font("Arial", 36F, FontStyle.Bold);
-            label9.ForeColor = Color.Cornsilk;
-            label9.Location = new Point(64, 0);
-            label9.Name = "label9";
-            label9.Size = new Size(525, 86);
-            label9.TabIndex = 16;
-            label9.Text = "₱1,000.00";
-            label9.TextAlign = ContentAlignment.MiddleRight;
+            lblElectricityBillTotal.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            lblElectricityBillTotal.BackColor = Color.Transparent;
+            lblElectricityBillTotal.Font = new Font("Arial", 36F, FontStyle.Bold);
+            lblElectricityBillTotal.ForeColor = Color.Cornsilk;
+            lblElectricityBillTotal.Location = new Point(64, 0);
+            lblElectricityBillTotal.Name = "lblElectricityBillTotal";
+            lblElectricityBillTotal.Size = new Size(525, 86);
+            lblElectricityBillTotal.TabIndex = 16;
+            lblElectricityBillTotal.Text = "₱1,000.00";
+            lblElectricityBillTotal.TextAlign = ContentAlignment.MiddleRight;
             // 
             // NewBill
             // 
@@ -756,23 +756,23 @@
         private Panel panel11;
         private Button btnBillPreview;
         private PictureBox pictureBox3;
-        private Label label2;
-        private Label label3;
+        private Label lblTenantName;
+        private Label lblBillNumber;
         private Label label7;
-        private Label label6;
-        private Label label4;
+        private Label lblInvoiceTotal;
+        private Label lblInvoiceDate;
         private Panel pnlWaterBill;
         private Panel pnlRentalBill;
         private Panel pnlInternetBill;
         private Panel pnlElectricityBill;
-        private Label label15;
+        private Label lblWaterBillTotal;
         private Label label10;
         private Label label11;
-        private Label label12;
+        private Label lblRentalBillTotal;
         private Label label13;
-        private Label label14;
+        private Label lblInternetBillTotal;
         private Label label8;
-        private Label label9;
+        private Label lblElectricityBillTotal;
         private Label label16;
         private Button btnManage_WaterBill;
         private Label label17;
