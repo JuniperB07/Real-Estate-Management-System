@@ -20,5 +20,10 @@ namespace Real_Estate_Management_System.Billing
 
             BHelper.NewInvoice = new InvoiceMetadata();
         }
+
+        private void FillTenantsList()
+        {
+            Forms.FillListBox(lstTenantsList, Internals.TenantsList);
+        }
     }
 }

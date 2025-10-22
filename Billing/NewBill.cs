@@ -39,6 +39,7 @@ namespace Real_Estate_Management_System.Billing
         private void NewBill_Load(object sender, EventArgs e)
         {
             ResetForm();
+            FillTenantsList();
         }
 
         private void btnManage_WaterBill_Click(object sender, EventArgs e)
