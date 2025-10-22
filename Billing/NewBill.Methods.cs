@@ -14,7 +14,11 @@ namespace Real_Estate_Management_System.Billing
     {
         private void ResetForm()
         {
+            Forms.ClearControlText(Forms.ControlType<Label>.Extract(this, "lbl"));
+            txtSearchTenant.Text = "";
+            lstTenantsList.Items.Clear();
 
+            BHelper.NewInvoice = new InvoiceMetadata();
         }
     }
 }
