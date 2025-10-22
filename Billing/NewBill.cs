@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Real_Estate_Management_System.Billing.Helper;
 using JunX.NET8.WinForms;
+using JunX.NETStandard.MySQL;
+using JunX.NETStandard.SQLBuilder;
 
 namespace Real_Estate_Management_System.Billing
 {
@@ -105,7 +107,19 @@ namespace Real_Estate_Management_System.Billing
 
         private void lstTenantsList_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            
+            string? tName = lstTenantsList.SelectedItem?.ToString();
+
+            if (!string.IsNullOrWhiteSpace(tName))
+            {
+                new SelectCommand<tbtenants>()
+                    .Select(tbtenants.TenantID)
+                    .From
+                    .StartWhere
+                        .Where(tbtenants.FullName, SQLOperator.Equal, "@FullName")
+                    .EndWhere
+                    .ExecuteReader(Internals.DBC, new ParametersMetadata("@FullName", tName));
+                BHelper.TenantID = Convert.ToInt32(Internals.DBC.Values[0]);
+            }
         }
     }
 }

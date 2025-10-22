@@ -13,11 +13,14 @@ namespace Real_Estate_Management_System.Billing
         internal static InvoiceMetadata NewInvoice { get; set; }
         internal static int TenantID { get; set; }
 
-        internal static bool IncludeInternet { get { return Configs.Billing.BillingConfig.IncludeInternet; } }
+        internal static bool IncludeInternet => Configs.Billing.BillingConfig.IncludeInternet;
         internal static string TenantName
         {
             get
             {
+                if (!(TenantID > 0))
+                    return "";
+
                 new SelectCommand<tbtenants>()
                     .Select(tbtenants.FullName)
                     .From
