@@ -97,7 +97,10 @@ namespace Real_Estate_Management_System.Billing
 
         private void txtSearchTenant_TextChanged(object sender, EventArgs e)
         {
-
+            if (!string.IsNullOrWhiteSpace(txtSearchTenant.Text))
+                Forms.FillListBox(lstTenantsList, Internals.SearchTenant(txtSearchTenant.Text));
+            else
+                FillTenantsList();
         }
     }
 }
