@@ -161,6 +161,10 @@
 		<Compile Update ="Utilities\ViewConsumptions.Methods.cs">
 			<DependentUpon>ViewConsumptions.cs</DependentUpon>
 		</Compile>
+
+		<Compile Update="Billing\NewBill.Methods.cs">
+			<DependentUpon>NewBill.cs</DependentUpon>
+		</Compile>
 	</ItemGroup>
 
 </Project>
