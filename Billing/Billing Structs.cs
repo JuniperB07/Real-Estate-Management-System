@@ -1,10 +1,62 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Real_Estate_Management_System.Billing
 {
-    
+    internal struct InvoiceMetadata
+    {
+        public string InvoiceNumber { get; set; }
+        public DateTime InvoiceDate { get; set; }
+        public int WaterInvoiceID { get; set; }
+        public int ElectricityInvoiceID { get; set; }
+        public int RentalInvoiceID { get; set; }
+        public int InternetInvoiceID { get; set; }
+        public double InvoiceTotal { get; set; }
+        public InvoiceStatuses Status { get; set; }
+
+        public InvoiceMetadata(
+            string SetInvoiceNumber = "",
+            DateTime SetInvoiceDate = default,
+            int SetWaterInvoiceID = -1,
+            int SetElectricityInvoiceID = -1,
+            int SetRentalInvoiceID = -1,
+            int SetInternetInvoiceID = -1,
+            double SetInvoiceTotal = -1,
+            InvoiceStatuses SetStatus = InvoiceStatuses.Unknown)
+        {
+            InvoiceNumber = SetInvoiceNumber;
+            InvoiceDate = SetInvoiceDate;
+            WaterInvoiceID = SetWaterInvoiceID;
+            ElectricityInvoiceID = SetElectricityInvoiceID;
+            RentalInvoiceID = SetRentalInvoiceID;
+            InternetInvoiceID = SetInternetInvoiceID;
+            InvoiceTotal = SetInvoiceTotal;
+            Status = SetStatus;
+        }
+
+        public bool IsValid()
+        {
+            return
+                !string.IsNullOrWhiteSpace(InvoiceNumber) &&
+                InvoiceDate != default &&
+                WaterInvoiceID >= 0 &&
+                ElectricityInvoiceID >= 0 &&
+                RentalInvoiceID >= 0 &&
+                InternetInvoiceID >= 0 &&
+                InvoiceTotal >= 0 &&
+                Status != InvoiceStatuses.Unknown;
+        }
+        public override bool Equals([NotNullWhen(true)] object? obj)
+        {
+            return base.Equals(obj);
+        }
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+    }
 }

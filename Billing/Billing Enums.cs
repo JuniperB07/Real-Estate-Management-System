@@ -8,6 +8,7 @@ namespace Real_Estate_Management_System.Billing
 {
     internal enum InvoiceStatuses
     {
+        Unknown=-1,
         PAID,
         UNPAID,
         TRANSFERRED
