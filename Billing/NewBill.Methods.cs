@@ -18,6 +18,14 @@ namespace Real_Estate_Management_System.Billing
             txtSearchTenant.Text = "";
             lstTenantsList.Items.Clear();
 
+            Forms.SetControlVisible(new Panel[]
+            {
+                pnlBillSummary,
+                pnlElectricityBill,
+                pnlInternetBill,
+                pnlRentalBill,
+                pnlWaterBill }, false);
+
             BHelper.NewInvoice = new InvoiceMetadata();
         }
 
