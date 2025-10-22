@@ -41,6 +41,7 @@
             label3 = new Label();
             pictureBox3 = new PictureBox();
             label4 = new Label();
+            chkInclude = new CheckBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -133,12 +134,13 @@
             // 
             // panel3
             // 
+            panel3.Controls.Add(chkInclude);
             panel3.Controls.Add(dateTimePicker3);
             panel3.Controls.Add(label3);
             panel3.Controls.Add(pictureBox3);
             panel3.Location = new Point(12, 230);
             panel3.Name = "panel3";
-            panel3.Size = new Size(474, 93);
+            panel3.Size = new Size(474, 95);
             panel3.TabIndex = 4;
             // 
             // dateTimePicker3
@@ -148,7 +150,7 @@
             dateTimePicker3.CalendarTitleForeColor = SystemColors.ActiveCaption;
             dateTimePicker3.CustomFormat = "MMMM d, yyyy";
             dateTimePicker3.Format = DateTimePickerFormat.Custom;
-            dateTimePicker3.Location = new Point(99, 51);
+            dateTimePicker3.Location = new Point(98, 50);
             dateTimePicker3.Name = "dateTimePicker3";
             dateTimePicker3.Size = new Size(372, 30);
             dateTimePicker3.TabIndex = 2;
@@ -157,7 +159,7 @@
             // 
             label3.Location = new Point(99, 3);
             label3.Name = "label3";
-            label3.Size = new Size(372, 33);
+            label3.Size = new Size(266, 33);
             label3.TabIndex = 1;
             label3.Text = "INTERNET BILL DUE DATE:";
             label3.TextAlign = ContentAlignment.MiddleLeft;
@@ -175,18 +177,28 @@
             // label4
             // 
             label4.Font = new Font("Arial", 10.2F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            label4.Location = new Point(12, 329);
+            label4.Location = new Point(12, 328);
             label4.Name = "label4";
             label4.Size = new Size(474, 25);
             label4.TabIndex = 5;
             label4.Text = "*Click the icon to restore default.";
             label4.TextAlign = ContentAlignment.TopRight;
             // 
+            // chkInclude
+            // 
+            chkInclude.AutoSize = true;
+            chkInclude.Location = new Point(376, 4);
+            chkInclude.Name = "chkInclude";
+            chkInclude.Size = new Size(94, 27);
+            chkInclude.TabIndex = 3;
+            chkInclude.Text = "Include";
+            chkInclude.UseVisualStyleBackColor = true;
+            // 
             // SetDueDates
             // 
             AutoScaleDimensions = new SizeF(11F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(498, 363);
+            ClientSize = new Size(498, 356);
             Controls.Add(label4);
             Controls.Add(panel3);
             Controls.Add(panel2);
@@ -205,6 +217,7 @@
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel3.ResumeLayout(false);
+            panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
         }
@@ -224,5 +237,6 @@
         private Label label3;
         private PictureBox pictureBox3;
         private Label label4;
+        private CheckBox chkInclude;
     }
 }
