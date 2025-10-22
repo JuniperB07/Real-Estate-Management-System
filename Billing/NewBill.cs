@@ -120,7 +120,8 @@ namespace Real_Estate_Management_System.Billing
                     .ExecuteReader(Internals.DBC, new ParametersMetadata("@FullName", tName));
                 BHelper.TenantID = Convert.ToInt32(Internals.DBC.Values[0]);
 
-
+                BHelper.NewInvoice = new InvoiceMetadata();
+                BHelper.NewInvoice.TenantID = BHelper.TenantID;
             }
         }
     }

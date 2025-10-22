@@ -10,7 +10,9 @@ namespace Real_Estate_Management_System.Billing
 {
     internal static class BHelper
     {
-        internal static InvoiceMetadata NewInvoice { get; set; }
+        internal static InvoiceMetadata NewInvoice;
+
+
         internal static int TenantID { get; set; }
 
         internal static bool IncludeInternet => Configs.Billing.BillingConfig.IncludeInternet;
