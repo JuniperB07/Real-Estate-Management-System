@@ -154,11 +154,11 @@
 			<DependentUpon>EditCharges.cs</DependentUpon>
 		</Compile>
 
-		<Compile Update ="Utilities\AddConsumption.Methods.cs">
+		<Compile Update="Utilities\AddConsumption.Methods.cs">
 			<DependentUpon>AddConsumption.cs</DependentUpon>
 		</Compile>
 
-		<Compile Update ="Utilities\ViewConsumptions.Methods.cs">
+		<Compile Update="Utilities\ViewConsumptions.Methods.cs">
 			<DependentUpon>ViewConsumptions.cs</DependentUpon>
 		</Compile>
 
