@@ -8,6 +8,9 @@ namespace Real_Estate_Management_System.Billing
 {
     partial class NewBill
     {
-        
+        private void ResetForm()
+        {
+
+        }
     }
 }
