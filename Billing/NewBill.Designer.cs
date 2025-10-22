@@ -147,6 +147,7 @@
             // txtSearchTenant
             // 
             txtSearchTenant.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtSearchTenant.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             txtSearchTenant.BorderStyle = BorderStyle.FixedSingle;
             txtSearchTenant.Font = new Font("Arial", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtSearchTenant.Location = new Point(3, 214);
@@ -154,6 +155,7 @@
             txtSearchTenant.PlaceholderText = "Search Tenant...";
             txtSearchTenant.Size = new Size(349, 34);
             txtSearchTenant.TabIndex = 2;
+            txtSearchTenant.TextChanged += txtSearchTenant_TextChanged;
             // 
             // lstTenantsList
             // 

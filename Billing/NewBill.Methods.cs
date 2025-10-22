@@ -25,5 +25,13 @@ namespace Real_Estate_Management_System.Billing
         {
             Forms.FillListBox(lstTenantsList, Internals.TenantsList);
         }
+
+        private void SetupSearchTenant_AutoCompleteSource()
+        {
+            txtSearchTenant.AutoCompleteCustomSource.Clear();
+
+            foreach (string TN in Internals.TenantsList)
+                txtSearchTenant.AutoCompleteCustomSource.Add(TN);
+        }
     }
 }

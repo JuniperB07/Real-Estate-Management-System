@@ -34,12 +34,15 @@ namespace Real_Estate_Management_System.Billing
             pnlBillSummary.BackColor = Internals.BrunswickGreen;
             Forms.SetControlForeColor(Forms.ControlType<Button>.Extract(pnlBillSummary), Internals.SandDune);
             Forms.SetControlBackColor(Forms.ControlType<Button>.Extract(pnlBillSummary), Internals.BrunswickGreen);
+
+            txtSearchTenant.AutoCompleteSource = AutoCompleteSource.CustomSource;
         }
 
         private void NewBill_Load(object sender, EventArgs e)
         {
             ResetForm();
             FillTenantsList();
+            SetupSearchTenant_AutoCompleteSource();
         }
 
         private void btnManage_WaterBill_Click(object sender, EventArgs e)
@@ -90,6 +93,11 @@ namespace Real_Estate_Management_System.Billing
             PreviewHelper.PreviewMode = PreviewHelperMode.ExportToPDF;
             BillPreview BP = new BillPreview();
             BP.ShowDialog();
+        }
+
+        private void txtSearchTenant_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
