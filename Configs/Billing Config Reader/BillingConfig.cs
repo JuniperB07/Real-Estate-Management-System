@@ -28,5 +28,15 @@ namespace Real_Estate_Management_System.Configs.Billing
                     return false;
             }
         }
+        internal static string? InvoiceNumberPrefix
+        {
+            get
+            {
+                return Doc
+                    .Descendants("add")
+                    .FirstOrDefault(x => x.Attribute("key")?.Value == "Billing:InvoiceNumberPrefix")?
+                    .Attribute("value")?.Value;
+            }
+        }
     }
 }
