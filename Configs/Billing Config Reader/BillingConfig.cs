@@ -13,21 +13,6 @@ namespace Real_Estate_Management_System.Configs.Billing
         private static readonly string configPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Configs\\Billing.config");
         private static readonly XDocument Doc = XDocument.Load(configPath);
 
-        internal static bool IncludeInternet
-        {
-            get
-            {
-                string? include = Doc
-                    .Descendants("add")?
-                    .FirstOrDefault(x => x.Attribute("key")?.Value == "Billing:IncludeInternet")?
-                    .Attribute("value")?.Value;
-
-                if (include == "true")
-                    return true;
-                else
-                    return false;
-            }
-        }
         internal static string? InvoiceNumberPrefix
         {
             get

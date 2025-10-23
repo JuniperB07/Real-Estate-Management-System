@@ -4,4 +4,5 @@ public enum tbbuilding
     BuildingID,
     BuildingName,
     BuildingAddress,
+    RentalRate,
 }

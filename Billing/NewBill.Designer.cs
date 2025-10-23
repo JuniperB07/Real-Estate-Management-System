@@ -141,7 +141,7 @@
             pnlSelectTenant.Controls.Add(pictureBox2);
             pnlSelectTenant.Location = new Point(0, 167);
             pnlSelectTenant.Name = "pnlSelectTenant";
-            pnlSelectTenant.Size = new Size(355, 695);
+            pnlSelectTenant.Size = new Size(355, 662);
             pnlSelectTenant.TabIndex = 1;
             // 
             // txtSearchTenant
@@ -165,7 +165,7 @@
             lstTenantsList.ItemHeight = 23;
             lstTenantsList.Location = new Point(3, 260);
             lstTenantsList.Name = "lstTenantsList";
-            lstTenantsList.Size = new Size(349, 416);
+            lstTenantsList.Size = new Size(349, 370);
             lstTenantsList.TabIndex = 1;
             lstTenantsList.MouseDoubleClick += lstTenantsList_MouseDoubleClick;
             // 

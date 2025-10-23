@@ -9,7 +9,7 @@ public enum tbinvoices
     ElectricityInvoiceID,
     RentalInvoiceID,
     InternetInvoiceID,
-    IncludeInternet,
+    PenaltyIDs,
     InvoiceTotal,
     Status,
 }

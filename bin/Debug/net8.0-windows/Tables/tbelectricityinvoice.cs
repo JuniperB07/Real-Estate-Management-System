@@ -1,7 +1,7 @@
-public enum tbwaterinvoice
+public enum tbelectricityinvoice
 {
-    tbwaterinvoice,
-    WaterInvoiceID,
+    tbelectricityinvoice,
+    ElectricityInvoiceID,
     InvoiceNumber,
     TenantID,
     PreviousReading,

@@ -23,4 +23,12 @@ namespace Real_Estate_Management_System.Billing
         INTERNET,
         Unknown = -1
     }
+
+    internal enum PenaltyStatuses
+    {
+        Unknown = -1,
+        PAID,
+        UNPAID,
+        PARTIAL
+    }
 }

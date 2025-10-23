@@ -11,18 +11,6 @@ namespace Real_Estate_Management_System.Configs.Billing
     {
         private const string DEFAULT_INVOICE_NUMBER_PREFIX = "REMS-B";
 
-        internal static void Restore_IncludeInternet()
-        {
-            XElement? target = Doc
-                .Descendants("add")?
-                .FirstOrDefault(x => x.Attribute("key")?.Value == "Billing:IncludeInternet");
-
-            if(target != null)
-            {
-                target?.SetAttributeValue("value", "true");
-                Doc.Save(configPath);
-            }
-        }
         internal static void Restore_InvoiceNumberPrefix()
         {
             XElement? target = Doc

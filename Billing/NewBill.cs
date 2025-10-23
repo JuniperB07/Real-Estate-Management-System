@@ -118,10 +118,7 @@ namespace Real_Estate_Management_System.Billing
                         .Where(tbtenants.FullName, SQLOperator.Equal, "@FullName")
                     .EndWhere
                     .ExecuteReader(Internals.DBC, new ParametersMetadata("@FullName", tName));
-                BHelper.TenantID = Convert.ToInt32(Internals.DBC.Values[0]);
-
-                InitiateNewInvoice();
-                RefreshBillingSummary();
+                //save Tenant id
             }
         }
     }
