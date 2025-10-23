@@ -47,6 +47,7 @@
             lblDueDate = new Label();
             label3 = new Label();
             lblPenalties = new Label();
+            btnSeePenalties = new Button();
             pnlHeader.SuspendLayout();
             SuspendLayout();
             // 
@@ -66,7 +67,7 @@
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Arial", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = SystemColors.ControlLightLight;
+            label1.ForeColor = Color.FromArgb(240, 237, 229);
             label1.Location = new Point(195, 9);
             label1.Name = "label1";
             label1.Size = new Size(335, 141);
@@ -78,7 +79,7 @@
             // 
             label12.Anchor = AnchorStyles.Bottom;
             label12.Font = new Font("Arial", 16.2F, FontStyle.Bold);
-            label12.Location = new Point(13, 523);
+            label12.Location = new Point(13, 521);
             label12.Name = "label12";
             label12.Size = new Size(274, 34);
             label12.TabIndex = 31;
@@ -89,7 +90,7 @@
             // 
             lblTotal.Anchor = AnchorStyles.Bottom;
             lblTotal.Font = new Font("Arial", 16.2F, FontStyle.Bold);
-            lblTotal.Location = new Point(293, 523);
+            lblTotal.Location = new Point(293, 521);
             lblTotal.Name = "lblTotal";
             lblTotal.Size = new Size(225, 34);
             lblTotal.TabIndex = 30;
@@ -226,11 +227,25 @@
             lblPenalties.Text = "0.00";
             lblPenalties.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // btnSeePenalties
+            // 
+            btnSeePenalties.FlatAppearance.BorderSize = 0;
+            btnSeePenalties.FlatStyle = FlatStyle.Flat;
+            btnSeePenalties.Font = new Font("Arial", 12F, FontStyle.Underline, GraphicsUnit.Point, 0);
+            btnSeePenalties.Location = new Point(354, 458);
+            btnSeePenalties.Name = "btnSeePenalties";
+            btnSeePenalties.Size = new Size(164, 38);
+            btnSeePenalties.TabIndex = 39;
+            btnSeePenalties.Text = "See Penalties";
+            btnSeePenalties.UseVisualStyleBackColor = true;
+            // 
             // RentalBill
             // 
             AutoScaleDimensions = new SizeF(11F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(530, 580);
+            BackColor = Color.FromArgb(240, 237, 229);
+            ClientSize = new Size(530, 578);
+            Controls.Add(btnSeePenalties);
             Controls.Add(label3);
             Controls.Add(lblPenalties);
             Controls.Add(label4);
@@ -249,6 +264,7 @@
             Controls.Add(lblAdditionalCharges);
             Controls.Add(pnlHeader);
             Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ForeColor = Color.FromArgb(0, 70, 67);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(4, 3, 4, 3);
@@ -283,5 +299,6 @@
         private Label lblDueDate;
         private Label label3;
         private Label lblPenalties;
+        private Button btnSeePenalties;
     }
 }

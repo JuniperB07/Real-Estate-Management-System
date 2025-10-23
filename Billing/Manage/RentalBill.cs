@@ -16,10 +16,6 @@ namespace Real_Estate_Management_System.Billing.Manage
         public RentalBill()
         {
             InitializeComponent();
-            Internals.SetFormColors(this);
-            Forms.SetControlForeColor(Forms.ControlType<Label>.Extract(this), Color.FromArgb(65, 38, 102));
-
-            Forms.SetControlForeColor(Forms.ControlType<Label>.Extract(pnlHeader), Internals.SandDune);
         }
 
         private void RentalBill_Load(object sender, EventArgs e)
