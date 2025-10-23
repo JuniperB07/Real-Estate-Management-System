@@ -88,6 +88,7 @@
             // txtPrevious
             // 
             txtPrevious.BorderStyle = BorderStyle.FixedSingle;
+            txtPrevious.ForeColor = Color.FromArgb(0, 70, 67);
             txtPrevious.Location = new Point(293, 204);
             txtPrevious.Name = "txtPrevious";
             txtPrevious.Size = new Size(225, 30);
@@ -116,13 +117,14 @@
             // 
             btnConfirm.FlatAppearance.BorderSize = 0;
             btnConfirm.FlatStyle = FlatStyle.Flat;
-            btnConfirm.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnConfirm.Font = new Font("Arial", 12F, FontStyle.Bold | FontStyle.Underline);
             btnConfirm.Location = new Point(378, 281);
             btnConfirm.Name = "btnConfirm";
             btnConfirm.Size = new Size(140, 43);
             btnConfirm.TabIndex = 5;
             btnConfirm.Text = "CONFIRM";
             btnConfirm.UseVisualStyleBackColor = true;
+            btnConfirm.Click += btnConfirm_Click;
             // 
             // lblCurrentCharge
             // 
@@ -225,7 +227,7 @@
             btnSubmit.Anchor = AnchorStyles.Bottom;
             btnSubmit.FlatAppearance.BorderSize = 0;
             btnSubmit.FlatStyle = FlatStyle.Flat;
-            btnSubmit.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSubmit.Font = new Font("Arial", 12F, FontStyle.Bold | FontStyle.Underline);
             btnSubmit.Location = new Point(195, 588);
             btnSubmit.Name = "btnSubmit";
             btnSubmit.Size = new Size(140, 43);
@@ -256,6 +258,7 @@
             // 
             AutoScaleDimensions = new SizeF(11F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(240, 237, 229);
             ClientSize = new Size(530, 643);
             Controls.Add(label4);
             Controls.Add(lblDueDate);
@@ -277,6 +280,7 @@
             Controls.Add(label2);
             Controls.Add(pnlHeader);
             Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ForeColor = Color.FromArgb(0, 70, 67);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(4, 3, 4, 3);

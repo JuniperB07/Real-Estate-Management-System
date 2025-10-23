@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewBill));
             pnlHeader = new Panel();
             label1 = new Label();
@@ -50,10 +51,10 @@
             panel2 = new Panel();
             btnSaveBill = new Button();
             pictureBox5 = new PictureBox();
-            panel1 = new Panel();
+            pnlExport = new Panel();
             btnExportToPDF = new Button();
             pictureBox4 = new PictureBox();
-            panel11 = new Panel();
+            pnlBillPreview = new Panel();
             btnBillPreview = new Button();
             pictureBox3 = new PictureBox();
             pnlWaterBill = new Panel();
@@ -76,6 +77,7 @@
             btnManage_ElectricityBill = new Button();
             label8 = new Label();
             lblElectricityBillTotal = new Label();
+            ttNewBill = new ToolTip(components);
             pnlHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             pnlSelectTenant.SuspendLayout();
@@ -87,9 +89,9 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
-            panel1.SuspendLayout();
+            pnlExport.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            panel11.SuspendLayout();
+            pnlBillPreview.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             pnlWaterBill.SuspendLayout();
             pnlRentalBill.SuspendLayout();
@@ -140,7 +142,7 @@
             pnlSelectTenant.Controls.Add(pictureBox2);
             pnlSelectTenant.Location = new Point(0, 167);
             pnlSelectTenant.Name = "pnlSelectTenant";
-            pnlSelectTenant.Size = new Size(355, 662);
+            pnlSelectTenant.Size = new Size(355, 691);
             pnlSelectTenant.TabIndex = 1;
             // 
             // txtSearchTenant
@@ -164,7 +166,7 @@
             lstTenantsList.ItemHeight = 23;
             lstTenantsList.Location = new Point(3, 260);
             lstTenantsList.Name = "lstTenantsList";
-            lstTenantsList.Size = new Size(349, 370);
+            lstTenantsList.Size = new Size(349, 393);
             lstTenantsList.TabIndex = 1;
             lstTenantsList.MouseDoubleClick += lstTenantsList_MouseDoubleClick;
             // 
@@ -190,8 +192,8 @@
             pnlBillSummary.Controls.Add(lblTenantName);
             pnlBillSummary.Controls.Add(panel3);
             pnlBillSummary.Controls.Add(panel2);
-            pnlBillSummary.Controls.Add(panel1);
-            pnlBillSummary.Controls.Add(panel11);
+            pnlBillSummary.Controls.Add(pnlExport);
+            pnlBillSummary.Controls.Add(pnlBillPreview);
             pnlBillSummary.ForeColor = SystemColors.ControlLightLight;
             pnlBillSummary.Location = new Point(354, 167);
             pnlBillSummary.Name = "pnlBillSummary";
@@ -302,6 +304,7 @@
             btnReset.Text = "RESET FORM";
             btnReset.TextAlign = ContentAlignment.MiddleLeft;
             btnReset.UseVisualStyleBackColor = true;
+            btnReset.Click += btnReset_Click;
             // 
             // pictureBox6
             // 
@@ -346,14 +349,14 @@
             pictureBox5.TabIndex = 0;
             pictureBox5.TabStop = false;
             // 
-            // panel1
+            // pnlExport
             // 
-            panel1.Controls.Add(btnExportToPDF);
-            panel1.Controls.Add(pictureBox4);
-            panel1.Location = new Point(7, 190);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(300, 50);
-            panel1.TabIndex = 3;
+            pnlExport.Controls.Add(btnExportToPDF);
+            pnlExport.Controls.Add(pictureBox4);
+            pnlExport.Location = new Point(7, 190);
+            pnlExport.Name = "pnlExport";
+            pnlExport.Size = new Size(300, 50);
+            pnlExport.TabIndex = 3;
             // 
             // btnExportToPDF
             // 
@@ -380,14 +383,14 @@
             pictureBox4.TabIndex = 0;
             pictureBox4.TabStop = false;
             // 
-            // panel11
+            // pnlBillPreview
             // 
-            panel11.Controls.Add(btnBillPreview);
-            panel11.Controls.Add(pictureBox3);
-            panel11.Location = new Point(7, 134);
-            panel11.Name = "panel11";
-            panel11.Size = new Size(300, 50);
-            panel11.TabIndex = 2;
+            pnlBillPreview.Controls.Add(btnBillPreview);
+            pnlBillPreview.Controls.Add(pictureBox3);
+            pnlBillPreview.Location = new Point(7, 134);
+            pnlBillPreview.Name = "pnlBillPreview";
+            pnlBillPreview.Size = new Size(300, 50);
+            pnlBillPreview.TabIndex = 2;
             // 
             // btnBillPreview
             // 
@@ -512,11 +515,11 @@
             label11.BackColor = Color.Transparent;
             label11.Font = new Font("Arial", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label11.ForeColor = Color.Cornsilk;
-            label11.Location = new Point(272, 86);
+            label11.Location = new Point(110, 86);
             label11.Name = "label11";
-            label11.Size = new Size(317, 38);
+            label11.Size = new Size(479, 38);
             label11.TabIndex = 15;
-            label11.Text = "RENTAL BILL TOTAL";
+            label11.Text = "RENTAL BILL TOTAL + PENALTIES";
             label11.TextAlign = ContentAlignment.MiddleRight;
             // 
             // btnManage_RentalBill
@@ -678,6 +681,12 @@
             lblElectricityBillTotal.Text = "₱1,000.00";
             lblElectricityBillTotal.TextAlign = ContentAlignment.MiddleRight;
             // 
+            // ttNewBill
+            // 
+            ttNewBill.AutomaticDelay = 1000;
+            ttNewBill.BackColor = Color.FromArgb(240, 237, 229);
+            ttNewBill.ForeColor = Color.FromArgb(0, 70, 67);
+            // 
             // NewBill
             // 
             AutoScaleDimensions = new SizeF(11F, 23F);
@@ -712,9 +721,9 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
-            panel1.ResumeLayout(false);
+            pnlExport.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            panel11.ResumeLayout(false);
+            pnlBillPreview.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             pnlWaterBill.ResumeLayout(false);
             pnlRentalBill.ResumeLayout(false);
@@ -739,10 +748,10 @@
         private Panel panel2;
         private Button btnSaveBill;
         private PictureBox pictureBox5;
-        private Panel panel1;
+        private Panel pnlExport;
         private Button btnExportToPDF;
         private PictureBox pictureBox4;
-        private Panel panel11;
+        private Panel pnlBillPreview;
         private Button btnBillPreview;
         private PictureBox pictureBox3;
         private Label lblTenantName;
@@ -772,5 +781,6 @@
         private Panel panel4;
         private Button btnSetDueDates;
         private PictureBox pictureBox7;
+        private ToolTip ttNewBill;
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration.Internal;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,7 @@ namespace Real_Estate_Management_System.Billing
             Forms.ClearControlText(Forms.ControlType<Label>.Extract(this, "lbl"));
             txtSearchTenant.Text = "";
             lstTenantsList.Items.Clear();
+            ttNewBill.Active = false;
 
             Forms.SetControlVisible(new Panel[]
             {
@@ -24,7 +26,16 @@ namespace Real_Estate_Management_System.Billing
                 pnlElectricityBill,
                 pnlInternetBill,
                 pnlRentalBill,
-                pnlWaterBill }, false);
+                pnlWaterBill,
+                pnlBillPreview,
+                pnlExport }, false);
+
+            BHelper.NewInvoice = new Invoice();
+            BHelper.NewWaterInvoice = new WaterInvoice();
+            BHelper.NewElectricityInvoice = new ElectricityInvoice();
+            BHelper.NewRentalInvoice = new RentalInvoice();
+            BHelper.NewInternetInvoice = new InternetInvoice();
+            BHelper.TenantID = 0;
         }
 
         private void FillTenantsList()
@@ -90,6 +101,84 @@ namespace Real_Estate_Management_System.Billing
                 pnlElectricityBill,
                 pnlRentalBill,
                 pnlInternetBill }, true);
+        }
+
+        private void RefreshInvoicePanels()
+        {
+            lblWaterBillTotal.Text = Internals.PESO + BHelper.NewWaterInvoice.Subtotal.ToString("0,0.00");
+            lblElectricityBillTotal.Text = Internals.PESO + BHelper.NewElectricityInvoice.Subtotal.ToString("0,0.00");
+            lblInternetBillTotal.Text = Internals.PESO + BHelper.NewInternetInvoice.Subtotal.ToString("0,0.00");
+            lblRentalBillTotal.Text = Internals.PESO + (BHelper.NewRentalInvoice.Subtotal + BHelper.NewInvoice.TotalPenalties).ToString("0,0.00");
+            lblInvoiceTotal.Text = Internals.PESO + BHelper.NewInvoiceTotal.ToString("0,0.00");
+
+            ttNewBill.SetToolTip(lblWaterBillTotal,
+                "Previous Reading: " + BHelper.NewWaterInvoice.PreviousReading.ToString() + "\n" +
+                "Present Reading: " + BHelper.NewWaterInvoice.PresentReading.ToString() + "\n" +
+                "Consumption: " + BHelper.NewWaterInvoice.Consumption.ToString() + Configs.Utilities.UtilitiesConfig.Water_Unit);
+            ttNewBill.SetToolTip(lblElectricityBillTotal,
+                "Previous Reading: " + BHelper.NewElectricityInvoice.PreviousReading.ToString() + "\n" +
+                "Present Reading: " + BHelper.NewElectricityInvoice.PresentReading.ToString() + "\n" +
+                "Consumption: " + BHelper.NewElectricityInvoice.Consumption.ToString() + Configs.Utilities.UtilitiesConfig.Electricity_Unit);
+            ttNewBill.SetToolTip(lblRentalBillTotal,
+                "Rental Bill Total: " + Internals.PESO + BHelper.NewRentalInvoice.Subtotal.ToString("0,0.00") + "\n" +
+                "Total Penalties: " + Internals.PESO + BHelper.NewInvoice.TotalPenalties.ToString("0,0.00"));
+            ttNewBill.SetToolTip(lblInternetBillTotal,
+                "Plan: " + BHelper.NewInternetInvoice.PlanName + "\n" +
+                "Subscription Plan: " + Internals.PESO + BHelper.NewInternetInvoice.SubscriptionFee.ToString("0,0.00"));
+
+        }
+
+        private void ActivateToolTip()
+        {
+            string bName = "", rName = "";
+            int rID, bID;
+
+            new SelectCommand<tbtenants>()
+                .Select(tbtenants.RoomID)
+                .From
+                .StartWhere
+                    .Where(tbtenants.TenantID, SQLOperator.Equal, BHelper.TenantID.ToString())
+                .EndWhere
+                .ExecuteReader(Internals.DBC);
+            rID = Convert.ToInt32(Internals.DBC.Values[0]);
+
+            new SelectCommand<tbrooms>()
+                .Select(tbrooms.BuildingID)
+                .Select(tbrooms.RoomName)
+                .From
+                .StartWhere
+                    .Where(tbrooms.RoomID, SQLOperator.Equal, rID.ToString())
+                .EndWhere
+                .ExecuteReader(Internals.DBC);
+            bID = Convert.ToInt32(Internals.DBC.Values[0]);
+            rName = Internals.DBC.Values[1];
+
+            new SelectCommand<tbbuilding>()
+                .Select(tbbuilding.BuildingName)
+                .From
+                .StartWhere
+                    .Where(tbbuilding.BuildingID, SQLOperator.Equal, bID.ToString())
+                .EndWhere
+                .ExecuteReader(Internals.DBC);
+            bName = Internals.DBC.Values[0];
+
+            ttNewBill.Active = true;
+            ttNewBill.SetToolTip(lblTenantName, "Building Name: " + bName + "\nRoom Name: " + rName);
+
+            ttNewBill.SetToolTip(lblWaterBillTotal,
+                "Previous Reading: " + BHelper.NewWaterInvoice.PreviousReading.ToString() + "\n" +
+                "Present Reading: " + BHelper.NewWaterInvoice.PresentReading.ToString() + "\n" +
+                "Consumption: " + BHelper.NewWaterInvoice.Consumption.ToString() + Configs.Utilities.UtilitiesConfig.Water_Unit);
+            ttNewBill.SetToolTip(lblElectricityBillTotal,
+                "Previous Reading: " + BHelper.NewElectricityInvoice.PreviousReading.ToString() + "\n" +
+                "Present Reading: " + BHelper.NewElectricityInvoice.PresentReading.ToString() + "\n" +
+                "Consumption: " + BHelper.NewElectricityInvoice.Consumption.ToString() + Configs.Utilities.UtilitiesConfig.Electricity_Unit);
+            ttNewBill.SetToolTip(lblRentalBillTotal,
+                "Rental Bill Total: " + Internals.PESO + BHelper.NewRentalInvoice.Subtotal.ToString("0,0.00") + "\n" +
+                "Total Penalties: " + Internals.PESO + BHelper.NewInvoice.TotalPenalties.ToString("0,0.00"));
+            ttNewBill.SetToolTip(lblInternetBillTotal,
+                "Plan: " + BHelper.NewInternetInvoice.PlanName + "\n" +
+                "Subscription Plan: " + Internals.PESO + BHelper.NewInternetInvoice.SubscriptionFee.ToString("0,0.00"));
         }
     }
 }

@@ -421,6 +421,24 @@ namespace Real_Estate_Management_System.Billing
                 InvoiceDate != default &&
                 Status != InvoiceStatuses.Unknown;
         }
+        /// <summary>
+        /// Creates a deep copy of the current <c>Invoice</c> instance.
+        /// </summary>
+        /// <returns>
+        /// A new <see cref="Invoice"/> object with the same <c>TenantID</c>, <c>InvoiceNumber</c>, <c>InvoiceDate</c>, and <c>Status</c> as the original.
+        /// </returns>
+        /// <remarks>
+        /// This method is used to duplicate invoice metadata without sharing references.
+        /// Changes made to the cloned invoice will not affect the original instance.
+        /// </remarks>
+        public Invoice Clone()
+        {
+            return new Invoice(
+                this.TenantID,
+                this.InvoiceNumber,
+                this.InvoiceDate,
+                this.Status);
+        }
     }
 
     /// <summary>
@@ -720,6 +738,40 @@ namespace Real_Estate_Management_System.Billing
             }
         }
         /// <summary>
+        /// Gets the present reading value from the tenant's water invoice issued one month prior to the current due date.
+        /// </summary>
+        /// <remarks>
+        /// This property queries the <c>tbwaterinvoice</c> table for the <c>PresentReading</c> value where:
+        /// <list type="bullet">
+        ///   <item><description><c>TenantID</c> matches the current invoice.</description></item>
+        ///   <item><description><c>DueDate</c> equals one month before the current invoice's <c>DueDate</c>.</description></item>
+        /// </list>
+        /// If a matching record is found, its present reading is returned; otherwise, the value defaults to <c>0</c>.
+        /// </remarks>
+        /// <returns>
+        /// The present reading from the previous month's water invoice, or <c>0</c> if unavailable.
+        /// </returns>
+        public double LastPresentReading
+        {
+            get
+            {
+                DateTime lastDueDate = DueDate.AddMonths(-1);
+
+                new SelectCommand<tbwaterinvoice>()
+                    .Select(tbwaterinvoice.PresentReading)
+                    .From
+                    .StartWhere
+                        .Where(tbwaterinvoice.TenantID, SQLOperator.Equal, TenantID.ToString())
+                        .And(tbwaterinvoice.DueDate, SQLOperator.Equal, "'" + lastDueDate.ToString("yyyy-MM-dd") + "'")
+                    .EndWhere
+                    .ExecuteReader(Internals.DBC);
+                if (Internals.DBC.HasRows)
+                    return Convert.ToDouble(Internals.DBC.Values[0]);
+                Internals.DBC.CloseReader();
+                return 0;
+            }
+        }
+        /// <summary>
         /// Gets the total deductions applied to the invoice, combining unused advances and available credits.
         /// </summary>
         /// <remarks>
@@ -790,6 +842,27 @@ namespace Real_Estate_Management_System.Billing
                 TenantID > 0 &&
                 Consumption >= 0 &&
                 Status != InvoiceStatuses.Unknown;
+        }
+        /// <summary>
+        /// Creates a deep copy of the current <c>WaterInvoice</c> instance.
+        /// </summary>
+        /// <returns>
+        /// A new <see cref="WaterInvoice"/> object with the same <c>InvoiceNumber</c>, <c>DueDate</c>, <c>TenantID</c>,
+        /// <c>PreviousReading</c>, <c>PresentReading</c>, and <c>Status</c> as the original.
+        /// </returns>
+        /// <remarks>
+        /// This method is used to duplicate water invoice data for editing or simulation purposes without affecting the original instance.
+        /// Changes made to the cloned invoice will not impact the source object.
+        /// </remarks>
+        public WaterInvoice Clone()
+        {
+            return new WaterInvoice(
+                this.InvoiceNumber,
+                this.DueDate,
+                this.TenantID,
+                this.PreviousReading,
+                this.PresentReading,
+                this.Status);
         }
     }
 
@@ -1080,6 +1153,40 @@ namespace Real_Estate_Management_System.Billing
             }
         }
         /// <summary>
+        /// Gets the present reading value from the tenant's electricity invoice issued one month prior to the current due date.
+        /// </summary>
+        /// <remarks>
+        /// This property queries the <c>tbelectricityinvoice</c> table for the <c>PresentReading</c> value where:
+        /// <list type="bullet">
+        ///   <item><description><c>TenantID</c> matches the current invoice.</description></item>
+        ///   <item><description><c>DueDate</c> equals one month before the current invoice's <c>DueDate</c>.</description></item>
+        /// </list>
+        /// If a matching record is found, its present reading is returned; otherwise, the value defaults to <c>0</c>.
+        /// </remarks>
+        /// <returns>
+        /// The present reading from the previous month's electricity invoice, or <c>0</c> if unavailable.
+        /// </returns>
+        public double LastPresentReading
+        {
+            get
+            {
+                DateTime lastDueDate = DueDate.AddMonths(-1);
+
+                new SelectCommand<tbelectricityinvoice>()
+                    .Select(tbelectricityinvoice.PresentReading)
+                    .From
+                    .StartWhere
+                        .Where(tbelectricityinvoice.TenantID, SQLOperator.Equal, TenantID.ToString())
+                        .And(tbelectricityinvoice.DueDate, SQLOperator.Equal, "'" + lastDueDate.ToString("yyyy-MM-dd") + "'")
+                    .EndWhere
+                    .ExecuteReader(Internals.DBC);
+                if (Internals.DBC.HasRows)
+                    return Convert.ToDouble(Internals.DBC.Values[0]);
+                Internals.DBC.CloseReader();
+                return 0;
+            }
+        }
+        /// <summary>
         /// Gets the total deductions applied to the electricity invoice, combining unused advances and available credits.
         /// </summary>
         /// <remarks>
@@ -1156,6 +1263,27 @@ namespace Real_Estate_Management_System.Billing
                 TenantID > 0 &&
                 Consumption >= 0 &&
                 Status != InvoiceStatuses.Unknown;
+        }
+        /// <summary>
+        /// Creates a deep copy of the current <c>ElectricityInvoice</c> instance.
+        /// </summary>
+        /// <returns>
+        /// A new <see cref="ElectricityInvoice"/> object with the same <c>InvoiceNumber</c>, <c>DueDate</c>, <c>TenantID</c>,
+        /// <c>PreviousReading</c>, <c>PresentReading</c>, and <c>Status</c> as the original.
+        /// </returns>
+        /// <remarks>
+        /// This method is used to duplicate electricity invoice data for editing, simulation, or rollback purposes without affecting the original instance.
+        /// Changes made to the cloned invoice will not impact the source object.
+        /// </remarks>
+        public ElectricityInvoice Clone()
+        {
+            return new ElectricityInvoice(
+                this.InvoiceNumber,
+                this.DueDate,
+                this.TenantID,
+                this.PreviousReading,
+                this.PresentReading,
+                this.Status);
         }
     }
 
@@ -1477,6 +1605,24 @@ namespace Real_Estate_Management_System.Billing
                 DueDate != default &&
                 TenantID > 0 &&
                 Status != InvoiceStatuses.Unknown;
+        }
+        /// <summary>
+        /// Creates a deep copy of the current <c>RentalInvoice</c> instance.
+        /// </summary>
+        /// <returns>
+        /// A new <see cref="RentalInvoice"/> object with the same <c>InvoiceNumber</c>, <c>DueDate</c>, <c>TenantID</c>, and <c>Status</c> as the original.
+        /// </returns>
+        /// <remarks>
+        /// This method is used to duplicate rental invoice metadata for editing, simulation, or rollback purposes without affecting the original instance.
+        /// Changes made to the cloned invoice will not impact the source object.
+        /// </remarks>
+        public RentalInvoice Clone()
+        {
+            return new RentalInvoice(
+                this.InvoiceNumber,
+                this.DueDate,
+                this.TenantID,
+                this.Status);
         }
     }
 
@@ -1815,6 +1961,24 @@ namespace Real_Estate_Management_System.Billing
                 DueDate != default &&
                 TenantID > 0 &&
                 Status != InvoiceStatuses.Unknown;
+        }
+        /// <summary>
+        /// Creates a deep copy of the current <c>InternetInvoice</c> instance.
+        /// </summary>
+        /// <returns>
+        /// A new <see cref="InternetInvoice"/> object with the same <c>InvoiceNumber</c>, <c>DueDate</c>, <c>TenantID</c>, and <c>Status</c> as the original.
+        /// </returns>
+        /// <remarks>
+        /// This method is used to duplicate internet invoice metadata for editing, simulation, or rollback purposes without affecting the original instance.
+        /// Changes made to the cloned invoice will not impact the source object.
+        /// </remarks>
+        public InternetInvoice Clone()
+        {
+            return new InternetInvoice(
+                this.InvoiceNumber,
+                this.DueDate,
+                this.TenantID,
+                this.Status);
         }
     }
 }

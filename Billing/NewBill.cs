@@ -54,6 +54,8 @@ namespace Real_Estate_Management_System.Billing
         {
             Manage.WaterBill MWB = new Manage.WaterBill();
             MWB.ShowDialog();
+
+            RefreshInvoicePanels();
         }
 
         private void btnManage_ElectricityBill_Click(object sender, EventArgs e)
@@ -139,7 +141,13 @@ namespace Real_Estate_Management_System.Billing
                 }
 
                 InitiateNewInvoice();
+                ActivateToolTip();
             }
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            NewBill_Load(this, EventArgs.Empty);
         }
     }
 }

@@ -172,6 +172,10 @@
 		<Compile Update ="Billing\SetDueDates.Methods.cs">
 			<DependentUpon>SetDueDates.cs</DependentUpon>
 		</Compile>
+
+		<Compile Update ="Billing\Manage\WaterBill.Methods.cs">
+			<DependentUpon>WaterBill.cs</DependentUpon>
+		</Compile>
 	</ItemGroup>
 
 </Project>
