@@ -36,6 +36,8 @@
             txtBuildingAddress = new TextBox();
             label2 = new Label();
             btnSave = new Button();
+            txtRentalRate = new TextBox();
+            label3 = new Label();
             pnlHeader.SuspendLayout();
             SuspendLayout();
             // 
@@ -114,7 +116,7 @@
             btnSave.FlatStyle = FlatStyle.Flat;
             btnSave.Font = new Font("Arial Narrow", 13.8F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
             btnSave.ForeColor = Color.FromArgb(0, 70, 67);
-            btnSave.Location = new Point(197, 334);
+            btnSave.Location = new Point(197, 395);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(203, 44);
             btnSave.TabIndex = 28;
@@ -122,12 +124,34 @@
             btnSave.UseVisualStyleBackColor = true;
             btnSave.Click += btnSave_Click;
             // 
+            // txtRentalRate
+            // 
+            txtRentalRate.Font = new Font("Arial", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtRentalRate.ForeColor = Color.FromArgb(0, 70, 67);
+            txtRentalRate.Location = new Point(233, 322);
+            txtRentalRate.Name = "txtRentalRate";
+            txtRentalRate.Size = new Size(364, 34);
+            txtRentalRate.TabIndex = 30;
+            // 
+            // label3
+            // 
+            label3.BackColor = Color.Transparent;
+            label3.Font = new Font("Arial", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Location = new Point(12, 322);
+            label3.Name = "label3";
+            label3.Size = new Size(215, 34);
+            label3.TabIndex = 29;
+            label3.Text = "Rental Rate:";
+            label3.TextAlign = ContentAlignment.TopRight;
+            // 
             // NewBuilding
             // 
             AutoScaleDimensions = new SizeF(11F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(240, 237, 229);
-            ClientSize = new Size(609, 390);
+            ClientSize = new Size(609, 451);
+            Controls.Add(txtRentalRate);
+            Controls.Add(label3);
             Controls.Add(btnSave);
             Controls.Add(txtBuildingAddress);
             Controls.Add(label2);
@@ -160,5 +184,7 @@
         private TextBox txtBuildingAddress;
         private Label label2;
         private Button btnSave;
+        private TextBox txtRentalRate;
+        private Label label3;
     }
 }

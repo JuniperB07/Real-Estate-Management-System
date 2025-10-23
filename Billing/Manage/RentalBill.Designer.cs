@@ -45,6 +45,8 @@
             lblMonthlyRent = new Label();
             label4 = new Label();
             lblDueDate = new Label();
+            label3 = new Label();
+            lblPenalties = new Label();
             pnlHeader.SuspendLayout();
             SuspendLayout();
             // 
@@ -74,8 +76,9 @@
             // 
             // label12
             // 
+            label12.Anchor = AnchorStyles.Bottom;
             label12.Font = new Font("Arial", 16.2F, FontStyle.Bold);
-            label12.Location = new Point(13, 446);
+            label12.Location = new Point(13, 523);
             label12.Name = "label12";
             label12.Size = new Size(274, 34);
             label12.TabIndex = 31;
@@ -84,8 +87,9 @@
             // 
             // lblTotal
             // 
+            lblTotal.Anchor = AnchorStyles.Bottom;
             lblTotal.Font = new Font("Arial", 16.2F, FontStyle.Bold);
-            lblTotal.Location = new Point(293, 446);
+            lblTotal.Location = new Point(293, 523);
             lblTotal.Name = "lblTotal";
             lblTotal.Size = new Size(225, 34);
             lblTotal.TabIndex = 30;
@@ -204,11 +208,31 @@
             lblDueDate.Text = "September 10, 2000";
             lblDueDate.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // label3
+            // 
+            label3.Location = new Point(13, 430);
+            label3.Name = "label3";
+            label3.Size = new Size(274, 25);
+            label3.TabIndex = 38;
+            label3.Text = "PENALTIES:";
+            label3.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // lblPenalties
+            // 
+            lblPenalties.Location = new Point(293, 430);
+            lblPenalties.Name = "lblPenalties";
+            lblPenalties.Size = new Size(225, 25);
+            lblPenalties.TabIndex = 37;
+            lblPenalties.Text = "0.00";
+            lblPenalties.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // RentalBill
             // 
             AutoScaleDimensions = new SizeF(11F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(530, 503);
+            ClientSize = new Size(530, 580);
+            Controls.Add(label3);
+            Controls.Add(lblPenalties);
             Controls.Add(label4);
             Controls.Add(lblDueDate);
             Controls.Add(label2);
@@ -257,5 +281,7 @@
         private Label lblMonthlyRent;
         private Label label4;
         private Label lblDueDate;
+        private Label label3;
+        private Label lblPenalties;
     }
 }

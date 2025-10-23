@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using JunX.NETStandard.MySQL;
 using JunX.NETStandard.SQLBuilder;
-using System.ComponentModel.Design;
-using Org.BouncyCastle.Asn1.Mozilla;
+using System.Configuration.Internal;
 
 namespace Real_Estate_Management_System.Billing
 {
@@ -472,6 +471,15 @@ namespace Real_Estate_Management_System.Billing
         /// </remarks>
         public string InvoiceNumber { get; set; }
         /// <summary>
+        /// Gets or sets the due date for the water invoice payment.
+        /// </summary>
+        /// <remarks>
+        /// This value indicates the deadline by which the tenant must settle the water bill.
+        /// It is used in billing logic, reporting, and penalty computation for overdue invoices.
+        /// A default or uninitialized value may indicate that the invoice is not yet finalized or scheduled.
+        /// </remarks>
+        public DateTime DueDate { get; set; }
+        /// <summary>
         /// Gets or sets the tenant ID associated with this water invoice.
         /// </summary>
         /// <remarks>
@@ -628,6 +636,7 @@ namespace Real_Estate_Management_System.Billing
                     .StartWhere
                         .Where(tbadvances.Status, SQLOperator.Equal, "'" + AdvancesStatuses.UNUSED.ToString() + "'")
                         .And(tbadvances.BillType, SQLOperator.Equal, "'" + InvoiceTypes.WATER.ToString() + "'")
+                        .And(tbadvances.TenantID, SQLOperator.Equal, TenantID.ToString())
                     .EndWhere
                     .ExecuteReader(Internals.DBC);
                 if (Internals.DBC.HasRows)
@@ -728,25 +737,28 @@ namespace Real_Estate_Management_System.Billing
         public double Subtotal => (CurrentCharge + RemainingBalance) - Deductions;
 
         /// <summary>
-        /// Initializes a new instance of the <c>WaterInvoice</c> class with specified invoice metadata and meter readings.
+        /// Initializes a new instance of the <c>WaterInvoice</c> class with specified invoice metadata, meter readings, and due date.
         /// </summary>
-        /// <param name="SetInvoiceNumber">The invoice number used to identify the billing record.</param>
+        /// <param name="SetInvoiceNumber">The invoice number used to identify the water billing record.</param>
+        /// <param name="SetDueDate">The due date by which the water bill must be paid.</param>
         /// <param name="SetTenantID">The tenant ID associated with the invoice.</param>
         /// <param name="SetPreviousReading">The previous water meter reading.</param>
         /// <param name="SetPresentReading">The present water meter reading.</param>
         /// <param name="SetStatus">The status of the invoice, such as <c>Unpaid</c>, <c>Partial</c>, or <c>Paid</c>.</param>
         /// <remarks>
-        /// This constructor sets the initial state of the invoice, including readings and status, without performing any validation or computation.
+        /// This constructor sets the initial state of the water invoice, including readings, due date, and status.
         /// Use <c>IsValid()</c> to verify that the constructed invoice meets minimum requirements for processing.
         /// </remarks>
         public WaterInvoice(
             string SetInvoiceNumber = "",
+            DateTime SetDueDate = default,
             int SetTenantID = 0,
             double SetPreviousReading = 0,
             double SetPresentReading = 0,
             InvoiceStatuses SetStatus = InvoiceStatuses.Unknown)
         {
             InvoiceNumber = SetInvoiceNumber;
+            DueDate = SetDueDate;
             TenantID = SetTenantID;
             PreviousReading = SetPreviousReading;
             PresentReading = SetPresentReading;
@@ -754,17 +766,18 @@ namespace Real_Estate_Management_System.Billing
         }
 
         /// <summary>
-        /// Determines whether the current water invoice contains valid metadata and meter readings.
+        /// Determines whether the current water invoice contains valid metadata, meter readings, and due date.
         /// </summary>
         /// <remarks>
-        /// This method checks that:
+        /// This method validates the invoice by checking:
         /// <list type="bullet">
         ///   <item><description><c>InvoiceNumber</c> is not null or whitespace.</description></item>
+        ///   <item><description><c>DueDate</c> is not the default value.</description></item>
         ///   <item><description><c>TenantID</c> is greater than 0.</description></item>
         ///   <item><description><c>Consumption</c> is non-negative.</description></item>
         ///   <item><description><c>Status</c> is not <c>InvoiceStatuses.Unknown</c>.</description></item>
         /// </list>
-        /// It is used to validate invoice readiness before processing, saving, or billing.
+        /// It ensures the invoice is complete and eligible for billing, reporting, or payment processing.
         /// </remarks>
         /// <returns>
         /// <c>true</c> if the invoice is structurally valid; otherwise, <c>false</c>.
@@ -773,6 +786,7 @@ namespace Real_Estate_Management_System.Billing
         {
             return
                 !string.IsNullOrWhiteSpace(InvoiceNumber) &&
+                DueDate != default &&
                 TenantID > 0 &&
                 Consumption >= 0 &&
                 Status != InvoiceStatuses.Unknown;
@@ -826,6 +840,15 @@ namespace Real_Estate_Management_System.Billing
         /// It must be non-empty to ensure the invoice is considered valid and processable.
         /// </remarks>
         public string InvoiceNumber { get; set; }
+        /// <summary>
+        /// Gets or sets the due date for the electricity invoice payment.
+        /// </summary>
+        /// <remarks>
+        /// This value specifies the deadline by which the tenant must settle the electricity bill.
+        /// It is used in billing workflows, reporting, and penalty logic for overdue invoices.
+        /// A default or uninitialized value may indicate that the invoice is not yet finalized or scheduled.
+        /// </remarks>
+        public DateTime DueDate { get; set; }
         /// <summary>
         /// Gets or sets the tenant ID associated with this electricity invoice.
         /// </summary>
@@ -976,6 +999,7 @@ namespace Real_Estate_Management_System.Billing
                     .StartWhere
                         .Where(tbadvances.Status, SQLOperator.Equal, "'" + AdvancesStatuses.UNUSED.ToString() + "'")
                         .And(tbadvances.BillType, SQLOperator.Equal, "'" + InvoiceTypes.ELECTRICITY.ToString() + "'")
+                        .And(tbadvances.TenantID, SQLOperator.Equal, TenantID.ToString())
                     .EndWhere
                     .ExecuteReader(Internals.DBC);
                 if (Internals.DBC.HasRows)
@@ -1079,25 +1103,28 @@ namespace Real_Estate_Management_System.Billing
         public double Subtotal => (CurrentCharge + RemainingBalance) - Deductions;
 
         /// <summary>
-        /// Initializes a new instance of the <c>ElectricityInvoice</c> class with specified invoice metadata and meter readings.
+        /// Initializes a new instance of the <c>ElectricityInvoice</c> class with specified invoice metadata, meter readings, and due date.
         /// </summary>
-        /// <param name="SetInvoiceNumber">The invoice number used to identify the billing record.</param>
+        /// <param name="SetInvoiceNumber">The invoice number used to identify the electricity billing record.</param>
+        /// <param name="SetDueDate">The due date by which the electricity bill must be paid.</param>
         /// <param name="SetTenantID">The tenant ID associated with the invoice.</param>
         /// <param name="SetPreviousReading">The previous electricity meter reading.</param>
         /// <param name="SetPresentReading">The present electricity meter reading.</param>
         /// <param name="SetStatus">The status of the invoice, such as <c>Unpaid</c>, <c>Partial</c>, or <c>Paid</c>.</param>
         /// <remarks>
-        /// This constructor sets the initial state of the invoice, including readings and status, without performing any validation or computation.
+        /// This constructor sets the initial state of the electricity invoice, including readings, due date, and status.
         /// Use <c>IsValid()</c> to verify that the constructed invoice meets minimum requirements for processing.
         /// </remarks>
         public ElectricityInvoice(
             string SetInvoiceNumber = "",
+            DateTime SetDueDate = default,
             int SetTenantID = 0,
             double SetPreviousReading = 0,
             double SetPresentReading = 0,
             InvoiceStatuses SetStatus = InvoiceStatuses.Unknown)
         {
             InvoiceNumber = SetInvoiceNumber;
+            DueDate = SetDueDate;
             TenantID = SetTenantID;
             PreviousReading = SetPreviousReading;
             PresentReading = SetPresentReading;
@@ -1105,17 +1132,18 @@ namespace Real_Estate_Management_System.Billing
         }
 
         /// <summary>
-        /// Determines whether the current electricity invoice contains valid metadata and meter readings.
+        /// Determines whether the current electricity invoice contains valid metadata, meter readings, and due date.
         /// </summary>
         /// <remarks>
-        /// This method checks that:
+        /// This method validates the invoice by checking:
         /// <list type="bullet">
         ///   <item><description><c>InvoiceNumber</c> is not null or whitespace.</description></item>
+        ///   <item><description><c>DueDate</c> is not the default value.</description></item>
         ///   <item><description><c>TenantID</c> is greater than 0.</description></item>
         ///   <item><description><c>Consumption</c> is non-negative.</description></item>
         ///   <item><description><c>Status</c> is not <c>InvoiceStatuses.Unknown</c>.</description></item>
         /// </list>
-        /// It is used to validate invoice readiness before processing, saving, or billing.
+        /// It ensures the invoice is complete and eligible for billing, reporting, or payment processing.
         /// </remarks>
         /// <returns>
         /// <c>true</c> if the invoice is structurally valid; otherwise, <c>false</c>.
@@ -1124,14 +1152,669 @@ namespace Real_Estate_Management_System.Billing
         {
             return
                 !string.IsNullOrWhiteSpace(InvoiceNumber) &&
+                DueDate != default &&
                 TenantID > 0 &&
                 Consumption >= 0 &&
                 Status != InvoiceStatuses.Unknown;
         }
     }
 
+    /// <summary>
+    /// Represents a rental invoice containing billing details, tenant metadata, and financial computations for monthly rent.
+    /// </summary>
+    /// <remarks>
+    /// This class encapsulates logic for retrieving rental rates, computing remaining balances, applying advances and credits,
+    /// and calculating the final subtotal. It integrates with tenant, room, building, and invoice tables to dynamically resolve
+    /// context-specific values. Use <c>IsValid()</c> to verify structural integrity before processing or saving.
+    /// </remarks>
     internal class RentalInvoice
     {
+        private int BuildingID
+        {
+            get
+            {
+                if (!(TenantID > 0))
+                    return 0;
 
+                int rID = 0;
+
+                new SelectCommand<tbtenants>()
+                    .Select(tbtenants.RoomID)
+                    .From
+                    .StartWhere
+                        .Where(tbtenants.TenantID, SQLOperator.Equal, TenantID.ToString())
+                    .EndWhere
+                    .ExecuteReader(Internals.DBC);
+                rID = Convert.ToInt32(Internals.DBC.Values[0]);
+
+                new SelectCommand<tbrooms>()
+                    .Select(tbrooms.BuildingID)
+                    .From
+                    .StartWhere
+                        .Where(tbrooms.RoomID, SQLOperator.Equal, rID.ToString())
+                    .EndWhere
+                    .ExecuteReader(Internals.DBC);
+                return Convert.ToInt32(Internals.DBC.Values[0]);
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the unique identifier assigned to the invoice.
+        /// </summary>
+        /// <remarks>
+        /// This value distinguishes the invoice record across billing modules and is used in reporting, validation, and payment tracking.
+        /// It must be non-empty to ensure the invoice is considered valid.
+        /// </remarks>
+        public string InvoiceNumber { get; set; }
+        /// <summary>
+        /// Gets or sets the due date for the invoice payment.
+        /// </summary>
+        /// <remarks>
+        /// This value specifies the deadline by which the tenant must settle the bill.
+        /// It is used in billing workflows, reporting, and penalty logic for overdue invoices.
+        /// A default or uninitialized value may indicate that the invoice is not yet finalized or scheduled.
+        /// </remarks>
+        public DateTime DueDate { get; set; }
+        /// <summary>
+        /// Gets or sets the unique identifier of the tenant associated with the invoice.
+        /// </summary>
+        /// <remarks>
+        /// This value links the invoice to a specific tenant record and is used to resolve billing context, balances, and applicable advances or credits.
+        /// A valid tenant ID must be greater than zero for the invoice to be considered valid.
+        /// </remarks>
+        public int TenantID { get; set; }
+        /// <summary>
+        /// Gets or sets the current status of the invoice.
+        /// </summary>
+        /// <remarks>
+        /// This value indicates the payment state of the invoice.
+        /// It is used in billing workflows, reporting, and validation logic.
+        /// A value of <c>Unknown</c> typically signifies an uninitialized or invalid invoice state.
+        /// </remarks>
+        public InvoiceStatuses Status { get; set; }
+
+        /// <summary>
+        /// Gets the monthly rental rate for the tenant's assigned building.
+        /// </summary>
+        /// <remarks>
+        /// This property resolves the tenant's <c>RoomID</c> via <c>tbtenants</c>, then queries <c>tbrooms</c> to determine the <c>BuildingID</c>.
+        /// It finally retrieves the <c>RentalRate</c> from <c>tbbuilding</c>.
+        /// If the tenant ID is invalid or no matching records are found, the result is 0.
+        /// </remarks>
+        /// <returns>
+        /// The monthly rental rate for the tenant's building; otherwise, 0.
+        /// </returns>
+        public double MonthlyRent
+        {
+            get
+            {
+                if (!(TenantID > 0))
+                    return 0;
+
+                new SelectCommand<tbbuilding>()
+                    .Select(tbbuilding.RentalRate)
+                    .From
+                    .StartWhere
+                        .Where(tbbuilding.BuildingID, SQLOperator.Equal, BuildingID.ToString())
+                    .EndWhere
+                    .ExecuteReader(Internals.DBC);
+                if (Internals.DBC.HasRows)
+                    return Convert.ToDouble(Internals.DBC.Values[0]);
+                Internals.DBC.CloseReader();
+                return 0;
+            }
+        }
+        /// <summary>
+        /// Gets the total remaining balance from unpaid or partially paid rental invoices for the tenant.
+        /// </summary>
+        /// <remarks>
+        /// This property queries the <c>tbrentalinvoice</c> table using the current <c>TenantID</c> and filters by <c>Status</c> values <c>UNPAID</c> and <c>PARTIAL</c>.
+        /// It iterates through all matching records and sums their <c>BillBalance</c> values.
+        /// If the tenant ID is invalid or no matching records are found, the result is 0.
+        /// </remarks>
+        /// <returns>
+        /// The aggregated remaining balance for the tenant's rental invoices.
+        /// </returns>
+        public double RemainingBalance
+        {
+            get
+            {
+                double rb = 0;
+
+                if (!(TenantID > 0))
+                    return 0;
+
+                new SelectCommand<tbrentalinvoice>()
+                    .Select(tbrentalinvoice.BillBalance)
+                    .From
+                    .StartWhere
+                        .Where(tbrentalinvoice.TenantID, SQLOperator.Equal, TenantID.ToString())
+                        .And()
+                        .StartGroup(tbrentalinvoice.Status, SQLOperator.Equal, "'" + InvoiceStatuses.UNPAID.ToString() + "'")
+                            .Or(tbrentalinvoice.Status, SQLOperator.Equal, "'" + InvoiceStatuses.PARTIAL.ToString() + "'")
+                        .EndGroup
+                    .EndWhere
+                    .ExecuteReader(Internals.DBC);
+                if (Internals.DBC.HasRows)
+                    foreach (string bb in Internals.DBC.Values)
+                        rb += Convert.ToDouble(bb);
+                Internals.DBC.CloseReader();
+
+                return rb;
+            }
+        }
+        /// <summary>
+        /// Gets a comma-separated list of unused advance payment IDs associated with the tenant.
+        /// </summary>
+        /// <remarks>
+        /// This property queries the <c>tbadvances</c> table for records where <c>Status</c> is <c>UNUSED</c> and matches the current <c>TenantID</c>.
+        /// It returns a string of matching <c>AdvanceID</c> values separated by commas, with a trailing comma if any are found.
+        /// If the tenant ID is invalid or no advances are available, the result is an empty string.
+        /// </remarks>
+        /// <returns>
+        /// A comma-separated list of unused advance IDs; otherwise, an empty string.
+        /// </returns>
+        public string AdvanceIDs
+        {
+            get
+            {
+                string AIDs = "";
+
+                if (!(TenantID > 0))
+                    return AIDs;
+
+                new SelectCommand<tbadvances>()
+                    .Select(tbadvances.AdvanceID)
+                    .From
+                    .StartWhere
+                        .Where(tbadvances.TenantID, SQLOperator.Equal, TenantID.ToString())
+                        .And(tbadvances.Status, SQLOperator.Equal, "'" + AdvancesStatuses.UNUSED.ToString() + "'")
+                        .And(tbadvances.BillType, SQLOperator.Equal, "'" + InvoiceTypes.RENTAL.ToString() + "'")
+                    .EndWhere
+                    .ExecuteReader(Internals.DBC);
+                if (Internals.DBC.HasRows)
+                    foreach (string AID in Internals.DBC.Values)
+                        AIDs = AID + ",";
+                Internals.DBC.CloseReader();
+
+                return AIDs;
+            }
+        }
+        /// <summary>
+        /// Gets the total amount of unused advance payments associated with the tenant.
+        /// </summary>
+        /// <remarks>
+        /// This property parses the <c>AdvanceIDs</c> string into a list of integers, then queries the <c>tbadvances</c> table
+        /// to retrieve the <c>AmountPaid</c> for each matching <c>AdvanceID</c>. The values are summed to compute the total.
+        /// If the tenant ID is invalid or no advance IDs are available, the result is 0.
+        /// </remarks>
+        /// <returns>
+        /// The total value of unused advances for the tenant; otherwise, 0.
+        /// </returns>
+        public double TotalAdvances
+        {
+            get
+            {
+                double ta = 0;
+
+                if (!(TenantID > 0) || string.IsNullOrWhiteSpace(AdvanceIDs))
+                    return ta;
+
+                List<int> AIDs = AdvanceIDs.Split(',', StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToList();
+
+                foreach(int AID in AIDs)
+                {
+                    new SelectCommand<tbadvances>()
+                        .Select(tbadvances.AmountPaid)
+                        .From
+                        .StartWhere
+                            .Where(tbadvances.AdvanceID, SQLOperator.Equal, AID.ToString())
+                        .EndWhere
+                        .ExecuteReader(Internals.DBC);
+                    ta += Convert.ToDouble(Internals.DBC.Values[0]);
+                }
+
+                return ta;
+            }
+        }
+        /// <summary>
+        /// Gets the total credit amount available to the tenant.
+        /// </summary>
+        /// <remarks>
+        /// This property queries the <c>tbcredits</c> table for records matching the current <c>TenantID</c>
+        /// and retrieves the <c>CreditAmount</c>. If a valid tenant ID is provided and matching records exist,
+        /// the first credit value is returned. If no records are found or the tenant ID is invalid, the result is 0.
+        /// </remarks>
+        /// <returns>
+        /// The available credit amount for the tenant; otherwise, 0.
+        /// </returns>
+        public double Credits
+        {
+            get
+            {
+                if (!(TenantID > 0))
+                    return 0;
+
+                new SelectCommand<tbcredits>()
+                    .Select(tbcredits.CreditAmount)
+                    .From
+                    .StartWhere
+                        .Where(tbcredits.TenantID, SQLOperator.Equal, TenantID.ToString())
+                    .EndWhere
+                    .ExecuteReader(Internals.DBC);
+                if (Internals.DBC.HasRows)
+                    return Convert.ToDouble(Internals.DBC.Values[0]);
+                Internals.DBC.CloseReader();
+                return 0;
+            }
+        }
+        /// <summary>
+        /// Gets the total deductions applied to the tenant's rental invoice.
+        /// </summary>
+        /// <remarks>
+        /// This value is computed by summing <c>TotalAdvances</c> and <c>Credits</c>, representing all applicable prepayments and credit adjustments.
+        /// It is subtracted from the combined rent and balance to determine the final subtotal.
+        /// </remarks>
+        /// <returns>
+        /// The total deduction amount applied to the invoice.
+        /// </returns>
+        public double Deductions => TotalAdvances + Credits;
+        /// <summary>
+        /// Gets the computed subtotal for the tenant's rental invoice.
+        /// </summary>
+        /// <remarks>
+        /// This value is calculated by adding <c>MonthlyRent</c> and <c>RemainingBalance</c>, then subtracting <c>Deductions</c>.
+        /// It represents the net amount due before any final adjustments or penalties.
+        /// </remarks>
+        /// <returns>
+        /// The subtotal amount for the rental invoice.
+        /// </returns>
+        public double Subtotal => (MonthlyRent + RemainingBalance) - Deductions;
+
+        /// <summary>
+        /// Initializes a new instance of the <c>RentalInvoice</c> class with specified invoice metadata and tenant association.
+        /// </summary>
+        /// <param name="SetInvoiceNumber">The invoice number used to identify the rental billing record.</param>
+        /// <param name="SetDueDate">The due date by which the rental bill must be paid.</param>
+        /// <param name="SetTenantID">The tenant ID associated with the invoice.</param>
+        /// <param name="SetStatus">The status of the invoice, such as <c>Unpaid</c>, <c>Partial</c>, or <c>Paid</c>.</param>
+        /// <remarks>
+        /// This constructor sets the initial state of the rental invoice, including due date, tenant linkage, and payment status.
+        /// Use <c>IsValid()</c> to verify that the constructed invoice meets minimum requirements for processing.
+        /// </remarks>
+        public RentalInvoice(
+            string SetInvoiceNumber = "",
+            DateTime SetDueDate = default,
+            int SetTenantID = 0,
+            InvoiceStatuses SetStatus = InvoiceStatuses.Unknown)
+        {
+            InvoiceNumber = SetInvoiceNumber;
+            DueDate = SetDueDate;
+            TenantID = SetTenantID;
+            Status = SetStatus;
+        }
+
+        /// <summary>
+        /// Determines whether the current rental invoice contains valid metadata and tenant association.
+        /// </summary>
+        /// <remarks>
+        /// This method validates the invoice by checking:
+        /// <list type="bullet">
+        ///   <item><description><c>InvoiceNumber</c> is not null or whitespace.</description></item>
+        ///   <item><description><c>DueDate</c> is not the default value.</description></item>
+        ///   <item><description><c>TenantID</c> is greater than 0.</description></item>
+        ///   <item><description><c>Status</c> is not <c>InvoiceStatuses.Unknown</c>.</description></item>
+        /// </list>
+        /// It ensures the invoice is structurally complete and eligible for billing, reporting, or payment processing.
+        /// </remarks>
+        /// <returns>
+        /// <c>true</c> if the invoice is structurally valid; otherwise, <c>false</c>.
+        /// </returns>
+        public bool IsValid()
+        {
+            return
+                !string.IsNullOrWhiteSpace(InvoiceNumber) &&
+                DueDate != default &&
+                TenantID > 0 &&
+                Status != InvoiceStatuses.Unknown;
+        }
+    }
+
+    /// <summary>
+    /// Represents an internet billing invoice linked to a tenant's subscribed internet plan.
+    /// </summary>
+    /// <remarks>
+    /// This class encapsulates logic for retrieving internet plan details, computing outstanding balances,
+    /// applying unused advances and credits, and calculating the final payable subtotal.
+    /// It integrates with tenant, internet plan, advance, and invoice tables to dynamically resolve billing context.
+    /// Use <c>IsValid()</c> to verify structural integrity before processing or saving.
+    /// </remarks>
+    internal class InternetInvoice
+    {
+        private int InternetPlanID
+        {
+            get
+            {
+                new SelectCommand<tbtenants>()
+                    .Select(tbtenants.ISPlanID)
+                    .From
+                    .StartWhere
+                        .Where(tbtenants.TenantID, SQLOperator.Equal, TenantID.ToString())
+                    .EndWhere
+                    .ExecuteReader(Internals.DBC);
+                if (Internals.DBC.HasRows)
+                    return Convert.ToInt32(Internals.DBC.Values[0]);
+                Internals.DBC.CloseReader();
+                return 0;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the unique identifier assigned to the internet invoice.
+        /// </summary>
+        /// <remarks>
+        /// This value serves as the primary reference for the internet billing record. It is used in tracking, validation,
+        /// reporting, and reconciliation processes. A non-empty invoice number is required for the invoice to be considered valid.
+        /// </remarks>
+        public string InvoiceNumber { get; set; }
+        /// <summary>
+        /// Gets or sets the due date for the internet invoice payment.
+        /// </summary>
+        /// <remarks>
+        /// This value defines the deadline by which the tenant must settle the internet subscription bill.
+        /// It is used in billing workflows, overdue detection, and reporting logic.
+        /// A default value may indicate that the invoice is not yet scheduled or finalized.
+        /// </remarks>
+        public DateTime DueDate { get; set; }
+        /// <summary>
+        /// Gets or sets the unique identifier of the tenant associated with the internet invoice.
+        /// </summary>
+        /// <remarks>
+        /// This value links the invoice to a specific tenant record and is used to resolve internet plan details,
+        /// billing context, and applicable advances or credits. A valid tenant ID must be greater than zero for the invoice to be considered valid.
+        /// </remarks>
+        public int TenantID { get; set; }
+        /// <summary>
+        /// Gets or sets the current status of the internet invoice.
+        /// </summary>
+        /// <remarks>
+        /// This value indicates the payment state of the invoice, such as <c>Unpaid</c>, <c>Partial</c>, <c>Paid</c>, or <c>Unknown</c>.
+        /// It is used to determine billing eligibility, balance computation, and reporting logic.
+        /// A value of <c>Unknown</c> typically signifies an uninitialized or invalid invoice state.
+        /// </remarks>
+        public InvoiceStatuses Status { get; set; }
+
+        /// <summary>
+        /// Gets the name of the internet plan associated with the tenant.
+        /// </summary>
+        /// <remarks>
+        /// This property resolves the tenant’s <c>InternetPlanID</c> via the <c>tbtenants</c> table,
+        /// then queries the <c>tbinternetplans</c> table to retrieve the corresponding <c>PlanName</c>.
+        /// If the tenant ID is invalid or no matching plan is found, the result is an empty string.
+        /// </remarks>
+        /// <returns>
+        /// The name of the tenant’s subscribed internet plan; otherwise, an empty string.
+        /// </returns>
+        public string PlanName
+        {
+            get
+            {
+                if (!(TenantID > 0))
+                    return "";
+
+                new SelectCommand<tbinternetplans>()
+                    .Select(tbinternetplans.PlanName)
+                    .From
+                    .StartWhere
+                        .Where(tbinternetplans.PlanID, SQLOperator.Equal, InternetPlanID.ToString())
+                    .EndWhere
+                    .ExecuteReader(Internals.DBC);
+                return Internals.DBC.Values[0];
+            }
+        }
+        /// <summary>
+        /// Gets the monthly subscription fee for the tenant's internet plan.
+        /// </summary>
+        /// <remarks>
+        /// This property resolves the tenant’s <c>InternetPlanID</c> via the <c>tbtenants</c> table,
+        /// then queries the <c>tbinternetplans</c> table to retrieve the corresponding <c>PlanPrice</c>.
+        /// If the tenant ID is invalid or no matching plan is found, the result is 0.
+        /// </remarks>
+        /// <returns>
+        /// The monthly fee for the tenant’s subscribed internet plan; otherwise, 0.
+        /// </returns>
+        public double SubscriptionFee
+        {
+            get
+            {
+                if (!(TenantID > 0))
+                    return 0;
+
+                new SelectCommand<tbinternetplans>()
+                    .Select(tbinternetplans.PlanPrice)
+                    .From
+                    .StartWhere
+                        .Where(tbinternetplans.PlanID, SQLOperator.Equal, InternetPlanID.ToString())
+                    .EndWhere
+                    .ExecuteReader(Internals.DBC);
+                return Convert.ToDouble(Internals.DBC.Values[0]);
+            }
+        }
+        /// <summary>
+        /// Gets the total remaining balance from unpaid or partially paid internet invoices for the tenant.
+        /// </summary>
+        /// <remarks>
+        /// This property queries the <c>tbinternetinvoice</c> table using the current <c>TenantID</c> and filters by <c>Status</c> values <c>UNPAID</c> and <c>PARTIAL</c>.
+        /// It iterates through all matching records and sums their <c>BillBalance</c> values.
+        /// If the tenant ID is invalid or no matching records are found, the result is 0.
+        /// </remarks>
+        /// <returns>
+        /// The aggregated remaining balance for the tenant’s internet invoices.
+        /// </returns>
+        public double RemainingBalance
+        {
+            get
+            {
+                double rb = 0;
+
+                if (!(TenantID > 0))
+                    return rb;
+
+                new SelectCommand<tbinternetinvoice>()
+                    .Select(tbinternetinvoice.BillBalance)
+                    .From
+                    .StartWhere
+                        .Where(tbinternetinvoice.TenantID, SQLOperator.Equal, TenantID.ToString())
+                        .And()
+                        .StartGroup(tbinternetinvoice.Status, SQLOperator.Equal, "'" + InvoiceStatuses.UNPAID.ToString() + "'")
+                            .Or(tbinternetinvoice.Status, SQLOperator.Equal, "'" + InvoiceStatuses.PARTIAL.ToString() + "'")
+                        .EndGroup
+                    .EndWhere
+                    .ExecuteReader(Internals.DBC);
+                if (Internals.DBC.HasRows)
+                    foreach (string bb in Internals.DBC.Values)
+                        rb += Convert.ToDouble(bb);
+                Internals.DBC.CloseReader();
+
+                return rb;
+            }
+        }
+        /// <summary>
+        /// Gets a comma-separated list of unused advance payment IDs associated with the tenant's internet billing.
+        /// </summary>
+        /// <remarks>
+        /// This property queries the <c>tbadvances</c> table for records where <c>Status</c> is <c>UNUSED</c>,
+        /// <c>BillType</c> is <c>INTERNET</c>, and the <c>TenantID</c> matches the current invoice.
+        /// It returns a string of matching <c>AdvanceID</c> values separated by commas, with a trailing comma if any are found.
+        /// If the tenant ID is invalid or no advances are available, the result is an empty string.
+        /// </remarks>
+        /// <returns>
+        /// A comma-separated list of unused advance IDs for internet billing; otherwise, an empty string.
+        /// </returns>
+        public string AdvanceIDs
+        {
+            get
+            {
+                string AIDs = "";
+                
+                if(!(TenantID > 0))
+                    return AIDs;
+
+                new SelectCommand<tbadvances>()
+                    .Select(tbadvances.AdvanceID)
+                    .From
+                    .StartWhere
+                        .Where(tbadvances.TenantID, SQLOperator.Equal, TenantID.ToString())
+                        .And(tbadvances.Status, SQLOperator.Equal, "'" + AdvancesStatuses.UNUSED.ToString() + "'")
+                        .And(tbadvances.BillType, SQLOperator.Equal, "'" + InvoiceTypes.INTERNET.ToString() + "'")
+                    .EndWhere
+                    .ExecuteReader(Internals.DBC);
+                if (Internals.DBC.HasRows)
+                    foreach (string AID in Internals.DBC.Values)
+                        AIDs += AID + ",";
+                Internals.DBC.CloseReader();
+
+                return AIDs;
+            }
+        }
+        /// <summary>
+        /// Gets the total amount of unused advance payments associated with the tenant's internet billing.
+        /// </summary>
+        /// <remarks>
+        /// This property parses the <c>AdvanceIDs</c> string into a list of integers, then queries the <c>tbadvances</c> table
+        /// to retrieve the <c>AmountPaid</c> for each matching <c>AdvanceID</c>. The values are summed to compute the total.
+        /// If the tenant ID is invalid or no advance IDs are available, the result is 0.
+        /// </remarks>
+        /// <returns>
+        /// The total value of unused advances for the tenant’s internet billing; otherwise, 0.
+        /// </returns>
+        public double TotalAdvances
+        {
+            get
+            {
+                double ta = 0;
+
+                if (!(TenantID > 0) || string.IsNullOrWhiteSpace(AdvanceIDs))
+                    return ta;
+
+                List<int> AIDs = AdvanceIDs.Split(',', StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToList();
+
+                foreach(int AID in AIDs)
+                {
+                    new SelectCommand<tbadvances>()
+                        .Select(tbadvances.AmountPaid)
+                        .From
+                        .StartWhere
+                            .Where(tbadvances.AdvanceID, SQLOperator.Equal, AID.ToString())
+                        .EndWhere
+                        .ExecuteReader(Internals.DBC);
+                    ta += Convert.ToDouble(Internals.DBC.Values[0]);
+                }
+
+                return ta;
+            }
+        }
+        /// <summary>
+        /// Gets the total credit amount available to the tenant for internet billing.
+        /// </summary>
+        /// <remarks>
+        /// This property queries the <c>tbcredits</c> table for records matching the current <c>TenantID</c>
+        /// and where <c>BillType</c> is <c>INTERNET</c>. If matching records exist, the first <c>CreditAmount</c>
+        /// is returned. If no records are found or the tenant ID is invalid, the result is 0.
+        /// </remarks>
+        /// <returns>
+        /// The available credit amount for the tenant’s internet billing; otherwise, 0.
+        /// </returns>
+        public double Credits
+        {
+            get
+            {
+                if (!(TenantID > 0))
+                    return 0;
+
+                new SelectCommand<tbcredits>()
+                    .Select(tbcredits.CreditAmount)
+                    .From
+                    .StartWhere
+                        .Where(tbcredits.TenantID, SQLOperator.Equal, TenantID.ToString())
+                        .And(tbcredits.BillType, SQLOperator.Equal, "'" + InvoiceTypes.INTERNET.ToString() + "'")
+                    .EndWhere
+                    .ExecuteReader(Internals.DBC);
+                if (Internals.DBC.HasRows)
+                    return Convert.ToDouble(Internals.DBC.Values[0]);
+                Internals.DBC.CloseReader();
+                return 0;
+            }
+        }
+        /// <summary>
+        /// Gets the total deductions applied to the tenant's internet invoice.
+        /// </summary>
+        /// <remarks>
+        /// This value is computed by summing <c>TotalAdvances</c> and <c>Credits</c>, representing all applicable prepayments and credit adjustments.
+        /// It is subtracted from the combined subscription fee and remaining balance to determine the final subtotal.
+        /// </remarks>
+        /// <returns>
+        /// The total deduction amount applied to the internet invoice.
+        /// </returns>
+        public double Deductions => TotalAdvances + Credits;
+        /// <summary>
+        /// Gets the computed subtotal for the tenant's internet invoice.
+        /// </summary>
+        /// <remarks>
+        /// This value is calculated by adding <c>SubscriptionFee</c> and <c>RemainingBalance</c>, then subtracting <c>Deductions</c>.
+        /// It represents the net amount due before any final adjustments or penalties.
+        /// </remarks>
+        /// <returns>
+        /// The subtotal amount for the internet invoice.
+        /// </returns>
+        public double Subtotal => (SubscriptionFee + RemainingBalance) - Deductions;
+
+        /// <summary>
+        /// Initializes a new instance of the <c>InternetInvoice</c> class with specified invoice metadata and tenant association.
+        /// </summary>
+        /// <param name="SetInvoiceNumber">The invoice number used to identify the internet billing record.</param>
+        /// <param name="SetDueDate">The due date by which the internet bill must be paid.</param>
+        /// <param name="SetTenantID">The tenant ID associated with the invoice.</param>
+        /// <param name="SetStatus">The status of the invoice, such as <c>Unpaid</c>, <c>Partial</c>, or <c>Paid</c>.</param>
+        /// <remarks>
+        /// This constructor sets the initial state of the internet invoice, including due date, tenant linkage, and payment status.
+        /// Use <c>IsValid()</c> to verify that the constructed invoice meets minimum requirements for processing.
+        /// </remarks>
+        public InternetInvoice(
+            string SetInvoiceNumber = "",
+            DateTime SetDueDate = default,
+            int SetTenantID = 0,
+            InvoiceStatuses SetStatus = InvoiceStatuses.Unknown)
+        {
+            InvoiceNumber = SetInvoiceNumber;
+            DueDate = SetDueDate;
+            TenantID = SetTenantID;
+            Status = SetStatus;
+        }
+
+        /// <summary>
+        /// Determines whether the current internet invoice contains valid metadata and tenant association.
+        /// </summary>
+        /// <remarks>
+        /// This method validates the invoice by checking:
+        /// <list type="bullet">
+        ///   <item><description><c>InvoiceNumber</c> is not null or whitespace.</description></item>
+        ///   <item><description><c>DueDate</c> is not the default value.</description></item>
+        ///   <item><description><c>TenantID</c> is greater than 0.</description></item>
+        ///   <item><description><c>Status</c> is not <c>InvoiceStatuses.Unknown</c>.</description></item>
+        /// </list>
+        /// It ensures the invoice is structurally complete and eligible for billing, reporting, or payment processing.
+        /// </remarks>
+        /// <returns>
+        /// <c>true</c> if the invoice is structurally valid; otherwise, <c>false</c>.
+        /// </returns>
+        public bool IsValid()
+        {
+            return
+                !string.IsNullOrWhiteSpace(InvoiceNumber) &&
+                DueDate != default &&
+                TenantID > 0 &&
+                Status != InvoiceStatuses.Unknown;
+        }
     }
 }
