@@ -176,6 +176,10 @@
 		<Compile Update ="Billing\Manage\WaterBill.Methods.cs">
 			<DependentUpon>WaterBill.cs</DependentUpon>
 		</Compile>
+
+		<Compile Update ="Billing\Manage\ElectricityBill.Methods.cs">
+			<DependentUpon>ElectricityBill.cs</DependentUpon>
+		</Compile>
 	</ItemGroup>
 
 </Project>
