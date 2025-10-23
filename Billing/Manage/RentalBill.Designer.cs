@@ -196,6 +196,7 @@
             btnSeePenalties.TabIndex = 39;
             btnSeePenalties.Text = "See Penalties";
             btnSeePenalties.UseVisualStyleBackColor = true;
+            btnSeePenalties.Click += btnSeePenalties_Click;
             // 
             // RentalBill
             // 

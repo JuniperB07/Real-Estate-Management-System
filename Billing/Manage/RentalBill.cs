@@ -33,5 +33,11 @@ namespace Real_Estate_Management_System.Billing.Manage
             GC.Collect();
             GC.WaitForPendingFinalizers();
         }
+
+        private void btnSeePenalties_Click(object sender, EventArgs e)
+        {
+            Penalties P = new Penalties();
+            P.ShowDialog();
+        }
     }
 }
