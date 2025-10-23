@@ -29,6 +29,11 @@ namespace Real_Estate_Management_System.Billing.Manage
 
             ResetForm();
             FillForm();
+
+            if (BHelper.IsSaved == true)
+                Forms.SetControlEnabled(Forms.ControlType<Button>.Extract(this), false);
+            else
+                Forms.SetControlEnabled(Forms.ControlType<Button>.Extract(this), true);
         }
 
         private void ElectricityBill_FormClosing(object sender, FormClosingEventArgs e)

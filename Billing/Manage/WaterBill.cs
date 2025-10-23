@@ -31,6 +31,11 @@ namespace Real_Estate_Management_System.Billing.Manage
 
             ResetForm();
             FillForm();
+
+            if (BHelper.IsSaved == true)
+                Forms.SetControlEnabled(Forms.ControlType<Button>.Extract(this), false);
+            else
+                Forms.SetControlEnabled(Forms.ControlType<Button>.Extract(this), true);
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)

@@ -37,6 +37,7 @@ namespace Real_Estate_Management_System.Billing
             BHelper.NewRentalInvoice = new RentalInvoice();
             BHelper.NewInternetInvoice = new InternetInvoice();
             BHelper.TenantID = 0;
+            BHelper.IsSaved = false;
         }
 
         private void FillTenantsList()

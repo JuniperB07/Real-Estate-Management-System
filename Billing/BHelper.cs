@@ -20,6 +20,7 @@ namespace Real_Estate_Management_System.Billing
         internal static DateTime DueDate_Utility { get; set; }
         internal static DateTime DueDate_Rental { get; set; }
         internal static DateTime DueDate_Internet { get; set; }
+        internal static bool IsSaved { get; set; }
 
         internal static double NewInvoiceTotal
         {

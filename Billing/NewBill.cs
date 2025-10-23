@@ -332,6 +332,8 @@ namespace Real_Estate_Management_System.Billing
 
             MBOK = new Dialogs.MSGBox_OK(this.Text, "Invoice saved.", Dialogs.DialogIcons.Information);
             MBOK.ShowDialog();
+
+            BHelper.IsSaved = true;
         }
     }
 }
