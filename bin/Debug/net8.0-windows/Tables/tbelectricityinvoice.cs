@@ -3,6 +3,7 @@ public enum tbelectricityinvoice
     tbelectricityinvoice,
     ElectricityInvoiceID,
     InvoiceNumber,
+    DueDate,
     TenantID,
     PreviousReading,
     PresentReading,
@@ -12,7 +13,6 @@ public enum tbelectricityinvoice
     Deductions,
     Subtotal,
     BillBalance,
-    DueDate,
     Status,
     AdvanceIDs,
 }

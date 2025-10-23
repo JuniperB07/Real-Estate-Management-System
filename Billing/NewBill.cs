@@ -17,6 +17,7 @@ namespace Real_Estate_Management_System.Billing
     public partial class NewBill : Form
     {
         private const string DEFAULT_FORM_TEXT = "Real Estate Management System - New Bill";
+        Dialogs.MSGBox_OK MBOK;
 
         public NewBill()
         {
@@ -45,6 +46,8 @@ namespace Real_Estate_Management_System.Billing
             ResetForm();
             FillTenantsList();
             SetupSearchTenant_AutoCompleteSource();
+
+            MBOK = new Dialogs.MSGBox_OK();
         }
 
         private void btnManage_WaterBill_Click(object sender, EventArgs e)
@@ -73,7 +76,7 @@ namespace Real_Estate_Management_System.Billing
 
         private void btnSetDueDates_Click(object sender, EventArgs e)
         {
-            FunctionButtons.SetDueDates SDD = new FunctionButtons.SetDueDates();
+            SetDueDates SDD = new SetDueDates();
             SDD.ShowDialog();
         }
 
@@ -118,7 +121,24 @@ namespace Real_Estate_Management_System.Billing
                         .Where(tbtenants.FullName, SQLOperator.Equal, "@FullName")
                     .EndWhere
                     .ExecuteReader(Internals.DBC, new ParametersMetadata("@FullName", tName));
-                //save Tenant id
+                BHelper.TenantID = Convert.ToInt32(Internals.DBC.Values[0]);
+
+                new SelectCommand<tbtenants>()
+                    .Select(tbtenants.TenancyStatus)
+                    .From
+                    .StartWhere
+                        .Where(tbtenants.TenantID, SQLOperator.Equal, BHelper.TenantID.ToString())
+                    .EndWhere
+                    .ExecuteReader(Internals.DBC);
+                if (Internals.DBC.Values[0] != Tenants.TenancyStatuses.Active.ToString())
+                {
+                    MBOK = new Dialogs.MSGBox_OK(this.Text, "The selected tenant is not active.\nUnable to proceed.", Dialogs.DialogIcons.Error);
+                    MBOK.ShowDialog();
+                    NewBill_Load(this, EventArgs.Empty);
+                    return;
+                }
+
+                InitiateNewInvoice();
             }
         }
     }

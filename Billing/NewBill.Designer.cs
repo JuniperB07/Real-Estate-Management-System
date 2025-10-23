@@ -40,7 +40,6 @@
             panel4 = new Panel();
             btnSetDueDates = new Button();
             pictureBox7 = new PictureBox();
-            label7 = new Label();
             lblInvoiceTotal = new Label();
             lblInvoiceDate = new Label();
             lblBillNumber = new Label();
@@ -185,7 +184,6 @@
             pnlBillSummary.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             pnlBillSummary.BackColor = SystemColors.ControlDarkDark;
             pnlBillSummary.Controls.Add(panel4);
-            pnlBillSummary.Controls.Add(label7);
             pnlBillSummary.Controls.Add(lblInvoiceTotal);
             pnlBillSummary.Controls.Add(lblInvoiceDate);
             pnlBillSummary.Controls.Add(lblBillNumber);
@@ -233,18 +231,6 @@
             pictureBox7.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox7.TabIndex = 0;
             pictureBox7.TabStop = false;
-            // 
-            // label7
-            // 
-            label7.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            label7.BackColor = Color.Transparent;
-            label7.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(486, 249);
-            label7.Name = "label7";
-            label7.Size = new Size(241, 38);
-            label7.TabIndex = 11;
-            label7.Text = "Bill Total:";
-            label7.TextAlign = ContentAlignment.MiddleRight;
             // 
             // lblInvoiceTotal
             // 
@@ -761,7 +747,6 @@
         private PictureBox pictureBox3;
         private Label lblTenantName;
         private Label lblBillNumber;
-        private Label label7;
         private Label lblInvoiceTotal;
         private Label lblInvoiceDate;
         private Panel pnlWaterBill;

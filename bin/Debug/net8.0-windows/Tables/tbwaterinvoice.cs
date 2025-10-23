@@ -3,6 +3,7 @@ public enum tbwaterinvoice
     tbwaterinvoice,
     WaterInvoiceID,
     InvoiceNumber,
+    DueDate,
     TenantID,
     PreviousReading,
     PresentReading,
@@ -12,7 +13,6 @@ public enum tbwaterinvoice
     Deductions,
     Subtotal,
     BillBalance,
-    DueDate,
     Status,
     AdvanceIDs,
 }
