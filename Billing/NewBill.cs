@@ -11,6 +11,7 @@ using Real_Estate_Management_System.Billing.Helper;
 using JunX.NET8.WinForms;
 using JunX.NETStandard.MySQL;
 using JunX.NETStandard.SQLBuilder;
+using System.Windows.Markup;
 
 namespace Real_Estate_Management_System.Billing
 {
@@ -63,6 +64,8 @@ namespace Real_Estate_Management_System.Billing
         {
             Manage.ElectricityBill MEB = new Manage.ElectricityBill();
             MEB.ShowDialog();
+
+            RefreshInvoicePanels();
         }
 
         private void btnManage_RentalBill_Click(object sender, EventArgs e)
@@ -152,7 +155,183 @@ namespace Real_Estate_Management_System.Billing
 
         private void btnSaveBill_Click(object sender, EventArgs e)
         {
+            if(!BHelper.InvoicesValid)
+            {
+                MBOK = new Dialogs.MSGBox_OK(this.Text, "An invalid sub-invoice detected.\nPlease check all inputs to sub-invoices (Water/Electricity/Rental/Internet) are valid.", Dialogs.DialogIcons.Error);
+                MBOK.ShowDialog();
+                return;
+            }
 
+            DialogResult confirm = MessageBox.Show("Saved invoice information can no longer be edited.\nProceed?", "Real Estate Management System", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (confirm != DialogResult.Yes)
+                return;
+
+            //--- SAVE WATER SUB-INVOICE ---
+            new InsertIntoCommand<tbwaterinvoice>()
+                .Column(new tbwaterinvoice[]
+                {
+                    tbwaterinvoice.InvoiceNumber,
+                    tbwaterinvoice.DueDate,
+                    tbwaterinvoice.TenantID,
+                    tbwaterinvoice.PreviousReading,
+                    tbwaterinvoice.PresentReading,
+                    tbwaterinvoice.Consumption,
+                    tbwaterinvoice.CurrentCharge,
+                    tbwaterinvoice.RemainingBalance,
+                    tbwaterinvoice.Deductions,
+                    tbwaterinvoice.Subtotal,
+                    tbwaterinvoice.BillBalance,
+                    tbwaterinvoice.Status,
+                    tbwaterinvoice.AdvanceIDs
+                })
+                .Values(new ValuesMetadata[]
+                {
+                    new ValuesMetadata(BHelper.NewWaterInvoice.InvoiceNumber, DataTypes.NonNumeric),
+                    new ValuesMetadata(BHelper.NewWaterInvoice.DueDate.ToString("yyyy-MM-dd"), DataTypes.NonNumeric),
+                    new ValuesMetadata(BHelper.NewWaterInvoice.TenantID.ToString(), DataTypes.Numeric),
+                    new ValuesMetadata(BHelper.NewWaterInvoice.PreviousReading.ToString(), DataTypes.Numeric),
+                    new ValuesMetadata(BHelper.NewWaterInvoice.PresentReading.ToString(), DataTypes.Numeric),
+                    new ValuesMetadata(BHelper.NewWaterInvoice.Consumption.ToString(), DataTypes.Numeric),
+                    new ValuesMetadata(BHelper.NewWaterInvoice.CurrentCharge.ToString(), DataTypes.Numeric),
+                    new ValuesMetadata(BHelper.NewWaterInvoice.RemainingBalance.ToString(), DataTypes.Numeric),
+                    new ValuesMetadata(BHelper.NewWaterInvoice.Deductions.ToString(), DataTypes.Numeric),
+                    new ValuesMetadata(BHelper.NewWaterInvoice.Subtotal.ToString(), DataTypes.Numeric),
+                    new ValuesMetadata(BHelper.NewWaterInvoice.Subtotal.ToString(), DataTypes.Numeric),
+                    new ValuesMetadata(BHelper.NewWaterInvoice.Status.ToString(), DataTypes.NonNumeric),
+                    new ValuesMetadata(BHelper.NewWaterInvoice.AdvanceIDs, DataTypes.NonNumeric)
+                })
+                .ExecuteNonQuery(Internals.DBC);
+
+            //--- SAVE ELECTRICITY SUB-INVOICE ---
+            new InsertIntoCommand<tbelectricityinvoice>()
+                .Column(new tbelectricityinvoice[]
+                {
+                    tbelectricityinvoice.InvoiceNumber,
+                    tbelectricityinvoice.DueDate,
+                    tbelectricityinvoice.TenantID,
+                    tbelectricityinvoice.PreviousReading,
+                    tbelectricityinvoice.PresentReading,
+                    tbelectricityinvoice.Consumption,
+                    tbelectricityinvoice.CurrentCharge,
+                    tbelectricityinvoice.RemainingBalance,
+                    tbelectricityinvoice.Deductions,
+                    tbelectricityinvoice.Subtotal,
+                    tbelectricityinvoice.BillBalance,
+                    tbelectricityinvoice.Status,
+                    tbelectricityinvoice.AdvanceIDs
+                })
+                .Values(new ValuesMetadata[]
+                {
+                    new ValuesMetadata(BHelper.NewElectricityInvoice.InvoiceNumber, DataTypes.NonNumeric),
+                    new ValuesMetadata(BHelper.NewElectricityInvoice.DueDate.ToString("yyyy-MM-dd"), DataTypes.NonNumeric),
+                    new ValuesMetadata(BHelper.NewElectricityInvoice.TenantID.ToString(), DataTypes.Numeric),
+                    new ValuesMetadata(BHelper.NewElectricityInvoice.PreviousReading.ToString(), DataTypes.Numeric),
+                    new ValuesMetadata(BHelper.NewElectricityInvoice.PresentReading.ToString(), DataTypes.Numeric),
+                    new ValuesMetadata(BHelper.NewElectricityInvoice.Consumption.ToString(), DataTypes.Numeric),
+                    new ValuesMetadata(BHelper.NewElectricityInvoice.CurrentCharge.ToString(), DataTypes.Numeric),
+                    new ValuesMetadata(BHelper.NewElectricityInvoice.RemainingBalance.ToString(), DataTypes.Numeric),
+                    new ValuesMetadata(BHelper.NewElectricityInvoice.Deductions.ToString(), DataTypes.Numeric),
+                    new ValuesMetadata(BHelper.NewElectricityInvoice.Subtotal.ToString(), DataTypes.Numeric),
+                    new ValuesMetadata(BHelper.NewElectricityInvoice.Subtotal.ToString(), DataTypes.Numeric),
+                    new ValuesMetadata(BHelper.NewElectricityInvoice.Status.ToString(), DataTypes.NonNumeric),
+                    new ValuesMetadata(BHelper.NewElectricityInvoice.AdvanceIDs, DataTypes.NonNumeric)
+                })
+                .ExecuteNonQuery(Internals.DBC);
+
+            //--- SAVE RENTAL SUB-INVOICE ---
+            new InsertIntoCommand<tbrentalinvoice>()
+                .Column(new tbrentalinvoice[]
+                {
+                    tbrentalinvoice.InvoiceNumber,
+                    tbrentalinvoice.DueDate,
+                    tbrentalinvoice.TenantID,
+                    tbrentalinvoice.MonthlyRent,
+                    tbrentalinvoice.RemainingBalance,
+                    tbrentalinvoice.Deductions,
+                    tbrentalinvoice.Subtotal,
+                    tbrentalinvoice.BillBalance,
+                    tbrentalinvoice.Status,
+                    tbrentalinvoice.AdvanceIDs
+                })
+                .Values(new ValuesMetadata[]
+                {
+                    new ValuesMetadata(BHelper.NewRentalInvoice.InvoiceNumber, DataTypes.NonNumeric),
+                    new ValuesMetadata(BHelper.NewRentalInvoice.DueDate.ToString("yyyy-MM-dd"), DataTypes.NonNumeric),
+                    new ValuesMetadata(BHelper.NewRentalInvoice.TenantID.ToString(), DataTypes.Numeric),
+                    new ValuesMetadata(BHelper.NewRentalInvoice.MonthlyRent.ToString(), DataTypes.Numeric),
+                    new ValuesMetadata(BHelper.NewRentalInvoice.RemainingBalance.ToString(), DataTypes.Numeric),
+                    new ValuesMetadata(BHelper.NewRentalInvoice.Deductions.ToString(), DataTypes.Numeric),
+                    new ValuesMetadata(BHelper.NewRentalInvoice.Subtotal.ToString(), DataTypes.Numeric),
+                    new ValuesMetadata(BHelper.NewRentalInvoice.Subtotal.ToString(), DataTypes.Numeric),
+                    new ValuesMetadata(BHelper.NewRentalInvoice.Status.ToString(), DataTypes.NonNumeric),
+                    new ValuesMetadata(BHelper.NewRentalInvoice.AdvanceIDs, DataTypes.NonNumeric)
+                })
+                .ExecuteNonQuery(Internals.DBC);
+
+            //--- SAVE INTERNET SUB-INVOICE ---
+            new InsertIntoCommand<tbinternetinvoice>()
+                .Column(new tbinternetinvoice[]
+                {
+                    tbinternetinvoice.InvoiceNumber,
+                    tbinternetinvoice.DueDate,
+                    tbinternetinvoice.TenantID,
+                    tbinternetinvoice.PlanName,
+                    tbinternetinvoice.SubscriptionFee,
+                    tbinternetinvoice.RemainingBalance,
+                    tbinternetinvoice.Deductions,
+                    tbinternetinvoice.Subtotal,
+                    tbinternetinvoice.BillBalance,
+                    tbinternetinvoice.Status,
+                    tbinternetinvoice.AdvanceIDs
+                })
+                .Values(new ValuesMetadata[]
+                {
+                    new ValuesMetadata(BHelper.NewInternetInvoice.InvoiceNumber, DataTypes.NonNumeric),
+                    new ValuesMetadata(BHelper.NewInternetInvoice.Deductions.ToString("yyyy-MM-dd"), DataTypes.NonNumeric),
+                    new ValuesMetadata(BHelper.NewInternetInvoice.TenantID.ToString(), DataTypes.Numeric),
+                    new ValuesMetadata(BHelper.NewInternetInvoice.PlanName, DataTypes.NonNumeric),
+                    new ValuesMetadata(BHelper.NewInternetInvoice.SubscriptionFee.ToString(), DataTypes.Numeric),
+                    new ValuesMetadata(BHelper.NewInternetInvoice.RemainingBalance.ToString(), DataTypes.Numeric),
+                    new ValuesMetadata(BHelper.NewInternetInvoice.Deductions.ToString(), DataTypes.Numeric),
+                    new ValuesMetadata(BHelper.NewInternetInvoice.Subtotal.ToString(), DataTypes.Numeric),
+                    new ValuesMetadata(BHelper.NewInternetInvoice.Subtotal.ToString(), DataTypes.Numeric),
+                    new ValuesMetadata(BHelper.NewInternetInvoice.Status.ToString(), DataTypes.NonNumeric),
+                    new ValuesMetadata(BHelper.NewInternetInvoice.AdvanceIDs, DataTypes.NonNumeric)
+                })
+                .ExecuteNonQuery(Internals.DBC);
+
+            //--- SAVE INVOICE ---
+            new InsertIntoCommand<tbinvoices>()
+                .Column(new tbinvoices[]
+                {
+                    tbinvoices.TenantID,
+                    tbinvoices.InvoiceNumber,
+                    tbinvoices.InvoiceDate,
+                    tbinvoices.WaterInvoiceID,
+                    tbinvoices.ElectricityInvoiceID,
+                    tbinvoices.RentalInvoiceID,
+                    tbinvoices.InternetInvoiceID,
+                    tbinvoices.PenaltyIDs,
+                    tbinvoices.InvoiceTotal,
+                    tbinvoices.Status
+                })
+                .Values(new ValuesMetadata[]
+                {
+                    new ValuesMetadata(BHelper.NewInvoice.TenantID.ToString(), DataTypes.Numeric),
+                    new ValuesMetadata(BHelper.NewInvoice.InvoiceNumber, DataTypes.NonNumeric),
+                    new ValuesMetadata(BHelper.NewInvoice.InvoiceDate.ToString("yyyy-MM-dd"), DataTypes.NonNumeric),
+                    new ValuesMetadata(BHelper.NewInvoice.WaterInvoiceID.ToString(), DataTypes.Numeric),
+                    new ValuesMetadata(BHelper.NewInvoice.ElectricityInvoiceID.ToString(), DataTypes.Numeric),
+                    new ValuesMetadata(BHelper.NewInvoice.RentalInvoiceID.ToString(), DataTypes.Numeric),
+                    new ValuesMetadata(BHelper.NewInvoice.InternetInvoiceID.ToString(), DataTypes.Numeric),
+                    new ValuesMetadata(BHelper.NewInvoice.PenaltyIDs, DataTypes.NonNumeric),
+                    new ValuesMetadata(BHelper.NewInvoice.InvoiceTotal.ToString(), DataTypes.Numeric),
+                    new ValuesMetadata(BHelper.NewInvoice.Status.ToString(), DataTypes.NonNumeric)
+                })
+                .ExecuteNonQuery(Internals.DBC);
+
+            MBOK = new Dialogs.MSGBox_OK(this.Text, "Invoice saved.", Dialogs.DialogIcons.Information);
+            MBOK.ShowDialog();
         }
     }
 }

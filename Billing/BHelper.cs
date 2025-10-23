@@ -33,6 +33,18 @@ namespace Real_Estate_Management_System.Billing
                     NewInvoice.TotalPenalties;
             }
         }
+        internal static bool InvoicesValid
+        {
+            get
+            {
+                return
+                    NewWaterInvoice.IsValid() &&
+                    NewElectricityInvoice.IsValid() &&
+                    NewRentalInvoice.IsValid() &&
+                    NewInternetInvoice.IsValid() &&
+                    NewInvoice.IsValid();
+            }
+        }
 
         internal static Configs.DueDateModes DueDateMode_Utility => Configs.DueDates.DueDatesConfig.DueDateMode_Utilities;
         internal static Configs.DueDateModes DueDateMode_Rental => Configs.DueDates.DueDatesConfig.DueDateMode_Rental;
