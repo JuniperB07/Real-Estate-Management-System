@@ -37,10 +37,6 @@
             label9 = new Label();
             lblDeductions = new Label();
             lblRemainingBalance = new Label();
-            label6 = new Label();
-            label7 = new Label();
-            lblCurrentCharge = new Label();
-            lblAdditionalCharges = new Label();
             label2 = new Label();
             lblMonthlyRent = new Label();
             label4 = new Label();
@@ -79,7 +75,7 @@
             // 
             label12.Anchor = AnchorStyles.Bottom;
             label12.Font = new Font("Arial", 16.2F, FontStyle.Bold);
-            label12.Location = new Point(13, 521);
+            label12.Location = new Point(13, 440);
             label12.Name = "label12";
             label12.Size = new Size(274, 34);
             label12.TabIndex = 31;
@@ -90,7 +86,7 @@
             // 
             lblTotal.Anchor = AnchorStyles.Bottom;
             lblTotal.Font = new Font("Arial", 16.2F, FontStyle.Bold);
-            lblTotal.Location = new Point(293, 521);
+            lblTotal.Location = new Point(293, 440);
             lblTotal.Name = "lblTotal";
             lblTotal.Size = new Size(225, 34);
             lblTotal.TabIndex = 30;
@@ -100,7 +96,7 @@
             // label8
             // 
             label8.Font = new Font("Arial", 12F, FontStyle.Italic);
-            label8.Location = new Point(13, 386);
+            label8.Location = new Point(13, 298);
             label8.Name = "label8";
             label8.Size = new Size(274, 25);
             label8.TabIndex = 29;
@@ -109,7 +105,7 @@
             // 
             // label9
             // 
-            label9.Location = new Point(13, 345);
+            label9.Location = new Point(13, 257);
             label9.Name = "label9";
             label9.Size = new Size(274, 25);
             label9.TabIndex = 28;
@@ -119,7 +115,7 @@
             // lblDeductions
             // 
             lblDeductions.Font = new Font("Arial", 12F, FontStyle.Italic);
-            lblDeductions.Location = new Point(293, 386);
+            lblDeductions.Location = new Point(293, 298);
             lblDeductions.Name = "lblDeductions";
             lblDeductions.Size = new Size(225, 25);
             lblDeductions.TabIndex = 27;
@@ -128,50 +124,12 @@
             // 
             // lblRemainingBalance
             // 
-            lblRemainingBalance.Location = new Point(293, 345);
+            lblRemainingBalance.Location = new Point(293, 257);
             lblRemainingBalance.Name = "lblRemainingBalance";
             lblRemainingBalance.Size = new Size(225, 25);
             lblRemainingBalance.TabIndex = 26;
             lblRemainingBalance.Text = "0.00";
             lblRemainingBalance.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label6
-            // 
-            label6.Font = new Font("Arial", 12F, FontStyle.Bold);
-            label6.Location = new Point(13, 295);
-            label6.Name = "label6";
-            label6.Size = new Size(274, 25);
-            label6.TabIndex = 25;
-            label6.Text = "CURRENT CHARGE:";
-            label6.TextAlign = ContentAlignment.MiddleRight;
-            // 
-            // label7
-            // 
-            label7.Location = new Point(13, 254);
-            label7.Name = "label7";
-            label7.Size = new Size(274, 25);
-            label7.TabIndex = 24;
-            label7.Text = "ADDITIONAL CHARGES:";
-            label7.TextAlign = ContentAlignment.MiddleRight;
-            // 
-            // lblCurrentCharge
-            // 
-            lblCurrentCharge.Font = new Font("Arial", 12F, FontStyle.Bold);
-            lblCurrentCharge.Location = new Point(293, 295);
-            lblCurrentCharge.Name = "lblCurrentCharge";
-            lblCurrentCharge.Size = new Size(225, 25);
-            lblCurrentCharge.TabIndex = 23;
-            lblCurrentCharge.Text = "0.00";
-            lblCurrentCharge.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // lblAdditionalCharges
-            // 
-            lblAdditionalCharges.Location = new Point(293, 254);
-            lblAdditionalCharges.Name = "lblAdditionalCharges";
-            lblAdditionalCharges.Size = new Size(225, 25);
-            lblAdditionalCharges.TabIndex = 22;
-            lblAdditionalCharges.Text = "0";
-            lblAdditionalCharges.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
@@ -211,7 +169,7 @@
             // 
             // label3
             // 
-            label3.Location = new Point(13, 430);
+            label3.Location = new Point(13, 342);
             label3.Name = "label3";
             label3.Size = new Size(274, 25);
             label3.TabIndex = 38;
@@ -220,7 +178,7 @@
             // 
             // lblPenalties
             // 
-            lblPenalties.Location = new Point(293, 430);
+            lblPenalties.Location = new Point(293, 342);
             lblPenalties.Name = "lblPenalties";
             lblPenalties.Size = new Size(225, 25);
             lblPenalties.TabIndex = 37;
@@ -231,8 +189,8 @@
             // 
             btnSeePenalties.FlatAppearance.BorderSize = 0;
             btnSeePenalties.FlatStyle = FlatStyle.Flat;
-            btnSeePenalties.Font = new Font("Arial", 12F, FontStyle.Underline, GraphicsUnit.Point, 0);
-            btnSeePenalties.Location = new Point(354, 458);
+            btnSeePenalties.Font = new Font("Arial", 12F, FontStyle.Bold | FontStyle.Italic | FontStyle.Underline, GraphicsUnit.Point, 0);
+            btnSeePenalties.Location = new Point(354, 370);
             btnSeePenalties.Name = "btnSeePenalties";
             btnSeePenalties.Size = new Size(164, 38);
             btnSeePenalties.TabIndex = 39;
@@ -244,7 +202,7 @@
             AutoScaleDimensions = new SizeF(11F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(240, 237, 229);
-            ClientSize = new Size(530, 578);
+            ClientSize = new Size(530, 483);
             Controls.Add(btnSeePenalties);
             Controls.Add(label3);
             Controls.Add(lblPenalties);
@@ -258,10 +216,6 @@
             Controls.Add(label9);
             Controls.Add(lblDeductions);
             Controls.Add(lblRemainingBalance);
-            Controls.Add(label6);
-            Controls.Add(label7);
-            Controls.Add(lblCurrentCharge);
-            Controls.Add(lblAdditionalCharges);
             Controls.Add(pnlHeader);
             Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ForeColor = Color.FromArgb(0, 70, 67);
@@ -289,10 +243,6 @@
         private Label label9;
         private Label lblDeductions;
         private Label lblRemainingBalance;
-        private Label label6;
-        private Label label7;
-        private Label lblCurrentCharge;
-        private Label lblAdditionalCharges;
         private Label label2;
         private Label lblMonthlyRent;
         private Label label4;

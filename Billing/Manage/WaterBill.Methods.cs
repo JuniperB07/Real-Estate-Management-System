@@ -31,7 +31,7 @@ namespace Real_Estate_Management_System.Billing.Manage
                 if (WaterInvoiceDraft.LastPresentReading > 0)
                     txtPrevious.Text = WaterInvoiceDraft.LastPresentReading.ToString();
                 else
-                    txtPrevious.Text = "00.00";
+                    txtPrevious.Text = "0";
             }
 
             txtPresent.Text = WaterInvoiceDraft.PresentReading.ToString();
