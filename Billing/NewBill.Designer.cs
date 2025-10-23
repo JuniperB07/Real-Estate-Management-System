@@ -38,17 +38,17 @@
             lstTenantsList = new ListBox();
             pictureBox2 = new PictureBox();
             pnlBillSummary = new Panel();
-            panel4 = new Panel();
-            btnSetDueDates = new Button();
-            pictureBox7 = new PictureBox();
             lblInvoiceTotal = new Label();
             lblInvoiceDate = new Label();
             lblBillNumber = new Label();
             lblTenantName = new Label();
-            panel3 = new Panel();
+            pnlSetDueDates = new Panel();
+            btnSetDueDates = new Button();
+            pictureBox7 = new PictureBox();
+            pnlReset = new Panel();
             btnReset = new Button();
             pictureBox6 = new PictureBox();
-            panel2 = new Panel();
+            pnlSaveBill = new Panel();
             btnSaveBill = new Button();
             pictureBox5 = new PictureBox();
             pnlExport = new Panel();
@@ -78,16 +78,17 @@
             label8 = new Label();
             lblElectricityBillTotal = new Label();
             ttNewBill = new ToolTip(components);
+            pnlButtons = new Panel();
             pnlHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             pnlSelectTenant.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             pnlBillSummary.SuspendLayout();
-            panel4.SuspendLayout();
+            pnlSetDueDates.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
-            panel3.SuspendLayout();
+            pnlReset.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
-            panel2.SuspendLayout();
+            pnlSaveBill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             pnlExport.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
@@ -97,6 +98,7 @@
             pnlRentalBill.SuspendLayout();
             pnlInternetBill.SuspendLayout();
             pnlElectricityBill.SuspendLayout();
+            pnlButtons.SuspendLayout();
             SuspendLayout();
             // 
             // pnlHeader
@@ -185,29 +187,72 @@
             // 
             pnlBillSummary.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             pnlBillSummary.BackColor = SystemColors.ControlDarkDark;
-            pnlBillSummary.Controls.Add(panel4);
             pnlBillSummary.Controls.Add(lblInvoiceTotal);
             pnlBillSummary.Controls.Add(lblInvoiceDate);
             pnlBillSummary.Controls.Add(lblBillNumber);
             pnlBillSummary.Controls.Add(lblTenantName);
-            pnlBillSummary.Controls.Add(panel3);
-            pnlBillSummary.Controls.Add(panel2);
-            pnlBillSummary.Controls.Add(pnlExport);
-            pnlBillSummary.Controls.Add(pnlBillPreview);
             pnlBillSummary.ForeColor = SystemColors.ControlLightLight;
-            pnlBillSummary.Location = new Point(354, 167);
+            pnlBillSummary.Location = new Point(683, 167);
             pnlBillSummary.Name = "pnlBillSummary";
-            pnlBillSummary.Size = new Size(1224, 299);
+            pnlBillSummary.Size = new Size(891, 299);
             pnlBillSummary.TabIndex = 2;
             // 
-            // panel4
+            // lblInvoiceTotal
             // 
-            panel4.Controls.Add(btnSetDueDates);
-            panel4.Controls.Add(pictureBox7);
-            panel4.Location = new Point(7, 62);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(300, 50);
-            panel4.TabIndex = 3;
+            lblInvoiceTotal.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            lblInvoiceTotal.BackColor = Color.Transparent;
+            lblInvoiceTotal.Font = new Font("Arial", 48F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblInvoiceTotal.Location = new Point(400, 159);
+            lblInvoiceTotal.Name = "lblInvoiceTotal";
+            lblInvoiceTotal.Size = new Size(478, 128);
+            lblInvoiceTotal.TabIndex = 10;
+            lblInvoiceTotal.Text = "₱1,000.00";
+            lblInvoiceTotal.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // lblInvoiceDate
+            // 
+            lblInvoiceDate.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            lblInvoiceDate.BackColor = Color.Transparent;
+            lblInvoiceDate.Font = new Font("Arial", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblInvoiceDate.Location = new Point(313, 132);
+            lblInvoiceDate.Name = "lblInvoiceDate";
+            lblInvoiceDate.Size = new Size(565, 27);
+            lblInvoiceDate.TabIndex = 8;
+            lblInvoiceDate.Text = "Invoice Date";
+            lblInvoiceDate.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // lblBillNumber
+            // 
+            lblBillNumber.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            lblBillNumber.BackColor = Color.Transparent;
+            lblBillNumber.Font = new Font("Arial", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblBillNumber.Location = new Point(313, 84);
+            lblBillNumber.Name = "lblBillNumber";
+            lblBillNumber.Size = new Size(565, 38);
+            lblBillNumber.TabIndex = 7;
+            lblBillNumber.Text = "Bill Number";
+            lblBillNumber.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // lblTenantName
+            // 
+            lblTenantName.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            lblTenantName.BackColor = Color.Transparent;
+            lblTenantName.Font = new Font("Arial", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTenantName.Location = new Point(313, 3);
+            lblTenantName.Name = "lblTenantName";
+            lblTenantName.Size = new Size(565, 78);
+            lblTenantName.TabIndex = 6;
+            lblTenantName.Text = "Dela Cruz, Juan";
+            lblTenantName.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // pnlSetDueDates
+            // 
+            pnlSetDueDates.Controls.Add(btnSetDueDates);
+            pnlSetDueDates.Controls.Add(pictureBox7);
+            pnlSetDueDates.Location = new Point(7, 62);
+            pnlSetDueDates.Name = "pnlSetDueDates";
+            pnlSetDueDates.Size = new Size(300, 50);
+            pnlSetDueDates.TabIndex = 3;
             // 
             // btnSetDueDates
             // 
@@ -234,62 +279,14 @@
             pictureBox7.TabIndex = 0;
             pictureBox7.TabStop = false;
             // 
-            // lblInvoiceTotal
+            // pnlReset
             // 
-            lblInvoiceTotal.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            lblInvoiceTotal.BackColor = Color.Transparent;
-            lblInvoiceTotal.Font = new Font("Arial", 48F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblInvoiceTotal.Location = new Point(733, 159);
-            lblInvoiceTotal.Name = "lblInvoiceTotal";
-            lblInvoiceTotal.Size = new Size(478, 128);
-            lblInvoiceTotal.TabIndex = 10;
-            lblInvoiceTotal.Text = "₱1,000.00";
-            lblInvoiceTotal.TextAlign = ContentAlignment.MiddleRight;
-            // 
-            // lblInvoiceDate
-            // 
-            lblInvoiceDate.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            lblInvoiceDate.BackColor = Color.Transparent;
-            lblInvoiceDate.Font = new Font("Arial", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblInvoiceDate.Location = new Point(313, 132);
-            lblInvoiceDate.Name = "lblInvoiceDate";
-            lblInvoiceDate.Size = new Size(898, 27);
-            lblInvoiceDate.TabIndex = 8;
-            lblInvoiceDate.Text = "Invoice Date";
-            lblInvoiceDate.TextAlign = ContentAlignment.MiddleRight;
-            // 
-            // lblBillNumber
-            // 
-            lblBillNumber.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            lblBillNumber.BackColor = Color.Transparent;
-            lblBillNumber.Font = new Font("Arial", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblBillNumber.Location = new Point(313, 84);
-            lblBillNumber.Name = "lblBillNumber";
-            lblBillNumber.Size = new Size(898, 38);
-            lblBillNumber.TabIndex = 7;
-            lblBillNumber.Text = "Bill Number";
-            lblBillNumber.TextAlign = ContentAlignment.MiddleRight;
-            // 
-            // lblTenantName
-            // 
-            lblTenantName.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            lblTenantName.BackColor = Color.Transparent;
-            lblTenantName.Font = new Font("Arial", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTenantName.Location = new Point(313, 3);
-            lblTenantName.Name = "lblTenantName";
-            lblTenantName.Size = new Size(898, 78);
-            lblTenantName.TabIndex = 6;
-            lblTenantName.Text = "Dela Cruz, Juan";
-            lblTenantName.TextAlign = ContentAlignment.MiddleRight;
-            // 
-            // panel3
-            // 
-            panel3.Controls.Add(btnReset);
-            panel3.Controls.Add(pictureBox6);
-            panel3.Location = new Point(7, 6);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(300, 50);
-            panel3.TabIndex = 5;
+            pnlReset.Controls.Add(btnReset);
+            pnlReset.Controls.Add(pictureBox6);
+            pnlReset.Location = new Point(7, 6);
+            pnlReset.Name = "pnlReset";
+            pnlReset.Size = new Size(300, 50);
+            pnlReset.TabIndex = 5;
             // 
             // btnReset
             // 
@@ -316,14 +313,14 @@
             pictureBox6.TabIndex = 0;
             pictureBox6.TabStop = false;
             // 
-            // panel2
+            // pnlSaveBill
             // 
-            panel2.Controls.Add(btnSaveBill);
-            panel2.Controls.Add(pictureBox5);
-            panel2.Location = new Point(7, 246);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(300, 50);
-            panel2.TabIndex = 4;
+            pnlSaveBill.Controls.Add(btnSaveBill);
+            pnlSaveBill.Controls.Add(pictureBox5);
+            pnlSaveBill.Location = new Point(7, 246);
+            pnlSaveBill.Name = "pnlSaveBill";
+            pnlSaveBill.Size = new Size(300, 50);
+            pnlSaveBill.TabIndex = 4;
             // 
             // btnSaveBill
             // 
@@ -338,6 +335,7 @@
             btnSaveBill.Text = "SAVE BILL";
             btnSaveBill.TextAlign = ContentAlignment.MiddleLeft;
             btnSaveBill.UseVisualStyleBackColor = true;
+            btnSaveBill.Click += btnSaveBill_Click;
             // 
             // pictureBox5
             // 
@@ -687,11 +685,25 @@
             ttNewBill.BackColor = Color.FromArgb(240, 237, 229);
             ttNewBill.ForeColor = Color.FromArgb(0, 70, 67);
             // 
+            // pnlButtons
+            // 
+            pnlButtons.BackColor = SystemColors.ControlDarkDark;
+            pnlButtons.Controls.Add(pnlSetDueDates);
+            pnlButtons.Controls.Add(pnlReset);
+            pnlButtons.Controls.Add(pnlSaveBill);
+            pnlButtons.Controls.Add(pnlExport);
+            pnlButtons.Controls.Add(pnlBillPreview);
+            pnlButtons.Location = new Point(354, 167);
+            pnlButtons.Name = "pnlButtons";
+            pnlButtons.Size = new Size(332, 299);
+            pnlButtons.TabIndex = 7;
+            // 
             // NewBill
             // 
             AutoScaleDimensions = new SizeF(11F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1577, 859);
+            Controls.Add(pnlButtons);
             Controls.Add(pnlInternetBill);
             Controls.Add(pnlRentalBill);
             Controls.Add(pnlElectricityBill);
@@ -715,11 +727,11 @@
             pnlSelectTenant.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             pnlBillSummary.ResumeLayout(false);
-            panel4.ResumeLayout(false);
+            pnlSetDueDates.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
-            panel3.ResumeLayout(false);
+            pnlReset.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
-            panel2.ResumeLayout(false);
+            pnlSaveBill.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             pnlExport.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
@@ -729,6 +741,7 @@
             pnlRentalBill.ResumeLayout(false);
             pnlInternetBill.ResumeLayout(false);
             pnlElectricityBill.ResumeLayout(false);
+            pnlButtons.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -742,10 +755,10 @@
         private PictureBox pictureBox2;
         private TextBox txtSearchTenant;
         private Panel pnlBillSummary;
-        private Panel panel3;
+        private Panel pnlReset;
         private Button btnReset;
         private PictureBox pictureBox6;
-        private Panel panel2;
+        private Panel pnlSaveBill;
         private Button btnSaveBill;
         private PictureBox pictureBox5;
         private Panel pnlExport;
@@ -778,9 +791,10 @@
         private Button btnManage_RentalBill;
         private Label label19;
         private Button btnManage_InternetBill;
-        private Panel panel4;
+        private Panel pnlSetDueDates;
         private Button btnSetDueDates;
         private PictureBox pictureBox7;
         private ToolTip ttNewBill;
+        private Panel pnlButtons;
     }
 }

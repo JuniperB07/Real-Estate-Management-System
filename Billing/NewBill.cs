@@ -34,6 +34,7 @@ namespace Real_Estate_Management_System.Billing
             txtSearchTenant.BackColor = Internals.SandDune;
             txtSearchTenant.ForeColor = Internals.BrunswickGreen;
 
+            pnlButtons.BackColor = Internals.BrunswickGreen;
             pnlBillSummary.BackColor = Internals.BrunswickGreen;
             Forms.SetControlForeColor(Forms.ControlType<Button>.Extract(pnlBillSummary), Internals.SandDune);
             Forms.SetControlBackColor(Forms.ControlType<Button>.Extract(pnlBillSummary), Internals.BrunswickGreen);
@@ -141,13 +142,17 @@ namespace Real_Estate_Management_System.Billing
                 }
 
                 InitiateNewInvoice();
-                ActivateToolTip();
             }
         }
 
         private void btnReset_Click(object sender, EventArgs e)
         {
             NewBill_Load(this, EventArgs.Empty);
+        }
+
+        private void btnSaveBill_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

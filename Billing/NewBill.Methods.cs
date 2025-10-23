@@ -22,6 +22,9 @@ namespace Real_Estate_Management_System.Billing
 
             Forms.SetControlVisible(new Panel[]
             {
+                pnlReset,
+                pnlSetDueDates,
+                pnlSaveBill,
                 pnlBillSummary,
                 pnlElectricityBill,
                 pnlInternetBill,
@@ -50,7 +53,27 @@ namespace Real_Estate_Management_System.Billing
         }
 
         private void InitiateNewInvoice()
-        { 
+        {
+            DateTime firstDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+
+            new SelectCommand<tbinvoices>()
+                .SelectAll.From
+                .StartWhere
+                    .Where(tbinvoices.TenantID, SQLOperator.Equal, BHelper.TenantID.ToString())
+                    .And()
+                    .Between(tbinvoices.InvoiceDate, "'" + firstDate.ToString("yyyy-MM-dd") + "'", "'" + DateTime.Now.ToString("yyyy-MM-dd") + "'")
+                .EndWhere
+                .ExecuteReader(Internals.DBC);
+            if (Internals.DBC.HasRows)
+            {
+                Internals.DBC.CloseReader();
+                MBOK = new Dialogs.MSGBox_OK(this.Text, "This tenant already have an existing bill.", Dialogs.DialogIcons.Error);
+                MBOK.ShowDialog();
+                NewBill_Load(this, EventArgs.Empty);
+                return;
+            }
+            Internals.DBC.CloseReader();
+
             BHelper.NewInvoice = new Invoice(
                 BHelper.TenantID,
                 Methods.GenerateInvoiceNumber(BHelper.TenantID),
@@ -94,11 +117,15 @@ namespace Real_Estate_Management_System.Billing
 
             Forms.SetControlVisible(new Control[]
             {
+                pnlReset,
+                pnlSetDueDates,
+                pnlSaveBill,
                 pnlBillSummary,
                 pnlWaterBill,
                 pnlElectricityBill,
                 pnlRentalBill,
                 pnlInternetBill }, true);
+            ActivateToolTip();
         }
 
         private void RefreshInvoicePanels()

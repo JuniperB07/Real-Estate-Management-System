@@ -2749,6 +2749,82 @@
             <param name="Right">The value to compare against, represented as a string.</param>
             <returns>The current <see cref="T:JunX.NETStandard.SQLBuilder.WhereClause`3"/> instance for fluent chaining.</returns>
         </member>
+        <member name="M:JunX.NETStandard.SQLBuilder.WhereClause`3.WhereBetween(`1,System.String,System.String)">
+            <summary>
+            Appends a SQL <c>WHERE</c> clause with a <c>BETWEEN</c> condition for the specified column and range.
+            </summary>
+            <param name="Column">The column to apply the <c>BETWEEN</c> filter to.</param>
+            <param name="Left">The lower bound of the range, inserted as-is into the SQL statement.</param>
+            <param name="Right">The upper bound of the range, inserted as-is into the SQL statement.</param>
+            <returns>
+            The current <see cref="T:JunX.NETStandard.SQLBuilder.WhereClause`3"/> instance with the appended <c>WHERE ... BETWEEN</c> clause.
+            </returns>
+            <remarks>
+            This method constructs a SQL fragment in the form:
+            <code>
+            WHERE Column BETWEEN Left AND Right
+            </code>
+            It does not escape or quote values, and assumes the caller provides valid SQL-compatible strings.
+            If a <c>WHERE</c> clause already exists, this method may produce invalid SQL unless manually adjusted.
+            </remarks>
+        </member>
+        <member name="M:JunX.NETStandard.SQLBuilder.WhereClause`3.WhereBetween(`2,System.String,System.String)">
+            <summary>
+            Appends a SQL <c>WHERE</c> clause with a <c>BETWEEN</c> condition for the specified join column and range.
+            </summary>
+            <param name="Column">The join column to apply the <c>BETWEEN</c> filter to.</param>
+            <param name="Left">The lower bound of the range, inserted directly into the SQL statement.</param>
+            <param name="Right">The upper bound of the range, inserted directly into the SQL statement.</param>
+            <returns>
+            The current <see cref="T:JunX.NETStandard.SQLBuilder.WhereClause`3"/> instance with the appended <c>WHERE ... BETWEEN</c> clause.
+            </returns>
+            <remarks>
+            This method constructs a SQL fragment in the form:
+            <code>
+            WHERE Column BETWEEN Left AND Right
+            </code>
+            It assumes no prior <c>WHERE</c> clause exists and does not escape or quote values.
+            Use with caution when chaining multiple conditions or working with string/date values.
+            </remarks>
+        </member>
+        <member name="M:JunX.NETStandard.SQLBuilder.WhereClause`3.Between(`1,System.String,System.String)">
+            <summary>
+            Appends a SQL <c>BETWEEN</c> clause for the specified column and range values.
+            </summary>
+            <param name="Column">The column to apply the <c>BETWEEN</c> condition to.</param>
+            <param name="Left">The lower bound of the range, inserted directly into the SQL statement.</param>
+            <param name="Right">The upper bound of the range, inserted directly into the SQL statement.</param>
+            <returns>
+            The current <see cref="T:JunX.NETStandard.SQLBuilder.WhereClause`3"/> instance with the appended <c>BETWEEN</c> clause.
+            </returns>
+            <remarks>
+            This method constructs a SQL fragment in the form:
+            <code>
+            Column BETWEEN Left AND Right
+            </code>
+            It assumes that a <c>WHERE</c> or <c>AND</c> clause has already been appended.
+            Values are inserted as-is, without quoting or escaping. Use with caution when working with strings or dates.
+            </remarks>
+        </member>
+        <member name="M:JunX.NETStandard.SQLBuilder.WhereClause`3.Between(`2,System.String,System.String)">
+            <summary>
+            Appends a SQL <c>BETWEEN</c> clause for the specified join column and range values.
+            </summary>
+            <param name="Column">The join column to apply the <c>BETWEEN</c> condition to.</param>
+            <param name="Left">The lower bound of the range, inserted directly into the SQL statement.</param>
+            <param name="Right">The upper bound of the range, inserted directly into the SQL statement.</param>
+            <returns>
+            The current <see cref="T:JunX.NETStandard.SQLBuilder.WhereClause`3"/> instance with the appended <c>BETWEEN</c> clause.
+            </returns>
+            <remarks>
+            This method constructs a SQL fragment in the form:
+            <code>
+            Column BETWEEN Left AND Right
+            </code>
+            It assumes that a <c>WHERE</c> or <c>AND</c> clause has already been appended.
+            Values are inserted as-is, without quoting or escaping. Use with caution when working with strings or dates.
+            </remarks>
+        </member>
         <member name="T:JunX.NETStandard.SQLBuilder.WhereClause`2">
             <summary>
             Provides a fluent interface for composing SQL <c>WHERE</c> clauses, including logical operators and grouping, for use within generic SQL builder commands.
@@ -2850,6 +2926,44 @@
             <param name="Operator">The SQL operator used in the comparison.</param>
             <param name="Right">The value to compare against, represented as a string.</param>
             <returns>The current <see cref="T:JunX.NETStandard.SQLBuilder.WhereClause`2"/> instance for fluent chaining.</returns>
+        </member>
+        <member name="M:JunX.NETStandard.SQLBuilder.WhereClause`2.WhereBetween(`1,System.String,System.String)">
+            <summary>
+            Appends a SQL <c>WHERE</c> clause that filters the specified column between two values.
+            </summary>
+            <param name="Column">The column to apply the <c>BETWEEN</c> condition to.</param>
+            <param name="Left">The lower bound of the range.</param>
+            <param name="Right">The upper bound of the range.</param>
+            <returns>
+            The current <see cref="T:JunX.NETStandard.SQLBuilder.WhereClause`2"/> instance with the appended <c>WHERE ... BETWEEN</c> clause.
+            </returns>
+            <remarks>
+            This method constructs a SQL fragment in the form:
+            <code>
+            WHERE Column BETWEEN Left AND Right
+            </code>
+            It does not escape or quote values, and assumes the caller provides valid SQL-compatible strings.
+            If a <c>WHERE</c> clause already exists, this method may produce invalid SQL unless manually adjusted.
+            </remarks>
+        </member>
+        <member name="M:JunX.NETStandard.SQLBuilder.WhereClause`2.Between(`1,System.String,System.String)">
+            <summary>
+            Appends a SQL <c>BETWEEN</c> clause for the specified column and range values.
+            </summary>
+            <param name="Column">The column to apply the <c>BETWEEN</c> condition to.</param>
+            <param name="Left">The lower bound of the range.</param>
+            <param name="Right">The upper bound of the range.</param>
+            <returns>
+            The current <see cref="T:JunX.NETStandard.SQLBuilder.WhereClause`2"/> instance with the appended <c>BETWEEN</c> clause.
+            </returns>
+            <remarks>
+            This method constructs a SQL fragment in the form:
+            <code>
+            Column BETWEEN Left AND Right
+            </code>
+            It assumes the caller has already appended a <c>WHERE</c> or <c>AND</c> clause if needed.
+            Values are inserted as-is, without quoting or escaping. Use with caution for strings or dates.
+            </remarks>
         </member>
         <member name="T:JunX.NETStandard.SQLBuilder.WhereClause`1">
             <summary>
