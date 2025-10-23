@@ -24,7 +24,12 @@ namespace Real_Estate_Management_System.Billing.Manage
 
         private void InternetBill_Load(object sender, EventArgs e)
         {
-
+            lblDueDate.Text = BHelper.NewInternetInvoice.DueDate.ToString("MMMM d, yyyy");
+            lblAvailedPlan.Text = BHelper.NewInternetInvoice.PlanName;
+            lblSubscriptionFee.Text = BHelper.NewInternetInvoice.SubscriptionFee.ToString("0,0.00");
+            lblRemainingBalance.Text = BHelper.NewInternetInvoice.RemainingBalance.ToString("0,0.00");
+            lblDeductions.Text = BHelper.NewInternetInvoice.Deductions.ToString("0,0.00");
+            lblTotal.Text = BHelper.NewInternetInvoice.Subtotal.ToString("0,0.00");
         }
 
         private void InternetBill_FormClosing(object sender, FormClosingEventArgs e)

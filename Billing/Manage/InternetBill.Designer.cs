@@ -41,9 +41,7 @@
             label9 = new Label();
             lblDeductions = new Label();
             lblRemainingBalance = new Label();
-            label6 = new Label();
             label7 = new Label();
-            lblCurrentCharge = new Label();
             lblSubscriptionFee = new Label();
             pnlHeader.SuspendLayout();
             SuspendLayout();
@@ -111,7 +109,7 @@
             // label12
             // 
             label12.Font = new Font("Arial", 16.2F, FontStyle.Bold);
-            label12.Location = new Point(25, 454);
+            label12.Location = new Point(25, 399);
             label12.Name = "label12";
             label12.Size = new Size(274, 34);
             label12.TabIndex = 46;
@@ -121,7 +119,7 @@
             // lblTotal
             // 
             lblTotal.Font = new Font("Arial", 16.2F, FontStyle.Bold);
-            lblTotal.Location = new Point(305, 454);
+            lblTotal.Location = new Point(305, 399);
             lblTotal.Name = "lblTotal";
             lblTotal.Size = new Size(225, 34);
             lblTotal.TabIndex = 45;
@@ -131,7 +129,7 @@
             // label8
             // 
             label8.Font = new Font("Arial", 12F, FontStyle.Italic);
-            label8.Location = new Point(25, 394);
+            label8.Location = new Point(25, 348);
             label8.Name = "label8";
             label8.Size = new Size(274, 25);
             label8.TabIndex = 44;
@@ -140,7 +138,7 @@
             // 
             // label9
             // 
-            label9.Location = new Point(25, 353);
+            label9.Location = new Point(25, 307);
             label9.Name = "label9";
             label9.Size = new Size(274, 25);
             label9.TabIndex = 43;
@@ -150,7 +148,7 @@
             // lblDeductions
             // 
             lblDeductions.Font = new Font("Arial", 12F, FontStyle.Italic);
-            lblDeductions.Location = new Point(305, 394);
+            lblDeductions.Location = new Point(305, 348);
             lblDeductions.Name = "lblDeductions";
             lblDeductions.Size = new Size(225, 25);
             lblDeductions.TabIndex = 42;
@@ -159,22 +157,12 @@
             // 
             // lblRemainingBalance
             // 
-            lblRemainingBalance.Location = new Point(305, 353);
+            lblRemainingBalance.Location = new Point(305, 307);
             lblRemainingBalance.Name = "lblRemainingBalance";
             lblRemainingBalance.Size = new Size(225, 25);
             lblRemainingBalance.TabIndex = 41;
             lblRemainingBalance.Text = "0.00";
             lblRemainingBalance.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label6
-            // 
-            label6.Font = new Font("Arial", 12F, FontStyle.Bold);
-            label6.Location = new Point(25, 303);
-            label6.Name = "label6";
-            label6.Size = new Size(274, 25);
-            label6.TabIndex = 40;
-            label6.Text = "CURRENT CHARGE:";
-            label6.TextAlign = ContentAlignment.MiddleRight;
             // 
             // label7
             // 
@@ -184,16 +172,6 @@
             label7.TabIndex = 39;
             label7.Text = "SUBSCRIPTION FEE:";
             label7.TextAlign = ContentAlignment.MiddleRight;
-            // 
-            // lblCurrentCharge
-            // 
-            lblCurrentCharge.Font = new Font("Arial", 12F, FontStyle.Bold);
-            lblCurrentCharge.Location = new Point(305, 303);
-            lblCurrentCharge.Name = "lblCurrentCharge";
-            lblCurrentCharge.Size = new Size(225, 25);
-            lblCurrentCharge.TabIndex = 38;
-            lblCurrentCharge.Text = "0.00";
-            lblCurrentCharge.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblSubscriptionFee
             // 
@@ -208,7 +186,8 @@
             // 
             AutoScaleDimensions = new SizeF(11F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(542, 505);
+            BackColor = Color.FromArgb(240, 237, 229);
+            ClientSize = new Size(542, 448);
             Controls.Add(label4);
             Controls.Add(lblDueDate);
             Controls.Add(label2);
@@ -219,12 +198,11 @@
             Controls.Add(label9);
             Controls.Add(lblDeductions);
             Controls.Add(lblRemainingBalance);
-            Controls.Add(label6);
             Controls.Add(label7);
-            Controls.Add(lblCurrentCharge);
             Controls.Add(lblSubscriptionFee);
             Controls.Add(pnlHeader);
             Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ForeColor = Color.FromArgb(0, 70, 67);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(4, 3, 4, 3);
@@ -253,9 +231,7 @@
         private Label label9;
         private Label lblDeductions;
         private Label lblRemainingBalance;
-        private Label label6;
         private Label label7;
-        private Label lblCurrentCharge;
         private Label lblSubscriptionFee;
     }
 }
