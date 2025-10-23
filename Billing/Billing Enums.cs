@@ -31,4 +31,11 @@ namespace Real_Estate_Management_System.Billing
         UNPAID,
         PARTIAL
     }
+
+    internal enum AdvancesStatuses
+    {
+        Unknown = -1,
+        USED,
+        UNUSED
+    }
 }
