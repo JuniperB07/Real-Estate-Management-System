@@ -613,6 +613,7 @@ namespace Real_Estate_Management_System.Billing
                     .From
                     .StartWhere
                         .Where(tbwaterinvoice.TenantID, SQLOperator.Equal, TenantID.ToString())
+                        .And(tbwaterinvoice.InvoiceNumber, SQLOperator.NotEqual, "'" + InvoiceNumber + "'")
                         .And()
                         .StartGroup(tbwaterinvoice.Status, SQLOperator.Equal, "'" + InvoiceStatuses.UNPAID.ToString() + "'")
                             .Or(tbwaterinvoice.Status, SQLOperator.Equal, "'" + InvoiceStatuses.PARTIAL.ToString() + "'")
@@ -1031,6 +1032,7 @@ namespace Real_Estate_Management_System.Billing
                     .From
                     .StartWhere
                         .Where(tbelectricityinvoice.TenantID, SQLOperator.Equal, TenantID.ToString())
+                        .And(tbelectricityinvoice.InvoiceNumber, SQLOperator.NotEqual, "'" + InvoiceNumber + "'")
                         .And()
                         .StartGroup(tbelectricityinvoice.Status, SQLOperator.Equal, "'" + InvoiceStatuses.UNPAID.ToString() + "'")
                             .Or(tbelectricityinvoice.Status, SQLOperator.Equal, "'" + InvoiceStatuses.PARTIAL.ToString() + "'")
@@ -1417,6 +1419,7 @@ namespace Real_Estate_Management_System.Billing
                     .From
                     .StartWhere
                         .Where(tbrentalinvoice.TenantID, SQLOperator.Equal, TenantID.ToString())
+                        .And(tbrentalinvoice.InvoiceNumber, SQLOperator.NotEqual, "'" + InvoiceNumber + "'")
                         .And()
                         .StartGroup(tbrentalinvoice.Status, SQLOperator.Equal, "'" + InvoiceStatuses.UNPAID.ToString() + "'")
                             .Or(tbrentalinvoice.Status, SQLOperator.Equal, "'" + InvoiceStatuses.PARTIAL.ToString() + "'")
@@ -1771,6 +1774,7 @@ namespace Real_Estate_Management_System.Billing
                     .From
                     .StartWhere
                         .Where(tbinternetinvoice.TenantID, SQLOperator.Equal, TenantID.ToString())
+                        .And(tbinternetinvoice.InvoiceNumber, SQLOperator.NotEqual, "'" + InvoiceNumber + "'")
                         .And()
                         .StartGroup(tbinternetinvoice.Status, SQLOperator.Equal, "'" + InvoiceStatuses.UNPAID.ToString() + "'")
                             .Or(tbinternetinvoice.Status, SQLOperator.Equal, "'" + InvoiceStatuses.PARTIAL.ToString() + "'")
