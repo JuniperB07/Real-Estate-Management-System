@@ -81,13 +81,14 @@
             btnSubmit.Anchor = AnchorStyles.Bottom;
             btnSubmit.FlatAppearance.BorderSize = 0;
             btnSubmit.FlatStyle = FlatStyle.Flat;
-            btnSubmit.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSubmit.Font = new Font("Arial", 12F, FontStyle.Bold | FontStyle.Underline);
             btnSubmit.Location = new Point(233, 587);
             btnSubmit.Name = "btnSubmit";
             btnSubmit.Size = new Size(140, 43);
             btnSubmit.TabIndex = 32;
             btnSubmit.Text = "SUBMIT";
             btnSubmit.UseVisualStyleBackColor = true;
+            btnSubmit.Click += btnSubmit_Click;
             // 
             // label12
             // 
@@ -189,17 +190,19 @@
             // 
             btnConfirm.FlatAppearance.BorderSize = 0;
             btnConfirm.FlatStyle = FlatStyle.Flat;
-            btnConfirm.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnConfirm.Font = new Font("Arial", 12F, FontStyle.Bold | FontStyle.Underline);
             btnConfirm.Location = new Point(453, 283);
             btnConfirm.Name = "btnConfirm";
             btnConfirm.Size = new Size(140, 43);
             btnConfirm.TabIndex = 21;
             btnConfirm.Text = "CONFIRM";
             btnConfirm.UseVisualStyleBackColor = true;
+            btnConfirm.Click += btnConfirm_Click;
             // 
             // txtPresent
             // 
             txtPresent.BorderStyle = BorderStyle.FixedSingle;
+            txtPresent.ForeColor = Color.FromArgb(0, 70, 67);
             txtPresent.Location = new Point(368, 247);
             txtPresent.Name = "txtPresent";
             txtPresent.Size = new Size(225, 30);
@@ -218,6 +221,7 @@
             // txtPrevious
             // 
             txtPrevious.BorderStyle = BorderStyle.FixedSingle;
+            txtPrevious.ForeColor = Color.FromArgb(0, 70, 67);
             txtPrevious.Location = new Point(368, 206);
             txtPrevious.Name = "txtPrevious";
             txtPrevious.Size = new Size(225, 30);
@@ -255,6 +259,7 @@
             // 
             AutoScaleDimensions = new SizeF(11F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(240, 237, 229);
             ClientSize = new Size(605, 643);
             Controls.Add(label4);
             Controls.Add(lblDueDate);
@@ -276,6 +281,7 @@
             Controls.Add(label2);
             Controls.Add(pnlHeader);
             Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ForeColor = Color.FromArgb(0, 70, 67);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(4);

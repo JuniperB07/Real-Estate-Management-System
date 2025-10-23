@@ -26,9 +26,7 @@ namespace Real_Estate_Management_System.Billing
                 pnlElectricityBill,
                 pnlInternetBill,
                 pnlRentalBill,
-                pnlWaterBill,
-                pnlBillPreview,
-                pnlExport }, false);
+                pnlWaterBill }, false);
 
             BHelper.NewInvoice = new Invoice();
             BHelper.NewWaterInvoice = new WaterInvoice();
