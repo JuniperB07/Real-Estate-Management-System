@@ -13,6 +13,7 @@ namespace Real_Estate_Management_System.Configs.InvoiceRDLC
         private static readonly string ConfigPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Configs\\InvoiceRDLC.config");
         private static readonly JunXML InvoiceRDLC = new JunXML(ConfigPath).Load();
 
+        internal static string InvoiceLogoPath => InvoiceRDLC.ReadAdd("InvoiceLogoPath");
         internal static string BusinessName => InvoiceRDLC.ReadAdd("BusinessName");
         internal static string BusinessAddress => InvoiceRDLC.ReadAdd("BusinessAddress");
         internal static string BusinessContact_Mobile => InvoiceRDLC.ReadAdd("BusinessContactInfo:Mobile");

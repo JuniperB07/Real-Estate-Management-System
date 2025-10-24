@@ -8,6 +8,7 @@ namespace Real_Estate_Management_System.Configs.InvoiceRDLC
 {
     internal static partial class InvoiceRDLC_Config
     {
+        private const string DEFAULT_INVOICE_LOGO_PATH = "Resources\\RDLC_INVOICE_LOGO.png";
         private const string DEFAULT_BUSINESS_NAME = "REAL ESTATE MANAGEMENT SYSTEM";
         private const string DEFAULT_BUSINESS_ADDRESS = "Your Business Address Here";
         private const string DEFAULT_BUSINESS_CONTACT_INFO_MOBILE = "+639123456789";
@@ -17,6 +18,7 @@ namespace Real_Estate_Management_System.Configs.InvoiceRDLC
         private const bool DEFAULT_INCLUDE_BIR_INFO = true;
         private const string DEFAULT_BUSINESS_BIR_INFO = "000-000-00000";
 
+        internal static void RestoreDefault_InvoiceLogoPath() => Change_InvoiceLogoPath(DEFAULT_INVOICE_LOGO_PATH);
         internal static void RestoreDefault_BusinessName() => Change_BusinessName(DEFAULT_BUSINESS_NAME);
         internal static void RestoreDefault_BusinessAddress() => Change_BusinessAddress(DEFAULT_BUSINESS_ADDRESS);
         internal static void RestoreDefault_BusinessContactInfo_Mobile() => Change_BusinessContact_Mobile(DEFAULT_BUSINESS_CONTACT_INFO_MOBILE);

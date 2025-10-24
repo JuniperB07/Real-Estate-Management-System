@@ -3184,5 +3184,109 @@
             consider adding support for 8-digit hex values or using a dedicated color utility library.
             </remarks>
         </member>
+        <member name="T:JunX.NETStandard.XML.JunXML">
+            <summary>
+            Provides utility methods for loading, reading, and modifying XML configuration files using <see cref="T:System.Xml.Linq.XDocument"/>.
+            </summary>
+            <remarks>
+            This class supports both file-based and in-memory XML operations, typically targeting configuration structures with <c>&lt;add key="..." value="..." /&gt;</c> elements.
+            Future extensions may include support for nested sections, attribute-based filtering, and schema validation.
+            </remarks>
+        </member>
+        <member name="M:JunX.NETStandard.XML.JunXML.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:JunX.NETStandard.XML.JunXML"/> class using the specified configuration file path.
+            </summary>
+            <param name="ConfigPath">The full path to the XML configuration file to be loaded and modified.</param>
+            <remarks>
+            This constructor sets the internal path reference but does not automatically load the document.
+            Call <see cref="M:JunX.NETStandard.XML.JunXML.Load"/> to parse the XML content from the specified path.
+            </remarks>
+        </member>
+        <member name="M:JunX.NETStandard.XML.JunXML.#ctor(System.Xml.Linq.XDocument)">
+            <summary>
+            Initializes a new instance of the <see cref="T:JunX.NETStandard.XML.JunXML"/> class using the specified <see cref="T:System.Xml.Linq.XDocument"/>.
+            </summary>
+            <param name="Document">An in-memory XML document to be used for reading and modification.</param>
+            <remarks>
+            This constructor allows direct manipulation of an existing <see cref="T:System.Xml.Linq.XDocument"/> without relying on file-based loading.
+            Useful for scenarios involving dynamic XML generation, testing, or runtime configuration overrides.
+            </remarks>
+        </member>
+        <member name="P:JunX.NETStandard.XML.JunXML.ConfigPath">
+            <summary>
+            Gets the file path of the XML configuration source associated with this instance.
+            </summary>
+            <value>
+            A <see cref="T:System.String"/> representing the full path to the XML configuration file.
+            </value>
+            <remarks>
+            This property is only populated when the instance is constructed using the <c>ConfigPath</c> constructor.
+            It remains <c>null</c> if the instance was initialized with an <see cref="T:System.Xml.Linq.XDocument"/> instead.
+            </remarks>
+        </member>
+        <member name="P:JunX.NETStandard.XML.JunXML.Document">
+            <summary>
+            Gets the underlying <see cref="T:System.Xml.Linq.XDocument"/> instance associated with this XML handler.
+            </summary>
+            <value>
+            An <see cref="T:System.Xml.Linq.XDocument"/> representing the loaded or injected XML content.
+            </value>
+            <remarks>
+            This property provides direct access to the in-memory XML structure for advanced querying, transformation, or inspection.
+            It may be <c>null</c> if the document has not been loaded or initialized.
+            </remarks>
+        </member>
+        <member name="M:JunX.NETStandard.XML.JunXML.Load">
+            <summary>
+            Loads the XML document from the configured file path and returns the current <see cref="N:JunX.NETStandard.XML"/> instance.
+            </summary>
+            <returns>
+            The same <see cref="N:JunX.NETStandard.XML"/> instance, allowing fluent chaining of subsequent operations.
+            </returns>
+            <remarks>
+            This method parses the XML content located at <see cref="P:JunX.NETStandard.XML.JunXML.ConfigPath"/> and assigns it to the <see cref="P:JunX.NETStandard.XML.JunXML.Document"/> property.
+            It enables fluent usage patterns such as <c>new XML(path).Load().ReadAdd("key")</c>.
+            </remarks>
+            <exception cref="T:System.Exception">
+            Thrown when the XML file cannot be loaded due to I/O errors, invalid format, or access restrictions.
+            </exception>
+        </member>
+        <member name="M:JunX.NETStandard.XML.JunXML.ReadAdd(System.String)">
+            <summary>
+            Retrieves the value of an <c>&lt;add&gt;</c> element with the specified key from the loaded XML document.
+            </summary>
+            <param name="Key">The value of the <c>key</c> attribute to search for.</param>
+            <returns>
+            A <see cref="T:System.String"/> containing the corresponding <c>value</c> attribute of the matched <c>&lt;add&gt;</c> element.
+            </returns>
+            <remarks>
+            This method searches for an element in the form:
+            <code>
+            &lt;add key="..." value="..." /&gt;
+            </code>
+            If the element or attribute is missing, an <see cref="T:System.Exception"/> is thrown with a descriptive error message.
+            </remarks>
+            <exception cref="T:System.Exception">
+            Thrown when the target element or attribute cannot be found or accessed.
+            </exception>
+        </member>
+        <member name="M:JunX.NETStandard.XML.JunXML.ChangeAddValue(System.String,System.String)">
+            <summary>
+            Updates the <c>value</c> attribute of an <c>&lt;add&gt;</c> element with the specified key in the loaded XML document.
+            </summary>
+            <param name="Key">The value of the <c>key</c> attribute to locate the target element.</param>
+            <param name="Value">The new value to assign to the <c>value</c> attribute.</param>
+            <remarks>
+            This method searches for an element in the form:
+            <code>
+            &lt;add key="..." value="..." /&gt;
+            </code>
+            If found, it updates the <c>value</c> attribute and saves the document back to <see cref="P:JunX.NETStandard.XML.JunXML.ConfigPath"/>.
+            </remarks>
+            <exception cref="T:System.Exception">
+            Thrown when the XML document cannot be saved due to I/O errors, access restrictions, or invalid path configuration.
+            </exception>
+        </member>
     </members>
 </doc>

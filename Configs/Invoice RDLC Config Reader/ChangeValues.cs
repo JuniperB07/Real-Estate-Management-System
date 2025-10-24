@@ -8,6 +8,7 @@ namespace Real_Estate_Management_System.Configs.InvoiceRDLC
 {
     internal static partial class InvoiceRDLC_Config
     {
+        internal static void Change_InvoiceLogoPath(string LogoPath) => InvoiceRDLC.ChangeAddValue("InvoiceLogoPath", LogoPath);
         internal static void Change_BusinessName(string BusinessName) => InvoiceRDLC.ChangeAddValue("BusinessName", BusinessName);
         internal static void Change_BusinessAddress(string BusinessAddress) => InvoiceRDLC.ChangeAddValue("BusinessAddress", BusinessAddress);
         internal static void Change_BusinessContact_Mobile(string MobileNumber) => InvoiceRDLC.ChangeAddValue("BusinessContactInfo:Mobile", MobileNumber);

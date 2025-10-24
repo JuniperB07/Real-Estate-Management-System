@@ -259,3 +259,4 @@ C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\obj\Debug
 C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Configs\Billing.config
 C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\obj\Debug\net8.0-windows\Real_Estate_Management_System.Billing.SetDueDates.resources
 C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\obj\Debug\net8.0-windows\Real_Estate_Management_System.Billing.Manage.Penalties.resources
+C:\Users\USER\Documents\Visual Studio\C#\Real Estate Management System\bin\Debug\net8.0-windows\Configs\InvoiceRDLC.config
