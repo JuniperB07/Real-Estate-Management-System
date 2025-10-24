@@ -1,5 +1,6 @@
 using JunX.NETStandard.MySQL;
 using JunX.NETStandard.Utility;
+using JunX.NETStandard.XML;
 using Real_Estate_Management_System.Splash_Screen;
 using System.Data;
 using System.Security.Cryptography;
@@ -99,6 +100,13 @@ namespace Real_Estate_Management_System
                         Application.Exit();
                     }
                 }
+                #endregion
+
+                #region Create RDLC Enum Files
+                SplashHelper.Splash_LoadingText = "Creating RDLC enum files...";
+
+                RDLCReader.RDLC_ToEnumFile(Internals.INVOICE_RDLC_PATH, Internals.INVOICE_RDLC_ENUM_PATH);
+                await Task.Delay(500);
                 #endregion
 
                 #region Check Configuration Files

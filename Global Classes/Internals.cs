@@ -20,7 +20,9 @@ namespace Real_Estate_Management_System
         internal const string DB_NAME = "dbREMS";
         internal const string PESO = "₱";
         internal const string DEFAULT_ID_LOCATION = @"Resources\REMS_TENANTS_DEFAULT_ID.png";
+        internal const string INVOICE_RDLC_PATH = "RDLCs\\Invoice.rdlc";
         internal static readonly ConnectionStringMetadata CONN_STR_METADATA = new ConnectionStringMetadata("localhost", "dbREMS", "root", SetSSLMode: SSLModes.None);
+        internal static readonly string INVOICE_RDLC_ENUM_PATH = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "RDLCs\\InvoiceEnums.cs");
 
         internal static readonly Color Cyprus = Utility.HexToRGB("#004643");
         internal static readonly Color SandDune = Utility.HexToRGB("#F0EDE5");

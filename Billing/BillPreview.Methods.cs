@@ -39,6 +39,9 @@ namespace Real_Estate_Management_System.Billing
                 new("prmPG1_InvoiceNumber", BHelper.InvoiceNumber),
                 new("prmPG1_InvoiceDate", InvoicePage1.InvoiceDate.ToString("MMMM d, yyyy")),
 
+                new("prmPG1_BalanceFromPreviousInvoice", InvoicePage1.BalanceFromPreviousInvoice.ToString("0,0.00")),
+                new("prmPG1_PaymentsReceived", InvoicePage1.PaymentsReceived.ToString("0,0.00")),
+                new("prmPG1_RemainingBalance", InvoicePage1.RemainingBalance.ToString("0,0.00")),
                 new("prmPG1_UtilitiesDueDate", InvoicePage1.UtilitiesDueDate.ToString("MMMM d, yyyy")),
                 new("prmPG1_RentalDueDate", InvoicePage1.RentalDueDate.ToString("MMMM d, yyyy")),
                 new("prmPG1_InternetDueDate", InvoicePage1.InternetDueDate.ToString("MMMM d, yyyy")),

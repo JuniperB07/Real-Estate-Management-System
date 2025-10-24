@@ -3184,6 +3184,38 @@
             consider adding support for 8-digit hex values or using a dedicated color utility library.
             </remarks>
         </member>
+        <member name="T:JunX.NETStandard.XML.RDLCReader">
+            <summary>
+            Reads RDLC files.
+            </summary>
+        </member>
+        <member name="M:JunX.NETStandard.XML.RDLCReader.RDLC_ToEnumFile(System.String,System.String)">
+            <summary>
+            Generates a C# <c>enum</c> file from the list of <c>ReportParameter</c> names defined in an RDLC report.
+            </summary>
+            <param name="RDLCPath">The full path to the RDLC file to parse.</param>
+            <param name="SavePath">The destination path where the generated enum file will be saved.</param>
+            <remarks>
+            This method loads the RDLC file as XML, extracts all unique <c>ReportParameter</c> names,
+            sanitizes them into valid C# identifiers, and writes them as members of a public enum.
+            The enum name is derived from the RDLC filename (excluding extension).
+            <para>
+            Example: If <paramref name="RDLCPath"/> is <c>InvoiceReport.rdlc</c>, the output will be:
+            <code>
+            public enum InvoiceReport
+            {
+                StartDate,
+                EndDate,
+                IncludeLogo
+            }
+            </code>
+            </para>
+            Each enum member is comma-separated except the last, ensuring valid syntax.
+            </remarks>
+            <exception cref="T:System.IO.FileNotFoundException">
+            Thrown when the RDLC file does not exist at the specified <paramref name="RDLCPath"/>.
+            </exception>
+        </member>
         <member name="T:JunX.NETStandard.XML.JunXML">
             <summary>
             Provides utility methods for loading, reading, and modifying XML configuration files using <see cref="T:System.Xml.Linq.XDocument"/>.

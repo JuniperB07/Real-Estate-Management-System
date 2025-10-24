@@ -34,7 +34,6 @@
     </Reference>
     <Reference Include="JunX.NETStandard">
       <HintPath>..\JunX.NETStandard\bin\Release\netstandard2.0\JunX.NETStandard.dll</HintPath>
-      <Private>True</Private>
     </Reference>
   </ItemGroup>
 
@@ -97,6 +96,10 @@
 
 	<ItemGroup>
 		<Compile Include="bin\Debug\net8.0-windows\Tables\*.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Include="bin\Debug\net8.0-windows\RDLCs\*.cs" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -184,9 +187,13 @@
 			<DependentUpon>ElectricityBill.cs</DependentUpon>
 		</Compile>
 
-		<Compile Update ="Billing\BillPreview.Methods.cs">
+		<Compile Update="Billing\BillPreview.Methods.cs">
 			<DependentUpon>BillPreview.cs</DependentUpon>
 		</Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="bin\Debug\net8.0-windows\RDLCs\" />
 	</ItemGroup>
 
 </Project>
