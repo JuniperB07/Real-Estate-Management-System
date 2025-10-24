@@ -21,13 +21,6 @@ namespace Real_Estate_Management_System.Billing
         {
             InitializeComponent();
             Internals.SetFormColors(this);
-
-            //Initialize ReportViewer 'rvInvoice'
-            rvInvoice.Dock = DockStyle.Fill;
-            rvInvoice.LocalReport.ReportPath = @"RDLCs\Invoice.rdlc";
-            rvInvoice.SetDisplayMode(DisplayMode.PrintLayout);
-            rvInvoice.RefreshReport();
-            Controls.Add(rvInvoice);
         }
 
         private void BillPreview_Load(object sender, EventArgs e)
@@ -35,6 +28,13 @@ namespace Real_Estate_Management_System.Billing
             ProcessingRequest PR = new ProcessingRequest();
             PR.Show();
             Application.DoEvents();
+
+            //Initialize ReportViewer 'rvInvoice'
+            rvInvoice.Dock = DockStyle.Fill;
+            rvInvoice.LocalReport.ReportPath = @"RDLCs\Invoice.rdlc";
+            rvInvoice.SetDisplayMode(DisplayMode.PrintLayout);
+            rvInvoice.RefreshReport();
+            Controls.Add(rvInvoice);
 
             if (PreviewHelper.PreviewMode == PreviewHelperMode.ExportToPDF)
             {
