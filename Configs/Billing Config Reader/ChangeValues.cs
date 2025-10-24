@@ -23,5 +23,6 @@ namespace Real_Estate_Management_System.Configs.Billing
                 Doc.Save(configPath);
             }
         }
+        internal static void Change_ExportToPDFPath(string ExportPath) => Billing.ChangeAddValue("ExportToPDFPath", ExportPath);
     }
 }
