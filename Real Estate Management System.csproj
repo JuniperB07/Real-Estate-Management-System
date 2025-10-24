@@ -65,6 +65,9 @@
     <None Update="Configs\DueDates.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Configs\InvoiceRDLC.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Configs\Tenants.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -169,15 +172,15 @@
 			<DependentUpon>NewBill.cs</DependentUpon>
 		</Compile>
 
-		<Compile Update ="Billing\SetDueDates.Methods.cs">
+		<Compile Update="Billing\SetDueDates.Methods.cs">
 			<DependentUpon>SetDueDates.cs</DependentUpon>
 		</Compile>
 
-		<Compile Update ="Billing\Manage\WaterBill.Methods.cs">
+		<Compile Update="Billing\Manage\WaterBill.Methods.cs">
 			<DependentUpon>WaterBill.cs</DependentUpon>
 		</Compile>
 
-		<Compile Update ="Billing\Manage\ElectricityBill.Methods.cs">
+		<Compile Update="Billing\Manage\ElectricityBill.Methods.cs">
 			<DependentUpon>ElectricityBill.cs</DependentUpon>
 		</Compile>
 	</ItemGroup>

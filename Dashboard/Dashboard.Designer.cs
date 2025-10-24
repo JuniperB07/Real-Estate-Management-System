@@ -600,11 +600,11 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Arial", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.Cornsilk;
-            label2.Location = new Point(162, 100);
+            label2.Location = new Point(4, 100);
             label2.Name = "label2";
-            label2.Size = new Size(275, 80);
+            label2.Size = new Size(433, 80);
             label2.TabIndex = 9;
-            label2.Text = "UNPAID BILLS";
+            label2.Text = "UNPAID/PARTIALLY PAID BILLS";
             label2.TextAlign = ContentAlignment.MiddleRight;
             // 
             // panel4

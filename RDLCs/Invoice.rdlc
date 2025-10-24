@@ -84,7 +84,7 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=Parameters!prmHEADER_BusinessName.Value</Value>
+                          <Value>=Parameters!prmHEADER_BusinessAddress.Value</Value>
                           <Style>
                             <FontFamily>Times New Roman</FontFamily>
                             <FontSize>12pt</FontSize>
