@@ -1,13 +1,14 @@
-﻿using System;
+﻿using JunX.NETStandard.MySQL;
+using JunX.NETStandard.SQLBuilder;
+using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
+using System.Configuration.Internal;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
-using JunX.NETStandard.MySQL;
-using JunX.NETStandard.SQLBuilder;
-using System.Configuration.Internal;
 
 namespace Real_Estate_Management_System.Billing
 {
@@ -203,104 +204,6 @@ namespace Real_Estate_Management_System.Billing
             }
         }
         /// <summary>
-        /// Gets a comma-separated string of penalty IDs associated with the tenant that are either unpaid or partially paid.
-        /// </summary>
-        /// <remarks>
-        /// This property queries the <c>tbpenalties</c> table using the current <c>TenantID</c> and filters by <c>Status</c> values <c>UNPAID</c> and <c>PARTIAL</c>.
-        /// It returns a string of matching <c>PenaltyID</c> values separated by commas, with a trailing comma included.
-        /// </remarks>
-        /// <returns>
-        /// A comma-separated list of penalty IDs if any exist; otherwise, an empty string.
-        /// </returns>
-        public string PenaltyIDs
-        {
-            get
-            {
-                List<int> pIDs = new List<int>();
-                string pIDString = "";
-
-                new SelectCommand<tbpenalties>()
-                    .Select(tbpenalties.PenaltyID)
-                    .From
-                    .StartWhere
-                        .Where(tbpenalties.TenantID, SQLOperator.Equal, TenantID.ToString())
-                        .And()
-                        .StartGroup(tbpenalties.Status, SQLOperator.Equal, "'" + PenaltyStatuses.UNPAID.ToString() + "'")
-                            .Or(tbpenalties.Status, SQLOperator.Equal, "'" + PenaltyStatuses.PARTIAL.ToString() + "'")
-                        .EndGroup
-                    .EndWhere
-                    .ExecuteReader(Internals.DBC);
-                if (Internals.DBC.HasRows)
-                    foreach (string PID in Internals.DBC.Values)
-                        pIDs.Add(Convert.ToInt32(PID));
-                Internals.DBC.CloseReader();
-
-                foreach (int PID in pIDs)
-                    pIDString += PID.ToString() + ",";
-
-                return pIDString;
-            }
-        }
-        /// <summary>
-        /// Calculates the total outstanding penalty amount for the tenant based on unpaid and partially paid penalties.
-        /// </summary>
-        /// <remarks>
-        /// This property parses the <c>PenaltyIDs</c> string into a list of penalty identifiers, then queries the <c>tbpenalties</c> table for each.
-        /// If a penalty is marked as <c>UNPAID</c>, the full <c>PenaltyAmount</c> is added to the total.
-        /// If marked as <c>PARTIAL</c>, only the remaining balance (<c>PenaltyAmount - AmountPaid</c>) is added.
-        /// </remarks>
-        /// <returns>
-        /// The total penalty amount due for the tenant.
-        /// </returns>
-        public double TotalPenalties
-        {
-            get
-            {
-                MySqlDataReader reader;
-                double TP = 0;
-
-                if (!string.IsNullOrWhiteSpace(PenaltyIDs))
-                {
-                    List<int> pIDs = PenaltyIDs.Split(',', StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToList();
-
-                    foreach(int PID in pIDs)
-                    {
-                        new SelectCommand<tbpenalties>()
-                            .Select(new tbpenalties[]
-                            {
-                                tbpenalties.PenaltyAmount,
-                                tbpenalties.AmountPaid,
-                                tbpenalties.Status
-                            })
-                            .From
-                            .StartWhere
-                                .Where(tbpenalties.PenaltyID, SQLOperator.Equal, PID.ToString())
-                            .EndWhere
-                            .ExecuteReader(Internals.DBC);
-                        reader = Internals.DBC.Reader;
-
-                        while (reader.Read())
-                        {
-                            if (reader[2].ToString() == PenaltyStatuses.UNPAID.ToString())
-                                TP += Convert.ToDouble(reader[0].ToString());
-                            else
-                            {
-                                double pa = Convert.ToDouble(reader[0].ToString());
-                                double ap = Convert.ToDouble(reader[1].ToString());
-
-                                TP += pa - ap;
-                            }
-                        }
-
-                        reader.Close();
-                        Internals.DBC.CloseReader();
-                    }
-                }
-
-                return TP;
-            }
-        }
-        /// <summary>
         /// Calculates the total amount due for the invoice, including all utility balances and applicable penalties.
         /// </summary>
         /// <remarks>
@@ -372,8 +275,6 @@ namespace Real_Estate_Management_System.Billing
                         InvT += Convert.ToDouble(Internals.DBC.Values[0]);
                     Internals.DBC.CloseReader();
                 }
-
-                InvT += TotalPenalties;
 
                 return InvT;
             }
@@ -1983,6 +1884,177 @@ namespace Real_Estate_Management_System.Billing
                 this.DueDate,
                 this.TenantID,
                 this.Status);
+        }
+    }
+
+    internal static class InvoiceHeader
+    {
+        internal static string BusinessName => Configs.InvoiceRDLC.InvoiceRDLC_Config.BusinessName;
+        internal static string BusinessAddress => Configs.InvoiceRDLC.InvoiceRDLC_Config.BusinessAddress;
+        internal static string BusinessContactInfo
+        {
+            get
+            {
+                StringBuilder CI = new StringBuilder();
+
+                CI.Append("Mobile: " + Configs.InvoiceRDLC.InvoiceRDLC_Config.BusinessContact_Mobile + " | ");
+                CI.Append("Email: " + Configs.InvoiceRDLC.InvoiceRDLC_Config.BusinessContact_Email);
+
+                if (Configs.InvoiceRDLC.InvoiceRDLC_Config.IncludeTelephone == true)
+                    CI.Append(" | Telephone: " + Configs.InvoiceRDLC.InvoiceRDLC_Config.BusinessContact_Telephone);
+
+                return CI.ToString();
+            }
+        }
+        internal static string BusinessBIRInfo
+        {
+            get
+            {
+                if (Configs.InvoiceRDLC.InvoiceRDLC_Config.IncludeBIRInfo)
+                    return Configs.InvoiceRDLC.InvoiceRDLC_Config.BusinessBIRInfo;
+                else
+                    return "";
+            }
+        }
+    }
+    
+    internal static class InvoicePage1
+    {
+        private static int TenantID
+        {
+            get
+            {
+                new SelectCommand<tbinvoices>()
+                    .Select(tbinvoices.TenantID)
+                    .From
+                    .StartWhere
+                        .Where(tbinvoices.InvoiceNumber, SQLOperator.Equal, "'" + BHelper.InvoiceNumber + "'")
+                    .EndWhere
+                    .ExecuteReader(Internals.DBC);
+                return Convert.ToInt32(Internals.DBC.Values[0]);
+            }
+        }
+
+        internal static string TenantName
+        {
+            get
+            {
+                new SelectCommand<tbtenants>()
+                    .Select(tbtenants.FullName)
+                    .From
+                    .StartWhere
+                        .Where(tbtenants.TenantID, SQLOperator.Equal, TenantID.ToString())
+                    .EndWhere
+                    .ExecuteReader(Internals.DBC);
+                return Internals.DBC.Values[0];
+            }
+        }
+        internal static string RoomName
+        {
+            get
+            {
+                int rID = 0;
+
+                new SelectCommand<tbtenants>()
+                    .Select(tbtenants.RoomID)
+                    .From
+                    .StartWhere
+                        .Where(tbtenants.TenantID, SQLOperator.Equal, TenantID.ToString())
+                    .EndWhere
+                    .ExecuteReader(Internals.DBC);
+                rID = Convert.ToInt32(Internals.DBC.Values[0]);
+
+                new SelectCommand<tbrooms>()
+                    .Select(tbrooms.RoomName)
+                    .From
+                    .StartWhere
+                        .Where(tbrooms.RoomID, SQLOperator.Equal, rID.ToString())
+                    .EndWhere
+                    .ExecuteReader(Internals.DBC);
+                return Internals.DBC.Values[0];
+            }
+        }
+        internal static string Building
+        {
+            get
+            {
+                int bID = 0, rID = 0;
+
+                new SelectCommand<tbtenants>()
+                    .Select(tbtenants.RoomID)
+                    .From
+                    .StartWhere
+                        .Where(tbtenants.TenantID, SQLOperator.Equal, TenantID.ToString())
+                    .EndWhere
+                    .ExecuteReader(Internals.DBC);
+                rID = Convert.ToInt32(Internals.DBC.Values[0]);
+
+                new SelectCommand<tbrooms>()
+                    .Select(tbrooms.BuildingID)
+                    .From
+                    .StartWhere
+                        .Where(tbrooms.RoomID, SQLOperator.Equal, rID.ToString())
+                    .EndWhere
+                    .ExecuteReader(Internals.DBC);
+                bID = Convert.ToInt32(Internals.DBC.Values[0]);
+
+                new SelectCommand<tbbuilding>()
+                    .Select(tbbuilding.BuildingName)
+                    .From
+                    .StartWhere
+                        .Where(tbbuilding.BuildingID, SQLOperator.Equal, bID.ToString())
+                    .EndWhere
+                    .ExecuteReader(Internals.DBC);
+                return Internals.DBC.Values[0];
+            }
+        }
+        internal static string BuildingAddress
+        {
+            get
+            {
+                int bID = 0, rID = 0;
+
+                new SelectCommand<tbtenants>()
+                    .Select(tbtenants.RoomID)
+                    .From
+                    .StartWhere
+                        .Where(tbtenants.TenantID, SQLOperator.Equal, TenantID.ToString())
+                    .EndWhere
+                    .ExecuteReader(Internals.DBC);
+                rID = Convert.ToInt32(Internals.DBC.Values[0]);
+
+                new SelectCommand<tbrooms>()
+                    .Select(tbrooms.BuildingID)
+                    .From
+                    .StartWhere
+                        .Where(tbrooms.RoomID, SQLOperator.Equal, rID.ToString())
+                    .EndWhere
+                    .ExecuteReader(Internals.DBC);
+                bID = Convert.ToInt32(Internals.DBC.Values[0]);
+
+                new SelectCommand<tbbuilding>()
+                    .Select(tbbuilding.BuildingAddress)
+                    .From
+                    .StartWhere
+                        .Where(tbbuilding.BuildingID, SQLOperator.Equal, bID.ToString())
+                    .EndWhere
+                    .ExecuteReader(Internals.DBC);
+                return Internals.DBC.Values[0];
+            }
+        }
+        internal static DateTime InvoiceDate
+        {
+            get
+            {
+                new SelectCommand<tbinvoices>()
+                    .Select(tbinvoices.InvoiceDate)
+                    .From
+                    .StartWhere
+                        .Where(tbinvoices.InvoiceNumber, SQLOperator.Equal, "'" + BHelper.InvoiceNumber + "'")
+                    .EndWhere
+                    .ExecuteReader(Internals.DBC);
+                return Convert.ToDateTime(Internals.DBC.Values[0]);
+            }
         }
     }
 }

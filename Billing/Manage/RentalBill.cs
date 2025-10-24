@@ -24,20 +24,13 @@ namespace Real_Estate_Management_System.Billing.Manage
             lblMonthlyRent.Text = BHelper.NewRentalInvoice.MonthlyRent.ToString("0,0.00");
             lblRemainingBalance.Text = BHelper.NewRentalInvoice.RemainingBalance.ToString("0,0.00");
             lblDeductions.Text = BHelper.NewRentalInvoice.Deductions.ToString("0,0.00");
-            lblPenalties.Text = BHelper.NewInvoice.TotalPenalties.ToString("0,0.00");
-            lblTotal.Text = (BHelper.NewRentalInvoice.Subtotal + BHelper.NewInvoice.TotalPenalties).ToString("0,0.00");
+            lblTotal.Text = BHelper.NewRentalInvoice.Subtotal.ToString("0,0.00");
         }
 
         private void RentalBill_FormClosing(object sender, FormClosingEventArgs e)
         {
             GC.Collect();
             GC.WaitForPendingFinalizers();
-        }
-
-        private void btnSeePenalties_Click(object sender, EventArgs e)
-        {
-            Penalties P = new Penalties();
-            P.ShowDialog();
         }
     }
 }

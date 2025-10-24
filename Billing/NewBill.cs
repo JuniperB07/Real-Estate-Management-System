@@ -324,7 +324,6 @@ namespace Real_Estate_Management_System.Billing
                     new ValuesMetadata(BHelper.NewInvoice.ElectricityInvoiceID.ToString(), DataTypes.Numeric),
                     new ValuesMetadata(BHelper.NewInvoice.RentalInvoiceID.ToString(), DataTypes.Numeric),
                     new ValuesMetadata(BHelper.NewInvoice.InternetInvoiceID.ToString(), DataTypes.Numeric),
-                    new ValuesMetadata(BHelper.NewInvoice.PenaltyIDs, DataTypes.NonNumeric),
                     new ValuesMetadata(BHelper.NewInvoice.InvoiceTotal.ToString(), DataTypes.Numeric),
                     new ValuesMetadata(BHelper.NewInvoice.Status.ToString(), DataTypes.NonNumeric)
                 })

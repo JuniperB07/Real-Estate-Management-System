@@ -17,10 +17,8 @@ namespace Real_Estate_Management_System.Billing
         internal static InternetInvoice NewInternetInvoice;
 
         internal static int TenantID { get; set; }
-        internal static DateTime DueDate_Utility { get; set; }
-        internal static DateTime DueDate_Rental { get; set; }
-        internal static DateTime DueDate_Internet { get; set; }
         internal static bool IsSaved { get; set; }
+        internal static string InvoiceNumber { get; set; }
 
         internal static double NewInvoiceTotal
         {
@@ -30,8 +28,7 @@ namespace Real_Estate_Management_System.Billing
                     NewWaterInvoice.Subtotal +
                     NewElectricityInvoice.Subtotal +
                     NewRentalInvoice.Subtotal +
-                    NewInternetInvoice.Subtotal +
-                    NewInvoice.TotalPenalties;
+                    NewInternetInvoice.Subtotal;
             }
         }
         internal static bool InvoicesValid

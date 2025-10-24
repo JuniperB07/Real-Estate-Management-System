@@ -108,7 +108,7 @@ namespace Real_Estate_Management_System.Billing
             lblWaterBillTotal.Text = Internals.PESO + BHelper.NewWaterInvoice.Subtotal.ToString("0,0.00");
             lblElectricityBillTotal.Text = Internals.PESO + BHelper.NewElectricityInvoice.Subtotal.ToString("0,0.00");
             lblInternetBillTotal.Text = Internals.PESO + BHelper.NewInternetInvoice.Subtotal.ToString("0,0.00");
-            lblRentalBillTotal.Text = Internals.PESO + (BHelper.NewRentalInvoice.Subtotal + BHelper.NewInvoice.TotalPenalties).ToString("0,0.00");
+            lblRentalBillTotal.Text = Internals.PESO + BHelper.NewRentalInvoice.Subtotal.ToString("0,0.00");
 
 
             lblTenantName.Text = BHelper.NewInvoice.TenantName;
@@ -134,7 +134,7 @@ namespace Real_Estate_Management_System.Billing
             lblWaterBillTotal.Text = Internals.PESO + BHelper.NewWaterInvoice.Subtotal.ToString("0,0.00");
             lblElectricityBillTotal.Text = Internals.PESO + BHelper.NewElectricityInvoice.Subtotal.ToString("0,0.00");
             lblInternetBillTotal.Text = Internals.PESO + BHelper.NewInternetInvoice.Subtotal.ToString("0,0.00");
-            lblRentalBillTotal.Text = Internals.PESO + (BHelper.NewRentalInvoice.Subtotal + BHelper.NewInvoice.TotalPenalties).ToString("0,0.00");
+            lblRentalBillTotal.Text = Internals.PESO + BHelper.NewRentalInvoice.Subtotal.ToString("0,0.00");
             lblInvoiceTotal.Text = Internals.PESO + BHelper.NewInvoiceTotal.ToString("0,0.00");
 
             ttNewBill.SetToolTip(lblWaterBillTotal,
@@ -146,8 +146,7 @@ namespace Real_Estate_Management_System.Billing
                 "Present Reading: " + BHelper.NewElectricityInvoice.PresentReading.ToString() + "\n" +
                 "Consumption: " + BHelper.NewElectricityInvoice.Consumption.ToString() + Configs.Utilities.UtilitiesConfig.Electricity_Unit);
             ttNewBill.SetToolTip(lblRentalBillTotal,
-                "Rental Bill Total: " + Internals.PESO + BHelper.NewRentalInvoice.Subtotal.ToString("0,0.00") + "\n" +
-                "Total Penalties: " + Internals.PESO + BHelper.NewInvoice.TotalPenalties.ToString("0,0.00"));
+                "Rental Bill Total: " + Internals.PESO + BHelper.NewRentalInvoice.Subtotal.ToString("0,0.00"));
             ttNewBill.SetToolTip(lblInternetBillTotal,
                 "Plan: " + BHelper.NewInternetInvoice.PlanName + "\n" +
                 "Subscription Plan: " + Internals.PESO + BHelper.NewInternetInvoice.SubscriptionFee.ToString("0,0.00"));
@@ -200,8 +199,7 @@ namespace Real_Estate_Management_System.Billing
                 "Present Reading: " + BHelper.NewElectricityInvoice.PresentReading.ToString() + "\n" +
                 "Consumption: " + BHelper.NewElectricityInvoice.Consumption.ToString() + Configs.Utilities.UtilitiesConfig.Electricity_Unit);
             ttNewBill.SetToolTip(lblRentalBillTotal,
-                "Rental Bill Total: " + Internals.PESO + BHelper.NewRentalInvoice.Subtotal.ToString("0,0.00") + "\n" +
-                "Total Penalties: " + Internals.PESO + BHelper.NewInvoice.TotalPenalties.ToString("0,0.00"));
+                "Rental Bill Total: " + Internals.PESO + BHelper.NewRentalInvoice.Subtotal.ToString("0,0.00"));
             ttNewBill.SetToolTip(lblInternetBillTotal,
                 "Plan: " + BHelper.NewInternetInvoice.PlanName + "\n" +
                 "Subscription Plan: " + Internals.PESO + BHelper.NewInternetInvoice.SubscriptionFee.ToString("0,0.00"));

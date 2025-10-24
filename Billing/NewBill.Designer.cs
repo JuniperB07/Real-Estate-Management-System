@@ -249,7 +249,7 @@
             // 
             pnlSetDueDates.Controls.Add(btnSetDueDates);
             pnlSetDueDates.Controls.Add(pictureBox7);
-            pnlSetDueDates.Location = new Point(7, 62);
+            pnlSetDueDates.Location = new Point(7, 190);
             pnlSetDueDates.Name = "pnlSetDueDates";
             pnlSetDueDates.Size = new Size(300, 50);
             pnlSetDueDates.TabIndex = 3;
@@ -283,7 +283,7 @@
             // 
             pnlReset.Controls.Add(btnReset);
             pnlReset.Controls.Add(pictureBox6);
-            pnlReset.Location = new Point(7, 6);
+            pnlReset.Location = new Point(7, 134);
             pnlReset.Name = "pnlReset";
             pnlReset.Size = new Size(300, 50);
             pnlReset.TabIndex = 5;
@@ -351,7 +351,7 @@
             // 
             pnlExport.Controls.Add(btnExportToPDF);
             pnlExport.Controls.Add(pictureBox4);
-            pnlExport.Location = new Point(7, 190);
+            pnlExport.Location = new Point(7, 62);
             pnlExport.Name = "pnlExport";
             pnlExport.Size = new Size(300, 50);
             pnlExport.TabIndex = 3;
@@ -385,7 +385,7 @@
             // 
             pnlBillPreview.Controls.Add(btnBillPreview);
             pnlBillPreview.Controls.Add(pictureBox3);
-            pnlBillPreview.Location = new Point(7, 134);
+            pnlBillPreview.Location = new Point(7, 6);
             pnlBillPreview.Name = "pnlBillPreview";
             pnlBillPreview.Size = new Size(300, 50);
             pnlBillPreview.TabIndex = 2;

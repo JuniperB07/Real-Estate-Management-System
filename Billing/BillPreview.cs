@@ -16,6 +16,8 @@ namespace Real_Estate_Management_System.Billing
     public partial class BillPreview : Form
     {
         ReportViewer rvInvoice = new ReportViewer();
+        ReportParameter[] rp;
+        ReportParameter[] rpHeader, rpPG1, rpPG2, rpPG3, rpPG4;
 
         public BillPreview()
         {
@@ -29,12 +31,9 @@ namespace Real_Estate_Management_System.Billing
             PR.Show();
             Application.DoEvents();
 
-            //Initialize ReportViewer 'rvInvoice'
-            rvInvoice.Dock = DockStyle.Fill;
-            rvInvoice.LocalReport.ReportPath = @"RDLCs\Invoice.rdlc";
-            rvInvoice.SetDisplayMode(DisplayMode.PrintLayout);
-            rvInvoice.RefreshReport();
-            Controls.Add(rvInvoice);
+            InitializeReportViewer();
+
+            FillInvoiceHeader();
 
             if (PreviewHelper.PreviewMode == PreviewHelperMode.ExportToPDF)
             {
