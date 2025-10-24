@@ -311,7 +311,6 @@ namespace Real_Estate_Management_System.Billing
                     tbinvoices.ElectricityInvoiceID,
                     tbinvoices.RentalInvoiceID,
                     tbinvoices.InternetInvoiceID,
-                    tbinvoices.PenaltyIDs,
                     tbinvoices.InvoiceTotal,
                     tbinvoices.Status
                 })
