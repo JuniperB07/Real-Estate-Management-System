@@ -34,11 +34,24 @@ namespace Real_Estate_Management_System.Billing
             InitializeReportViewer();
 
             FillInvoiceHeader();
+            FillInvoicePage1();
+
+            rp = rpHeader
+                .Concat(rpPG1)
+                .Concat(rpPG2)
+                .Concat(rpPG3)
+                .Concat(rpPG4)
+                .ToArray();
 
             if (PreviewHelper.PreviewMode == PreviewHelperMode.ExportToPDF)
             {
                 ExportToPDF ETPDF = new ExportToPDF();
                 ETPDF.ShowDialog();
+            }
+            else
+            {
+                rvInvoice.LocalReport.SetParameters(rp);
+                rvInvoice.RefreshReport();
             }
             PR.Close();
         }
