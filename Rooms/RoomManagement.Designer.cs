@@ -57,6 +57,9 @@
             label7 = new Label();
             label6 = new Label();
             label3 = new Label();
+            panel3 = new Panel();
+            btnEditBuilding = new Button();
+            pictureBox5 = new PictureBox();
             pnlHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             pnlBuildingInfo.SuspendLayout();
@@ -67,6 +70,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             SuspendLayout();
             // 
             // pnlHeader
@@ -110,6 +115,7 @@
             pnlBuildingInfo.BackColor = Color.FromArgb(0, 69, 127);
             pnlBuildingInfo.BackgroundImage = Properties.Resources.REMS_ROOMS_BUILDING;
             pnlBuildingInfo.BackgroundImageLayout = ImageLayout.Stretch;
+            pnlBuildingInfo.Controls.Add(panel3);
             pnlBuildingInfo.Controls.Add(panel11);
             pnlBuildingInfo.Controls.Add(lstBuilding);
             pnlBuildingInfo.Controls.Add(txtBuildingAddress);
@@ -128,7 +134,7 @@
             panel11.BackColor = Color.Transparent;
             panel11.Controls.Add(btnBuilding_New);
             panel11.Controls.Add(pictureBox3);
-            panel11.Location = new Point(12, 168);
+            panel11.Location = new Point(12, 153);
             panel11.Name = "panel11";
             panel11.Size = new Size(186, 50);
             panel11.TabIndex = 11;
@@ -166,9 +172,9 @@
             lstBuilding.ForeColor = Color.FromArgb(240, 237, 229);
             lstBuilding.FormattingEnabled = true;
             lstBuilding.ItemHeight = 23;
-            lstBuilding.Location = new Point(16, 224);
+            lstBuilding.Location = new Point(12, 270);
             lstBuilding.Name = "lstBuilding";
-            lstBuilding.Size = new Size(518, 276);
+            lstBuilding.Size = new Size(518, 230);
             lstBuilding.TabIndex = 10;
             lstBuilding.MouseDoubleClick += lstBuilding_MouseDoubleClick;
             // 
@@ -182,7 +188,7 @@
             txtBuildingAddress.Multiline = true;
             txtBuildingAddress.Name = "txtBuildingAddress";
             txtBuildingAddress.ReadOnly = true;
-            txtBuildingAddress.Size = new Size(297, 94);
+            txtBuildingAddress.Size = new Size(297, 142);
             txtBuildingAddress.TabIndex = 9;
             // 
             // txtBuildingName
@@ -421,6 +427,42 @@
             label3.Text = "ROOMS";
             label3.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // panel3
+            // 
+            panel3.BackColor = Color.Transparent;
+            panel3.Controls.Add(btnEditBuilding);
+            panel3.Controls.Add(pictureBox5);
+            panel3.Location = new Point(12, 209);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(186, 50);
+            panel3.TabIndex = 12;
+            // 
+            // btnEditBuilding
+            // 
+            btnEditBuilding.BackColor = Color.FromArgb(0, 69, 127);
+            btnEditBuilding.FlatAppearance.BorderSize = 0;
+            btnEditBuilding.FlatStyle = FlatStyle.Flat;
+            btnEditBuilding.Font = new Font("Arial Narrow", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnEditBuilding.ForeColor = SystemColors.Control;
+            btnEditBuilding.Location = new Point(75, 3);
+            btnEditBuilding.Name = "btnEditBuilding";
+            btnEditBuilding.Size = new Size(108, 44);
+            btnEditBuilding.TabIndex = 1;
+            btnEditBuilding.Text = "EDIT";
+            btnEditBuilding.TextAlign = ContentAlignment.MiddleLeft;
+            btnEditBuilding.UseVisualStyleBackColor = false;
+            btnEditBuilding.Click += btnEditBuilding_Click;
+            // 
+            // pictureBox5
+            // 
+            pictureBox5.Image = Properties.Resources.REMS_EDIT_ICON;
+            pictureBox5.Location = new Point(13, 3);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(56, 44);
+            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox5.TabIndex = 0;
+            pictureBox5.TabStop = false;
+            // 
             // RoomManagement
             // 
             AutoScaleDimensions = new SizeF(11F, 23F);
@@ -453,6 +495,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ResumeLayout(false);
         }
 
@@ -486,5 +530,8 @@
         private Panel panel2;
         private Button btnEdit;
         private PictureBox pictureBox4;
+        private Panel panel3;
+        private Button btnEditBuilding;
+        private PictureBox pictureBox5;
     }
 }

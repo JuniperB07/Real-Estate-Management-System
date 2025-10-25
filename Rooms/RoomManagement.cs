@@ -115,5 +115,14 @@ namespace Real_Estate_Management_System.Rooms
             ResetRoomsPanel();
             RefreshRoomsList();
         }
+
+        private void btnEditBuilding_Click(object sender, EventArgs e)
+        {
+            if (!(RMHelper.BuildingID > 0))
+                return;
+
+            EditBuilding EB = new EditBuilding();
+            EB.ShowDialog();
+        }
     }
 }
