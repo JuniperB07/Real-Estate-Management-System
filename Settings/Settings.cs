@@ -21,5 +21,18 @@ namespace Real_Estate_Management_System.Settings
         {
 
         }
+
+        private void tsmiBilling_Utilities_Water_Click(object sender, EventArgs e)
+        {
+            Billing.WaterUtilitySettings WUS = new Billing.WaterUtilitySettings();
+            WUS.MdiParent = this;
+            WUS.Show();
+        }
+
+        private void Settings_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+        }
     }
 }

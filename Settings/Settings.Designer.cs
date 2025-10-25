@@ -30,23 +30,23 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Settings));
             mnuMenu = new MenuStrip();
-            billingToolStripMenuItem = new ToolStripMenuItem();
-            utilitiesToolStripMenuItem = new ToolStripMenuItem();
-            waterToolStripMenuItem = new ToolStripMenuItem();
-            electricityToolStripMenuItem = new ToolStripMenuItem();
-            dueDatesToolStripMenuItem = new ToolStripMenuItem();
-            utilitiesToolStripMenuItem1 = new ToolStripMenuItem();
-            rentalToolStripMenuItem = new ToolStripMenuItem();
-            internetToolStripMenuItem = new ToolStripMenuItem();
-            invoiceToolStripMenuItem = new ToolStripMenuItem();
-            invoiceNumberPrefixToolStripMenuItem = new ToolStripMenuItem();
-            pDFExportPathToolStripMenuItem = new ToolStripMenuItem();
-            businessInformationToolStripMenuItem = new ToolStripMenuItem();
-            contactInformationToolStripMenuItem = new ToolStripMenuItem();
-            bIRInformationToolStripMenuItem = new ToolStripMenuItem();
-            tenantsToolStripMenuItem = new ToolStripMenuItem();
-            newUserAccountToolStripMenuItem = new ToolStripMenuItem();
-            editUserAccountToolStripMenuItem = new ToolStripMenuItem();
+            tsmiBilling = new ToolStripMenuItem();
+            tsmiBilling_Utilities = new ToolStripMenuItem();
+            tsmiBilling_Utilities_Water = new ToolStripMenuItem();
+            tsmiBilling_Utilities_Electricity = new ToolStripMenuItem();
+            tsmiBilling_DueDates = new ToolStripMenuItem();
+            tsmiBilling_DueDates_Utilities = new ToolStripMenuItem();
+            tsmiBilling_DueDates_Rental = new ToolStripMenuItem();
+            tsmiBilling_DueDates_Internet = new ToolStripMenuItem();
+            tsmiBilling_Invoice = new ToolStripMenuItem();
+            tsmiBilling_Invoice_InvoiceNumberPrefix = new ToolStripMenuItem();
+            tsmiBilling_Invoice_PDFExportPath = new ToolStripMenuItem();
+            tsmiBilling_Invoice_BusinessInformation = new ToolStripMenuItem();
+            tsmiBilling_Invoice_ContactInformation = new ToolStripMenuItem();
+            tsmiBilling_Invoice_BIRInformation = new ToolStripMenuItem();
+            tsmiAccounts = new ToolStripMenuItem();
+            tsmiAccounts_NewUserAccount = new ToolStripMenuItem();
+            tsmiAccounts_EditUserAccount = new ToolStripMenuItem();
             mnuMenu.SuspendLayout();
             SuspendLayout();
             // 
@@ -54,119 +54,120 @@
             // 
             mnuMenu.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             mnuMenu.ImageScalingSize = new Size(20, 20);
-            mnuMenu.Items.AddRange(new ToolStripItem[] { billingToolStripMenuItem, tenantsToolStripMenuItem });
+            mnuMenu.Items.AddRange(new ToolStripItem[] { tsmiBilling, tsmiAccounts });
             mnuMenu.Location = new Point(0, 0);
             mnuMenu.Name = "mnuMenu";
             mnuMenu.Size = new Size(1163, 27);
             mnuMenu.TabIndex = 1;
             mnuMenu.Text = "menuStrip1";
             // 
-            // billingToolStripMenuItem
+            // tsmiBilling
             // 
-            billingToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { utilitiesToolStripMenuItem, dueDatesToolStripMenuItem, invoiceToolStripMenuItem });
-            billingToolStripMenuItem.Name = "billingToolStripMenuItem";
-            billingToolStripMenuItem.Size = new Size(66, 23);
-            billingToolStripMenuItem.Text = "Billing";
+            tsmiBilling.DropDownItems.AddRange(new ToolStripItem[] { tsmiBilling_Utilities, tsmiBilling_DueDates, tsmiBilling_Invoice });
+            tsmiBilling.Name = "tsmiBilling";
+            tsmiBilling.Size = new Size(66, 23);
+            tsmiBilling.Text = "Billing";
             // 
-            // utilitiesToolStripMenuItem
+            // tsmiBilling_Utilities
             // 
-            utilitiesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { waterToolStripMenuItem, electricityToolStripMenuItem });
-            utilitiesToolStripMenuItem.Name = "utilitiesToolStripMenuItem";
-            utilitiesToolStripMenuItem.Size = new Size(224, 26);
-            utilitiesToolStripMenuItem.Text = "Utilities";
+            tsmiBilling_Utilities.DropDownItems.AddRange(new ToolStripItem[] { tsmiBilling_Utilities_Water, tsmiBilling_Utilities_Electricity });
+            tsmiBilling_Utilities.Name = "tsmiBilling_Utilities";
+            tsmiBilling_Utilities.Size = new Size(169, 26);
+            tsmiBilling_Utilities.Text = "Utilities";
             // 
-            // waterToolStripMenuItem
+            // tsmiBilling_Utilities_Water
             // 
-            waterToolStripMenuItem.Name = "waterToolStripMenuItem";
-            waterToolStripMenuItem.Size = new Size(224, 26);
-            waterToolStripMenuItem.Text = "Water";
+            tsmiBilling_Utilities_Water.Name = "tsmiBilling_Utilities_Water";
+            tsmiBilling_Utilities_Water.Size = new Size(164, 26);
+            tsmiBilling_Utilities_Water.Text = "Water";
+            tsmiBilling_Utilities_Water.Click += tsmiBilling_Utilities_Water_Click;
             // 
-            // electricityToolStripMenuItem
+            // tsmiBilling_Utilities_Electricity
             // 
-            electricityToolStripMenuItem.Name = "electricityToolStripMenuItem";
-            electricityToolStripMenuItem.Size = new Size(224, 26);
-            electricityToolStripMenuItem.Text = "Electricity";
+            tsmiBilling_Utilities_Electricity.Name = "tsmiBilling_Utilities_Electricity";
+            tsmiBilling_Utilities_Electricity.Size = new Size(164, 26);
+            tsmiBilling_Utilities_Electricity.Text = "Electricity";
             // 
-            // dueDatesToolStripMenuItem
+            // tsmiBilling_DueDates
             // 
-            dueDatesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { utilitiesToolStripMenuItem1, rentalToolStripMenuItem, internetToolStripMenuItem });
-            dueDatesToolStripMenuItem.Name = "dueDatesToolStripMenuItem";
-            dueDatesToolStripMenuItem.Size = new Size(224, 26);
-            dueDatesToolStripMenuItem.Text = "Due Dates";
+            tsmiBilling_DueDates.DropDownItems.AddRange(new ToolStripItem[] { tsmiBilling_DueDates_Utilities, tsmiBilling_DueDates_Rental, tsmiBilling_DueDates_Internet });
+            tsmiBilling_DueDates.Name = "tsmiBilling_DueDates";
+            tsmiBilling_DueDates.Size = new Size(169, 26);
+            tsmiBilling_DueDates.Text = "Due Dates";
             // 
-            // utilitiesToolStripMenuItem1
+            // tsmiBilling_DueDates_Utilities
             // 
-            utilitiesToolStripMenuItem1.Name = "utilitiesToolStripMenuItem1";
-            utilitiesToolStripMenuItem1.Size = new Size(224, 26);
-            utilitiesToolStripMenuItem1.Text = "Utilities";
+            tsmiBilling_DueDates_Utilities.Name = "tsmiBilling_DueDates_Utilities";
+            tsmiBilling_DueDates_Utilities.Size = new Size(147, 26);
+            tsmiBilling_DueDates_Utilities.Text = "Utilities";
             // 
-            // rentalToolStripMenuItem
+            // tsmiBilling_DueDates_Rental
             // 
-            rentalToolStripMenuItem.Name = "rentalToolStripMenuItem";
-            rentalToolStripMenuItem.Size = new Size(224, 26);
-            rentalToolStripMenuItem.Text = "Rental";
+            tsmiBilling_DueDates_Rental.Name = "tsmiBilling_DueDates_Rental";
+            tsmiBilling_DueDates_Rental.Size = new Size(147, 26);
+            tsmiBilling_DueDates_Rental.Text = "Rental";
             // 
-            // internetToolStripMenuItem
+            // tsmiBilling_DueDates_Internet
             // 
-            internetToolStripMenuItem.Name = "internetToolStripMenuItem";
-            internetToolStripMenuItem.Size = new Size(224, 26);
-            internetToolStripMenuItem.Text = "Internet";
+            tsmiBilling_DueDates_Internet.Name = "tsmiBilling_DueDates_Internet";
+            tsmiBilling_DueDates_Internet.Size = new Size(147, 26);
+            tsmiBilling_DueDates_Internet.Text = "Internet";
             // 
-            // invoiceToolStripMenuItem
+            // tsmiBilling_Invoice
             // 
-            invoiceToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { invoiceNumberPrefixToolStripMenuItem, pDFExportPathToolStripMenuItem, businessInformationToolStripMenuItem, contactInformationToolStripMenuItem, bIRInformationToolStripMenuItem });
-            invoiceToolStripMenuItem.Name = "invoiceToolStripMenuItem";
-            invoiceToolStripMenuItem.Size = new Size(224, 26);
-            invoiceToolStripMenuItem.Text = "Invoice";
+            tsmiBilling_Invoice.DropDownItems.AddRange(new ToolStripItem[] { tsmiBilling_Invoice_InvoiceNumberPrefix, tsmiBilling_Invoice_PDFExportPath, tsmiBilling_Invoice_BusinessInformation, tsmiBilling_Invoice_ContactInformation, tsmiBilling_Invoice_BIRInformation });
+            tsmiBilling_Invoice.Name = "tsmiBilling_Invoice";
+            tsmiBilling_Invoice.Size = new Size(169, 26);
+            tsmiBilling_Invoice.Text = "Invoice";
             // 
-            // invoiceNumberPrefixToolStripMenuItem
+            // tsmiBilling_Invoice_InvoiceNumberPrefix
             // 
-            invoiceNumberPrefixToolStripMenuItem.Name = "invoiceNumberPrefixToolStripMenuItem";
-            invoiceNumberPrefixToolStripMenuItem.Size = new Size(253, 26);
-            invoiceNumberPrefixToolStripMenuItem.Text = "Invoice Number Prefix";
+            tsmiBilling_Invoice_InvoiceNumberPrefix.Name = "tsmiBilling_Invoice_InvoiceNumberPrefix";
+            tsmiBilling_Invoice_InvoiceNumberPrefix.Size = new Size(253, 26);
+            tsmiBilling_Invoice_InvoiceNumberPrefix.Text = "Invoice Number Prefix";
             // 
-            // pDFExportPathToolStripMenuItem
+            // tsmiBilling_Invoice_PDFExportPath
             // 
-            pDFExportPathToolStripMenuItem.Name = "pDFExportPathToolStripMenuItem";
-            pDFExportPathToolStripMenuItem.Size = new Size(253, 26);
-            pDFExportPathToolStripMenuItem.Text = "PDF Export Path";
+            tsmiBilling_Invoice_PDFExportPath.Name = "tsmiBilling_Invoice_PDFExportPath";
+            tsmiBilling_Invoice_PDFExportPath.Size = new Size(253, 26);
+            tsmiBilling_Invoice_PDFExportPath.Text = "PDF Export Path";
             // 
-            // businessInformationToolStripMenuItem
+            // tsmiBilling_Invoice_BusinessInformation
             // 
-            businessInformationToolStripMenuItem.Name = "businessInformationToolStripMenuItem";
-            businessInformationToolStripMenuItem.Size = new Size(253, 26);
-            businessInformationToolStripMenuItem.Text = "Business Information";
+            tsmiBilling_Invoice_BusinessInformation.Name = "tsmiBilling_Invoice_BusinessInformation";
+            tsmiBilling_Invoice_BusinessInformation.Size = new Size(253, 26);
+            tsmiBilling_Invoice_BusinessInformation.Text = "Business Information";
             // 
-            // contactInformationToolStripMenuItem
+            // tsmiBilling_Invoice_ContactInformation
             // 
-            contactInformationToolStripMenuItem.Name = "contactInformationToolStripMenuItem";
-            contactInformationToolStripMenuItem.Size = new Size(253, 26);
-            contactInformationToolStripMenuItem.Text = "Contact Information";
+            tsmiBilling_Invoice_ContactInformation.Name = "tsmiBilling_Invoice_ContactInformation";
+            tsmiBilling_Invoice_ContactInformation.Size = new Size(253, 26);
+            tsmiBilling_Invoice_ContactInformation.Text = "Contact Information";
             // 
-            // bIRInformationToolStripMenuItem
+            // tsmiBilling_Invoice_BIRInformation
             // 
-            bIRInformationToolStripMenuItem.Name = "bIRInformationToolStripMenuItem";
-            bIRInformationToolStripMenuItem.Size = new Size(253, 26);
-            bIRInformationToolStripMenuItem.Text = "BIR Information";
+            tsmiBilling_Invoice_BIRInformation.Name = "tsmiBilling_Invoice_BIRInformation";
+            tsmiBilling_Invoice_BIRInformation.Size = new Size(253, 26);
+            tsmiBilling_Invoice_BIRInformation.Text = "BIR Information";
             // 
-            // tenantsToolStripMenuItem
+            // tsmiAccounts
             // 
-            tenantsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { newUserAccountToolStripMenuItem, editUserAccountToolStripMenuItem });
-            tenantsToolStripMenuItem.Name = "tenantsToolStripMenuItem";
-            tenantsToolStripMenuItem.Size = new Size(91, 23);
-            tenantsToolStripMenuItem.Text = "Accounts";
+            tsmiAccounts.DropDownItems.AddRange(new ToolStripItem[] { tsmiAccounts_NewUserAccount, tsmiAccounts_EditUserAccount });
+            tsmiAccounts.Name = "tsmiAccounts";
+            tsmiAccounts.Size = new Size(91, 23);
+            tsmiAccounts.Text = "Accounts";
             // 
-            // newUserAccountToolStripMenuItem
+            // tsmiAccounts_NewUserAccount
             // 
-            newUserAccountToolStripMenuItem.Name = "newUserAccountToolStripMenuItem";
-            newUserAccountToolStripMenuItem.Size = new Size(226, 26);
-            newUserAccountToolStripMenuItem.Text = "New User Account";
+            tsmiAccounts_NewUserAccount.Name = "tsmiAccounts_NewUserAccount";
+            tsmiAccounts_NewUserAccount.Size = new Size(226, 26);
+            tsmiAccounts_NewUserAccount.Text = "New User Account";
             // 
-            // editUserAccountToolStripMenuItem
+            // tsmiAccounts_EditUserAccount
             // 
-            editUserAccountToolStripMenuItem.Name = "editUserAccountToolStripMenuItem";
-            editUserAccountToolStripMenuItem.Size = new Size(226, 26);
-            editUserAccountToolStripMenuItem.Text = "Edit User Account";
+            tsmiAccounts_EditUserAccount.Name = "tsmiAccounts_EditUserAccount";
+            tsmiAccounts_EditUserAccount.Size = new Size(226, 26);
+            tsmiAccounts_EditUserAccount.Text = "Edit User Account";
             // 
             // Settings
             // 
@@ -177,16 +178,14 @@
             Controls.Add(mnuMenu);
             Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ForeColor = Color.FromArgb(0, 70, 67);
-            FormBorderStyle = FormBorderStyle.FixedDialog;
             Icon = (Icon)resources.GetObject("$this.Icon");
             IsMdiContainer = true;
             MainMenuStrip = mnuMenu;
             Margin = new Padding(4, 3, 4, 3);
-            MaximizeBox = false;
             Name = "Settings";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Settings";
-            WindowState = FormWindowState.Maximized;
+            FormClosing += Settings_FormClosing;
             Load += Settings_Load;
             mnuMenu.ResumeLayout(false);
             mnuMenu.PerformLayout();
@@ -197,22 +196,22 @@
         #endregion
 
         private MenuStrip mnuMenu;
-        private ToolStripMenuItem billingToolStripMenuItem;
-        private ToolStripMenuItem utilitiesToolStripMenuItem;
-        private ToolStripMenuItem waterToolStripMenuItem;
-        private ToolStripMenuItem electricityToolStripMenuItem;
-        private ToolStripMenuItem dueDatesToolStripMenuItem;
-        private ToolStripMenuItem utilitiesToolStripMenuItem1;
-        private ToolStripMenuItem rentalToolStripMenuItem;
-        private ToolStripMenuItem internetToolStripMenuItem;
-        private ToolStripMenuItem invoiceToolStripMenuItem;
-        private ToolStripMenuItem invoiceNumberPrefixToolStripMenuItem;
-        private ToolStripMenuItem pDFExportPathToolStripMenuItem;
-        private ToolStripMenuItem businessInformationToolStripMenuItem;
-        private ToolStripMenuItem contactInformationToolStripMenuItem;
-        private ToolStripMenuItem bIRInformationToolStripMenuItem;
-        private ToolStripMenuItem tenantsToolStripMenuItem;
-        private ToolStripMenuItem newUserAccountToolStripMenuItem;
-        private ToolStripMenuItem editUserAccountToolStripMenuItem;
+        private ToolStripMenuItem tsmiBilling;
+        private ToolStripMenuItem tsmiBilling_Utilities;
+        private ToolStripMenuItem tsmiBilling_Utilities_Water;
+        private ToolStripMenuItem tsmiBilling_Utilities_Electricity;
+        private ToolStripMenuItem tsmiBilling_DueDates;
+        private ToolStripMenuItem tsmiBilling_DueDates_Utilities;
+        private ToolStripMenuItem tsmiBilling_DueDates_Rental;
+        private ToolStripMenuItem tsmiBilling_DueDates_Internet;
+        private ToolStripMenuItem tsmiBilling_Invoice;
+        private ToolStripMenuItem tsmiBilling_Invoice_InvoiceNumberPrefix;
+        private ToolStripMenuItem tsmiBilling_Invoice_PDFExportPath;
+        private ToolStripMenuItem tsmiBilling_Invoice_BusinessInformation;
+        private ToolStripMenuItem tsmiBilling_Invoice_ContactInformation;
+        private ToolStripMenuItem tsmiBilling_Invoice_BIRInformation;
+        private ToolStripMenuItem tsmiAccounts;
+        private ToolStripMenuItem tsmiAccounts_NewUserAccount;
+        private ToolStripMenuItem tsmiAccounts_EditUserAccount;
     }
 }
