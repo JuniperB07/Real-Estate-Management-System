@@ -13,12 +13,16 @@ using Real_Estate_Management_System.Dialogs;
 using Real_Estate_Management_System.Billing;
 using Real_Estate_Management_System.Login;
 using Real_Estate_Management_System.Payments;
+using System.ComponentModel.Design;
 
 namespace Real_Estate_Management_System
 {
     public partial class Dashboard : Form
     {
         private const string SUMMARY_HEADER = "SUMMARY FOR THE MONTH OF ";
+        DateTime Month_FirstDay;
+        DateTime Month_LastDay;
+        double Revenue, Expenses, Profit;
 
         public Dashboard()
         {
@@ -42,7 +46,8 @@ namespace Real_Estate_Management_System
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-            lblSummaryHeader.Text = SUMMARY_HEADER + DateTime.Now.ToString("MMMM yyyy").ToUpper();
+            ResetDashboard();
+            RefreshAllPanels();
         }
 
         private void tmrClock_Tick(object sender, EventArgs e)

@@ -190,6 +190,10 @@
 		<Compile Update="Billing\BillPreview.Methods.cs">
 			<DependentUpon>BillPreview.cs</DependentUpon>
 		</Compile>
+
+		<Compile Update="Dashboard\Dashboard.Methods.cs">
+			<DependentUpon>Dashboard.cs</DependentUpon>
+		</Compile>
 	</ItemGroup>
 
 	<ItemGroup>
