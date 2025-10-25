@@ -52,6 +52,5 @@ public enum InvoiceEnums
      prmPG3_InternetSubscriptionCharge,
      prmPG3_InternetDeductions,
      prmPG3_InternetCurrentCharge,
-     prmPG4_TotalUtilitiesCharge,
-     prmPG4_OtherAdditionalCharges
+     prmPG4_TotalUtilitiesCharge
 }

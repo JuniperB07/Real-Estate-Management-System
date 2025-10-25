@@ -2347,7 +2347,7 @@ namespace Real_Estate_Management_System.Billing
                     .StartWhere
                         .Where(tbwaterinvoice.InvoiceNumber, SQLOperator.Equal, "@InvNum")
                     .EndWhere
-                    .ExecuteReader(Internals.DBC, new ParametersMetadata("@InvNum", BHelper.InvoiceNumber));
+                    .ExecuteReader(Internals.DBC, new ParametersMetadata("@InvNum", PreviousInvoiceNumber));
                 if (Internals.DBC.HasRows)
                     return Convert.ToDouble(Internals.DBC.Values[0]);
                 Internals.DBC.CloseReader();
@@ -2370,7 +2370,7 @@ namespace Real_Estate_Management_System.Billing
                         .Where(tbinvoicepayments.InvoiceNumber, SQLOperator.Equal, "@InvNum")
                         .And(tbinvoicepayments.InvoiceType, SQLOperator.Equal, "'" + InvoiceTypes.WATER.ToString() + "'")
                     .EndWhere
-                    .ExecuteReader(Internals.DBC, new ParametersMetadata("@InvNum", BHelper.InvoiceNumber));
+                    .ExecuteReader(Internals.DBC, new ParametersMetadata("@InvNum", PreviousInvoiceNumber));
                 if (Internals.DBC.HasRows)
                     foreach (string ap in Internals.DBC.Values)
                         WPR += Convert.ToDouble(ap);
@@ -2391,7 +2391,7 @@ namespace Real_Estate_Management_System.Billing
                     .StartWhere
                         .Where(tbwaterinvoice.InvoiceNumber, SQLOperator.Equal, "@InvNum")
                     .EndWhere
-                    .ExecuteReader(Internals.DBC, new ParametersMetadata("@InvNum", BHelper.InvoiceNumber));
+                    .ExecuteReader(Internals.DBC, new ParametersMetadata("@InvNum", PreviousInvoiceNumber));
                 if (Internals.DBC.HasRows)
                     return Convert.ToDouble(Internals.DBC.Values[0]);
                 Internals.DBC.CloseReader();
@@ -2631,5 +2631,305 @@ namespace Real_Estate_Management_System.Billing
                 return Convert.ToDouble(Internals.DBC.Values[0]);
             }
         }
+    }
+
+    internal static class InvoicePage3
+    {
+        private static int TenantID
+        {
+            get
+            {
+                new SelectCommand<tbinvoices>()
+                    .Select(tbinvoices.TenantID)
+                    .From
+                    .StartWhere
+                        .Where(tbinvoices.InvoiceNumber, SQLOperator.Equal, "'" + BHelper.InvoiceNumber + "'")
+                    .EndWhere
+                    .ExecuteReader(Internals.DBC);
+                return Convert.ToInt32(Internals.DBC.Values[0]);
+            }
+        }
+        private static string PreviousInvoiceNumber
+        {
+            get
+            {
+                DateTime prevMonthDay1 = new DateTime(InvoicePage1.InvoiceDate.AddMonths(-1).Year, InvoicePage1.InvoiceDate.AddMonths(-1).Month, 1);
+                DateTime prevMonthLastDay = new DateTime(prevMonthDay1.Year, prevMonthDay1.Month, DateTime.DaysInMonth(prevMonthDay1.Year, prevMonthDay1.Month));
+
+                new SelectCommand<tbinvoices>()
+                    .Select(tbinvoices.InvoiceNumber)
+                    .From
+                    .StartWhere
+                        .Where(tbinvoices.TenantID, SQLOperator.Equal, TenantID.ToString())
+                        .And()
+                        .Between(tbinvoices.InvoiceDate, prevMonthDay1.ToString("yyyy-MM-dd"), prevMonthLastDay.ToString("yyyy-MM-dd"))
+                    .EndWhere
+                    .ExecuteReader(Internals.DBC);
+                if (Internals.DBC.HasRows)
+                    return Internals.DBC.Values[0];
+                Internals.DBC.CloseReader();
+                return "";
+            }
+        }
+
+        internal static double RentalPreviousBalance
+        {
+            get
+            {
+                if (string.IsNullOrWhiteSpace(PreviousInvoiceNumber))
+                    return 0;
+
+                new SelectCommand<tbrentalinvoice>()
+                    .Select(tbrentalinvoice.Subtotal)
+                    .From
+                    .StartWhere
+                        .Where(tbrentalinvoice.InvoiceNumber, SQLOperator.Equal, "@PrevInvNum")
+                    .EndWhere
+                    .ExecuteReader(Internals.DBC, new ParametersMetadata("@PrevInvNum", PreviousInvoiceNumber));
+                if (Internals.DBC.HasRows)
+                    return Convert.ToDouble(Internals.DBC.Values[0]);
+                Internals.DBC.CloseReader();
+                return 0;
+            }
+        }
+        internal static double RentalPaymentsReceived
+        {
+            get
+            {
+                double RPR = 0;
+
+                if (string.IsNullOrWhiteSpace(PreviousInvoiceNumber))
+                    return RPR;
+
+                new SelectCommand<tbinvoicepayments>()
+                    .Select(tbinvoicepayments.AmountPaid)
+                    .From
+                    .StartWhere
+                        .Where(tbinvoicepayments.InvoiceNumber, SQLOperator.Equal, "@PrevInvNum")
+                        .And(tbinvoicepayments.InvoiceType, SQLOperator.Equal, "'" + InvoiceTypes.RENTAL.ToString() + "'")
+                    .EndWhere
+                    .ExecuteReader(Internals.DBC, new ParametersMetadata("@PrevInvNum", PreviousInvoiceNumber));
+                if (Internals.DBC.HasRows)
+                    foreach (string ap in Internals.DBC.Values)
+                        RPR += Convert.ToDouble(ap);
+                Internals.DBC.CloseReader();
+                return RPR;
+            }
+        }
+        internal static double RentalRemainingBalance
+        {
+            get
+            {
+                if (string.IsNullOrWhiteSpace(PreviousInvoiceNumber))
+                    return 0;
+
+                new SelectCommand<tbrentalinvoice>()
+                    .Select(tbrentalinvoice.BillBalance)
+                    .From
+                    .StartWhere
+                        .Where(tbrentalinvoice.InvoiceNumber, SQLOperator.Equal, "@PrevInvNum")
+                    .EndWhere
+                    .ExecuteReader(Internals.DBC, new ParametersMetadata("@PrevInvNum", PreviousInvoiceNumber));
+                if (Internals.DBC.HasRows)
+                    return Convert.ToDouble(Internals.DBC.Values[0]);
+                Internals.DBC.CloseReader();
+                return 0;
+            }
+        }
+        internal static double RentalMonthlyRent
+        {
+            get
+            {
+                new SelectCommand<tbrentalinvoice>()
+                    .Select(tbrentalinvoice.MonthlyRent)
+                    .From
+                    .StartWhere
+                        .Where(tbrentalinvoice.InvoiceNumber, SQLOperator.Equal, "@InvNum")
+                    .EndWhere
+                    .ExecuteReader(Internals.DBC, new ParametersMetadata("@InvNum", BHelper.InvoiceNumber));
+                return Convert.ToDouble(Internals.DBC.Values[0]);
+            }
+        }
+        internal static double RentalDeductions
+        {
+            get
+            {
+                new SelectCommand<tbrentalinvoice>()
+                    .Select(tbrentalinvoice.Deductions)
+                    .From
+                    .StartWhere
+                        .Where(tbrentalinvoice.InvoiceNumber, SQLOperator.Equal, "@InvNum")
+                    .EndWhere
+                    .ExecuteReader(Internals.DBC, new ParametersMetadata("@InvNum", BHelper.InvoiceNumber));
+                return Convert.ToDouble(Internals.DBC.Values[0]);
+            }
+        }
+        internal static double RentalCurrentCharges
+        {
+            get
+            {
+                new SelectCommand<tbrentalinvoice>()
+                    .Select(tbrentalinvoice.Subtotal)
+                    .From
+                    .StartWhere
+                        .Where(tbrentalinvoice.InvoiceNumber, SQLOperator.Equal, "@InvNum")
+                    .EndWhere
+                    .ExecuteReader(Internals.DBC, new ParametersMetadata("@InvNum", BHelper.InvoiceNumber));
+                return Convert.ToDouble(Internals.DBC.Values[0]);
+            }
+        }
+
+        internal static double InternetPreviousBalance
+        {
+            get
+            {
+                if (string.IsNullOrWhiteSpace(PreviousInvoiceNumber))
+                    return 0;
+
+                new SelectCommand<tbinternetinvoice>()
+                    .Select(tbinternetinvoice.Subtotal)
+                    .From
+                    .StartWhere
+                        .Where(tbinternetinvoice.InvoiceNumber, SQLOperator.Equal, "@PrevInvNum")
+                    .EndWhere
+                    .ExecuteReader(Internals.DBC, new ParametersMetadata("@PrevInvNum", PreviousInvoiceNumber));
+                if (Internals.DBC.HasRows)
+                    return Convert.ToDouble(Internals.DBC.Values[0]);
+                Internals.DBC.CloseReader();
+                return 0;
+            }
+        }
+        internal static double InternetPaymentsReceived
+        {
+            get
+            {
+                double IPR = 0;
+
+                if (string.IsNullOrWhiteSpace(PreviousInvoiceNumber))
+                    return IPR;
+
+                new SelectCommand<tbinvoicepayments>()
+                    .Select(tbinvoicepayments.AmountPaid)
+                    .From
+                    .StartWhere
+                        .Where(tbinvoicepayments.InvoiceNumber, SQLOperator.Equal, "@PrevInvNum")
+                        .And(tbinvoicepayments.InvoiceType, SQLOperator.Equal, "'" + InvoiceTypes.INTERNET.ToString() + "'")
+                    .EndWhere
+                    .ExecuteReader(Internals.DBC, new ParametersMetadata("@PrevInvNum", PreviousInvoiceNumber));
+                if (Internals.DBC.HasRows)
+                    foreach (string ap in Internals.DBC.Values)
+                        IPR += Convert.ToDouble(ap);
+                Internals.DBC.CloseReader();
+                return IPR;
+            }
+        }
+        internal static double InternetRemainingBalance
+        {
+            get
+            {
+                if (string.IsNullOrWhiteSpace(PreviousInvoiceNumber))
+                    return 0;
+
+                new SelectCommand<tbinternetinvoice>()
+                    .Select(tbinternetinvoice.BillBalance)
+                    .From
+                    .StartWhere
+                        .Where(tbinternetinvoice.InvoiceNumber, SQLOperator.Equal, "@PrevInvNum")
+                    .EndWhere
+                    .ExecuteReader(Internals.DBC, new ParametersMetadata("@PrevInvNum", PreviousInvoiceNumber));
+                if (Internals.DBC.HasRows)
+                    return Convert.ToDouble(Internals.DBC.Values[0]);
+                Internals.DBC.CloseReader();
+                return 0;
+            }
+        }
+        internal static string InternetPlanAvailed
+        {
+            get
+            {
+                new SelectCommand<tbinternetinvoice>()
+                    .Select(tbinternetinvoice.PlanName)
+                    .From
+                    .StartWhere
+                        .Where(tbinternetinvoice.InvoiceNumber, SQLOperator.Equal, "@InvNum")
+                    .EndWhere
+                    .ExecuteReader(Internals.DBC, new ParametersMetadata("@InvNum", BHelper.InvoiceNumber));
+                return Internals.DBC.Values[0];
+            }
+        }
+        internal static double InternetSubscriptionCharge
+        {
+            get
+            {
+                new SelectCommand<tbinternetinvoice>()
+                    .Select(tbinternetinvoice.SubscriptionFee)
+                    .From
+                    .StartWhere
+                        .Where(tbinternetinvoice.InvoiceNumber, SQLOperator.Equal, "@InvNum")
+                    .EndWhere
+                    .ExecuteReader(Internals.DBC, new ParametersMetadata("@InvNum", BHelper.InvoiceNumber));
+                return Convert.ToDouble(Internals.DBC.Values[0]);
+            }
+        }
+        internal static double InternetDeductions
+        {
+            get
+            {
+                new SelectCommand<tbinternetinvoice>()
+                    .Select(tbinternetinvoice.Deductions)
+                    .From
+                    .StartWhere
+                        .Where(tbinternetinvoice.InvoiceNumber, SQLOperator.Equal, "@InvNum")
+                    .EndWhere
+                    .ExecuteReader(Internals.DBC, new ParametersMetadata("@InvNum", BHelper.InvoiceNumber));
+                return Convert.ToDouble(Internals.DBC.Values[0]);
+            }
+        }
+        internal static double InternetCurrentCharges
+        {
+            get
+            {
+                new SelectCommand<tbinternetinvoice>()
+                    .Select(tbinternetinvoice.Subtotal)
+                    .From
+                    .StartWhere
+                        .Where(tbinternetinvoice.InvoiceNumber, SQLOperator.Equal, "@InvNum")
+                    .EndWhere
+                    .ExecuteReader(Internals.DBC, new ParametersMetadata("@InvNum", BHelper.InvoiceNumber));
+                return Convert.ToDouble(Internals.DBC.Values[0]);
+            }
+        }
+    }
+
+    internal static class InvoicePage4
+    {
+        internal static double TotalUtilitiesCharges
+        {
+            get
+            {
+                double TUC = 0;
+
+                new SelectCommand<tbwaterinvoice>()
+                    .Select(tbwaterinvoice.Subtotal)
+                    .From
+                    .StartWhere
+                        .Where(tbwaterinvoice.InvoiceNumber, SQLOperator.Equal, "@InvNum")
+                    .EndWhere
+                    .ExecuteReader(Internals.DBC, new ParametersMetadata("@InvNum", BHelper.InvoiceNumber));
+                TUC += Convert.ToDouble(Internals.DBC.Values[0]);
+
+                new SelectCommand<tbelectricityinvoice>()
+                    .Select(tbelectricityinvoice.Subtotal)
+                    .From
+                    .StartWhere
+                        .Where(tbelectricityinvoice.InvoiceNumber, SQLOperator.Equal, "@InvNum")
+                    .EndWhere
+                    .ExecuteReader(Internals.DBC, new ParametersMetadata("@InvNum", BHelper.InvoiceNumber));
+                TUC += Convert.ToDouble(Internals.DBC.Values[0]);
+
+                return TUC;
+            }
+        }
+
     }
 }

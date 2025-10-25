@@ -5064,67 +5064,6 @@
                   </Border>
                 </Style>
               </Line>
-              <Textbox Name="Textbox178">
-                <CanGrow>true</CanGrow>
-                <KeepTogether>true</KeepTogether>
-                <Paragraphs>
-                  <Paragraph>
-                    <TextRuns>
-                      <TextRun>
-                        <Value>Details of Other Additional Charges:</Value>
-                        <Style>
-                          <FontWeight>Bold</FontWeight>
-                        </Style>
-                      </TextRun>
-                    </TextRuns>
-                    <Style />
-                  </Paragraph>
-                </Paragraphs>
-                <rd:DefaultName>Textbox176</rd:DefaultName>
-                <Top>3.61391in</Top>
-                <Height>0.23333in</Height>
-                <Width>2.70004in</Width>
-                <ZIndex>16</ZIndex>
-                <Style>
-                  <Border>
-                    <Style>None</Style>
-                  </Border>
-                  <PaddingLeft>2pt</PaddingLeft>
-                  <PaddingRight>2pt</PaddingRight>
-                  <PaddingTop>2pt</PaddingTop>
-                  <PaddingBottom>2pt</PaddingBottom>
-                </Style>
-              </Textbox>
-              <Textbox Name="Textbox179">
-                <CanGrow>true</CanGrow>
-                <KeepTogether>true</KeepTogether>
-                <Paragraphs>
-                  <Paragraph>
-                    <TextRuns>
-                      <TextRun>
-                        <Value>=Parameters!prmPG4_OtherAdditionalCharges.Value</Value>
-                        <Style />
-                      </TextRun>
-                    </TextRuns>
-                    <Style />
-                  </Paragraph>
-                </Paragraphs>
-                <rd:DefaultName>Textbox176</rd:DefaultName>
-                <Top>3.91668in</Top>
-                <Left>0.95258cm</Left>
-                <Height>0.78333in</Height>
-                <Width>6.9861in</Width>
-                <ZIndex>17</ZIndex>
-                <Style>
-                  <Border>
-                    <Style>None</Style>
-                  </Border>
-                  <PaddingLeft>2pt</PaddingLeft>
-                  <PaddingRight>2pt</PaddingRight>
-                  <PaddingTop>2pt</PaddingTop>
-                  <PaddingBottom>2pt</PaddingBottom>
-                </Style>
-              </Textbox>
             </ReportItems>
             <PageBreak>
               <BreakLocation>Start</BreakLocation>
@@ -5132,7 +5071,7 @@
             <KeepTogether>true</KeepTogether>
             <Top>21.42445in</Top>
             <Left>0.37999in</Left>
-            <Height>4.875in</Height>
+            <Height>3.63333in</Height>
             <Width>7.47504in</Width>
             <ZIndex>4</ZIndex>
             <Style>
@@ -5142,7 +5081,7 @@
             </Style>
           </Rectangle>
         </ReportItems>
-        <Height>27.03in</Height>
+        <Height>25.38833in</Height>
         <Style />
       </Body>
       <Width>8.27in</Width>
@@ -5545,10 +5484,6 @@
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
-    <ReportParameter Name="prmPG4_OtherAdditionalCharges">
-      <DataType>String</DataType>
-      <Prompt>ReportParameter1</Prompt>
-    </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
@@ -5819,11 +5754,6 @@
           <ColumnIndex>1</ColumnIndex>
           <RowIndex>13</RowIndex>
           <ParameterName>prmPG4_TotalUtilitiesCharge</ParameterName>
-        </CellDefinition>
-        <CellDefinition>
-          <ColumnIndex>2</ColumnIndex>
-          <RowIndex>13</RowIndex>
-          <ParameterName>prmPG4_OtherAdditionalCharges</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>

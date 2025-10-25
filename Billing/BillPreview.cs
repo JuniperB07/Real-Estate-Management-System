@@ -35,6 +35,9 @@ namespace Real_Estate_Management_System.Billing
 
             FillInvoiceHeader();
             FillInvoicePage1();
+            FillInvoicePage2();
+            FillInvoicePage3();
+            FillInvoicePage4();
 
             rp = rpHeader
                 .Concat(rpPG1)
