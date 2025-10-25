@@ -2422,7 +2422,7 @@ namespace Real_Estate_Management_System.Billing
                     .StartWhere
                         .Where(tbwaterinvoice.InvoiceNumber, SQLOperator.Equal, "@InvNum")
                     .EndWhere
-                    .ExecuteReader(Internals.DBC);
+                    .ExecuteReader(Internals.DBC, new ParametersMetadata("@InvNum", BHelper.InvoiceNumber));
                 return Convert.ToDouble(Internals.DBC.Values[0]);
             }
         }
