@@ -74,7 +74,10 @@ namespace Real_Estate_Management_System
 
         private void btnSettings_Click(object sender, EventArgs e)
         {
-
+            Hide();
+            Settings.Settings S = new Settings.Settings();
+            S.ShowDialog();
+            Show();
         }
 
         private void Dashboard_FormClosing(object sender, FormClosingEventArgs e)

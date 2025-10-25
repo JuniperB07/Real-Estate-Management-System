@@ -10,4 +10,5 @@ public enum tbinvoicepayments
     AmountPaid,
     TransactionBalance,
     PaymentMethod,
+    Comments,
 }
