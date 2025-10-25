@@ -9,6 +9,7 @@ namespace Real_Estate_Management_System.Billing.Helper
     internal static class PreviewHelper
     {
         internal static PreviewHelperMode PreviewMode { get; set; }
+        internal static bool AllowProceed { get; set; }
     }
 
     internal enum PreviewHelperMode

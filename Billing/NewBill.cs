@@ -94,6 +94,12 @@ namespace Real_Estate_Management_System.Billing
 
         private void btnBillPreview_Click(object sender, EventArgs e)
         {
+            SelectInvoice SI = new SelectInvoice();
+            SI.ShowDialog();
+
+            if (!PreviewHelper.AllowProceed)
+                return;
+
             PreviewHelper.PreviewMode = PreviewHelperMode.Preview;
             BillPreview BP = new BillPreview();
             BP.ShowDialog();
