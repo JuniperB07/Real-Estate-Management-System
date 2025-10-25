@@ -2189,7 +2189,7 @@
                   <Paragraph>
                     <TextRuns>
                       <TextRun>
-                        <Value>Total Current Charges:</Value>
+                        <Value>Total Amount Due</Value>
                         <Style>
                           <FontSize>12pt</FontSize>
                           <FontWeight>Bold</FontWeight>
@@ -2951,7 +2951,7 @@
                   <Paragraph>
                     <TextRuns>
                       <TextRun>
-                        <Value>Total Current Charges:</Value>
+                        <Value>Total Amount Due</Value>
                         <Style>
                           <FontSize>12pt</FontSize>
                           <FontWeight>Bold</FontWeight>
