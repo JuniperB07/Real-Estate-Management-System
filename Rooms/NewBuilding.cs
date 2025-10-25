@@ -53,7 +53,7 @@ namespace Real_Estate_Management_System.Rooms
                 return;
             }
 
-            if(!string.IsNullOrWhiteSpace(txtRentalRate.Text) || !double.TryParse(txtRentalRate.Text, out _))
+            if(string.IsNullOrWhiteSpace(txtRentalRate.Text) || !double.TryParse(txtRentalRate.Text, out _))
             {
                 MBOK = new Dialogs.MSGBox_OK(this.Text, "Please enter a valid Rental Rate.", Dialogs.DialogIcons.Error);
                 MBOK.ShowDialog();
