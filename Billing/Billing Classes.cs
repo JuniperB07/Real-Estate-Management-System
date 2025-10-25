@@ -2436,7 +2436,7 @@ namespace Real_Estate_Management_System.Billing
                     .StartWhere
                         .Where(tbwaterinvoice.InvoiceNumber, SQLOperator.Equal, "@InvNum")
                     .EndWhere
-                    .ExecuteReader(Internals.DBC);
+                    .ExecuteReader(Internals.DBC, new ParametersMetadata("@InvNum", BHelper.InvoiceNumber));
                 return Internals.DBC.Values[0] + Configs.Utilities.UtilitiesConfig.Water_Unit;
             }
         }
