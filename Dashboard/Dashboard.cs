@@ -60,6 +60,7 @@ namespace Real_Estate_Management_System
             Hide();
             NewBill NB = new NewBill();
             NB.ShowDialog();
+            RefreshAllPanels();
             Show();
         }
 
@@ -87,6 +88,7 @@ namespace Real_Estate_Management_System
             Hide();
             PayBill PB = new PayBill();
             PB.ShowDialog();
+            RefreshAllPanels();
             Show();
         }
 
