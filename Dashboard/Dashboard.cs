@@ -95,7 +95,8 @@ namespace Real_Estate_Management_System
         private void btnTenants_Click(object sender, EventArgs e)
         {
             Tenants.Tenants T = new Tenants.Tenants();
-            T.Show();
+            T.ShowDialog();
+            RefreshAllPanels();
         }
 
         private void btnViewAllTenants_Click(object sender, EventArgs e)
@@ -106,19 +107,27 @@ namespace Real_Estate_Management_System
         private void btnRooms_Click(object sender, EventArgs e)
         {
             Rooms.RoomManagement RM = new Rooms.RoomManagement();
-            RM.Show();
+            RM.ShowDialog();
+            RefreshAllPanels();
         }
 
         private void btnInternetPlans_Click(object sender, EventArgs e)
         {
             Internet.InternetManagement IM = new Internet.InternetManagement();
-            IM.Show();
+            IM.ShowDialog();
+            RefreshAllPanels();
         }
 
         private void btnUtilities_Click(object sender, EventArgs e)
         {
             Utilities.Utilities U = new Utilities.Utilities();
-            U.Show();
+            U.ShowDialog();
+            RefreshAllPanels();
+        }
+
+        private void btnReports_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -354,6 +354,7 @@
             btnReports.Text = "REPORTS";
             btnReports.TextAlign = ContentAlignment.MiddleLeft;
             btnReports.UseVisualStyleBackColor = true;
+            btnReports.Click += btnReports_Click;
             // 
             // pictureBox9
             // 

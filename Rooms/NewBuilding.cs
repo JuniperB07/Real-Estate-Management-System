@@ -53,6 +53,13 @@ namespace Real_Estate_Management_System.Rooms
                 return;
             }
 
+            if(!string.IsNullOrWhiteSpace(txtRentalRate.Text) || !double.TryParse(txtRentalRate.Text, out _))
+            {
+                MBOK = new Dialogs.MSGBox_OK(this.Text, "Please enter a valid Rental Rate.", Dialogs.DialogIcons.Error);
+                MBOK.ShowDialog();
+                return;
+            }
+
             //Check if Building Name already in Database
             new SelectCommand<tbbuilding>()
                 .SelectAll.From
@@ -75,11 +82,15 @@ namespace Real_Estate_Management_System.Rooms
                 .Column(new tbbuilding[]
                 {
                     tbbuilding.BuildingName,
-                    tbbuilding.BuildingAddress })
+                    tbbuilding.BuildingAddress,
+                    tbbuilding.RentalRate
+                })
                 .Values(new ValuesMetadata[]
                 {
                     new ValuesMetadata(BuildingInfo.Name, DataTypes.NonNumeric),
-                    new ValuesMetadata(BuildingInfo.Address, DataTypes.NonNumeric) })
+                    new ValuesMetadata(BuildingInfo.Address, DataTypes.NonNumeric),
+                    new ValuesMetadata(txtRentalRate.Text, DataTypes.Numeric)
+                })
                 .ExecuteNonQuery(Internals.DBC);
 
             //---GET NEW BUILDING'S BUILDING ID---
