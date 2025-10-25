@@ -2294,4 +2294,96 @@ namespace Real_Estate_Management_System.Billing
             }
         }
     }
+
+    internal static class InvoicePage2
+    {
+        private static int TenantID
+        {
+            get
+            {
+                new SelectCommand<tbinvoices>()
+                    .Select(tbinvoices.TenantID)
+                    .From
+                    .StartWhere
+                        .Where(tbinvoices.InvoiceNumber, SQLOperator.Equal, "'" + BHelper.InvoiceNumber + "'")
+                    .EndWhere
+                    .ExecuteReader(Internals.DBC);
+                return Convert.ToInt32(Internals.DBC.Values[0]);
+            }
+        }
+        private static string PreviousInvoiceNumber
+        {
+            get
+            {
+                DateTime prevMonthDay1 = new DateTime(InvoicePage1.InvoiceDate.AddMonths(-1).Year, InvoicePage1.InvoiceDate.AddMonths(-1).Month, 1);
+                DateTime prevMonthLastDay = new DateTime(prevMonthDay1.Year, prevMonthDay1.Month, DateTime.DaysInMonth(prevMonthDay1.Year, prevMonthDay1.Month));
+
+                new SelectCommand<tbinvoices>()
+                    .Select(tbinvoices.InvoiceNumber)
+                    .From
+                    .StartWhere
+                        .Where(tbinvoices.TenantID, SQLOperator.Equal, TenantID.ToString())
+                        .And()
+                        .Between(tbinvoices.InvoiceDate, prevMonthDay1.ToString("yyyy-MM-dd"), prevMonthLastDay.ToString("yyyy-MM-dd"))
+                    .EndWhere
+                    .ExecuteReader(Internals.DBC);
+                if (Internals.DBC.HasRows)
+                    return Internals.DBC.Values[0];
+                Internals.DBC.CloseReader();
+                return "";
+            }
+        }
+
+        internal static double WaterPreviousBalance
+        {
+            get
+            {
+                if (string.IsNullOrWhiteSpace(PreviousInvoiceNumber))
+                    return 0;
+
+                new SelectCommand<tbwaterinvoice>()
+                    .Select(tbwaterinvoice.Subtotal)
+                    .From
+                    .StartWhere
+                        .Where(tbwaterinvoice.InvoiceNumber, SQLOperator.Equal, "@InvNum")
+                    .EndWhere
+                    .ExecuteReader(Internals.DBC, new ParametersMetadata("@InvNum", BHelper.InvoiceNumber));
+                if (Internals.DBC.HasRows)
+                    return Convert.ToDouble(Internals.DBC.Values[0]);
+                Internals.DBC.CloseReader();
+                return 0;
+            }
+        }
+        internal static double WaterPaymentsReceived
+        {
+            get
+            {
+                double WPR = 0;
+
+                if (string.IsNullOrWhiteSpace(PreviousInvoiceNumber))
+                    return WPR;
+
+                new SelectCommand<tbinvoicepayments>()
+                    .Select(tbinvoicepayments.AmountPaid)
+                    .From
+                    .StartWhere
+                        .Where(tbinvoicepayments.InvoiceNumber, SQLOperator.Equal, "@InvNum")
+                        .And(tbinvoicepayments.InvoiceType, SQLOperator.Equal, "'" + InvoiceTypes.WATER.ToString() + "'")
+                    .EndWhere
+                    .ExecuteReader(Internals.DBC, new ParametersMetadata("@InvNum", BHelper.InvoiceNumber));
+                if (Internals.DBC.HasRows)
+                    foreach (string ap in Internals.DBC.Values)
+                        WPR += Convert.ToDouble(ap);
+                Internals.DBC.CloseReader();
+                return WPR;
+            }
+        }
+        internal static double WaterRemainingBalance
+        {
+            get
+            {
+                return 0;
+            }
+        }
+    }
 }

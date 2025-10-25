@@ -204,5 +204,68 @@ namespace Real_Estate_Management_System.Billing
                 "Plan: " + BHelper.NewInternetInvoice.PlanName + "\n" +
                 "Subscription Plan: " + Internals.PESO + BHelper.NewInternetInvoice.SubscriptionFee.ToString("0,0.00"));
         }
+
+        private void TransferUnpaidPartialBills()
+        {
+            //---TRANSFER UNPAID/PARTIAL WATER BILLS---
+            new UpdateCommand<tbwaterinvoice>()
+                .Set(new UpdateMetadata<tbwaterinvoice>(tbwaterinvoice.Status, InvoiceStatuses.TRANSFERRED.ToString(), DataTypes.NonNumeric))
+                .StartWhere
+                    .Where(tbwaterinvoice.TenantID, SQLOperator.Equal, BHelper.TenantID.ToString())
+                    .And()
+                    .StartGroup(tbwaterinvoice.Status, SQLOperator.Equal, "'" + InvoiceStatuses.UNPAID.ToString() + "'")
+                        .Or(tbwaterinvoice.Status, SQLOperator.Equal, "'" + InvoiceStatuses.PARTIAL.ToString() + "'")
+                    .EndGroup
+                .EndWhere
+                .ExecuteNonQuery(Internals.DBC);
+
+            //---TRANSFER UNPAID/PARTIAL ELECTRICITY BILLS---
+            new UpdateCommand<tbelectricityinvoice>()
+                .Set(new UpdateMetadata<tbelectricityinvoice>(tbelectricityinvoice.Status, InvoiceStatuses.TRANSFERRED.ToString(), DataTypes.NonNumeric))
+                .StartWhere
+                    .Where(tbelectricityinvoice.TenantID, SQLOperator.Equal, BHelper.TenantID.ToString())
+                    .And()
+                    .StartGroup(tbelectricityinvoice.Status, SQLOperator.Equal, "'" + InvoiceStatuses.UNPAID.ToString() + "'")
+                        .Or(tbelectricityinvoice.Status, SQLOperator.Equal, "'" + InvoiceStatuses.PARTIAL.ToString() + "'")
+                    .EndGroup
+                .EndWhere
+                .ExecuteNonQuery(Internals.DBC);
+
+            //---TRANSFER UNPAID/PARTIAL RENTAL BILLS---
+            new UpdateCommand<tbrentalinvoice>()
+                .Set(new UpdateMetadata<tbrentalinvoice>(tbrentalinvoice.Status, InvoiceStatuses.TRANSFERRED.ToString(), DataTypes.NonNumeric))
+                .StartWhere
+                    .Where(tbrentalinvoice.TenantID, SQLOperator.Equal, BHelper.TenantID.ToString())
+                    .And()
+                    .StartGroup(tbrentalinvoice.Status, SQLOperator.Equal, "'" + InvoiceStatuses.UNPAID.ToString() + "'")
+                        .Or(tbrentalinvoice.Status, SQLOperator.Equal, "'" + InvoiceStatuses.PARTIAL.ToString() + "'")
+                    .EndGroup
+                .EndWhere
+                .ExecuteNonQuery(Internals.DBC);
+
+            //---TRANSFER UNPAID/PARTIAL INTERNET BILLS---
+            new UpdateCommand<tbinternetinvoice>()
+                .Set(new UpdateMetadata<tbinternetinvoice>(tbinternetinvoice.Status, InvoiceStatuses.TRANSFERRED.ToString(), DataTypes.NonNumeric))
+                .StartWhere
+                    .Where(tbinternetinvoice.TenantID, SQLOperator.Equal, BHelper.TenantID.ToString())
+                    .And()
+                    .StartGroup(tbinternetinvoice.Status, SQLOperator.Equal, "'" + InvoiceStatuses.UNPAID.ToString() + "'")
+                        .Or(tbinternetinvoice.Status, SQLOperator.Equal, "'" + InvoiceStatuses.PARTIAL.ToString() + "'")
+                    .EndGroup
+                .EndWhere
+                .ExecuteNonQuery(Internals.DBC);
+
+            //---TRANSFER UNPAID/PARTIAL INVOICES---
+            new UpdateCommand<tbinvoices>()
+                .Set(new UpdateMetadata<tbinvoices>(tbinvoices.Status, InvoiceStatuses.TRANSFERRED.ToString(), DataTypes.NonNumeric))
+                .StartWhere
+                    .Where(tbinvoices.TenantID, SQLOperator.Equal, BHelper.TenantID.ToString())
+                    .And()
+                    .StartGroup(tbinvoices.Status, SQLOperator.Equal, "'" + InvoiceStatuses.UNPAID.ToString() + "'")
+                        .Or(tbinvoices.Status, SQLOperator.Equal, "'" + InvoiceStatuses.PARTIAL.ToString() + "'")
+                    .EndGroup
+                .EndWhere
+                .ExecuteNonQuery(Internals.DBC);
+        }
     }
 }

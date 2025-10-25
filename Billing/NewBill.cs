@@ -166,6 +166,8 @@ namespace Real_Estate_Management_System.Billing
             if (confirm != DialogResult.Yes)
                 return;
 
+            TransferUnpaidPartialBills();
+
             //--- SAVE WATER SUB-INVOICE ---
             new InsertIntoCommand<tbwaterinvoice>()
                 .Column(new tbwaterinvoice[]
