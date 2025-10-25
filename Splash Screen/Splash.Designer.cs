@@ -108,6 +108,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Splash";
             FormClosing += Splash_FormClosing;
+            Load += Splash_Load;
             pnlBG.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pcbLogo).EndInit();
             ResumeLayout(false);

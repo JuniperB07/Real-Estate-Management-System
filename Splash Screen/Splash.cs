@@ -68,5 +68,10 @@ namespace Real_Estate_Management_System
         {
             dragging = false;
         }
+
+        private void Splash_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
