@@ -10,17 +10,17 @@ using System.Windows.Forms;
 
 namespace Real_Estate_Management_System.Settings.Billing
 {
-    public partial class WaterUtilitySettings : Form
+    public partial class ElectricityUtilitySettings : Form
     {
-        public WaterUtilitySettings()
+        public ElectricityUtilitySettings()
         {
             InitializeComponent();
         }
 
-        private void WaterUtilitySettings_Load(object sender, EventArgs e)
+        private void ElectricityUtilitySettings_Load(object sender, EventArgs e)
         {
-            txtUnit.Text = Configs.Utilities.UtilitiesConfig.Water_Unit;
-            txtUnitPrice.Text = Configs.Utilities.UtilitiesConfig.Water_UnitPrice.ToString("0.00");
+            txtUnit.Text = Configs.Utilities.UtilitiesConfig.Electricity_Unit;
+            txtUnitPrice.Text = Configs.Utilities.UtilitiesConfig.Electricity_UnitPrice.ToString("0.00");
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -37,14 +37,14 @@ namespace Real_Estate_Management_System.Settings.Billing
                 return;
             }
 
-            Configs.Utilities.UtilitiesConfig.Change_WaterUnit(txtUnit.Text);
-            Configs.Utilities.UtilitiesConfig.Change_WaterUnitPrice(Convert.ToDouble(txtUnitPrice.Text));
+            Configs.Utilities.UtilitiesConfig.Change_ElectricityUnit(txtUnit.Text);
+            Configs.Utilities.UtilitiesConfig.Change_ElectricityUnitPrice(Convert.ToDouble(txtUnitPrice.Text));
 
             MessageBox.Show("Changes saved!", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
-            WaterUtilitySettings_Load(this, EventArgs.Empty);
+            ElectricityUtilitySettings_Load(this, EventArgs.Empty);
         }
 
-        private void WaterUtilitySettings_FormClosing(object sender, FormClosingEventArgs e)
+        private void ElectricityUtilitySettings_FormClosing(object sender, FormClosingEventArgs e)
         {
             GC.Collect();
             GC.WaitForPendingFinalizers();

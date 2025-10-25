@@ -57,7 +57,7 @@
             mnuMenu.Items.AddRange(new ToolStripItem[] { tsmiBilling, tsmiAccounts });
             mnuMenu.Location = new Point(0, 0);
             mnuMenu.Name = "mnuMenu";
-            mnuMenu.Size = new Size(1163, 27);
+            mnuMenu.Size = new Size(1163, 28);
             mnuMenu.TabIndex = 1;
             mnuMenu.Text = "menuStrip1";
             // 
@@ -65,34 +65,35 @@
             // 
             tsmiBilling.DropDownItems.AddRange(new ToolStripItem[] { tsmiBilling_Utilities, tsmiBilling_DueDates, tsmiBilling_Invoice });
             tsmiBilling.Name = "tsmiBilling";
-            tsmiBilling.Size = new Size(66, 23);
+            tsmiBilling.Size = new Size(66, 24);
             tsmiBilling.Text = "Billing";
             // 
             // tsmiBilling_Utilities
             // 
             tsmiBilling_Utilities.DropDownItems.AddRange(new ToolStripItem[] { tsmiBilling_Utilities_Water, tsmiBilling_Utilities_Electricity });
             tsmiBilling_Utilities.Name = "tsmiBilling_Utilities";
-            tsmiBilling_Utilities.Size = new Size(169, 26);
+            tsmiBilling_Utilities.Size = new Size(224, 26);
             tsmiBilling_Utilities.Text = "Utilities";
             // 
             // tsmiBilling_Utilities_Water
             // 
             tsmiBilling_Utilities_Water.Name = "tsmiBilling_Utilities_Water";
-            tsmiBilling_Utilities_Water.Size = new Size(164, 26);
+            tsmiBilling_Utilities_Water.Size = new Size(224, 26);
             tsmiBilling_Utilities_Water.Text = "Water";
             tsmiBilling_Utilities_Water.Click += tsmiBilling_Utilities_Water_Click;
             // 
             // tsmiBilling_Utilities_Electricity
             // 
             tsmiBilling_Utilities_Electricity.Name = "tsmiBilling_Utilities_Electricity";
-            tsmiBilling_Utilities_Electricity.Size = new Size(164, 26);
+            tsmiBilling_Utilities_Electricity.Size = new Size(224, 26);
             tsmiBilling_Utilities_Electricity.Text = "Electricity";
+            tsmiBilling_Utilities_Electricity.Click += tsmiBilling_Utilities_Electricity_Click;
             // 
             // tsmiBilling_DueDates
             // 
             tsmiBilling_DueDates.DropDownItems.AddRange(new ToolStripItem[] { tsmiBilling_DueDates_Utilities, tsmiBilling_DueDates_Rental, tsmiBilling_DueDates_Internet });
             tsmiBilling_DueDates.Name = "tsmiBilling_DueDates";
-            tsmiBilling_DueDates.Size = new Size(169, 26);
+            tsmiBilling_DueDates.Size = new Size(224, 26);
             tsmiBilling_DueDates.Text = "Due Dates";
             // 
             // tsmiBilling_DueDates_Utilities
@@ -117,7 +118,7 @@
             // 
             tsmiBilling_Invoice.DropDownItems.AddRange(new ToolStripItem[] { tsmiBilling_Invoice_InvoiceNumberPrefix, tsmiBilling_Invoice_PDFExportPath, tsmiBilling_Invoice_BusinessInformation, tsmiBilling_Invoice_ContactInformation, tsmiBilling_Invoice_BIRInformation });
             tsmiBilling_Invoice.Name = "tsmiBilling_Invoice";
-            tsmiBilling_Invoice.Size = new Size(169, 26);
+            tsmiBilling_Invoice.Size = new Size(224, 26);
             tsmiBilling_Invoice.Text = "Invoice";
             // 
             // tsmiBilling_Invoice_InvoiceNumberPrefix
@@ -154,7 +155,7 @@
             // 
             tsmiAccounts.DropDownItems.AddRange(new ToolStripItem[] { tsmiAccounts_NewUserAccount, tsmiAccounts_EditUserAccount });
             tsmiAccounts.Name = "tsmiAccounts";
-            tsmiAccounts.Size = new Size(91, 23);
+            tsmiAccounts.Size = new Size(91, 24);
             tsmiAccounts.Text = "Accounts";
             // 
             // tsmiAccounts_NewUserAccount

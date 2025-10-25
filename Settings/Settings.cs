@@ -34,5 +34,12 @@ namespace Real_Estate_Management_System.Settings
             GC.Collect();
             GC.WaitForPendingFinalizers();
         }
+
+        private void tsmiBilling_Utilities_Electricity_Click(object sender, EventArgs e)
+        {
+            Billing.ElectricityUtilitySettings EUS = new Billing.ElectricityUtilitySettings();
+            EUS.MdiParent = this;
+            EUS.Show();
+        }
     }
 }
