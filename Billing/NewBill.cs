@@ -295,7 +295,7 @@ namespace Real_Estate_Management_System.Billing
                 .Values(new ValuesMetadata[]
                 {
                     new ValuesMetadata(BHelper.NewInternetInvoice.InvoiceNumber, DataTypes.NonNumeric),
-                    new ValuesMetadata(BHelper.NewInternetInvoice.Deductions.ToString("yyyy-MM-dd"), DataTypes.NonNumeric),
+                    new ValuesMetadata(BHelper.NewInternetInvoice.DueDate.ToString("yyyy-MM-dd"), DataTypes.NonNumeric),
                     new ValuesMetadata(BHelper.NewInternetInvoice.TenantID.ToString(), DataTypes.Numeric),
                     new ValuesMetadata(BHelper.NewInternetInvoice.PlanName, DataTypes.NonNumeric),
                     new ValuesMetadata(BHelper.NewInternetInvoice.SubscriptionFee.ToString(), DataTypes.Numeric),
