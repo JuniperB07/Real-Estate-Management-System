@@ -12,19 +12,9 @@ namespace Real_Estate_Management_System.Configs.Billing
     internal static partial class BillingConfig
     {
         private static readonly string configPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Configs\\Billing.config");
-        private static readonly XDocument Doc = XDocument.Load(configPath);
-        private static readonly JunXML Billing = new JunXML(Doc);
+        private static readonly JunXML Billing = new JunXML(configPath).Load();
 
-        internal static string? InvoiceNumberPrefix
-        {
-            get
-            {
-                return Doc
-                    .Descendants("add")
-                    .FirstOrDefault(x => x.Attribute("key")?.Value == "Billing:InvoiceNumberPrefix")?
-                    .Attribute("value")?.Value;
-            }
-        }
+        internal static string InvoiceNumberPrefix => Billing.ReadAdd("Billing:InvoiceNumberPrefix");
         internal static string ExportToPDFPath => Billing.ReadAdd("ExportToPDFPath");
     }
 }

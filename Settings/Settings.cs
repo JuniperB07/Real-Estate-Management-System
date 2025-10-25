@@ -41,5 +41,12 @@ namespace Real_Estate_Management_System.Settings
             EUS.MdiParent = this;
             EUS.Show();
         }
+
+        private void tsmiBilling_DueDates_Utilities_Click(object sender, EventArgs e)
+        {
+            Due_Dates.UtilityDueDateSettings UDDS = new Due_Dates.UtilityDueDateSettings();
+            UDDS.MdiParent = this;
+            UDDS.Show();
+        }
     }
 }

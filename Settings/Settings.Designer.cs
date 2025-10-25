@@ -99,19 +99,20 @@
             // tsmiBilling_DueDates_Utilities
             // 
             tsmiBilling_DueDates_Utilities.Name = "tsmiBilling_DueDates_Utilities";
-            tsmiBilling_DueDates_Utilities.Size = new Size(147, 26);
+            tsmiBilling_DueDates_Utilities.Size = new Size(224, 26);
             tsmiBilling_DueDates_Utilities.Text = "Utilities";
+            tsmiBilling_DueDates_Utilities.Click += tsmiBilling_DueDates_Utilities_Click;
             // 
             // tsmiBilling_DueDates_Rental
             // 
             tsmiBilling_DueDates_Rental.Name = "tsmiBilling_DueDates_Rental";
-            tsmiBilling_DueDates_Rental.Size = new Size(147, 26);
+            tsmiBilling_DueDates_Rental.Size = new Size(224, 26);
             tsmiBilling_DueDates_Rental.Text = "Rental";
             // 
             // tsmiBilling_DueDates_Internet
             // 
             tsmiBilling_DueDates_Internet.Name = "tsmiBilling_DueDates_Internet";
-            tsmiBilling_DueDates_Internet.Size = new Size(147, 26);
+            tsmiBilling_DueDates_Internet.Size = new Size(224, 26);
             tsmiBilling_DueDates_Internet.Text = "Internet";
             // 
             // tsmiBilling_Invoice
