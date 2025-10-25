@@ -16,7 +16,6 @@ namespace Real_Estate_Management_System.Rooms
     {
         Dialogs.MSGBox_OK MBOK;
         double OriginalRR;
-        double UpdatedRR;
 
         public EditBuilding()
         {
