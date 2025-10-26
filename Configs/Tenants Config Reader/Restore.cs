@@ -9,41 +9,10 @@ namespace Real_Estate_Management_System.Configs.Tenants
 {
     internal static partial class DefaultValues
     {
-        internal static void RestoreDefaults()
-        {
-            Restore_Default_IDLocation();
-            Restore_Default_Internet_Plan();
-        }
+        private const string DEFAULT_ID_LOCATION = "Resources\\REMS_TENANTS_DEFAULT_ID.png";
+        private const string DEFAULT_INTERNET_PLAN = "None";
 
-        #region PRIVATES
-        private static void Restore_Default_IDLocation()
-        {
-            doc = XDocument.Load(configPath);
-
-            var target = doc
-                .Descendants("add")
-                .FirstOrDefault(x => x.Attribute("key")?.Value == "Tenants:Default_IDLocation");
-
-            if(target != null)
-            {
-                target.SetAttributeValue("value", DEFAULT_ID_LOCATION);
-                doc.Save(configPath);
-            }
-        }
-        private static void Restore_Default_Internet_Plan()
-        {
-            doc = XDocument.Load(configPath);
-
-            var target = doc
-                .Descendants("add")
-                .FirstOrDefault(x => x.Attribute("key")?.Value == "Tenants:Default_InternetPlan");
-
-            if (target != null)
-            {
-                target.SetAttributeValue("value", DEFAULT_INTERNET_PLAN);
-                doc.Save(configPath);
-            }
-        }
-        #endregion
+        internal static void Restore_IDLocationConfig() => Change_IDLocation(DEFAULT_ID_LOCATION);
+        internal static void Restore_DefaultInternetPlanConfig() => Change_DefaultInternetPlan(DEFAULT_INTERNET_PLAN);
     }
 }

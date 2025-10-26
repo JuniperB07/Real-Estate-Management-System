@@ -10,74 +10,11 @@ namespace Real_Estate_Management_System.Configs.DueDates
 {
     internal static partial class DueDatesConfig
     {
-        internal static void RestoreDefaults()
-        {
-            Restore_Utilities_DueDateMode();
-            Restore_Rental_DueDateMode();
-            Restore_Internet_DueDateMode();
-        }
+        private const int DEFAULT_USER_DEFINED_VALUE = -1;
+        private const DueDateModes DEFAULT_DUE_DATE_MODE = DueDateModes.Start_Date_Dependent;
 
-        #region Private Restores
-        private static void Restore_Utilities_DueDateMode()
-        {
-            var target = Doc
-                .Descendants("add")
-                .FirstOrDefault(x => x.Attribute("key")?.Value == "DueDateMode:Utilities");
-            if(target != null)
-            {
-                target.SetAttributeValue("value", EnumHelper<DueDateModes>.GetReadableValue(DEFAULT_DUE_DATE_MODE, '_'));
-                Doc.Save(configPath);
-            }
-
-            target = Doc
-                .Descendants("add")
-                .FirstOrDefault(x => x.Attribute("key")?.Value == "DueDateMode:Utilities_UserDefined");
-            if(target != null)
-            {
-                target.SetAttributeValue("value", DEFAULT_USER_DEFINED_VALUE.ToString());
-                Doc.Save(configPath);
-            }
-        }
-        private static void Restore_Rental_DueDateMode()
-        {
-            var target = Doc
-                .Descendants("add")
-                .FirstOrDefault(x => x.Attribute("key")?.Value == "DueDateMode:Rental");
-            if (target != null)
-            {
-                target.SetAttributeValue("value", EnumHelper<DueDateModes>.GetReadableValue(DEFAULT_DUE_DATE_MODE, '_'));
-                Doc.Save(configPath);
-            }
-
-            target = Doc
-                .Descendants("add")
-                .FirstOrDefault(x => x.Attribute("key")?.Value == "DueDateMode:Rental_UserDefined");
-            if (target != null)
-            {
-                target.SetAttributeValue("value", DEFAULT_USER_DEFINED_VALUE.ToString());
-                Doc.Save(configPath);
-            }
-        }
-        private static void Restore_Internet_DueDateMode()
-        {
-            var target = Doc
-                .Descendants("add")
-                .FirstOrDefault(x => x.Attribute("key")?.Value == "DueDateMode:Internet");
-            if (target != null)
-            {
-                target.SetAttributeValue("value", EnumHelper<DueDateModes>.GetReadableValue(DEFAULT_DUE_DATE_MODE, '_'));
-                Doc.Save(configPath);
-            }
-
-            target = Doc
-                .Descendants("add")
-                .FirstOrDefault(x => x.Attribute("key")?.Value == "DueDateMode:Internet_UserDefined");
-            if (target != null)
-            {
-                target.SetAttributeValue("value", DEFAULT_USER_DEFINED_VALUE.ToString());
-                Doc.Save(configPath);
-            }
-        }
-        #endregion
+        internal static void Restore_Utilities_DueDateConfig() => ChangeDueDateMode_Utilities(DEFAULT_DUE_DATE_MODE);
+        internal static void Restore_Rental_DueDateConfig() => ChangeDueDateMode_Rental(DEFAULT_DUE_DATE_MODE);
+        internal static void Restore_Internet_DueDateConfig() => ChangeDueDateMode_Internet(DEFAULT_DUE_DATE_MODE);
     }
 }

@@ -36,6 +36,7 @@
             txtUnitPrice = new TextBox();
             label2 = new Label();
             btnSave = new Button();
+            btnRestore = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -109,7 +110,7 @@
             btnSave.FlatStyle = FlatStyle.Flat;
             btnSave.Font = new Font("Arial Narrow", 13.8F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
             btnSave.ForeColor = Color.FromArgb(0, 70, 67);
-            btnSave.Location = new Point(156, 196);
+            btnSave.Location = new Point(307, 196);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(203, 44);
             btnSave.TabIndex = 30;
@@ -117,12 +118,29 @@
             btnSave.UseVisualStyleBackColor = true;
             btnSave.Click += btnSave_Click;
             // 
+            // btnRestore
+            // 
+            btnRestore.Anchor = AnchorStyles.Bottom;
+            btnRestore.FlatAppearance.BorderColor = Color.FromArgb(0, 70, 67);
+            btnRestore.FlatAppearance.BorderSize = 2;
+            btnRestore.FlatStyle = FlatStyle.Flat;
+            btnRestore.Font = new Font("Arial Narrow", 13.8F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
+            btnRestore.ForeColor = Color.FromArgb(0, 70, 67);
+            btnRestore.Location = new Point(12, 196);
+            btnRestore.Name = "btnRestore";
+            btnRestore.Size = new Size(227, 44);
+            btnRestore.TabIndex = 40;
+            btnRestore.Text = "RESTORE DEFAULTS";
+            btnRestore.UseVisualStyleBackColor = true;
+            btnRestore.Click += btnRestore_Click;
+            // 
             // WaterUtilitySettings
             // 
             AutoScaleDimensions = new SizeF(11F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(240, 237, 229);
             ClientSize = new Size(522, 252);
+            Controls.Add(btnRestore);
             Controls.Add(btnSave);
             Controls.Add(txtUnitPrice);
             Controls.Add(label2);
@@ -153,5 +171,6 @@
         private TextBox txtUnitPrice;
         private Label label2;
         private Button btnSave;
+        private Button btnRestore;
     }
 }

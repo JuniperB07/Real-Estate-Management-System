@@ -4,35 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using JunX.NETStandard.XML;
 
 namespace Real_Estate_Management_System.Configs.Tenants
 {
     internal static partial class DefaultValues
     {
         private static string configPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Configs\\Tenants.config");
-        private static XDocument doc;
+        private static JunXML TenantsConfig = new JunXML(configPath).Load();
 
-        internal static string Default_IDLocation
-        {
-            get
-            {
-                doc = XDocument.Load(configPath);
-
-                return doc
-                    .Descendants("add")
-                    .FirstOrDefault(x => x.Attribute("key")?.Value == "Tenants:Default_IDLocation")?
-                    .Attribute("value")?.Value;
-            }
-        }
-        internal static string Default_InternetPlan
-        {
-            get
-            {
-                doc = XDocument.Load(configPath);
-                return doc.Descendants("add")
-                    .FirstOrDefault(x => x.Attribute("key")?.Value == "Tenants:Default_InternetPlan")?
-                    .Attribute("value")?.Value;
-            }
-        }
+        internal static string Default_IDLocation => TenantsConfig.ReadAdd("Tenants:Default_IDLocation");
+        internal static string Default_InternetPlan => TenantsConfig.ReadAdd("Tenants:Default_InternetPlan");
     }
 }

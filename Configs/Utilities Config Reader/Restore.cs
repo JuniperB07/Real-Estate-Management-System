@@ -8,37 +8,19 @@ namespace Real_Estate_Management_System.Configs.Utilities
 {
     internal static partial class UtilitiesConfig
     {
-        internal static void RestoreDefaults()
-        {
-            Restore_Default_Electricity_Unit();
-            Restore_Default_Water_Unit();
-        }
+        private const string DEFAULT_WATER_UNIT = "m^3";
+        private const string DEFAULT_ELECTRICITY_UNIT = "kWh";
+        private const double DEFAULT_UTILITY_UNIT_PRICE = 0;
 
-        #region Private Restores
-        private static void Restore_Default_Electricity_Unit()
+        internal static void Restore_WaterUtilityConfig()
         {
-            var target = Doc
-                .Descendants("add")
-                .FirstOrDefault(x => x.Attribute("key")?.Value == "Utilities:Electricity_Unit");
-
-            if(target != null)
-            {
-                target.SetAttributeValue("value", DEFAULT_ELECTRICITY_UNIT);
-                Doc.Save(configPath);
-            }
+            Change_WaterUnit(DEFAULT_WATER_UNIT);
+            Change_WaterUnitPrice(DEFAULT_UTILITY_UNIT_PRICE);
         }
-        private static void Restore_Default_Water_Unit()
+        internal static void Restore_ElectricityUtilityConfig()
         {
-            var target = Doc
-                .Descendants("add")
-                .FirstOrDefault(x => x.Attribute("key")?.Value == "Utilities:Water_Unit");
-
-            if(target != null)
-            {
-                target.SetAttributeValue("value", DEFAULT_WATER_UNIT);
-                Doc.Save(configPath);
-            }
+            Change_ElectricityUnit(DEFAULT_ELECTRICITY_UNIT);
+            Change_ElectricityUnitPrice(DEFAULT_UTILITY_UNIT_PRICE);
         }
-        #endregion
     }
 }

@@ -37,8 +37,8 @@ namespace Real_Estate_Management_System.Settings.Due_Dates
             {
                 if (cmbDueDateMode.Text == Configs.DueDateModes.User_Defined.ToString().Replace('_', ' '))
                 {
-                    Forms.SetControlVisible(new Control[] { lblDueDateDay, txtDueDateDay }, false);
-                    txtDueDateDay.Text = Configs.DueDates.DueDatesConfig.DueDate_Internet.ToString();
+                    Forms.SetControlVisible(new Control[] { lblDueDateDay, txtDueDateDay }, true);
+                    txtDueDateDay.Text = Configs.DueDates.DueDatesConfig.DueDate_Utilities.ToString();
                 }
             }
             else

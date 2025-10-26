@@ -49,5 +49,10 @@ namespace Real_Estate_Management_System.Settings.Billing
             GC.Collect();
             GC.WaitForPendingFinalizers();
         }
+
+        private void btnRestore_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
